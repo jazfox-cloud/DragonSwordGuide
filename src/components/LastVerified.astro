@@ -1,0 +1,17 @@
+---
+interface Props {
+  date: string;
+  gameVersion?: string;
+}
+
+const { date, gameVersion } = Astro.props;
+---
+
+<p class="meta">
+  Last verified: {date}
+  {gameVersion && <><span aria-hidden="true"> · </span>Game version: {gameVersion}</>}
+</p>
+
+<style>
+  .meta { color: var(--muted); font-size: 0.82rem; }
+</style>

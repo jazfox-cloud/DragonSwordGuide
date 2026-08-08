@@ -1,0 +1,18 @@
+---
+interface Props {
+  message?: string;
+}
+
+const { message = 'More guides will be added after this page has been validated.' } = Astro.props;
+---
+
+<section class="related" aria-labelledby="related-title">
+  <h2 id="related-title">Related guides</h2>
+  <p>{message}</p>
+</section>
+
+<style>
+  .related { max-width: 760px; border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 0.25rem; }
+  .related h2 { font-size: 1.35rem; }
+  .related p { color: var(--muted); font-size: 0.9rem; }
+</style>

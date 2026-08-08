@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'DragonSword Guide';
+const description = 'Unofficial fan-made guides and answers for DragonSword: Awakening.';
+const canonical = 'https://dragonswordguide.com/';
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <div class="shell home-wrap">
+    <h1>DragonSword Guide</h1>
+    <p>Unofficial fan-made guides and answers for DragonSword: Awakening.</p>
+    <p><a class="primary-link" href="/multiplayer/">Is DragonSword Awakening Multiplayer?</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-wrap { padding: 4rem 0 5rem; }
+  h1 { line-height: 1.2; letter-spacing: -0.025em; font-size: clamp(2rem, 7vw, 3.25rem); margin: 0 0 0.75rem; }
+  p { color: var(--muted); max-width: 620px; }
+  .primary-link { color: var(--accent); font-weight: 700; }
+</style>

@@ -1,0 +1,29 @@
+---
+interface Source {
+  label: string;
+  href: string;
+  note: string;
+}
+
+interface Props {
+  sources: Source[];
+}
+
+const { sources } = Astro.props;
+---
+
+<section class="sources" aria-labelledby="sources-title">
+  <h2 id="sources-title">Sources &amp; verification</h2>
+  <p>Evidence level: B (primary-source verified), with C (community verification) clearly labeled where live behavior could not be confirmed.</p>
+  <ol>
+    {sources.map((source) => <li><a href={source.href}>{source.label}</a> — {source.note}</li>)}
+  </ol>
+</section>
+
+<style>
+  .sources { max-width: 760px; border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 0.25rem; }
+  .sources h2 { font-size: 1.35rem; }
+  .sources p, .sources li { color: var(--muted); font-size: 0.9rem; }
+  .sources ol { padding-left: 1.25rem; }
+  .sources li { margin: 0.6rem 0; }
+</style>

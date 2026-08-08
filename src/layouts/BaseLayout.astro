@@ -4,9 +4,12 @@ interface Props {
   description: string;
   canonical: string;
   schema?: Record<string, unknown>[];
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
-const { title, description, canonical, schema = [] } = Astro.props;
+const { title, description, canonical, schema = [], ogType = 'website', noindex = false } = Astro.props;
+const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
 ---
 <!doctype html>
 <html lang="en">
@@ -14,19 +17,30 @@ const { title, description, canonical, schema = [] } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
-    <meta property="og:type" content="article" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
     <title>{title}</title>
     {schema.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+    {ga4Id && <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+      <script is:inline define:vars={{ ga4Id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag()&#123;dataLayer.push(arguments);&#125;
+        gtag('js', new Date());
+        gtag('config', ga4Id);
+      </script>
+    </>}
   </head>
   <body>
     <header class="site-header">
       <div class="shell header-inner">
-        <span class="brand">DragonSword Guide</span>
+        <a class="brand" href="/">DragonSword Guide</a>
         <span class="brand-note">Unofficial fan-made guides</span>
       </div>
     </header>
@@ -35,7 +49,7 @@ const { title, description, canonical, schema = [] } = Astro.props;
     </main>
     <footer class="site-footer">
       <div class="shell">
-        <p>DragonSword Guide is an unofficial fan site and is not affiliated with Hound13.</p>
+        <p>DragonSword Guide is an unofficial fan-made website and is not affiliated with or endorsed by Hound13 Inc.</p>
       </div>
     </footer>
   </body>
