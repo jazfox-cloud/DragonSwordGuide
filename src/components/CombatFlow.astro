@@ -1,0 +1,14 @@
+---
+const steps = ['Active Skill', 'Status Ailment', 'Signal Skill', 'Switching Signal', 'Finisher'];
+---
+<div class="combat-flow" aria-label="Combat flow">
+  {steps.map((step, index) => <><div class="flow-step"><span>0{index + 1}</span><strong>{step}</strong></div>{index < steps.length - 1 && <span class="flow-arrow" aria-hidden="true">→</span>}</>)}
+</div>
+<style>
+  .combat-flow { display: flex; align-items: stretch; gap: 0.5rem; flex-wrap: wrap; padding: 1rem; border: 1px solid var(--line); background: linear-gradient(120deg, hsl(202 65% 20% / 0.65), var(--paper)); border-radius: 14px; }
+  .flow-step { display: grid; gap: 0.25rem; min-width: 8rem; padding: 0.8rem; background: hsl(221 27% 12% / 0.8); border: 1px solid var(--line); border-radius: 10px; }
+  .flow-step span { color: var(--accent); font-size: 0.68rem; font-weight: 800; }
+  .flow-step strong { font-size: 0.82rem; }
+  .flow-arrow { align-self: center; color: var(--accent-light); font-size: 1.25rem; }
+  @media (max-width: 700px) { .flow-step { flex: 1 1 42%; } .flow-arrow { display: none; } }
+</style>

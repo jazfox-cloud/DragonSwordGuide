@@ -5,118 +5,41 @@ import LastVerified from '../../components/LastVerified.astro';
 import QuickAnswer from '../../components/QuickAnswer.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
 import SourceList from '../../components/SourceList.astro';
+import UpdateBadge from '../../components/UpdateBadge.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
 
 const title = 'Is DragonSword Awakening Multiplayer? Co-op Explained';
 const description = "Yes, DragonSword: Awakening supports online co-op for selected activities. See what's confirmed for Subjugation, Raids, story co-op, lobbies, and matchmaking.";
 const canonical = 'https://dragonswordguide.com/multiplayer/';
 const verifiedDate = 'August 8, 2026';
-
-const breadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dragonswordguide.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Multiplayer', item: canonical },
-  ],
-};
-
-const article = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: title,
-  description,
-  mainEntityOfPage: canonical,
-  datePublished: '2026-08-08',
-  dateModified: '2026-08-08',
-  publisher: { '@type': 'Organization', name: 'DragonSword Guide' },
-};
-
+const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dragonswordguide.com/' }, { '@type': 'ListItem', position: 2, name: 'Multiplayer', item: canonical }] };
+const article = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-08-08', publisher: { '@type': 'Organization', name: 'DragonSword Guide' } };
 const sources = [
   { label: 'Official Steam store page', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'lists Single-player and Online Co-op.' },
+  { label: 'Official Steam update notes 1.0.7', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'confirms Quick Entry and a lobby search range setting for multiplayer matching.' },
   { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'describes Subjugation and Raids, and says story co-op was not ready for launch.' },
-  { label: 'Current player discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/581677493394742159/', note: 'contains community reports about invite codes and matchmaking; it is not treated as official fact.' },
 ];
 ---
-
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article" schema={[article, breadcrumb]}>
-  <div class="shell page-wrap">
-    <Breadcrumbs items={[{ label: 'DragonSword Guide', href: '/' }, { label: 'Multiplayer' }]} />
-
-    <article>
-      <header class="article-header">
-        <h1>Is DragonSword Awakening Multiplayer?</h1>
-        <LastVerified date={verifiedDate} />
-      </header>
-
-      <QuickAnswer title="Yes, but co-op is limited.">
-        <p>DragonSword: Awakening supports online co-op, while the main game is primarily designed as a single-player RPG. Hound13 confirmed Subjugation and Raids as co-op activities. Current story and open-world co-op have not been verified by the sources reviewed for this page.</p>
-      </QuickAnswer>
-
-      <div class="article-body">
-        <h2>How Does Multiplayer Work in DragonSword: Awakening?</h2>
-        <p>DragonSword: Awakening is built first as a single-player RPG. Steam lists both Single-player and Online Co-op, and Hound13 has described co-op content for selected combat activities rather than a fully shared campaign.</p>
-
-        <h2>What Can You Play in Co-op?</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th scope="col">Activity</th><th scope="col">Co-op?</th><th scope="col">Notes</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Story</th><td>Not currently verified</td><td>Hound13 said it was not ready for launch and discussed it as a possible post-launch feature.</td></tr>
-              <tr><th scope="row">Open-world exploration</th><td>Not confirmed</td><td>Current player reports say no; no primary-source confirmation of open-world co-op was found.</td></tr>
-              <tr><th scope="row">Subjugation</th><td>Yes</td><td>Identified by Hound13 as a co-op activity.</td></tr>
-              <tr><th scope="row">Raids</th><td>Yes</td><td>Identified by Hound13 as a co-op activity.</td></tr>
-              <tr><th scope="row">Solo play</th><td>Yes</td><td>Steam lists the game as Single-player; co-op is not the whole game.</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2>Can You Play the Story in Co-op?</h2>
-        <p><strong>Current story co-op has not yet been verified by our sources.</strong> Hound13 confirmed that story-mode co-op was not ready for launch and discussed it as a possible post-launch feature. That earlier statement does not establish whether it is available in the current build.</p>
-
-        <h2>Does DragonSword: Awakening Have Open-World Co-op?</h2>
-        <p><strong>There is no verified open-world co-op feature in the evidence reviewed for this page.</strong> Player reports describe the game as solo outside of selected boss activities, but those reports are community evidence rather than an official feature specification.</p>
-
-        <h2>Can You Play DragonSword: Awakening Solo?</h2>
-        <p>Yes. Steam lists DragonSword: Awakening as a single-player game, and the co-op feature is limited to selected activities. That means multiplayer is not presented as a requirement for playing the main RPG.</p>
-
-        <h2>How Do You Play With Friends?</h2>
-        <p>Hound13 has confirmed co-op for Subjugation and Raids, but the exact current-version steps for creating or joining a session are not reliably documented in the primary sources reviewed here. Use the in-game multiplayer prompt for the activity you want to run; this page does not invent menu paths or lobby instructions.</p>
-
-        <h2>Does DragonSword: Awakening Have Matchmaking?</h2>
-        <p><strong>Current matchmaking is not verified.</strong> Before release, Hound13 described Steam lobby play with friends or random players. Current player reports are inconsistent: some describe invite-code or friend-based lobbies, while others expected a broader lobby system. Treat matchmaking as unconfirmed until the current live build or an updated developer notice clarifies it.</p>
-
-        <h2>Does DragonSword: Awakening Have PvP?</h2>
-        <p>No PvP feature was verified in the primary sources reviewed for this page. The confirmed multiplayer discussion is about cooperative PvE activities.</p>
-
-        <h2>DragonSword Awakening Multiplayer FAQ</h2>
-        <details><summary>Is DragonSword: Awakening an MMO?</summary><p>No. It is primarily a single-player RPG with limited online co-op content.</p></details>
-        <details><summary>Can I play DragonSword: Awakening with friends?</summary><p>Yes, for the confirmed co-op activities: Subjugation and Raids. Story and open-world co-op are not confirmed as current features.</p></details>
-        <details><summary>Is co-op required?</summary><p>No requirement was identified in the sources reviewed. Steam lists the game as single-player, and co-op is limited to selected activities.</p></details>
-      </div>
-
-      <SourceList sources={sources} />
-      <RelatedGuides />
-    </article>
-  </div>
+  <div class="shell page-wrap"><Breadcrumbs items={[{ label: 'DragonSword Guide', href: '/' }, { label: 'Multiplayer' }]} /><article>
+    <header class="article-header"><p class="eyebrow">Guide · Current multiplayer systems</p><h1>Is DragonSword Awakening Multiplayer?</h1><LastVerified date={verifiedDate} /></header>
+    <UpdateBadge label="Official update 1.0.7 · Quick Entry added" href="https://steamcommunity.com/app/4570720/announcements/" />
+    <QuickAnswer title="Yes — selected activities support online co-op."><p>Steam lists Single-player and Online Co-op. Hound13 confirmed Subjugation and Raids as co-op activities, and the official 1.0.7 notes now confirm Quick Entry plus a lobby search range setting for multiplayer matching.</p></QuickAnswer>
+    <div class="article-body">
+      <SectionHeader eyebrow="Current status" title="What is confirmed now" description="These labels separate official feature evidence from story and open-world questions that still need verification." />
+      <div class="status-grid"><div><strong>Online co-op</strong><span>Confirmed on Steam</span></div><div><strong>Subjugation & Raids</strong><span>Confirmed by Hound13</span></div><div><strong>Quick Entry</strong><span>Added in official 1.0.7</span></div><div><strong>Story co-op</strong><span>Current status not yet verified</span></div></div>
+      <h2>How Does Multiplayer Work in DragonSword: Awakening?</h2><p>DragonSword: Awakening is built first as a single-player RPG. Steam lists both Single-player and Online Co-op, while the developer evidence points to selected co-op activities rather than a fully shared campaign.</p>
+      <h2>What Can You Play in Co-op?</h2><div class="table-wrap"><table><thead><tr><th scope="col">Activity</th><th scope="col">Co-op?</th><th scope="col">Notes</th></tr></thead><tbody><tr><th scope="row">Story</th><td>Not currently verified</td><td>Hound13 said it was not ready for launch and discussed it as a possible post-launch feature.</td></tr><tr><th scope="row">Open-world exploration</th><td>Not currently verified</td><td>No primary-source confirmation of current open-world co-op was found.</td></tr><tr><th scope="row">Subjugation</th><td>Yes</td><td>Identified by Hound13 as a co-op activity.</td></tr><tr><th scope="row">Raids</th><td>Yes</td><td>Identified by Hound13 as a co-op activity.</td></tr><tr><th scope="row">Solo play</th><td>Yes</td><td>Steam lists the game as Single-player; co-op is not the whole game.</td></tr></tbody></table></div>
+      <h2>Can You Play the Story in Co-op?</h2><p><strong>Current story co-op has not yet been verified by our sources.</strong> Hound13 confirmed that story-mode co-op was not ready for launch and discussed it as a possible post-launch feature. That earlier statement does not establish whether it is available in the current build.</p>
+      <h2>Does DragonSword: Awakening Have Open-World Co-op?</h2><p><strong>There is no verified open-world co-op feature in the evidence reviewed for this page.</strong> We do not convert community reports into a current official feature specification.</p>
+      <h2>Can You Play DragonSword: Awakening Solo?</h2><p>Yes. Steam lists DragonSword: Awakening as a single-player game, and co-op is limited to selected activities. Multiplayer is not presented as a requirement for the main RPG.</p>
+      <h2>How Do You Play With Friends?</h2><p>Hound13 confirmed co-op for Subjugation and Raids. The 1.0.7 notes add Quick Entry and a lobby search range setting; use the in-game multiplayer prompt for the activity you want to run. This page does not invent menu paths that are not in the official notes.</p>
+      <h2>Does DragonSword: Awakening Have Matchmaking?</h2><p><strong>Yes, current matchmaking support is now confirmed by the official 1.0.7 notes.</strong> The update added Quick Entry to multiplayer content and a setting to configure the lobby search range for multiplayer matching. Before release, Hound13 had also discussed Steam lobby play with friends or random players; 1.0.7 is the current primary-source confirmation.</p>
+      <h2>Does DragonSword: Awakening Have PvP?</h2><p>No PvP feature was verified in the primary sources reviewed for this page. The confirmed multiplayer discussion is about cooperative PvE activities.</p>
+      <h2>DragonSword Awakening Multiplayer FAQ</h2><details><summary>Is DragonSword: Awakening an MMO?</summary><p>No. It is primarily a single-player RPG with selected online co-op content.</p></details><details><summary>Can I play DragonSword: Awakening with friends?</summary><p>Yes, for the confirmed co-op activities: Subjugation and Raids. Story and open-world co-op are not confirmed as current features.</p></details><details><summary>Is co-op required?</summary><p>No. Steam lists the game as single-player, and co-op is limited to selected activities.</p></details>
+    </div><SourceList sources={sources} /><RelatedGuides links={[{ label: 'Beginner Guide', href: '/guides/beginner/' }, { label: 'Combat System', href: '/guides/combat-system/' }, { label: 'Roadmap', href: '/roadmap/' }]} />
+  </article></div>
 </BaseLayout>
-
 <style>
-  .page-wrap { padding: 1.25rem 0 2rem; }
-  .article-header { margin-bottom: 1.25rem; }
-  h1, h2 { line-height: 1.2; letter-spacing: -0.025em; }
-  h1 { font-size: clamp(2rem, 7vw, 3.25rem); margin: 0 0 0.75rem; max-width: 760px; }
-  h2 { font-size: clamp(1.35rem, 4vw, 1.75rem); margin: 2.5rem 0 0.8rem; }
-  p { margin: 0 0 1rem; }
-  .meta { color: var(--muted); font-size: 0.82rem; }
-  .article-body { max-width: 760px; }
-  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
-  table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.92rem; }
-  th, td { border-bottom: 1px solid var(--line); padding: 0.8rem; text-align: left; vertical-align: top; }
-  thead th { background: #eef2f5; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
-  tbody th { width: 25%; font-weight: 700; }
-  details { border-top: 1px solid var(--line); padding: 1rem 0; }
-  details:last-child { border-bottom: 1px solid var(--line); }
-  summary { cursor: pointer; font-weight: 700; }
-  details p { margin: 0.65rem 0 0; color: var(--muted); }
+  .page-wrap { padding: 1.25rem 0 2rem; } .article-header { margin-bottom: 1.25rem; } .eyebrow { color: var(--accent-light); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; } h1, h2 { line-height: 1.2; letter-spacing: -0.025em; } h1 { font-size: clamp(2.4rem, 7vw, 5rem); margin: 0 0 0.75rem; max-width: 760px; } h2 { font-size: clamp(1.35rem, 4vw, 1.75rem); margin: 2.5rem 0 0.8rem; } p { margin: 0 0 1rem; } .article-body { max-width: 800px; } .status-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin: 1rem 0 2rem; } .status-grid div { display: grid; gap: 0.3rem; padding: 1rem; border-top: 1px solid var(--accent); background: var(--paper); } .status-grid span { color: var(--muted); font-size: 0.76rem; } .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); } table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.92rem; } th, td { border-bottom: 1px solid var(--line); padding: 0.8rem; text-align: left; vertical-align: top; } thead th { background: var(--raised); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; } tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; } tbody th { width: 25%; font-weight: 700; } details { border-top: 1px solid var(--line); padding: 1rem 0; } details:last-child { border-bottom: 1px solid var(--line); } summary { cursor: pointer; font-weight: 700; min-height: 44px; padding-top: 0.4rem; } details p { margin: 0.65rem 0 0; color: var(--muted); } @media (max-width: 760px) { .status-grid { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 560px) { .status-grid { grid-template-columns: 1fr; } }
 </style>

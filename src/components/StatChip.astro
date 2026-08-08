@@ -1,0 +1,10 @@
+---
+interface Props { value: string; label: string; }
+const { value, label } = Astro.props;
+---
+<div class="stat-chip"><strong>{value}</strong><span>{label}</span></div>
+<style>
+  .stat-chip { display: grid; gap: 0.1rem; border-left: 1px solid var(--accent); padding-left: 0.75rem; min-width: 9rem; }
+  strong { color: var(--ink); font-size: 1rem; }
+  span { color: var(--muted); font-size: 0.75rem; }
+</style>

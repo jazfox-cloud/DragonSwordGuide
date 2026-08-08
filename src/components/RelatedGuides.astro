@@ -1,18 +1,22 @@
 ---
 interface Props {
   message?: string;
+  links?: { label: string; href: string }[];
 }
 
-const { message = 'More guides will be added after this page has been validated.' } = Astro.props;
+const { message = 'Continue with another verified guide.', links = [] } = Astro.props;
 ---
 
 <section class="related" aria-labelledby="related-title">
   <h2 id="related-title">Related guides</h2>
   <p>{message}</p>
+  {links.length > 0 && <ul>{links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>}
 </section>
 
 <style>
   .related { max-width: 760px; border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 0.25rem; }
   .related h2 { font-size: 1.35rem; }
   .related p { color: var(--muted); font-size: 0.9rem; }
+  .related ul { display: flex; flex-wrap: wrap; gap: 0.8rem 1.25rem; padding: 0; list-style: none; }
+  .related li { font-size: 0.88rem; }
 </style>

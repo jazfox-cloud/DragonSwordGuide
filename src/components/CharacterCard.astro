@@ -1,0 +1,17 @@
+---
+import VerificationBadge from './VerificationBadge.astro';
+interface Props { name: string; identity: string; status: string; }
+const { name, identity, status } = Astro.props;
+---
+<a class="character-card" href="/characters/">
+  <span class="character-initial" aria-hidden="true">{name.slice(0, 1)}</span>
+  <span class="character-copy"><strong>{name}</strong><span>{identity}</span><VerificationBadge label={status} /></span>
+</a>
+<style>
+  .character-card { display: flex; gap: 0.8rem; align-items: flex-start; padding: 0.9rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 12px; text-decoration: none; }
+  .character-card:hover { border-color: var(--accent); }
+  .character-initial { display: grid; width: 2.25rem; height: 2.25rem; flex: 0 0 auto; place-items: center; border: 1px solid hsl(199 86% 58% / 0.55); border-radius: 50%; color: var(--accent-light); font-family: Georgia, serif; font-size: 1.15rem; }
+  .character-copy { display: grid; gap: 0.25rem; }
+  .character-copy strong { font-size: 0.95rem; }
+  .character-copy > span:not(.badge) { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+</style>

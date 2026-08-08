@@ -37,19 +37,50 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
       </script>
     </>}
   </head>
-  <body>
+<body>
+    <!--
+      THESIS: A field guide for making sense of Orbis, with proof before hype and a useful next step on every page.
+      OWN-WORLD: Deep navy surfaces, icy cyan signals, silver rules, and precise editorial panels inspired by a night-time map table.
+      STORY: Visitors quickly learn what DragonSword: Awakening is, trust the verification labels, and choose a guide.
+      FIRST VIEWPORT: A compact header leads into the page thesis, the current signal, and the primary guide path without a billboard gap.
+      FORM: Information-dense dark guide product, chosen for Read/Persuade; seed key: dragonsword-guide-orbis-fieldbook.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href="/">DragonSword Guide</a>
-        <span class="brand-note">Unofficial fan-made guides</span>
+        <a class="brand" href="/" aria-label="DragonSword Guide home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>DragonSword Guide</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/guides/beginner/">Guides</a>
+          <a href="/characters/">Characters</a>
+          <a href="/builds/">Builds</a>
+          <a href="/teams/">Teams</a>
+          <a href="/map/">Map</a>
+          <a href="/systems/runes/">Systems</a>
+          <a href="/roadmap/">Updates</a>
+        </nav>
+        <span class="brand-note">Unofficial fan-made guide</span>
       </div>
     </header>
     <main>
       <slot />
     </main>
     <footer class="site-footer">
-      <div class="shell">
-        <p>DragonSword Guide is an unofficial fan-made website and is not affiliated with or endorsed by Hound13 Inc.</p>
+      <div class="shell footer-grid">
+        <div>
+          <a class="footer-brand" href="/">DragonSword Guide</a>
+          <p>DragonSword Guide is an independent fan-made guide for DragonSword: Awakening. We publish practical guides for characters, builds, teams, maps, progression, combat systems and current game updates.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://store.steampowered.com/app/4570720/DragonSword__Awakening/">Steam</a>
+          <a href="https://discord.gg/CzZ5ddkMVg">Official Discord</a>
+          <a href="https://www.youtube.com/@DragonSwordAwakening">Official YouTube</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+        <p class="footer-disclaimer">DragonSword Guide is an unofficial fan-made website and is not affiliated with or endorsed by Hound13 Inc.</p>
       </div>
     </footer>
   </body>
@@ -57,26 +88,42 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
 
 <style is:global>
   :root {
-    color-scheme: light;
-    --ink: #17202b;
-    --muted: #647180;
-    --line: #dfe5ea;
-    --paper: #ffffff;
-    --wash: #f5f7f9;
-    --accent: #7a3f25;
-    --accent-soft: #fff5ed;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color-scheme: dark;
+    --ink: hsl(210 30% 96%);
+    --muted: hsl(215 16% 68%);
+    --muted-strong: hsl(214 22% 82%);
+    --line: hsl(217 20% 22%);
+    --paper: hsl(221 27% 12%);
+    --wash: hsl(222 32% 8%);
+    --raised: hsl(219 24% 16%);
+    --accent: hsl(199 86% 58%);
+    --accent-light: hsl(192 92% 68%);
+    --accent-soft: hsl(202 65% 20%);
+    --success: hsl(165 62% 63%);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   * { box-sizing: border-box; }
   body { margin: 0; color: var(--ink); background: var(--wash); line-height: 1.65; }
-  a { color: var(--accent); }
-  .shell { width: min(100% - 2rem, 920px); margin-inline: auto; }
-  .site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
-  .header-inner { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
-  .brand { color: var(--ink); font-size: 1.05rem; font-weight: 750; text-decoration: none; letter-spacing: -0.02em; }
-  .brand-note { color: var(--muted); font-size: 0.8rem; }
-  .site-footer { color: var(--muted); font-size: 0.82rem; padding: 2.5rem 0; }
-  .site-footer p { margin: 0; }
-  @media (max-width: 560px) { .brand-note { display: none; } }
+  a { color: var(--accent-light); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+  .shell { width: min(100% - 2rem, 1220px); margin-inline: auto; }
+  .site-header { background: hsl(222 32% 8% / 0.94); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; min-height: 72px; }
+  .brand, .footer-brand { display: inline-flex; align-items: center; gap: 0.65rem; color: var(--ink); font-size: 1.05rem; font-weight: 800; text-decoration: none; letter-spacing: -0.025em; white-space: nowrap; }
+  .brand-mark { width: 26px; height: 26px; border: 1px solid var(--accent); border-radius: 8px 3px 8px 3px; display: grid; place-items: center; transform: rotate(-12deg); }
+  .brand-mark span { display: block; width: 11px; height: 2px; background: var(--accent-light); transform: rotate(-35deg); box-shadow: 5px 5px 0 -0.5px var(--accent); }
+  .site-nav { display: flex; align-items: center; gap: 1rem; }
+  .site-nav a { color: var(--muted-strong); font-size: 0.82rem; text-decoration: none; }
+  .site-nav a:hover { color: var(--accent-light); }
+  .brand-note { color: var(--muted); font-size: 0.72rem; white-space: nowrap; }
+  .site-footer { color: var(--muted); font-size: 0.82rem; padding: 4rem 0 2rem; border-top: 1px solid var(--line); margin-top: 4rem; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr); gap: 2rem 4rem; }
+  .footer-brand { margin-bottom: 0.8rem; }
+  .site-footer p { max-width: 58ch; margin: 0; }
+  .footer-links { display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 0.55rem 1rem; }
+  .footer-links a { color: var(--muted-strong); text-decoration: none; }
+  .footer-disclaimer { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); }
+  @media (max-width: 900px) { .site-nav { display: none; } .brand-note { margin-left: auto; } }
+  @media (max-width: 560px) { .brand-note { display: none; } .footer-grid { grid-template-columns: 1fr; } .footer-disclaimer { grid-column: auto; } }
 </style>

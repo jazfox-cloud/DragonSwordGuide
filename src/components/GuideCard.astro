@@ -1,0 +1,18 @@
+---
+interface Props { href: string; eyebrow?: string; title: string; description: string; accent?: string; }
+const { href, eyebrow, title, description, accent = 'signal' } = Astro.props;
+---
+<a class={`guide-card ${accent}`} href={href}>
+  {eyebrow && <span class="card-eyebrow">{eyebrow}</span>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <span class="card-link">Read guide <span aria-hidden="true">↗</span></span>
+</a>
+<style>
+  .guide-card { display: flex; min-height: 190px; flex-direction: column; align-items: flex-start; padding: 1.25rem; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; text-decoration: none; transition: border-color 180ms ease, transform 180ms ease, background 180ms ease; }
+  .guide-card:hover { border-color: var(--accent); background: var(--raised); transform: translateY(-3px); }
+  .guide-card h3 { color: var(--ink); font-size: 1.1rem; margin: 0.55rem 0 0.35rem; letter-spacing: -0.02em; }
+  .guide-card p { color: var(--muted); font-size: 0.86rem; margin: 0; }
+  .card-eyebrow { color: var(--accent-light); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .card-link { color: var(--accent-light); margin-top: auto; padding-top: 1.15rem; font-size: 0.78rem; font-weight: 800; }
+</style>
