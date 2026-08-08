@@ -31,7 +31,7 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
       <script is:inline define:vars={{ ga4Id }}>
         window.dataLayer = window.dataLayer || [];
-        function gtag()&#123;dataLayer.push(arguments);&#125;
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', ga4Id);
       </script>
