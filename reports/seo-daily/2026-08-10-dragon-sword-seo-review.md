@@ -20,57 +20,50 @@
 | Metric | 2026-08-10 |
 |---|---:|
 | Sitemap HTTP status / URL count | 200 / 14 URLs observed in production sitemap |
-| GSC sitemap status | N/A — `sc-domain:dragonswordguide.com` is not authorized for the available read-only service account |
-| Discovered URLs | N/A — GSC property access unavailable |
-| Indexed P0 / total P0 | N/A / 5 — URL Inspection unavailable because the property is not authorized |
-| Clicks | N/A — insufficient GSC access |
-| Impressions | N/A — insufficient GSC access |
-| CTR | N/A — insufficient GSC access |
-| Average position | N/A — insufficient GSC access |
-| Non-brand queries | N/A — insufficient GSC access |
-| Top 50 URLs / queries | N/A — insufficient GSC access |
-| Top 20 URLs / queries | N/A — insufficient GSC access |
-| Top 10 URLs / queries | N/A — insufficient GSC access |
-| GA4 production tracking | Present in live HTML; backend organic attribution not verified |
-| GA4 organic sessions | N/A — no GA4 reporting access; test traffic not substituted |
-| GA4 organic users | N/A — no GA4 reporting access; test traffic not substituted |
+| GSC access / property | Working / `sc-domain:dragonswordguide.com` |
+| GSC permission | `siteFullUser` |
+| Homepage index status | Submitted and indexed |
+| Homepage last crawl | `2026-08-09T03:45:02Z` |
+| Homepage fetch / robots / canonical | Successful / Allowed / Correct |
+| Search Analytics last 7 days | Empty / 0 query rows |
+| GA4 Property ID | `549210618` |
+| GA4 date range | `2026-08-04` to `2026-08-10` |
+| GA4 active users / sessions | 33 / 34 |
+| GA4 Organic Search active users / sessions | 1 / 1 |
+| GA4 Organic landing page | `/teams/` |
+| GA4 Realtime active users | 1 |
 
 P0 URLs checked locally: `/`, `/multiplayer/`, `/is-it-gacha/`, `/characters/`, `/roadmap/`. All built P0 pages have a self canonical and an H1. Production was observed before this change set, so post-release verification is listed separately.
 
 ## Measurement baseline re-run — 2026-08-10
 
-This re-run was read-only and made no production content/code, URL, sitemap, or homepage changes. The requested permission state was not available to the API credentials used for this run.
+This re-run was read-only and made no production content/code, URL, sitemap, or homepage changes.
 
 ### GSC
 
-- Property access: **FAIL / unavailable**. The service account's authorized property list does not include `sc-domain:dragonswordguide.com`; Search Analytics and URL Inspection return HTTP 403 `User does not have sufficient permission`.
-- Sitemap discovered pages: **N/A** from GSC. The live sitemap itself returned HTTP 200 and contains 14 URLs; this is not a GSC discovered-pages count.
+- Access: **Working** for `sc-domain:dragonswordguide.com` with permission `siteFullUser`.
+- Sitemap discovered pages: **N/A** — the live sitemap returned HTTP 200 and contains 14 URLs; the minimal Search Analytics query returned an empty result, not a discovered-page count.
 - Indexed status:
-  - `/`: N/A — URL Inspection unavailable
-  - `/multiplayer/`: N/A — URL Inspection unavailable
-  - `/is-it-gacha/`: N/A — URL Inspection unavailable
-  - `/characters/`: N/A — URL Inspection unavailable
-  - `/roadmap/`: N/A — URL Inspection unavailable
-- Last 7 days clicks: **N/A**
-- Last 7 days impressions: **N/A**
-- CTR: **N/A**
-- Average position: **N/A**
-- Non-brand queries: **N/A**
-- Query → target URL mapping: **N/A**
-- Crawl/indexing errors: **N/A** — issue detail and URL Inspection require property access; no zero/clean claim is made.
+  - `/`: **Submitted and indexed**; last crawl `2026-08-09T03:45:02Z`; fetch Successful; robots Allowed; canonical Correct.
+  - `/multiplayer/`, `/is-it-gacha/`, `/characters/`, `/roadmap/`: N/A — not inspected in this minimal rerun.
+- Search Analytics last 7 days: **empty / 0 query rows** for `2026-08-04` to `2026-08-10`.
+- Query → target URL mapping: **empty / 0 query rows**.
+- Crawl/indexing errors: **N/A** — no issue-detail query was requested in this minimal rerun.
 
 ### GA4
 
-- Property access: **FAIL / unavailable**. Production exposes measurement ID `G-8FSN3XDL1K`, but the Analytics Admin API is disabled for the service-account project and no GA4 property/report access was available.
-- Last 7 days users: **N/A**
-- Last 7 days sessions: **N/A**
-- Organic Search users: **N/A**
-- Organic Search sessions: **N/A**
-- Organic Search landing pages: **N/A**
-- Organic Search engagement rate: **N/A**
-- Top organic landing pages: **N/A**
+- Data API: **Working**
+- Property: `DragonSword Guide` (`549210618`)
+- Date range: `2026-08-04` to `2026-08-10`
+- Active users: **33**
+- Sessions: **34**
+- Organic Search active users: **1**
+- Organic Search sessions: **1**
+- Organic landing page: **`/teams/`**
+- Realtime active users: **1**
+- Admin API: **Not enabled, but not blocking reporting**
 
-No first measurable GSC or GA4 baseline was produced in this re-run. The first baseline remains pending actual property access and API/report availability; no metric is inferred from HTML tracking presence.
+The measurement pipeline is now operational. GSC query data is still empty and the organic sample is too small for a content-expansion decision.
 
 ## SERP and multiplayer baseline
 
@@ -104,6 +97,6 @@ The existing `/multiplayer/` page was strengthened in place:
 
 ## Decision
 
-**YELLOW** — no production content/code was changed in this re-run; deployment remains healthy, but GSC property authorization and GA4 backend access are still unavailable. The measurement baseline is intentionally incomplete rather than filled with zeros.
+**YELLOW** — measurement pipeline is operational, homepage is indexed, and the site has recorded its first Organic Search session. GSC query data is still empty and the organic sample is too small for content expansion.
 
-Biggest SEO problem after today’s work: **the authorized reporting path still cannot read this domain’s GSC property or GA4 property, so indexing, query demand, organic landing pages, and acquisition cannot yet be compared or used to prioritize the next SEO action.**
+Highest-priority action: **collect several more days of GSC query/impression data before selecting the next Planned keyword cluster.**
