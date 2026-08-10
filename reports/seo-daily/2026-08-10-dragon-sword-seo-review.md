@@ -64,7 +64,8 @@ The existing `/multiplayer/` page was strengthened in place:
 - `npm run build`: PASS (15 static routes; sitemap generated)
 - `git diff --check`: PASS
 - SEO audit: PASS by built-output checks for P0 canonical/H1, indexable static output, robots/sitemap generation, and stale `current/latest 1.0.7` label review. No project-specific automated SEO script exists.
-- Production pre-release probe: custom domain returned 200 for `/`, `/multiplayer/`, `/roadmap/`, `/sitemap-index.xml`, and `/robots.txt`; live HTML contained GA4 and the old 1.0.7 content. A post-deployment probe is required before calling the release production-verified.
+- Production deployment: Cloudflare Pages project `dragonswordguide`, Git Provider = Yes, Production deployment `edbe16c4-c01d-4a84-9ae7-ae451ce26aec`, source `a562f5b`, preview `https://edbe16c4.dragonswordguide.pages.dev`.
+- Post-deployment custom-domain verification: `https://dragonswordguide.com/`, `/multiplayer/`, `/is-it-gacha/`, `/characters/`, `/roadmap/`, `/robots.txt`, and `/sitemap-index.xml` all returned HTTP 200. P0 HTML exposed self canonicals and GA4; `/roadmap/` exposed 1.0.8, Ryza, and the scheduled livestream wording; `/characters/` exposed Ryza; the custom domain matched the new Pages deployment.
 
 ## Decision
 
