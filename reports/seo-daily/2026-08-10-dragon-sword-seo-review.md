@@ -37,6 +37,41 @@
 
 P0 URLs checked locally: `/`, `/multiplayer/`, `/is-it-gacha/`, `/characters/`, `/roadmap/`. All built P0 pages have a self canonical and an H1. Production was observed before this change set, so post-release verification is listed separately.
 
+## Measurement baseline re-run — 2026-08-10
+
+This re-run was read-only and made no production content/code, URL, sitemap, or homepage changes. The requested permission state was not available to the API credentials used for this run.
+
+### GSC
+
+- Property access: **FAIL / unavailable**. The service account's authorized property list does not include `sc-domain:dragonswordguide.com`; Search Analytics and URL Inspection return HTTP 403 `User does not have sufficient permission`.
+- Sitemap discovered pages: **N/A** from GSC. The live sitemap itself returned HTTP 200 and contains 14 URLs; this is not a GSC discovered-pages count.
+- Indexed status:
+  - `/`: N/A — URL Inspection unavailable
+  - `/multiplayer/`: N/A — URL Inspection unavailable
+  - `/is-it-gacha/`: N/A — URL Inspection unavailable
+  - `/characters/`: N/A — URL Inspection unavailable
+  - `/roadmap/`: N/A — URL Inspection unavailable
+- Last 7 days clicks: **N/A**
+- Last 7 days impressions: **N/A**
+- CTR: **N/A**
+- Average position: **N/A**
+- Non-brand queries: **N/A**
+- Query → target URL mapping: **N/A**
+- Crawl/indexing errors: **N/A** — issue detail and URL Inspection require property access; no zero/clean claim is made.
+
+### GA4
+
+- Property access: **FAIL / unavailable**. Production exposes measurement ID `G-8FSN3XDL1K`, but the Analytics Admin API is disabled for the service-account project and no GA4 property/report access was available.
+- Last 7 days users: **N/A**
+- Last 7 days sessions: **N/A**
+- Organic Search users: **N/A**
+- Organic Search sessions: **N/A**
+- Organic Search landing pages: **N/A**
+- Organic Search engagement rate: **N/A**
+- Top organic landing pages: **N/A**
+
+No first measurable GSC or GA4 baseline was produced in this re-run. The first baseline remains pending actual property access and API/report availability; no metric is inferred from HTML tracking presence.
+
 ## SERP and multiplayer baseline
 
 The 2026-08-10 SERP check for `Dragon Sword Awakening multiplayer`, `co-op`, `matchmaking`, `co-op raids`, and `invite friends` found the official Steam store page plus several third-party/community guide pages. These are demand/competition observations, not ranking metrics. No third-party claim was upgraded to Evidence B.
@@ -69,6 +104,6 @@ The existing `/multiplayer/` page was strengthened in place:
 
 ## Decision
 
-**YELLOW** — content and local SEO checks pass, but GSC property authorization and GA4 backend access are unavailable, and deployment/live verification remains pending. The primary measurement baseline is therefore intentionally incomplete rather than filled with zeros.
+**YELLOW** — no production content/code was changed in this re-run; deployment remains healthy, but GSC property authorization and GA4 backend access are still unavailable. The measurement baseline is intentionally incomplete rather than filled with zeros.
 
-Biggest SEO problem after today’s work: **there is still no authoritative GSC/GA4 measurement baseline for this domain, so indexing, query demand, and organic acquisition cannot yet be compared or used to prioritize the next page decision.**
+Biggest SEO problem after today’s work: **the authorized reporting path still cannot read this domain’s GSC property or GA4 property, so indexing, query demand, organic landing pages, and acquisition cannot yet be compared or used to prioritize the next SEO action.**
