@@ -7,23 +7,25 @@ import RelatedGuides from '../../components/RelatedGuides.astro';
 import SourceList from '../../components/SourceList.astro';
 import UpdateBadge from '../../components/UpdateBadge.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import { patch108 } from '../../data/sources';
 
 const title = 'Is DragonSword Awakening Multiplayer? Co-op Explained';
-const description = "Yes, DragonSword: Awakening supports online co-op for selected activities. See what's confirmed for Subjugation, Raids, story co-op, lobbies, and matchmaking.";
+const description = "Yes, DragonSword: Awakening supports online co-op for selected activities. See what's officially confirmed for Subjugation, Raids, story co-op, lobbies, and matchmaking.";
 const canonical = 'https://dragonswordguide.com/multiplayer/';
-const verifiedDate = 'August 8, 2026';
+const verifiedDate = 'August 10, 2026';
 const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dragonswordguide.com/' }, { '@type': 'ListItem', position: 2, name: 'Multiplayer', item: canonical }] };
-const article = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-08-08', publisher: { '@type': 'Organization', name: 'DragonSword Guide' } };
+const article = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-08-10', publisher: { '@type': 'Organization', name: 'DragonSword Guide' } };
 const sources = [
   { label: 'Official Steam store page', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'lists Single-player and Online Co-op.' },
   { label: 'Official Steam update notes 1.0.7', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'confirms Quick Entry and a lobby search range setting for multiplayer matching.' },
+  { label: 'Official update notes 1.0.8', href: patch108.href, note: 'latest official update; it fixes dash-related character-state bugs and does not add a new co-op mode.' },
   { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'describes Subjugation and Raids, and says story co-op was not ready for launch.' },
 ];
 ---
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article" schema={[article, breadcrumb]}>
   <div class="shell page-wrap"><Breadcrumbs items={[{ label: 'DragonSword Guide', href: '/' }, { label: 'Multiplayer' }]} /><article>
     <header class="article-header"><p class="eyebrow">Guide · Current multiplayer systems</p><h1>Is DragonSword Awakening Multiplayer?</h1><LastVerified date={verifiedDate} /></header>
-    <UpdateBadge label="Official update 1.0.7 · Quick Entry added" href="https://steamcommunity.com/app/4570720/announcements/" />
+    <UpdateBadge label={`${patch108.label} · latest checked August 10`} href={patch108.href} />
     <QuickAnswer title="Yes — selected activities support online co-op."><p>Steam lists Single-player and Online Co-op. Hound13 confirmed Subjugation and Raids as co-op activities, and the official 1.0.7 notes now confirm Quick Entry plus a lobby search range setting for multiplayer matching.</p></QuickAnswer>
     <div class="article-body">
       <SectionHeader eyebrow="Current status" title="What is confirmed now" description="These labels separate official feature evidence from story and open-world questions that still need verification." />
@@ -34,7 +36,7 @@ const sources = [
       <h2>Does DragonSword: Awakening Have Open-World Co-op?</h2><p><strong>There is no verified open-world co-op feature in the evidence reviewed for this page.</strong> We do not convert community reports into a current official feature specification.</p>
       <h2>Can You Play DragonSword: Awakening Solo?</h2><p>Yes. Steam lists DragonSword: Awakening as a single-player game, and co-op is limited to selected activities. Multiplayer is not presented as a requirement for the main RPG.</p>
       <h2>How Do You Play With Friends?</h2><p>Hound13 confirmed co-op for Subjugation and Raids. The 1.0.7 notes add Quick Entry and a lobby search range setting; use the in-game multiplayer prompt for the activity you want to run. This page does not invent menu paths that are not in the official notes.</p>
-      <h2>Does DragonSword: Awakening Have Matchmaking?</h2><p><strong>Yes, current matchmaking support is now confirmed by the official 1.0.7 notes.</strong> The update added Quick Entry to multiplayer content and a setting to configure the lobby search range for multiplayer matching. Before release, Hound13 had also discussed Steam lobby play with friends or random players; 1.0.7 is the current primary-source confirmation.</p>
+      <h2>Does DragonSword: Awakening Have Matchmaking?</h2><p><strong>Multiplayer matching support is confirmed by the official 1.0.7 notes.</strong> The update added Quick Entry to multiplayer content and a setting to configure the lobby search range for multiplayer matching. Before release, Hound13 had also discussed Steam lobby play with friends or random players; the official update notes are the primary-source confirmation for this feature.</p>
       <h2>Does DragonSword: Awakening Have PvP?</h2><p>No PvP feature was verified in the primary sources reviewed for this page. The confirmed multiplayer discussion is about cooperative PvE activities.</p>
       <h2>DragonSword Awakening Multiplayer FAQ</h2><details><summary>Is DragonSword: Awakening an MMO?</summary><p>No. It is primarily a single-player RPG with selected online co-op content.</p></details><details><summary>Can I play DragonSword: Awakening with friends?</summary><p>Yes, for the confirmed co-op activities: Subjugation and Raids. Story and open-world co-op are not confirmed as current features.</p></details><details><summary>Is co-op required?</summary><p>No. Steam lists the game as single-player, and co-op is limited to selected activities.</p></details>
     </div><SourceList sources={sources} /><RelatedGuides links={[{ label: 'Beginner Guide', href: '/guides/beginner/' }, { label: 'Combat System', href: '/guides/combat-system/' }, { label: 'Roadmap', href: '/roadmap/' }]} />

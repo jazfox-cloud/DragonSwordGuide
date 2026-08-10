@@ -7,7 +7,7 @@ import CharacterCard from '../components/CharacterCard.astro';
 import CTASection from '../components/CTASection.astro';
 import UpdateBadge from '../components/UpdateBadge.astro';
 import { previewCharacters } from '../data/characters';
-import { sourceUrls, patch107 } from '../data/sources';
+import { sourceUrls, patch108 } from '../data/sources';
 
 const title = 'DragonSword Awakening Wiki — Builds, Map & Characters';
 const description = 'DragonSword Awakening fan guide covering builds, characters, maps, co-op, Karma, roadmap updates, and beginner walkthroughs with verified sources.';
@@ -34,8 +34,8 @@ const organization = { '@context': 'https://schema.org', '@type': 'Organization'
     </section>
 
     <section class="home-section shell signal-section">
-      <div class="signal-heading"><SectionHeader eyebrow="Live signal" title="What is changing now" description="Official update notes are the fastest way to separate a current system from launch-era assumptions." /><UpdateBadge label={`${patch107.label} · ${patch107.date}`} href={patch107.href} /></div>
-      <div class="signal-list"><a href="/multiplayer/"><strong>Quick Entry is live</strong><span>1.0.7 added Quick Entry and a lobby search range setting for multiplayer matching.</span></a><a href="/systems/runes/"><strong>Rune inventory expanded</strong><span>Capacity increased from 200 to 500; 4-Star synthesis can now yield 5-Star Runes.</span></a><a href="/map/"><strong>Map pins doubled</strong><span>World Map saved pins increased from 100 to 200.</span></a></div>
+      <div class="signal-heading"><SectionHeader eyebrow="Live signal" title="What is changing now" description="Official update notes are the fastest way to separate a current system from launch-era assumptions." /><UpdateBadge label={`${patch108.label} · ${patch108.date}`} href={patch108.href} /></div>
+      <div class="signal-list"><a href="/roadmap/"><strong>1.0.8 is applied</strong><span>The latest official update fixes four dash-by-holding-dodge state issues; 1.0.7 remains in the historical patch trail.</span></a><a href="/multiplayer/"><strong>Quick Entry is live</strong><span>1.0.7 added Quick Entry and a lobby search range setting for multiplayer matching.</span></a><a href="/systems/runes/"><strong>Rune capacity is 500</strong><span>1.0.7 increased Rune inventory capacity from 200 to 500 and enabled 4-Star synthesis to yield 5-Star Runes.</span></a></div>
     </section>
 
     <section class="home-section shell"><SectionHeader eyebrow="Start here" title="A practical first route through Orbis" description="Use the page that matches the question in front of you. Each guide keeps official facts separate from reports still waiting for first-hand verification." /><div class="guide-grid four"><GuideCard href="/guides/beginner/" eyebrow="First hours" title="Beginner Guide" description="First-hours progression, combat basics, early resources, exploration and team setup." /><GuideCard href="/teams/" eyebrow="Build logic" title="Builds & Teams" description="Hero order, Status Ailments, Signal Skills and team synergy without fake meta claims." accent="cool" /><GuideCard href="/map/" eyebrow="World reference" title="Map & Locations" description="Orbis regions, caves, dungeons, resources and exploration references." accent="deep" /><GuideCard href="/guides/combat-system/" eyebrow="Core system" title="Combat System" description="Active Skills → Status Ailments → Signal Skills → Switching Signals." accent="silver" /></div></section>
@@ -46,7 +46,7 @@ const organization = { '@context': 'https://schema.org', '@type': 'Organization'
 
     <section class="home-section shell character-section"><div class="section-split"><SectionHeader eyebrow="Roster preview" title="Characters, with the uncertainty visible" description="The game confirms 19 Heroes and several official story or update mentions. Exact traits, factions, unlock routes and combat roles still need first-hand testing." /><a class="text-link" href="/characters/">See all 19 names <span aria-hidden="true">↗</span></a></div><div class="character-grid">{previewCharacters.map((character) => <CharacterCard {...character} />)}</div></section>
 
-    <section class="home-section shell roadmap-strip"><div><UpdateBadge label="Official update trail" href={sourceUrls.roadmap} /><h2>Roadmap, announcements, and the build in front of you</h2><p>We track public update notes and mark the date each page was last checked. If a system is not verified, the page says so.</p></div><a class="button secondary" href="/roadmap/">Open roadmap</a></section>
+    <section class="home-section shell roadmap-strip"><div><UpdateBadge label="Official update trail · verified August 10" href={sourceUrls.roadmap} /><h2>Roadmap, announcements, and the build in front of you</h2><p>We track public update notes and mark the date each page was last checked. If a system is not verified, the page says so.</p></div><a class="button secondary" href="/roadmap/">Open roadmap</a></section>
 
     <section class="home-section shell trust-section"><SectionHeader eyebrow="How we work" title="Evidence before wiki confidence" /><div class="trust-grid"><div><strong>Official sources first</strong><p>Steam, Hound13 announcements, the official roadmap and official video channels lead the research.</p></div><div><strong>Community claims stay labeled</strong><p>Player reports can point to a question, but they do not become official fact by repetition.</p></div><div><strong>No guessed stats</strong><p>Missing data is marked “Not yet verified” instead of filled with a plausible-looking number.</p></div></div></section>
 
