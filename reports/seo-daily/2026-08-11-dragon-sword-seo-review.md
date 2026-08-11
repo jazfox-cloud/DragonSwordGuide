@@ -94,6 +94,16 @@ No candidate passes the full `READY_TO_BUILD` gate today: none combines a valida
 - Preview verification: **PASS** — `/teams/` HTTP 200, canonical self-reference, no noindex, Article schema, Aug 11 date, and the new early-team section present.
 - Custom-domain verification: **FAIL / mismatch** — core custom-domain URLs returned HTTP 200 with canonical and Article schema, but `/teams/` still exposed Aug 8 content and did not contain the new section. No DNS, Cloudflare global setting, GSC write, sitemap submission, or new URL creation was performed.
 
+## Content Expansion Sprint
+
+| URL | Search Signal | Decision | Evidence | Changes |
+|---|---|---|---|---|
+| `/systems/runes/` | GSC position 10 + 3 Organic Search sessions | STRENGTHEN | B | Added explicit inventory, synthesis, FAQ, build relevance, internal links, and `NOT_YET_VERIFIED` boundary. |
+| `/builds/` | Breakout keyword history for build / builds | STRENGTHEN | B | Reframed the placeholder hub as a build framework covering roles, skills, Status, Signals, switching, Runes, Karma boundary, and team context. |
+| `/roadmap/` | Position 2 query currently landing `/` + 2 Organic Search sessions | STRENGTHEN | B | Clarified released / announced-planned / unknown ownership and added links to narrower system/build pages. |
+
+Claims deliberately not added: best Rune, drop rates, stat ceilings, guaranteed synthesis, optimal farming, best character builds, meta rankings, absolute best build, DPS rankings, unsupported skill priority/rotation/Karma/equipment recommendations, and unsupported release dates.
+
 ## Files changed
 
 - `src/pages/teams/index.astro` — minimal evidence-gated intent enhancement.
