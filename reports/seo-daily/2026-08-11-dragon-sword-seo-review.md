@@ -2,7 +2,7 @@
 
 ## 1. Executive Status
 
-**YELLOW** — the first non-brand Search Console rows have appeared and GA4 organic landings expanded, but the sample is still too small for broad content expansion. Production and local SEO contracts are healthy; `/teams/` received one evidence-gated, minimal refresh.
+**RED** — the first non-brand Search Console rows have appeared and GA4 organic landings expanded, but the active Pages deployment is not yet reflected on the custom domain. The custom-domain mismatch blocks production acceptance of the `/teams/` refresh.
 
 ## 2. Today's strongest signal
 
@@ -77,12 +77,12 @@ No candidate passes the full `READY_TO_BUILD` gate today: none combines a valida
 
 ## 8. Biggest current SEO problem
 
-**Insufficient repeated search validation:** the site now has its first two non-brand rows, but only one impression per query and no clicks, while `/teams/` remains discovered-but-not-indexed in URL Inspection.
+**Deployment mismatch:** Cloudflare Pages reports active production source `b66e260`, and the deployment preview serves the new `/teams/` content, but `https://dragonswordguide.com/teams/` still serves the previous Aug 8 page. This is a production acceptance blocker; DNS/Cloudflare global changes were not made.
 
 ## 9. Tomorrow recommendation
 
-1. Recheck GSC query/page rows and URL Inspection after another data delay, especially `/teams/`, `/systems/runes/`, and `/roadmap/`.
-2. Recheck GA4 organic landings and determine whether `/teams/` produces a second organic session.
+1. Recheck the custom domain against active Pages source `b66e260`; investigate the Pages/custom-domain propagation or routing mismatch before claiming production success.
+2. Recheck GSC query/page rows and URL Inspection after another data delay, especially `/teams/`, `/systems/runes/`, and `/roadmap/`.
 3. Keep all new clusters at `OBSERVE`; only promote a cluster after repeated query intent or a clearly non-overlapping validated need.
 
 ## Production health and verification
@@ -90,7 +90,9 @@ No candidate passes the full `READY_TO_BUILD` gate today: none combines a valida
 - Local `npm run build`: PASS; 15 static routes generated and sitemap output created.
 - Local SEO contract checks: PASS for the homepage and six core pages — HTTP build output exists, one H1, self canonical, no accidental noindex, Article JSON-LD present, and robots/sitemap generated.
 - `git diff --check`: PASS.
-- The production verification step will follow the scoped commit and Pages deployment; no DNS, Cloudflare global setting, GSC write, sitemap submission, or new URL creation is authorized by this review.
+- Pages deployment lookup: **active**, production source `b66e260`, preview `https://2bf99fdd.dragonswordguide.pages.dev`.
+- Preview verification: **PASS** — `/teams/` HTTP 200, canonical self-reference, no noindex, Article schema, Aug 11 date, and the new early-team section present.
+- Custom-domain verification: **FAIL / mismatch** — core custom-domain URLs returned HTTP 200 with canonical and Article schema, but `/teams/` still exposed Aug 8 content and did not contain the new section. No DNS, Cloudflare global setting, GSC write, sitemap submission, or new URL creation was performed.
 
 ## Files changed
 
