@@ -322,3 +322,165 @@ Latest available GSC date remains **2026-08-11**, with the existing read-only wi
 - Cloudflare Pages: Production deployment for source `75f832e` is active at `https://74a53782.dragonswordguide.pages.dev`.
 - Preview and custom-domain verification: `/system-requirements/`, `/guides/beginner/`, `/price/`, and `/sitemap-index.xml` returned HTTP 200; the new PC page and existing pages had one H1, self-canonical, no accidental noindex, and expected markers. Sitemap contains 16 URLs and includes `/system-requirements/`.
 - Final status: **PASS**. No DNS, Cloudflare global settings, GSC, GA4, AIOS, WOS, or unrelated project changes were made.
+
+---
+
+# 16-URL Winner / Laggard Portfolio Review — 2026-08-13
+
+## 1. Executive Status
+
+**GREEN.** Three pages are real current search winners (`/roadmap/`, `/systems/runes/`, `/map/`), emerging signals exist for `/builds/`, `/`, and `/characters/`, and production technical health is normal. The sample is still small, and the latest GSC and GA4 complete dates differ; no public page changes are justified by this measurement-only sprint.
+
+## 2. Measurement Windows
+
+| Source | Latest complete window | Previous complete window | Result |
+|---|---|---|---|
+| GSC, page | 2026-08-10 to 2026-08-11 | 2026-08-08 to 2026-08-09 | complete; latest page totals 43 clicks / 833 impressions vs 0 / 16 |
+| GSC, query + page | 2026-08-05 to 2026-08-11 | 2026-07-29 to 2026-08-04 | complete request; previous returned no rows, so delta is `NO_PRIOR_ROWS`, not a like-for-like growth claim |
+| GA4 Organic Search | 2026-08-11 to 2026-08-12 | 2026-08-09 to 2026-08-10 | complete; `(not set)` excluded from URL totals |
+| GA4 Organic Search | 2026-08-06 to 2026-08-12 | 2026-07-30 to 2026-08-05 | complete; previous returned no rows, so delta is `NO_PRIOR_ROWS` |
+
+GSC latest complete date is **2026-08-11**. GA4 coverage is available through **2026-08-12**. Search Console does not expose brand/non-brand classification; non-brand query count is therefore `N/A` rather than inferred.
+
+### Fixed-window totals
+
+| Window | GSC clicks | GSC impressions | GA4 Organic sessions on URL landings | GA4 Organic users |
+|---|---:|---:|---:|---:|
+| GSC latest 2d / GA4 latest 2d | 43 | 833 | 52 | 52 |
+| Previous complete 2d | 0 | 16 | 6 | 6 |
+| GSC latest 7d / GA4 latest 7d | 47 | 849 | 58 | 58 |
+| Previous complete 7d | 0 rows | 0 rows | 0 rows | 0 rows |
+
+The GA4 totals exclude `(not set)` and include only `Organic Search`; Direct, Referral, testing and realtime traffic were not included.
+
+## 3. Full 16-URL Portfolio Scorecard
+
+GSC values use the latest complete 2-day page window unless noted. `N/A` means the endpoint returned no row; it is not converted to zero. Best-query and Top 50/20/10 values use the latest complete 7-day query+page response. Repeated-day count is based on the dated query+page response.
+
+| URL | Page type / primary intent | GSC clicks | Impressions | CTR | Position | Query count | Non-brand queries | Best query by clicks / impressions | Top 50 / 20 / 10 | Repeat days | GA4 organic sessions | Classification | Action |
+|---|---|---:|---:|---:|---:|---:|---:|---|---|---:|---:|---|---|
+| `/roadmap/` | content / official updates | 25 | 405 | 6.17% | 7.18 | 17 | N/A | `dragon sword awakening roadmap` / `dragonsword awakening roadmap` | 17 / 16 / 16 | 2 | 34 | **WINNER** | `EXPAND_RESEARCH` |
+| `/systems/runes/` | content / Rune system answer | 10 | 107 | 9.35% | 6.77 | 8 | N/A | `dragonsword runes` / `dragonsword awakening runes` | 8 / 8 / 8 | 3 | 6 | **WINNER** | `EXPAND_RESEARCH` |
+| `/map/` | hub / map and location reference | 4 | 88 | 4.55% | 8.91 | 9 | N/A | `dragonsword awakening interactive map` / `dragonsword interactive map` | 9 / 7 / 4 | 2 | 7 | **WINNER** | `STRENGTHEN_LATER` |
+| `/builds/` | content / build framework | 4 | 16 | 25.00% | 13.13 | 5 | N/A | `dragonsword awakening builds` / `dragonsword awakening build` | 5 / 5 / 2 | 2 | 3 | **EMERGING** | `EXPAND_RESEARCH` |
+| `/` | hub / broad guide discovery | 0 | 18 | 0.00% | 11.44 | 6 | N/A | `N/A` / `dragonsword awakening guide` | 6 / 5 / 3 | 3 | 1 | **EMERGING** | `STRENGTHEN_LATER` |
+| `/characters/` | hub / character directory | 0 | 17 | 0.00% | 13.47 | 2 | N/A | `N/A` / `dragonsword : awakening all character` | 2 / 0 / 0 | 1 | 1 | **EMERGING** | `WAIT_FOR_DATA` |
+| `/multiplayer/` | exact-answer / co-op scope | 0 | 178 | 0.00% | 8.16 | 16 | N/A | `N/A` / `is dragonsword awakening multiplayer` | 16 / 16 / 12 | 2 | N/A | **INDEXED_NO_SIGNAL** | `WAIT_FOR_DATA` |
+| `/gameplay/` | hub / gameplay overview | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **INDEXED_NO_SIGNAL** | `WAIT_FOR_DATA` |
+| `/guides/combat-system/` | content / combat explainer | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **INDEXED_NO_SIGNAL** | `WAIT_FOR_DATA` |
+| `/is-it-gacha/` | exact-answer / purchase model | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **INDEXED_NO_SIGNAL** | `WAIT_FOR_DATA` |
+| `/teams/` | hub / team composition framework | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **INDEXED_NO_SIGNAL** | `WAIT_FOR_DATA` |
+| `/guides/beginner/` | content / first-hours guide | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **NOT_ENOUGH_DATA** | `WAIT_FOR_DATA` |
+| `/price/` | exact-answer / Steam price and editions | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **NOT_ENOUGH_DATA** | `WAIT_FOR_DATA` |
+| `/system-requirements/` | exact-answer / PC requirements | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **NOT_ENOUGH_DATA** | `WAIT_FOR_DATA` |
+| `/privacy/` | structural / legal | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **STRUCTURAL_PAGE** | `STRUCTURAL_KEEP` |
+| `/terms/` | structural / legal | N/A | N/A | N/A | N/A | N/A | N/A | `N/A` / `N/A` | N/A | N/A | N/A | **STRUCTURAL_PAGE** | `STRUCTURAL_KEEP` |
+
+The scorecard deliberately does not call a low-traffic page a loser. `INDEXED_NO_SIGNAL` means no current GSC/GA4 row in the fixed window while the live URL is healthy; `NOT_ENOUGH_DATA` is reserved for the recently added or materially refreshed pages whose first fair post-change window has not completed.
+
+## 4. Winners
+
+- `/roadmap/`: 405 impressions, 25 clicks, 17 query rows, 16 Top-10 queries, and 34 GA4 Organic sessions in the latest 2-day GA4 window.
+- `/systems/runes/`: 107 impressions, 10 clicks, repeated Rune queries across three days, and 6 GA4 Organic sessions.
+- `/map/`: 88 impressions, 4 clicks, position 8.91, repeated interactive-map queries, and 7 GA4 Organic sessions.
+
+These are winners by repeated search and/or organic evidence, not by page count or word count.
+
+## 5. Emerging Pages
+
+`/builds/` has 16 impressions, 4 clicks, five query rows, repeated days and 3 GA4 Organic sessions. `/` and `/characters/` have limited query/impression signal plus 1 GA4 Organic session each, but neither is stable enough to guide a new URL.
+
+## 6. Indexed / No Signal
+
+`/multiplayer/` has a large impression footprint (178) and strong average position (8.16) but no click or current GA4 Organic landing row. `/gameplay/`, `/guides/combat-system/`, `/is-it-gacha/`, and `/teams/` returned no current fixed-window GSC/GA4 row. These remain `WAIT_FOR_DATA`, not delete/noindex candidates.
+
+## 7. New Pages / Not Enough Data
+
+`/guides/beginner/` was materially refreshed, while `/price/` and `/system-requirements/` were newly published after the latest complete GSC date. They are `NOT_ENOUGH_DATA`; no ranking or content judgment is made yet.
+
+Top five URLs needing patience or more data: `/system-requirements/`, `/price/`, `/guides/beginner/`, `/guides/combat-system/`, and `/gameplay/`.
+
+## 8. Structural Pages
+
+`/privacy/` and `/terms/` are `STRUCTURAL_PAGE`. Their success criterion is accessibility and policy coverage, not search traffic. Do not score them as SEO laggards.
+
+## 9. Second Validated Cluster Decision
+
+Runes remains the first validated cluster. The comparison below excludes Runes as required:
+
+| Cluster | Search Validation /30 | Organic Validation /20 | Sub-intent Depth /20 | Evidence /20 | Cannibalization Safety /10 | Total | Decision |
+|---|---:|---:|---:|---:|---:|---:|---|
+| `/roadmap/` | 29 | 20 | 18 | 20 | 9 | **96** | `NEXT_VALIDATED_CLUSTER` |
+| `/builds/` | 22 | 12 | 15 | 15 | 8 | **72** | strong emerging |
+| `/map/` | 21 | 12 | 14 | 14 | 8 | **69** | emerging, below gate |
+| `/multiplayer/` | 19 | 0 | 14 | 15 | 8 | **56** | observe |
+| `/teams/` | 0 | 0 | 12 | 15 | 8 | **35** | observe |
+
+### A. What is the second strongest validated cluster after Runes?
+
+**`/roadmap/` — the Roadmap / Official Updates cluster.** It is the only compared cluster that clears the 70-point gate with repeated GSC signal, organic landing sessions, multiple independent update intents, official Evidence B, and acceptable cannibalization risk.
+
+## 10. Leading Cluster Child-Intent Research
+
+No pages were created. Candidate child intents for Roadmap remain conservative:
+
+| Child intent | Demand | GSC signal | SERP independence | Evidence | Cannibalization risk | Decision |
+|---|---|---|---|---|---|---|
+| next update / future updates | medium | `next update` 1 impression / 1 click; future-updates rows present | medium | high from official announcements | high with parent | `MERGE_PARENT` |
+| roadmap date / current status | high | roadmap family dominates current rows | low | high | high | `MERGE_PARENT` |
+| multiplayer roadmap | low-medium | current roadmap and multiplayer rows, no isolated child demand | medium | high from official roadmap | medium-high with `/multiplayer/` | `OBSERVE` |
+| new heroes / planned content | low | no independent repeated child row | medium | official roadmap may support future facts | medium | `OBSERVE` |
+| patch / update history | low-medium | 1.0.7 and 1.0.8 signals are sparse | medium | high from official announcements | high with parent | `MERGE_PARENT` |
+
+No child URL is justified yet. The parent already owns the strongest roadmap intent.
+
+## 11. Walkthrough Evidence Backlog
+
+Walkthrough remains `RESEARCH_ONLY`; no `/walkthrough/` or child pages were created.
+
+| Topic | Demand signal | Current evidence | Missing evidence | Can publish reliably? |
+|---|---|---|---|---|
+| Prologue / chapters | competitor walkthrough hubs | official Steam describes the game, not a chapter index | first-hand chapter list and save-state checkpoints | No |
+| Main-story sequence | third-party full-route pages | no project-tested route | gameplay recording, screenshots, objective transitions | No |
+| Main / side quests | quest-style SERP pages | no verified quest inventory in this project | exact names, unlock conditions, completion state | No |
+| Dungeons | map/walkthrough demand and broad Steam mention | dungeon existence only at broad level | names, entry conditions, objectives, exits | No |
+| Bosses | video and walkthrough demand | no project encounter log | boss identity, context, phases, route proof | No |
+| Puzzles | puzzle pages in competitor SERP | no first-hand puzzle capture | screenshots, interaction sequence, version check | No |
+
+First-hand work required before publishing: play the relevant route, record screenshots/video, note quest and region names, reproduce objective state changes, verify the same route on the current build, and preserve enough evidence to support each claim. The previous Evidence score of `10/25` remains justified; this sprint produced no new primary gameplay evidence, so it is not raised.
+
+### Walkthrough-related GSC signals
+
+`NO_WALKTHROUGH_GSC_SIGNAL`: no query rows containing `walkthrough`, `quest`, `quests`, `chapter`, `dungeon`, `boss`, `puzzle`, `story`, or `prologue` were present in the latest complete 2026-08-05 to 2026-08-11 GSC query+page response.
+
+## 12. New URL Approval Decision
+
+**`NO_NEW_URL_YET`.** No new URL is justified for the next sprint. Roadmap is validated, but its child intents still merge into the parent; Builds is emerging but below the independent-child gate; Walkthrough lacks primary evidence; and the new PC/Price pages have not completed a fair measurement window.
+
+### B. Is any new URL justified for the next sprint?
+
+**No.** Exact result: `NO_NEW_URL_YET`.
+
+## 13. Single Biggest SEO Problem
+
+**Measurement maturity and ownership separation.** Roadmap already captures most current demand, but the site still has too little complete-window history to distinguish stable winners from launch/update spikes or to safely split child URLs. The fix is more comparable observation, not another page.
+
+## 14. Next Sprint Recommendation
+
+1. Re-run the same complete 2-day and 7-day GSC/GA4 windows after the new PC/Price/Beginner pages have a full post-publication window.
+2. Continue Roadmap parent ownership and test whether Builds develops repeated independent sub-intent without creating a child page.
+3. Collect first-hand Walkthrough evidence for one bounded route or puzzle only; do not publish a Hub or child page until the evidence backlog closes.
+
+## 15. Technical Health Sanity Check
+
+- Production sitemap: HTTP 200, 16 URLs, exact route inventory matches the built sitemap.
+- All 16 sitemap URLs: HTTP 200, one H1, self-canonical, no accidental noindex, no redirect.
+- No production defect found; no code, configuration, DNS, Cloudflare, GSC or GA4 changes made.
+
+## 16. Portfolio Review Validation
+
+- Latest GSC/GA4 read-only retrieval: PASS.
+- Fixed-window aggregation and scorecard: PASS; unavailable values retained as `N/A`.
+- Production URL health check: PASS, 16/16.
+- `git diff --check`: PASS.
+- Files changed: this report only.
