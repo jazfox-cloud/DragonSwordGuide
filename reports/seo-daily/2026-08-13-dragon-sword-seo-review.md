@@ -313,3 +313,12 @@ Latest available GSC date remains **2026-08-11**, with the existing read-only wi
 - Validation: `npm run build` PASS (17 generated pages including 404; 16 indexable sitemap URLs), SEO contract PASS for `/system-requirements/`, `/guides/beginner/`, and `/price/`, internal-link check PASS with no broken routes, and `git diff --check` PASS.
 - Sitemap expectation: **15 → 16** indexable URLs if the PC page is released; Walkthrough does not change the count.
 - Next gap to build: none immediately; the next candidate is Walkthrough only after verified gameplay evidence, a repeat GSC signal, or repeated community demand supports real guide inventory.
+
+### Gate Sprint Production Verification
+
+- Before branch / HEAD: `main` / `a517f4f4a5d2718cad3662947efcfd15611feb47`.
+- Content commit: `75f832e31ab965e67c5df3dfbb4b64891f8afb42` (`Evaluate DragonSword PC and walkthrough gaps`).
+- Push: `origin/main` updated successfully.
+- Cloudflare Pages: Production deployment for source `75f832e` is active at `https://74a53782.dragonswordguide.pages.dev`.
+- Preview and custom-domain verification: `/system-requirements/`, `/guides/beginner/`, `/price/`, and `/sitemap-index.xml` returned HTTP 200; the new PC page and existing pages had one H1, self-canonical, no accidental noindex, and expected markers. Sitemap contains 16 URLs and includes `/system-requirements/`.
+- Final status: **PASS**. No DNS, Cloudflare global settings, GSC, GA4, AIOS, WOS, or unrelated project changes were made.
