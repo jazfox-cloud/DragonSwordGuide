@@ -183,7 +183,7 @@ Deliberately excluded: complete chest coverage, exact chest count, exact coordin
 - `robots.txt`: HTTP 200, allows crawling, points to `https://dragonswordguide.com/sitemap-index.xml`.
 - `sitemap-index.xml`: HTTP 200.
 - No DNS, Cloudflare, GA4, or GSC configuration changes were made.
-- Pages deployment: active production source `f602124`, preview `https://af9cf500.dragonswordguide.pages.dev`.
+- Content deployment source: `f602124`; the report-only follow-up `979fb79` was the active production source at the final verification check. Preview: `https://af9cf500.dragonswordguide.pages.dev`.
 - Preview verification: `/`, `/guides/beginner/`, `/price/`, and `/sitemap-index.xml` returned HTTP 200; the new pages had self-canonical, one H1, no noindex, and expected sprint markers.
 - Custom-domain verification: initially served the previous release (`/price/` returned 404), then converged after one bounded 20-second no-cache recheck. Final custom-domain responses for `/`, `/guides/beginner/`, `/price/`, and `/sitemap-index.xml` returned HTTP 200; `/price/` exposed the new marker. Classified as `TRANSIENT_PROPAGATION_DELAY`; no DNS or Cloudflare configuration change was needed.
 
@@ -196,7 +196,7 @@ Deliberately excluded: complete chest coverage, exact chest count, exact coordin
 - Before branch / HEAD: `main` / `1cb2700`.
 - Phase 2 commit: `d528d84a0e9fc4d7479838ecf733469fcd552fd9`.
 - Sprint commit: `f602124f87e3dda865121be3268b88e4c28e1fee` (`Add DragonSword beginner and pricing guides`).
-- Push: `origin/main` updated successfully; active Pages source verified as `f602124`.
+- Push: `origin/main` updated successfully; content deployment and final report-only production source were both verified in the Pages deployment list.
 - Final status: **PASS_WITH_LIMITATION** — the release is verified after transient custom-domain propagation delay; the search sample remains small.
 
 ## Sources
