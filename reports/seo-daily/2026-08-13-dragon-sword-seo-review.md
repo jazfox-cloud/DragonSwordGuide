@@ -192,7 +192,7 @@ Deliberately excluded: complete chest coverage, exact chest count, exact coordin
 - `npm run build`: PASS.
 - `git diff --check`: PASS.
 - Production HTTP checks: PASS after bounded propagation recheck.
-- Changed only `src/pages/map/index.astro`, `src/pages/multiplayer/index.astro`, and this report; existing untracked `.DS_Store`, brand-pack files, and `doct/` were preserved.
+- Changed only the Phase 2 files plus the allowed Beginner/Price sprint files: `src/pages/guides/beginner/index.astro`, `src/pages/index.astro`, `src/pages/price/index.astro`, and this report; existing untracked `.DS_Store`, brand-pack files, and `doct/` were preserved.
 - Before branch / HEAD: `main` / `dbba5bd`.
 - Phase 2 commit: `d528d84a0e9fc4d7479838ecf733469fcd552fd9`.
 - Push: `origin/main` updated successfully; active Pages source verified as `d528d84`.
@@ -204,3 +204,59 @@ Deliberately excluded: complete chest coverage, exact chest count, exact coordin
 - [Steam Discussion: multiplayer scope](https://steamcommunity.com/app/4570720/discussions/0/581677493394789225/)
 - [Reddit: all chests interactive map demand signal](https://www.reddit.com/r/DSwordAwakening/comments/1vap7qr/all_chests_locations_interactive_map/)
 - [Reddit: community activity and moderation discussion](https://www.reddit.com/r/DragonSwordAwakening/comments/1umity3/im_excited/)
+
+## Competitor Coverage Gap Sprint
+
+### Beginner SERP Baseline
+
+Target queries: `dragon sword awakening beginner guide`, `dragon sword awakening beginners guide`, `dragon sword awakening getting started`, `dragon sword awakening tips`, and `dragon sword awakening beginner tips`.
+
+The observed result types were specialist fan-guide hubs, third-party beginner guides, combat/tag-system explainers, and broad walkthrough hubs. The strongest coverage pattern combines first-hours combat, progression framing, exploration, and links into deeper systems. Reddit/YouTube presence was not reliably separable in this non-localized API result set: `SERP_LOCALIZED_UNVERIFIED`.
+
+Decision: **BUILD / strengthen existing `/guides/beginner/`**. The route already existed, but its prior content was a shorter first-hours page. It now functions as the Getting Started Hub with the required combat flow, functional-team framework, build-vs-team distinction, exploration, co-op boundary, low-regret prioritization, mistakes, and next-guide links. It does not publish a first Hero, best starter, or optimal progression route.
+
+### Price SERP Baseline
+
+Target queries: `dragon sword awakening price`, `dragon sword awakening deluxe edition`, `dragon sword awakening editions`, `dragon sword awakening buy`, and `dragon sword awakening steam price`.
+
+The observed result types were the official Steam store page, Steam bundle/product listings, third-party price trackers, and launch/price reporting. The official Steam result directly answers base price, Deluxe Pack, bundle contents and Windows/Steam purchase intent. Localized price display is region-dependent; this page records the US listing and explicitly warns that Steam regional pricing can vary. Reddit/YouTube presence was not reliably separable: `SERP_LOCALIZED_UNVERIFIED`.
+
+Decision: **BUILD `/price/`**. Official Steam data was sufficient at the August 13, 2026 check: Standard `$29.99`, Deluxe Pack `$19.99`, and Deluxe Edition bundle `$44.98` after the displayed 10% bundle discount. The bundle contains the base game and Deluxe Pack. No affiliate urgency, historical-price claim, or unverified console date was added.
+
+### Progression / Who to Build First — Research Only
+
+| Query cluster | SERP intent | Demand | Evidence | Existing-page overlap | Risk | Decision |
+|---|---|---|---|---|---|---|
+| who to build first / who to awaken first | hero-investment recommendation | third-party guide interest; no confirmed GSC row | LOW for a universal priority | HIGH with `/teams/` and `/builds/` | high meta/cannibalization risk | MERGE_TEAMS |
+| investment priority | resource optimization | third-party recommendation pattern | LOW | HIGH with `/builds/` | high unsupported-stat risk | MERGE_BUILDS |
+| progression guide / early progression | informational how-to | competitor coverage exists | MEDIUM for broad official loop, LOW for exact route | MEDIUM with Beginner/Builds/Roadmap | medium | OBSERVE |
+| best character to invest in | ranking/recommendation | weak exact evidence | LOW | HIGH with Characters/Teams/Builds | high tier-list risk | REJECT |
+
+Final decision: **OBSERVE**, with narrow questions merged into `/teams/` or `/builds/` only when actual GSC intent repeats. `POTENTIAL_NEW_PAGE` is not met and no progression URL was created.
+
+### Competitor Coverage Audit
+
+| Topic | Competitor coverage | Our coverage | Intent quality | Evidence feasibility | Action |
+|---|---|---|---|---|---|
+| Beginner Guide | strong; multiple specialist guides/hubs | `/guides/beginner/` now covers the hub intent | high | high | BUILD_NOW / COVERED |
+| Price / Editions | official Steam plus third-party price pages | `/price/` | high | high from Steam | BUILD_NOW |
+| Progression | broad competitor hubs and speculative route pages | framework only; no route claim | medium | medium for framework, low for exact route | RESEARCH_NEXT |
+| Walkthrough | specialist story/walkthrough competitors | no dedicated walkthrough | high | low until official chapter/quest evidence is organized | RESEARCH_NEXT |
+| PC / System Requirements | competitor/platform guides; Steam has primary requirements | no dedicated page | high | high from Steam | RESEARCH_NEXT |
+| Gear / Karma | third-party guides | `/builds/` mentions Karma but keeps exact optimization unverified | medium | low for recommendations | HOLD |
+| Familiars | covered in competitor hubs and official Steam description | `/gameplay/`, Beginner and homepage references | medium | high for broad facts | COVERED |
+| Cooking | covered in competitor beginner pages and official Steam description | `/gameplay/` and Beginner references | medium | high for broad facts | COVERED |
+| Dungeon | walkthrough/map competitors mention dungeons | `/map/` and `/gameplay/` broad coverage only | medium | medium | RESEARCH_NEXT |
+| Tier List | common in third-party competitor pages | intentionally absent | high demand but unsafe fact pattern | low | HOLD |
+| Character Builds | competitor pages publish individual builds | `/builds/` framework only | medium | low without retail testing | HOLD |
+
+Third-party competitor pages were used for SERP intent and coverage structure only. Their numbers, character rankings, routes and conclusions were not copied into the new pages.
+
+### Sprint Files and Decisions
+
+- `/guides/beginner/` existed before this sprint and was strengthened in place; no new path was created for it.
+- `/price/` was the only new URL created.
+- Homepage received one necessary link to `/price/`; no sitewide navigation rewrite was made.
+- Existing protected pages `/systems/runes/`, `/builds/`, `/teams/`, `/roadmap/`, `/map/`, and `/multiplayer/` were not modified.
+- Sitemap is expected to grow from 14 to 15 indexable URLs: one actual new URL, not two.
+- Remaining highest-priority gap: **PC/System Requirements**, then **Walkthrough**, subject to primary-source depth.
