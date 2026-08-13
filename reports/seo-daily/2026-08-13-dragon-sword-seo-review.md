@@ -260,4 +260,56 @@ Third-party competitor pages were used for SERP intent and coverage structure on
 - Homepage received one necessary link to `/price/`; no sitewide navigation rewrite was made.
 - Existing protected pages `/systems/runes/`, `/builds/`, `/teams/`, `/roadmap/`, `/map/`, and `/multiplayer/` were not modified.
 - Sitemap is expected to grow from 14 to 15 indexable URLs: one actual new URL, not two.
-- Remaining highest-priority gap: **PC/System Requirements**, then **Walkthrough**, subject to primary-source depth.
+- Remaining next research gap: **Walkthrough**, subject to first-hand quest/chapter evidence. PC/System Requirements passed this sprint and is now covered by `/system-requirements/`.
+
+## PC + Walkthrough Gap Gate
+
+### PC Decision
+
+**`BUILD_PC_REQUIREMENTS_PAGE` — BUILD `/system-requirements/`.** Existing homepage, `/gameplay/`, `/price/`, and `/guides/beginner/` mentioned platform or SSD context but did not provide a standalone minimum/recommended answer. The exact PC/spec intent is therefore not sufficiently covered by an existing page. The URL `/system-requirements/` was chosen because it matches the exact query family and is narrower and clearer than a broader `/platforms/pc/` taxonomy.
+
+Official Steam Evidence B is sufficient: Windows 10, 64-bit processor/OS, Intel i5-9400F / i7-9700F, 8 GB / 16 GB RAM, GTX 1660 / RTX 3060, DirectX 12, 25 GB storage, and the official SSD warning are all listed. No third-party hardware claims were used.
+
+| Demand | Evidence | SERP Opportunity | Site Fit | Total | Standalone | Cannibalization | Decision |
+|---:|---:|---:|---:|---:|---|---|---|
+| 22/25 | 25/25 | 22/25 | 23/25 | **92/100** | YES | acceptable | BUILD |
+
+### PC SERP Audit
+
+The observed result set contains the official Steam listing, specialist PC/system-requirements pages, generic game databases, performance/setup pages, Reddit Steam Deck and troubleshooting discussions, and YouTube/community setup content. Steam has the strongest answer and exposes a complete minimum/recommended table. Specialist competitors show that a dedicated answer page is a normal SERP shape, but their benchmark, Steam Deck and optimization claims were not copied. The Steam Deck result is community-led and not an official verified/playable status.
+
+### Walkthrough Decision
+
+**`RESEARCH_ONLY` — do not create `/walkthrough/` yet.** Walkthrough is a clear standalone intent, but the current project lacks verified first-hand chapter/quest structure, screenshots, or a reliable tested route. Existing `/guides/beginner/`, `/gameplay/`, and `/map/` cover first-hours, broad exploration, and world context; they do not justify a full route claim. A thin hub would be navigation without enough verified guide inventory.
+
+| Demand | Evidence | SERP Opportunity | Site Fit | Total | Standalone | Cannibalization | Decision |
+|---:|---:|---:|---:|---:|---|---|---|
+| 23/25 | 10/25 | 23/25 | 20/25 | **76/100** | YES | acceptable | RESEARCH_ONLY |
+
+### Walkthrough SERP Audit
+
+The observed SERP is led by full walkthrough hubs, chapter 1–8 routes, prologue/part videos, quest/puzzle pages, dungeon/boss pages, and wiki-style guides. This confirms standalone demand and a future hub-and-spoke shape. However, competitor chapter and quest details are Evidence C structure/demand signals only; no chapter count, quest sequence, boss route, puzzle solution, or ending claim was imported as project fact.
+
+### GSC / GA4 Opportunity Signals
+
+Latest available GSC date remains **2026-08-11**, with the existing read-only window 2026-07-14 through 2026-08-11. No matching PC/system-requirements or walkthrough/quest/chapter/dungeon/boss query row was present in the available reviewed breakdown. No exact PC or Walkthrough landing page appeared in the latest GA4 Organic Search landing-page table. This is `NO_EXACT_GSC_SIGNAL`, not an automatic reject: official answer quality and SERP shape were decisive for PC, while missing first-hand evidence blocked Walkthrough.
+
+### Competitor Gap Comparison
+
+| Competitor | PC/System Requirements | Walkthrough | Quest/Chapter Depth | Notes |
+|---|---|---|---|---|
+| Whisper of the House | no primary PC table in the sampled result | full Chapter 1–8 hub | high | useful hub structure; chapter/route claims remain third-party Evidence C |
+| Into Indie Games | no dedicated PC answer in sampled result | prologue/Part 1 walkthrough | low-to-medium | editorial walkthrough format, but partial coverage |
+| DragonSword Awakening Wiki pages | dedicated PC/system page appears in site navigation | chapter, puzzle and quest pages | high | claims are not evidence for our facts; use only coverage pattern |
+| Steam official store | complete minimum/recommended table | no walkthrough | none | authoritative PC facts; no chapter route |
+
+### URLs, Claims and Execution
+
+- Created exactly one URL: `/system-requirements/`.
+- Added necessary internal links from homepage, `/guides/beginner/`, `/price/`, and `/gameplay/`; no batch navigation rewrite.
+- Walkthrough created no URL and no child Quest, Chapter, Dungeon, or Boss pages.
+- Deliberately excluded FPS guarantees, best settings, RTX 3060 frame-rate claims, Steam Deck verified/playable claims, performance tiers, optimization tips, official chapter count, complete quest route, exact boss/puzzle solutions, screenshots, and ending claims.
+- Required PC page sections are present: Quick Answer, minimum, recommended, plain-language spec meaning, performance status, Steam Deck boundary, source attribution, schema, Last Verified, breadcrumbs, and related guides.
+- Validation: `npm run build` PASS (17 generated pages including 404; 16 indexable sitemap URLs), SEO contract PASS for `/system-requirements/`, `/guides/beginner/`, and `/price/`, internal-link check PASS with no broken routes, and `git diff --check` PASS.
+- Sitemap expectation: **15 → 16** indexable URLs if the PC page is released; Walkthrough does not change the count.
+- Next gap to build: none immediately; the next candidate is Walkthrough only after verified gameplay evidence, a repeat GSC signal, or repeated community demand supports real guide inventory.
