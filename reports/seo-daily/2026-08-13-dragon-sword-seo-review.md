@@ -183,15 +183,20 @@ Deliberately excluded: complete chest coverage, exact chest count, exact coordin
 - `robots.txt`: HTTP 200, allows crawling, points to `https://dragonswordguide.com/sitemap-index.xml`.
 - `sitemap-index.xml`: HTTP 200.
 - No DNS, Cloudflare, GA4, or GSC configuration changes were made. No URL was created.
+- Pages deployment: active production source `d528d84`, preview `https://16f6532b.dragonswordguide.pages.dev`.
+- Preview verification: `/systems/runes/`, `/map/`, and `/multiplayer/` returned HTTP 200 with self-canonical, one H1, no noindex, and expected markers.
+- Custom-domain verification: initially served the previous `/map/` and `/multiplayer/` responses, then converged after one bounded 20-second no-cache recheck. Final custom-domain responses returned the new `dateModified: 2026-08-13` markers. Classified as `TRANSIENT_PROPAGATION_DELAY`; no DNS or Cloudflare configuration change was needed.
 
 ## Validation and Files
 
 - `npm run build`: PASS.
 - `git diff --check`: PASS.
-- Production HTTP checks: PASS.
+- Production HTTP checks: PASS after bounded propagation recheck.
 - Changed only `src/pages/map/index.astro`, `src/pages/multiplayer/index.astro`, and this report; existing untracked `.DS_Store`, brand-pack files, and `doct/` were preserved.
 - Before branch / HEAD: `main` / `dbba5bd`.
-- Commit / push / deployment: **not performed**; report-only scope.
+- Phase 2 commit: `d528d84a0e9fc4d7479838ecf733469fcd552fd9`.
+- Push: `origin/main` updated successfully; active Pages source verified as `d528d84`.
+- Final status: **PASS_WITH_LIMITATION** — the release is verified, but custom-domain propagation briefly lagged and the search sample remains small.
 
 ## Sources
 
