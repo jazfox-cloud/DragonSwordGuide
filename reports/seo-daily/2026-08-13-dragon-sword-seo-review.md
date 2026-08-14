@@ -483,4 +483,77 @@ First-hand work required before publishing: play the relevant route, record scre
 - Fixed-window aggregation and scorecard: PASS; unavailable values retained as `N/A`.
 - Production URL health check: PASS, 16/16.
 - `git diff --check`: PASS.
-- Files changed: this report only.
+- Files changed in the earlier measurement-only review: this report only.
+
+## Winner Optimization Sprint
+
+### Scope and measurement boundary
+
+This sprint used the latest complete Search Console snapshot available to the checkout: `sc-domain:dragonswordguide.com`, web search, through **2026-08-11**. The requested comparable windows are recorded as GSC `2026-08-10` to `2026-08-11` vs `2026-08-08` to `2026-08-09`, and GSC/GA4 `2026-08-05` to `2026-08-11` vs `2026-07-29` to `2026-08-04`. No newer GSC rows were available locally on 2026-08-13. SERP checks were performed on 2026-08-13; competitor/community results remain Evidence C unless they are official sources.
+
+### Roadmap query decomposition
+
+The available query/page evidence supports these meaningful rows. CTR is calculated from clicks divided by impressions; `N/A` is retained where the saved GSC summary did not preserve the row-level metric.
+
+| Query | Landing URL | Clicks | Impressions | CTR | Position |
+|---|---|---:|---:|---:|---:|
+| `dragon sword awakening roadmap` | `/roadmap/` | 6 | 56 | 10.71% | N/A |
+| `dragonsword awakening roadmap` | `/roadmap/` | 4 | 133 | 3.01% | N/A |
+| `dragon sword roadmap` | `/` | 0 | 1 | 0% | 2.00 |
+| `dragon sword roadmap` | `/roadmap/` | 0 | 2 | 0% | 6.00 |
+
+Supported intent buckets: **roadmap**, **future content / planned updates**, and **current update status**. The larger roadmap family is owned by `/roadmap/`; the exact shorter query is still mixed with the homepage. Status: **`OWNERSHIP_IMPROVING`**, not `OWNERSHIP_STRONG`.
+
+### Roadmap changes
+
+`/roadmap/` received a narrow winner optimization: title and description now lead with latest updates and future plans; `dateModified` and `LastVerified` are `2026-08-13`; and a Quick Answer states that 1.0.8 is applied while future release dates remain unconfirmed. Released, announced/planned, and unknown sections were preserved and no speculative date or update was added.
+
+The homepage description now says **current game updates** rather than **roadmap updates**. This is the smallest ownership adjustment justified by the homepage row; the homepage still links to and summarizes the roadmap.
+
+### Multiplayer query-level CTR audit
+
+The saved GSC summary contains 16 query rows for `/multiplayer/`, 178 page impressions, 0 clicks, average position 8.16, and the strongest named query `is dragonsword awakening multiplayer` at 16 impressions. The preserved meaningful rows are:
+
+| Query | Clicks | Impressions | CTR | Position |
+|---|---:|---:|---:|---:|
+| `is dragonsword awakening multiplayer` | 0 | 16 | 0% | N/A |
+| `dragon sword awakening multiplayer` | 0 | 8 | 0% | N/A |
+| Other multiplayer / co-op / matchmaking rows | 0 | N/A | N/A | N/A |
+
+Supported groups: **multiplayer**, **co-op**, and **matchmaking**. No preserved row supports separate lobby, invite-friends, raids, PvP, or story/open-world-co-op buckets with enough detail to report independently.
+
+### Multiplayer SERP diagnosis and decision
+
+Current metadata is already direct: the title begins with `Is DragonSword Awakening Multiplayer?`, the description begins with `Yes`, and the first-screen Quick Answer says selected activities support online co-op. The current SERP also contains community/wikis with broader claims, but those do not justify copying unsupported scope. Classification: **`INSUFFICIENT_DATA`** for a further CTR rewrite, with no clear title/description gap. Decision: **`HOLD_INSUFFICIENT_EVIDENCE`**; no Multiplayer content change.
+
+### Map child-intent scores
+
+The parent has 88 impressions, 4 clicks, 4.55% CTR, average position 8.91, 9 query rows, and 7 GA4 Organic sessions in the latest available page summary. Query evidence includes `dragonsword awakening interactive map` (4 impressions, 1 click) and `dragon sword interactive map` (2 impressions, 0 clicks).
+
+| Child intent | Search validation /30 | Demand /20 | SERP independence /20 | Evidence /20 | Cannibalization safety /10 | Total | Decision |
+|---|---:|---:|---:|---:|---:|---:|---|
+| interactive map | 21 | 14 | 18 | 10 | 7 | 70 | `OBSERVE` |
+| chest locations | 12 | 12 | 16 | 8 | 7 | 55 | `OBSERVE` |
+| locations | 10 | 8 | 14 | 8 | 7 | 47 | `OBSERVE` |
+| treasure / chests | 8 | 6 | 12 | 7 | 8 | 41 | `OBSERVE` |
+
+Interactive-map demand is real and the SERP is independently shaped, but the project lacks first-hand coordinates, a stable marker inventory, and enough evidence to publish a useful child page. The gate therefore does not reach `POTENTIAL_CHILD`; no map child page was created. The existing parent already labels the community interactive-map result as Evidence C and states the missing-data boundary. Decision: **`OBSERVE`** / `HOLD_MAP_PARENT`.
+
+### Decision summary
+
+| Cluster | Decision |
+|---|---|
+| Roadmap | `OPTIMIZED_WINNER` |
+| Multiplayer | `HOLD_INSUFFICIENT_EVIDENCE` |
+| Map | `OBSERVE` |
+
+**`NO_NEW_URL_CREATED`**. No Roadmap child, Map/Chest/Location child, or Multiplayer child was created. Protected pages and unrelated projects were not modified.
+
+### Sprint validation
+
+- `npm run build`: PASS.
+- Generated sitemap route count: 16 indexable URLs; no route loss.
+- SEO checks: all generated routes have one H1, self-canonical, and no accidental noindex.
+- Internal-link and sitemap consistency: PASS.
+- `git diff --check`: PASS.
+- Production health sanity: live route verification was not repeated after this local edit; deployment and custom-domain verification remain a separate release gate.
