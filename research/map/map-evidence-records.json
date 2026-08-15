@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "project": "DragonSword Awakening",
+  "scope": "research-only; no public location page",
+  "verifiedDate": "2026-08-15",
+  "gameVersion": null,
+  "verificationStatus": "FIRST_HAND_VERIFICATION_BLOCKED",
+  "records": [],
+  "leads": [
+    {
+      "id": "lead-community-wip-chests",
+      "marker": "WIP all-chests interactive map",
+      "category": "chest",
+      "region": "Orbis / unspecified",
+      "source": "https://www.reddit.com/r/DSwordAwakening/comments/1vap7qr/all_chests_locations_interactive_map/",
+      "evidence": "C",
+      "coordinates": null,
+      "screenshot": null,
+      "route": null,
+      "status": "COMMUNITY_LEAD",
+      "confidence": "MEDIUM",
+      "notes": "Demand and candidate terminology only; WIP source does not establish completeness."
+    },
+    {
+      "id": "lead-community-city-underground-chests",
+      "marker": "Underground or city chest uncertainty",
+      "category": "chest",
+      "region": "Unspecified",
+      "source": "https://www.reddit.com/r/DSwordAwakening/comments/1vo8eg7/interractive_map_recommandation/",
+      "evidence": "C",
+      "coordinates": null,
+      "screenshot": null,
+      "route": null,
+      "status": "COMMUNITY_LEAD",
+      "confidence": "MEDIUM",
+      "notes": "Community pain point; requires in-game verification."
+    },
+    {
+      "id": "lead-official-orbis-caves",
+      "marker": "Orbis caves",
+      "category": "cave",
+      "region": "Orbis",
+      "source": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "evidence": "B",
+      "coordinates": null,
+      "screenshot": null,
+      "route": null,
+      "status": "COMMUNITY_LEAD",
+      "confidence": "MEDIUM",
+      "notes": "Official source supports broad existence/context, not a location record."
+    },
+    {
+      "id": "lead-official-orbis-dungeons",
+      "marker": "Orbis dungeons",
+      "category": "dungeon",
+      "region": "Orbis",
+      "source": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "evidence": "B",
+      "coordinates": null,
+      "screenshot": null,
+      "route": null,
+      "status": "COMMUNITY_LEAD",
+      "confidence": "MEDIUM",
+      "notes": "Official source supports broad existence/context, not a location record."
+    }
+  ]
+}
