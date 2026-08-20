@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "gsc:daily-review": "node scripts/gsc-daily-review.mjs",
+    "test:gsc-daily-review": "node --test scripts/gsc-daily-review.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
