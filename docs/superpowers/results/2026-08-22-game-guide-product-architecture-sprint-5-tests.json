@@ -1,0 +1,57 @@
+{
+  "tests": [
+    {
+      "test": "Official YouTube source record is present and B-level",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "B-DESCRIPTION facts recovered for Lute and the official combo",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "B-OBSERVED skill behavior is not invented",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Third-party C leads cannot satisfy B fields",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Official combo source creates the primary team relation",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Roxy and Theresia no longer hard-block the primary chain",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Every upgraded B-level field has provenance trace",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Copyrighted frame reuse remains blocked",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Readiness is re-scored to research-ready, not review-ready",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Production boundary remains closed",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "pass_count": 10,
+  "fail_count": 0,
+  "total": 10
+}
