@@ -1,0 +1,63 @@
+---
+const containerId = 'container-5b0f9dec680f68b542b2049fa6fc069d';
+const scriptSrc = 'https://pl30970443.profitableratecpmnetwork.com/5b0f9dec680f68b542b2049fa6fc069d/invoke.js';
+---
+
+<aside class="adsterra-native-banner" aria-label="Advertisement">
+  <span class="adsterra-native-banner__label">Advertisement</span>
+  <div class="adsterra-native-banner__slot">
+    <div id={containerId}></div>
+  </div>
+</aside>
+
+<script is:inline define:vars={{ scriptSrc }}>
+  (() => {
+    if (window.AstroAdsterraNativeBannerLoaded || document.querySelector(`script[src="${scriptSrc}"]`)) {
+      return;
+    }
+
+    window.AstroAdsterraNativeBannerLoaded = true;
+    const script = document.createElement('script');
+    script.setAttribute('async', 'async');
+    script.setAttribute('data-cfasync', 'false');
+    script.src = scriptSrc;
+    document.body.appendChild(script);
+  })();
+</script>
+
+<style>
+  .adsterra-native-banner {
+    max-width: 760px;
+    margin: 2.5rem 0;
+    overflow: hidden;
+  }
+
+  .adsterra-native-banner__label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .adsterra-native-banner__slot {
+    width: 100%;
+    min-height: 250px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  .adsterra-native-banner__slot :global(*) {
+    max-width: 100%;
+  }
+
+  @media (min-width: 760px) {
+    .adsterra-native-banner__slot {
+      min-height: 280px;
+    }
+  }
+</style>
