@@ -1,4 +1,7 @@
 import {
+  ArtifactClass,
+  CANONICAL_ENTITY_TYPES,
+  DERIVED_ARTIFACT_TYPES,
   EvidenceLevel,
   ErrorCode,
   ENTITY_CONTRACTS,
@@ -31,6 +34,16 @@ const JUDGMENT_REQUIRED_KEYS = [
 ];
 
 const ENTITY_METRICS = new Set(["source_record", "game_version"]);
+
+function artifactClassFor(entityType) {
+  if (CANONICAL_ENTITY_TYPES.includes(entityType)) {
+    return ArtifactClass.CANONICAL_ENTITY;
+  }
+  if (DERIVED_ARTIFACT_TYPES.includes(entityType)) {
+    return ArtifactClass.DERIVED_EDITORIAL_ARTIFACT;
+  }
+  return undefined;
+}
 
 const RAW_FIELD_META = {
   source_record: new Set([
@@ -915,6 +928,7 @@ export function evaluateGameGuideBundle(bundle = {}, options = {}) {
       entityEvaluations.push({
         entity_id: entityId,
         entity_type: entityType,
+        artifact_class: artifactClassFor(entityType),
         completeness,
         readiness_state: readiness,
         blocking_errors: blockingFromEntity,

@@ -92,6 +92,27 @@ export const CanonicalIdPrefix = Object.freeze({
   build_recommendation: "build-recommendation",
 });
 
+export const CANONICAL_ENTITY_TYPES = Object.freeze([
+  "character",
+  "skill",
+  "combat_status",
+  "equipment",
+  "karma",
+  "material",
+  "team_relation",
+  "source_record",
+  "game_version",
+]);
+
+export const DERIVED_ARTIFACT_TYPES = Object.freeze([
+  "build_recommendation",
+]);
+
+export const ArtifactClass = Object.freeze({
+  CANONICAL_ENTITY: "CANONICAL_ENTITY",
+  DERIVED_EDITORIAL_ARTIFACT: "DERIVED_EDITORIAL_ARTIFACT",
+});
+
 export const REQUIRED_FIELD_IDS = Object.freeze([
   "value",
   "source_id",
@@ -239,4 +260,3 @@ export const VALID_ROUTING_STATES = Object.freeze([
   "RESEARCH_BACKLOG",
   "HOLD",
 ]);
-
