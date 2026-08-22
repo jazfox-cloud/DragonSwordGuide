@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+      "test": "pilot selection uses real evidence gates and selects only Lute",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "community-only candidates do not become pilot-ready",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "vertical slice remains non-public and acquisition-first",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "team relations are editorial candidates, not official facts",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "shared reuse demo references one canonical fact in three contexts",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "production boundary remains closed",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "pass_count": 6,
+  "fail_count": 0,
+  "total": 6
+}

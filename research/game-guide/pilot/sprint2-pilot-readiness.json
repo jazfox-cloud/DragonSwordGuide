@@ -1,0 +1,393 @@
+{
+  "metadata": {
+    "project": "DragonSwordGuide",
+    "game": "DragonSword: Awakening",
+    "created_at": "2026-08-22T00:00:00Z",
+    "publication_state": "APPROVAL_REQUIRED",
+    "public_dataset": false,
+    "selection_gate": "minimum 1, maximum 3 pilots; score >= 70; official or primary factual identity; skill, Equipment/Karma, and Team Relation evidence paths present"
+  },
+  "skill_governance": {
+    "chosen_source_repository": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide",
+    "source_path": "docs/superpowers/skills/game-guide-product-architecture/SKILL.md",
+    "runtime_path": "/Users/jazfox/.codex/skills/game-guide-product-architecture/SKILL.md",
+    "status": "TEMPORARY_GOVERNED_SOURCE",
+    "sync_install_method": "copy source skill folder to runtime path after review; do not install during Sprint 2",
+    "drift_detection_method": "compare SHA-256 of governed source SKILL.md against runtime SKILL.md before use",
+    "preferred_future_repository": "/Users/jazfox/Documents/website-operating-system/skills",
+    "governance_note": "Existing WOS repository has a skills registry but no reusable Skill source folders were found; use DragonSword docs as temporary version-controlled source until a cross-project Skill source is authorized."
+  },
+  "sources": [
+    {
+      "id": "source:steam-dragonsword-awakening",
+      "title": "DragonSword : Awakening on Steam",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "source_type": "official",
+      "evidence_level": "B_OFFICIAL",
+      "supports": [
+        "Lute official story identity",
+        "Johnny and Castella official story identity",
+        "19 Heroes have distinct Status Ailment abilities",
+        "Signal Skills and Switching Signals are core team mechanics"
+      ],
+      "public_allowed": true,
+      "last_verified": "2026-08-22"
+    },
+    {
+      "id": "source:dsa-net-team-builder",
+      "title": "DragonSword Awakening Team Builder & Signal Chain",
+      "url": "https://dragonswordawakening.net/team-builder",
+      "source_type": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "supports": [
+        "Lute -> Roxy -> Theresia sample team chain",
+        "Stun Slash applies Stun",
+        "Kick Storm triggers from Stun",
+        "Crimson Spiral applies Bleed",
+        "Holy Rise triggers from Bleed"
+      ],
+      "public_allowed": false,
+      "last_verified": "2026-08-22"
+    },
+    {
+      "id": "source:dsa-net-builds",
+      "title": "DragonSword: Awakening Builds",
+      "url": "https://dragonswordawakening.net/builds",
+      "source_type": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "supports": [
+        "Lute build has Exclusive Karma A Sword Summoned for a Friend",
+        "Lute build has Holy Arbiter equipment set",
+        "Roxy and Theresia have build/team option signals"
+      ],
+      "public_allowed": false,
+      "last_verified": "2026-08-22"
+    },
+    {
+      "id": "source:steam-discussion-team-combos",
+      "title": "Steam Discussion: What team/combos do y'all use?",
+      "url": "https://steamcommunity.com/app/4570720/discussions/0/572668324079617925/",
+      "source_type": "community",
+      "evidence_level": "C_COMMUNITY",
+      "supports": [
+        "Community reports Lute/Roxy/Theresia and Castella/Roxy/Lute combo usage",
+        "Community describes status-triggered skill activation"
+      ],
+      "public_allowed": false,
+      "last_verified": "2026-08-22"
+    }
+  ],
+  "candidate_inventory": [
+    {
+      "canonical_id": "character:lute",
+      "official_display_name": "Lute",
+      "official_primary_source_availability": "B_OFFICIAL identity available from Steam story description",
+      "skill_data_availability": "C_COMMUNITY sample skill-chain data; first-hand verification required",
+      "role_combat_function_evidence": "Official protagonist and team-system context; opener role from third-party Team Builder sample",
+      "equipment_karma_evidence_availability": "C_COMMUNITY build index lists exclusive Karma and equipment set",
+      "team_relation_evidence_availability": "C_COMMUNITY Team Builder sample links Lute to Roxy and Theresia",
+      "current_game_version_relevance": "Global launch/current Orbis version reported by sources; exact patch version UNKNOWN",
+      "gsc_search_demand": "UNKNOWN",
+      "maintenance_feasibility": "High; official identity stable, missing mechanics can become bounded acquisition tasks",
+      "required_completeness": 21,
+      "source_quality": 17,
+      "build_relevance": 16,
+      "team_relation_richness": 13,
+      "search_user_demand": 5,
+      "maintenance_feasibility_score": 9,
+      "required_factual_identity_available": true,
+      "non_public_readiness_record_possible": true,
+      "meaningful_skill_relation": true,
+      "equipment_or_karma_relation": true,
+      "potential_team_relation": true,
+      "maintenance_burden_acceptable": true,
+      "evidence_strength": "B+C",
+      "major_gaps": [
+        "exact current skill wording requires first-hand or official validation",
+        "equipment and Karma values are C-only leads",
+        "Roxy/Theresia relation remains editorial candidate until verified"
+      ]
+    },
+    {
+      "canonical_id": "character:roxy",
+      "official_display_name": "Roxy",
+      "official_primary_source_availability": "No direct official identity source captured in Sprint 2",
+      "skill_data_availability": "C_COMMUNITY Team Builder and Steam Discussion leads",
+      "role_combat_function_evidence": "Third-party build/team sources describe Bloodburst/Bleed role",
+      "equipment_karma_evidence_availability": "C_COMMUNITY build index lists exclusive Karma and equipment set",
+      "team_relation_evidence_availability": "Strong C_COMMUNITY relation with Lute/Theresia",
+      "current_game_version_relevance": "Current patch UNKNOWN",
+      "gsc_search_demand": "UNKNOWN",
+      "maintenance_feasibility": "Medium; strong community data but official identity/source capture missing",
+      "required_completeness": 18,
+      "source_quality": 12,
+      "build_relevance": 18,
+      "team_relation_richness": 14,
+      "search_user_demand": 6,
+      "maintenance_feasibility_score": 8,
+      "required_factual_identity_available": false,
+      "non_public_readiness_record_possible": true,
+      "meaningful_skill_relation": true,
+      "equipment_or_karma_relation": true,
+      "potential_team_relation": true,
+      "maintenance_burden_acceptable": true,
+      "evidence_strength": "C",
+      "major_gaps": [
+        "official identity/source capture missing",
+        "skill facts are not production-eligible",
+        "build and team claims are editorial leads"
+      ]
+    },
+    {
+      "canonical_id": "character:theresia",
+      "official_display_name": "Theresia",
+      "official_primary_source_availability": "No direct official identity source captured in Sprint 2",
+      "skill_data_availability": "C_COMMUNITY Team Builder, wiki, and Steam Discussion leads",
+      "role_combat_function_evidence": "Community/third-party sources repeatedly connect Theresia to Bleed/Stun",
+      "equipment_karma_evidence_availability": "C_COMMUNITY build sources list Karma/equipment candidates",
+      "team_relation_evidence_availability": "Strong C_COMMUNITY relation with Lute/Roxy",
+      "current_game_version_relevance": "Current patch UNKNOWN",
+      "gsc_search_demand": "UNKNOWN",
+      "maintenance_feasibility": "Medium; many leads but needs source cleanup",
+      "required_completeness": 18,
+      "source_quality": 12,
+      "build_relevance": 18,
+      "team_relation_richness": 14,
+      "search_user_demand": 7,
+      "maintenance_feasibility_score": 7,
+      "required_factual_identity_available": false,
+      "non_public_readiness_record_possible": true,
+      "meaningful_skill_relation": true,
+      "equipment_or_karma_relation": true,
+      "potential_team_relation": true,
+      "maintenance_burden_acceptable": true,
+      "evidence_strength": "C",
+      "major_gaps": [
+        "official identity/source capture missing",
+        "demo/community skill reports need current verification",
+        "equipment/Karma claims are not public-eligible"
+      ]
+    },
+    {
+      "canonical_id": "character:castella",
+      "official_display_name": "Castella",
+      "official_primary_source_availability": "B_OFFICIAL identity available from Steam story description",
+      "skill_data_availability": "C_COMMUNITY build/team leads only",
+      "role_combat_function_evidence": "Official companion identity; build/team role requires verification",
+      "equipment_karma_evidence_availability": "C_COMMUNITY build index lists candidates",
+      "team_relation_evidence_availability": "C_COMMUNITY team options exist but first vertical chain weaker than Lute/Roxy/Theresia",
+      "current_game_version_relevance": "Current patch UNKNOWN",
+      "gsc_search_demand": "UNKNOWN",
+      "maintenance_feasibility": "High, but not the strongest first chain",
+      "required_completeness": 19,
+      "source_quality": 16,
+      "build_relevance": 14,
+      "team_relation_richness": 7,
+      "search_user_demand": 4,
+      "maintenance_feasibility_score": 9,
+      "required_factual_identity_available": true,
+      "non_public_readiness_record_possible": true,
+      "meaningful_skill_relation": true,
+      "equipment_or_karma_relation": true,
+      "potential_team_relation": true,
+      "maintenance_burden_acceptable": true,
+      "evidence_strength": "B+C",
+      "major_gaps": [
+        "less direct first vertical relation than Lute sample chain",
+        "skill and equipment evidence remains C-only"
+      ]
+    },
+    {
+      "canonical_id": "character:charlotte",
+      "official_display_name": "Charlotte",
+      "official_primary_source_availability": "No direct official identity source captured in Sprint 2",
+      "skill_data_availability": "C_COMMUNITY unlock/build/tier leads",
+      "role_combat_function_evidence": "Third-party sources describe Poison/Airborne/Knockdown role",
+      "equipment_karma_evidence_availability": "C_COMMUNITY build index lists candidates",
+      "team_relation_evidence_availability": "C_COMMUNITY team options exist",
+      "current_game_version_relevance": "Current patch UNKNOWN",
+      "gsc_search_demand": "UNKNOWN",
+      "maintenance_feasibility": "Medium",
+      "required_completeness": 16,
+      "source_quality": 11,
+      "build_relevance": 16,
+      "team_relation_richness": 10,
+      "search_user_demand": 6,
+      "maintenance_feasibility_score": 7,
+      "required_factual_identity_available": false,
+      "non_public_readiness_record_possible": true,
+      "meaningful_skill_relation": true,
+      "equipment_or_karma_relation": true,
+      "potential_team_relation": true,
+      "maintenance_burden_acceptable": true,
+      "evidence_strength": "C",
+      "major_gaps": [
+        "official identity/source capture missing",
+        "not part of first Lute/Roxy/Theresia vertical chain"
+      ]
+    }
+  ],
+  "selected_pilots": [
+    {
+      "canonical_id": "character:lute",
+      "display_name": "Lute",
+      "decision": "PILOT_READY",
+      "why_selected": "Only candidate with official identity support, a direct Team Builder sample-chain role, and enough C-level Equipment/Karma/team leads to generate bounded acquisition tasks without publishing.",
+      "vertical_slice_readiness": {
+        "character": "RESEARCH_READY",
+        "skills": "INCOMPLETE",
+        "equipment_karma": "INCOMPLETE",
+        "team_relation": "INCOMPLETE",
+        "overall": "APPROVAL_REQUIRED"
+      },
+      "canonical_reuse_demo": {
+        "canonical_fact_id": "skill:stun-slash",
+        "fact": "Stun Slash applies Stun in the sample Signal chain",
+        "source_id": "source:dsa-net-team-builder",
+        "used_by": [
+          "Character detail readiness",
+          "Build readiness",
+          "Team Relation readiness"
+        ],
+        "reference_integrity_result": "PASS_NON_PUBLIC_REFERENCE_ONLY"
+      }
+    }
+  ],
+  "team_relation_candidates": [
+    {
+      "id": "team-relation:lute|roxy|starter_connector|orbis-current",
+      "from_character_id": "character:lute",
+      "to_character_id": "character:roxy",
+      "status_refs": [
+        "combat-status:stun"
+      ],
+      "classification": "editorial_recommendation",
+      "basis": "Team Builder sample says Stun Slash applies Stun and Kick Storm triggers from Stun",
+      "source_ids": [
+        "source:dsa-net-team-builder"
+      ],
+      "game_version": "game-version:orbis-current",
+      "confidence": "MEDIUM",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "id": "team-relation:roxy|theresia|connector_finisher|orbis-current",
+      "from_character_id": "character:roxy",
+      "to_character_id": "character:theresia",
+      "status_refs": [
+        "combat-status:bleed"
+      ],
+      "classification": "editorial_recommendation",
+      "basis": "Team Builder sample says Crimson Spiral applies Bleed and Holy Rise triggers from Bleed",
+      "source_ids": [
+        "source:dsa-net-team-builder"
+      ],
+      "game_version": "game-version:orbis-current",
+      "confidence": "MEDIUM",
+      "publication_state": "APPROVAL_REQUIRED"
+    }
+  ],
+  "acquisition_backlog": [
+    {
+      "task_id": "acq-lute-skill-current-verification",
+      "goal": "Verify Lute's exact current skill names, effects, and status applications.",
+      "data_needed": "Current in-game or official Lute skill wording",
+      "fields_needed": [
+        "skill.name",
+        "skill.description",
+        "skill.applies_status_ids",
+        "skill.level",
+        "skill.damage_type"
+      ],
+      "source_candidates": [
+        "first-hand gameplay screenshot/capture",
+        "official guide or patch material"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current skill screen and source metadata, or cite official current material.",
+      "validation_method": "Run evidence wrapper and reference-integrity gates against skill and status records.",
+      "completion_criteria": "All required Skill fields have source, evidence level, game version, last_verified, public_allowed, and editorial judgment metadata.",
+      "unblock_condition": "Lute Skill layer moves from INCOMPLETE to READY_FOR_REVIEW.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-karma-equipment-verification",
+      "goal": "Verify Lute's relevant Karma and Equipment relation before build readiness.",
+      "data_needed": "Current Lute exclusive/compatible Karma and equipment set relation",
+      "fields_needed": [
+        "karma.name",
+        "karma.effect",
+        "equipment.name",
+        "equipment.stats_summary"
+      ],
+      "source_candidates": [
+        "first-hand character build screen",
+        "official equipment/Karma collection"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current game collection/build screens or official collection records.",
+      "validation_method": "Validate canonical Karma/Equipment IDs and evidence wrappers.",
+      "completion_criteria": "At least one Karma or Equipment relation is evidence-complete and references Lute without copied facts.",
+      "unblock_condition": "Equipment/Karma layer moves from INCOMPLETE to RESEARCH_READY or READY_FOR_REVIEW.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-roxy-theresia-team-relation",
+      "goal": "Validate whether the Lute -> Roxy -> Theresia chain exists in current gameplay.",
+      "data_needed": "Current Signal Skill chain evidence for Stun and Bleed transitions",
+      "fields_needed": [
+        "team_relation.from_character_id",
+        "team_relation.to_character_id",
+        "team_relation.relation_type",
+        "team_relation.status_ids",
+        "team_relation.rationale"
+      ],
+      "source_candidates": [
+        "first-hand Team Builder reproduction",
+        "official combat guide",
+        "community lead only for target scenario"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL for production; C_COMMUNITY allowed only as lead",
+      "collection_method": "Reproduce the chain in-game or with validated current data and capture status trigger evidence.",
+      "validation_method": "Run reference-integrity gate for character, skill, status, and team_relation IDs.",
+      "completion_criteria": "Both directed relation candidates resolve canonical refs and carry current version evidence.",
+      "unblock_condition": "Team Relation layer moves from INCOMPLETE to RESEARCH_READY or READY_FOR_REVIEW.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-roxy-theresia-official-identity",
+      "goal": "Capture official or first-hand identity evidence for Roxy and Theresia before promoting them to pilot characters.",
+      "data_needed": "Official roster, in-game roster screenshot, or developer material naming Roxy and Theresia",
+      "fields_needed": [
+        "character.name",
+        "character.summary",
+        "source_record"
+      ],
+      "source_candidates": [
+        "first-hand roster screenshot",
+        "official character page",
+        "developer announcement"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current roster screen or official page with date/version metadata.",
+      "validation_method": "Create Source Records and validate Character wrappers.",
+      "completion_criteria": "Roxy and Theresia factual identity fields become production-eligible.",
+      "unblock_condition": "Roxy/Theresia may be rescored for Sprint 3 pilot expansion.",
+      "publication_state": "APPROVAL_REQUIRED"
+    }
+  ],
+  "evidence_distribution": {
+    "A_FIRST_HAND": 0,
+    "B_OFFICIAL": 1,
+    "C_COMMUNITY": 3
+  },
+  "production_boundary": {
+    "public_character_page_created": false,
+    "build_page_created": false,
+    "team_builder_created": false,
+    "public_search_filter_ui_created": false,
+    "public_url_created": false,
+    "sitemap_changed": false,
+    "publish_or_deploy_action": false
+  }
+}
