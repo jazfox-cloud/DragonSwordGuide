@@ -1,0 +1,494 @@
+{
+  "metadata": {
+    "project": "DragonSwordGuide",
+    "game": "DragonSword: Awakening",
+    "created_at": "2026-08-22T00:00:00Z",
+    "last_verified": "2026-08-22",
+    "public_dataset": false,
+    "publication_gate": "APPROVAL_REQUIRED",
+    "selected_pilot": "character:lute",
+    "purpose": "Non-public Lute Character -> Build -> Team Relation readiness package"
+  },
+  "game_version": {
+    "id": "game-version:release-current-unknown-patch",
+    "label": "Release/current build; exact patch number UNKNOWN",
+    "source_id": "source:steam-dragonsword-awakening",
+    "last_verified": "2026-08-22",
+    "status": "CURRENT_UNVERIFIED_PATCH"
+  },
+  "sources": [
+    {
+      "id": "source:steam-dragonsword-awakening",
+      "title": "DragonSword : Awakening on Steam",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "source_type": "official",
+      "evidence_level": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "public_allowed": true,
+      "supports": [
+        "Lute official character existence and story identity",
+        "Johnny and Castella official story identity",
+        "19 Heroes have distinct Status Ailment abilities",
+        "Status Ailments, Active Skills, Signal Skills, and Switching Signals are official combat systems"
+      ]
+    },
+    {
+      "id": "source:dsa-net-team-builder",
+      "title": "DragonSword Awakening Team Builder & Signal Chain",
+      "url": "https://dragonswordawakening.net/team-builder",
+      "source_type": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "public_allowed": false,
+      "supports": [
+        "Lute -> Roxy -> Theresia sample team-chain lead",
+        "Stun Slash / Kick Storm / Crimson Spiral / Holy Rise lead values"
+      ]
+    },
+    {
+      "id": "source:dsa-net-builds-lute",
+      "title": "Lute Build, Karma, Equipment - DragonSword: Awakening",
+      "url": "https://dragonswordawakening.net/builds/lute",
+      "source_type": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "public_allowed": false,
+      "supports": [
+        "Lute Stun Slash / Relic Fall / Healing Circle / Swordgrab skill lead",
+        "A Sword Summoned for a Friend Karma lead",
+        "Holy Arbiter equipment recommendation lead"
+      ]
+    },
+    {
+      "id": "source:steam-discussion-combat-work",
+      "title": "Steam Discussions combat explanation thread",
+      "url": "https://steamcommunity.com/app/4570720/discussions/0/581677493394799624/",
+      "source_type": "community",
+      "evidence_level": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "public_allowed": false,
+      "supports": [
+        "Lute Sword Grab Signal prompted when enemy is Stunned, as community explanation only"
+      ]
+    }
+  ],
+  "character": {
+    "canonical_id": "character:lute",
+    "official_display_name": {
+      "value": "Lute",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_allowed": true,
+      "editorial_judgment": {
+        "kind": "factual",
+        "basis_source_ids": [
+          "source:steam-dragonsword-awakening"
+        ],
+        "game_version": "game-version:release-current-unknown-patch",
+        "author_editor_status": "verified_reviewer",
+        "last_reviewed": "2026-08-22",
+        "confidence": "HIGH",
+        "public_allowed": true
+      }
+    },
+    "existence": {
+      "value": "Official story protagonist / boy traveling toward Orbis",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_allowed": true,
+      "editorial_judgment": {
+        "kind": "factual",
+        "basis_source_ids": [
+          "source:steam-dragonsword-awakening"
+        ],
+        "game_version": "game-version:release-current-unknown-patch",
+        "author_editor_status": "verified_reviewer",
+        "last_reviewed": "2026-08-22",
+        "confidence": "HIGH",
+        "public_allowed": true
+      }
+    },
+    "combat_role": {
+      "value": "UNKNOWN",
+      "status": "INCOMPLETE",
+      "reason": "No official/current source found that states a Lute-specific role label."
+    },
+    "readiness": "RESEARCH_READY"
+  },
+  "first_hand_verification": {
+    "status": "FIRST_HAND_LUTE_SKILL_VERIFICATION_BLOCKED",
+    "reason": "No local gameplay access or captured in-game screenshots were available in this Codex session.",
+    "evidence_records_created": 0,
+    "date": "2026-08-22"
+  },
+  "canonical_facts": [
+    {
+      "id": "fact:lute-official-identity",
+      "entity_id": "character:lute",
+      "field": "official_display_name",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:official-signal-skill-system",
+      "entity_id": "system:combat",
+      "field": "status_ailment_signal_skill_system",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:lute-stun-slash-lead",
+      "entity_id": "skill:stun-slash-lead",
+      "field": "applies_status_ids",
+      "source_id": "source:dsa-net-team-builder",
+      "evidence_level": "C_COMMUNITY",
+      "game_version": "game-version:release-current-unknown-patch",
+      "public_fact_allowed": false
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill:stun-slash-lead",
+      "display_name": "Stun Slash",
+      "source_id": "source:dsa-net-team-builder",
+      "evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch",
+      "known_fields": [
+        "display_name lead",
+        "status interaction lead"
+      ],
+      "missing_fields": [
+        "official/display name",
+        "skill type",
+        "official/observed behavior",
+        "status interaction",
+        "Signal interaction",
+        "level",
+        "damage_type"
+      ]
+    },
+    {
+      "id": "skill:sword-grab-lead",
+      "display_name": "Sword Grab",
+      "source_id": "source:steam-discussion-combat-work",
+      "evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch",
+      "known_fields": [
+        "Signal trigger lead"
+      ],
+      "missing_fields": [
+        "official/display name",
+        "official/observed trigger",
+        "current game version capture"
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "id": "equipment:holy-arbiter-lead",
+      "display_name": "Holy Arbiter",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "karma": [
+    {
+      "id": "karma:a-sword-summoned-for-a-friend-lead",
+      "display_name": "A Sword Summoned for a Friend",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "reference_characters": [
+    {
+      "canonical_id": "character:roxy",
+      "display_name": "Roxy",
+      "identity_readiness": "RESEARCH_REQUIRED",
+      "evidence_level": "C_COMMUNITY",
+      "source_id": "source:dsa-net-team-builder",
+      "public_allowed": false
+    },
+    {
+      "canonical_id": "character:theresia",
+      "display_name": "Theresia",
+      "identity_readiness": "RESEARCH_REQUIRED",
+      "evidence_level": "C_COMMUNITY",
+      "source_id": "source:dsa-net-team-builder",
+      "public_allowed": false
+    }
+  ],
+  "team_relations": [
+    {
+      "id": "team-relation:lute|roxy|starter_connector|release-current-unknown-patch",
+      "from_character_id": "character:lute",
+      "to_character_id": "character:roxy",
+      "relation_type": "STARTER_CONNECTOR",
+      "status_ids": [
+        "status:stun-lead"
+      ],
+      "rationale": "Third-party Team Builder suggests Stun Slash applies Stun and Kick Storm triggers from Stun.",
+      "source_ids": [
+        "source:dsa-net-team-builder"
+      ],
+      "classification": "editorial_recommendation",
+      "evidence_level": "C_COMMUNITY",
+      "game_version": "game-version:release-current-unknown-patch",
+      "confidence": "MEDIUM",
+      "publication_gate": "APPROVAL_REQUIRED"
+    },
+    {
+      "id": "team-relation:roxy|theresia|connector_finisher|release-current-unknown-patch",
+      "from_character_id": "character:roxy",
+      "to_character_id": "character:theresia",
+      "relation_type": "CONNECTOR_FINISHER",
+      "status_ids": [
+        "status:bleed-lead"
+      ],
+      "rationale": "Third-party Team Builder suggests Crimson Spiral applies Bleed and Holy Rise triggers from Bleed.",
+      "source_ids": [
+        "source:dsa-net-team-builder"
+      ],
+      "classification": "editorial_recommendation",
+      "evidence_level": "C_COMMUNITY",
+      "game_version": "game-version:release-current-unknown-patch",
+      "confidence": "MEDIUM",
+      "publication_gate": "APPROVAL_REQUIRED"
+    }
+  ],
+  "team_chain": {
+    "id": "team-chain:lute-roxy-theresia",
+    "classification": "TEAM_CHAIN_RESEARCH_REQUIRED",
+    "reason": "No Evidence A tested chain and no official/current source for Roxy/Theresia identity or skill interactions was found.",
+    "publication_gate": "BLOCKED"
+  },
+  "build_artifact": {
+    "id": "build-readiness:lute-sprint-3",
+    "artifact_class": "DERIVED_EDITORIAL_ARTIFACT",
+    "references": [
+      "character:lute",
+      "skill:stun-slash-lead",
+      "equipment:holy-arbiter-lead",
+      "karma:a-sword-summoned-for-a-friend-lead",
+      "team-relation:lute|roxy|starter_connector|release-current-unknown-patch",
+      "fact:official-signal-skill-system"
+    ],
+    "duplicated_fact_values": [],
+    "basis_source_ids": [
+      "source:steam-dragonsword-awakening",
+      "source:dsa-net-team-builder",
+      "source:dsa-net-builds-lute"
+    ],
+    "game_version": "game-version:release-current-unknown-patch",
+    "editorial_status": "analyst",
+    "confidence": "LOW",
+    "last_reviewed": "2026-08-22",
+    "publication_gate": "APPROVAL_REQUIRED",
+    "readiness": "RESEARCH_READY"
+  },
+  "field_evidence_matrix": {
+    "rows": [
+      {
+        "layer": "Character",
+        "entity_field": "character:lute.name",
+        "required": true,
+        "current_evidence": "B_OFFICIAL",
+        "status": "READY_FOR_REVIEW",
+        "missing_action": "N/A"
+      },
+      {
+        "layer": "Character",
+        "entity_field": "character:lute.role",
+        "required": true,
+        "current_evidence": "UNKNOWN",
+        "status": "INCOMPLETE",
+        "missing_action": "Find official/current role or keep role UNKNOWN."
+      },
+      {
+        "layer": "Skills",
+        "entity_field": "skill:stun-slash-lead.required_fields",
+        "required": true,
+        "current_evidence": "C_COMMUNITY",
+        "status": "INCOMPLETE",
+        "missing_action": "Capture first-hand or official current skill panel."
+      },
+      {
+        "layer": "Equipment",
+        "entity_field": "equipment:holy-arbiter-lead",
+        "required": true,
+        "current_evidence": "C_COMMUNITY",
+        "status": "INCOMPLETE",
+        "missing_action": "Verify factual compatibility from gameplay or official source."
+      },
+      {
+        "layer": "Karma",
+        "entity_field": "karma:a-sword-summoned-for-a-friend-lead",
+        "required": true,
+        "current_evidence": "C_COMMUNITY",
+        "status": "INCOMPLETE",
+        "missing_action": "Verify factual compatibility from gameplay or official source."
+      },
+      {
+        "layer": "Team Relation",
+        "entity_field": "team-relation:lute|roxy|starter_connector",
+        "required": true,
+        "current_evidence": "C_COMMUNITY",
+        "status": "INCOMPLETE",
+        "missing_action": "Verify Roxy identity and reproduce/status-chain evidence."
+      },
+      {
+        "layer": "Build artifact",
+        "entity_field": "build-readiness:lute-sprint-3",
+        "required": true,
+        "current_evidence": "B+C",
+        "status": "RESEARCH_READY",
+        "missing_action": "Wait for skill/equipment/karma/team A/B validation."
+      }
+    ],
+    "summary": {
+      "required_complete": 2,
+      "required_total": 7,
+      "optional_complete": 1,
+      "optional_total": 4,
+      "required_evidence_c_only": 4,
+      "evidence_completeness": 0.29
+    }
+  },
+  "acquisition_tasks": [
+    {
+      "task_id": "acq-lute-skill-current-verification",
+      "status": "BLOCKED",
+      "goal": "Verify Lute's exact current skill names, effects, and status applications.",
+      "data_needed": "Current in-game or official Lute skill wording",
+      "fields_needed": [
+        "skill.name",
+        "skill.description",
+        "skill.applies_status_ids",
+        "skill.level",
+        "skill.damage_type"
+      ],
+      "source_candidates": [
+        "first-hand gameplay screenshot/capture",
+        "official guide or patch material"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current skill screen and source metadata, or cite official current material.",
+      "validation_method": "Run evidence wrapper and reference-integrity gates against skill and status records.",
+      "completion_criteria": "All required Skill fields have source, evidence level, game version, last_verified, public_allowed, and editorial judgment metadata.",
+      "unblock_condition": "Gameplay access or official skill source becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-karma-equipment-verification",
+      "status": "PARTIALLY_COMPLETED",
+      "goal": "Verify Lute's relevant Karma and Equipment relation before build readiness.",
+      "data_needed": "Current Lute exclusive/compatible Karma and equipment set relation",
+      "fields_needed": [
+        "karma.name",
+        "karma.effect",
+        "equipment.name",
+        "equipment.stats_summary"
+      ],
+      "source_candidates": [
+        "first-hand character build screen",
+        "official equipment/Karma collection"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Use C-level build source only as target list; capture gameplay or official evidence next.",
+      "validation_method": "Validate canonical Karma/Equipment IDs and evidence wrappers.",
+      "completion_criteria": "At least one Karma or Equipment relation is evidence-complete and references Lute without copied facts.",
+      "unblock_condition": "Gameplay or official collection evidence is captured.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-roxy-theresia-team-relation",
+      "status": "PARTIALLY_COMPLETED",
+      "goal": "Validate whether the Lute -> Roxy -> Theresia chain exists in current gameplay.",
+      "data_needed": "Current Signal Skill chain evidence for Stun and Bleed transitions",
+      "fields_needed": [
+        "team_relation.from_character_id",
+        "team_relation.to_character_id",
+        "team_relation.relation_type",
+        "team_relation.status_ids",
+        "team_relation.rationale"
+      ],
+      "source_candidates": [
+        "first-hand Team Builder reproduction",
+        "official combat guide",
+        "community lead only for target scenario"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL for production; C_COMMUNITY allowed only as lead",
+      "collection_method": "Use Team Builder source only as hypothesis; reproduce the chain or find official evidence.",
+      "validation_method": "Run reference-integrity gate for character, skill, status, and team_relation IDs.",
+      "completion_criteria": "Both directed relation candidates resolve canonical refs and carry current version evidence.",
+      "unblock_condition": "Roxy/Theresia identity and status-chain proof are verified.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-roxy-theresia-official-identity",
+      "status": "BLOCKED",
+      "goal": "Capture official or first-hand identity evidence for Roxy and Theresia before promoting references.",
+      "data_needed": "Official roster, in-game roster screenshot, or developer material naming Roxy and Theresia",
+      "fields_needed": [
+        "character.name",
+        "character.summary",
+        "source_record"
+      ],
+      "source_candidates": [
+        "first-hand roster screenshot",
+        "official character page",
+        "developer announcement"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current roster screen or official page with date/version metadata.",
+      "validation_method": "Create Source Records and validate Character wrappers.",
+      "completion_criteria": "Roxy and Theresia factual identity fields become production-eligible.",
+      "unblock_condition": "Official/current identity source is found or first-hand capture becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    }
+  ],
+  "readiness": {
+    "character": "RESEARCH_READY",
+    "skills": "INCOMPLETE",
+    "equipment": "INCOMPLETE",
+    "karma": "INCOMPLETE",
+    "team_relation": "INCOMPLETE",
+    "build_artifact": "RESEARCH_READY",
+    "overall": "RESEARCH_READY"
+  },
+  "vertical_slice_classification": "VERTICAL_SLICE_RESEARCH_READY",
+  "governed_skill_installation_readiness": {
+    "status": "READY_TO_INSTALL",
+    "source": "docs/superpowers/skills/game-guide-product-architecture/SKILL.md",
+    "runtime_target": "/Users/jazfox/.codex/skills/game-guide-product-architecture/SKILL.md",
+    "install_requires_explicit_authorization": true,
+    "drift_strategy": "compare source and runtime SHA-256 before use"
+  },
+  "production_boundary": {
+    "public_character_page_created": false,
+    "build_page_created": false,
+    "team_builder_created": false,
+    "team_pages_created": false,
+    "public_url_created": false,
+    "public_search_filter_created": false,
+    "sitemap_changed": false,
+    "deployment": false
+  }
+}
