@@ -1,0 +1,770 @@
+{
+  "metadata": {
+    "project": "DragonSwordGuide",
+    "game": "DragonSword: Awakening",
+    "created_at": "2026-08-22T00:00:00Z",
+    "last_verified": "2026-08-22",
+    "public_dataset": false,
+    "publication_gate": "BLOCKED",
+    "selected_pilot": "character:lute",
+    "purpose": "Sprint 6 exact evidence capture attempt for non-public Lute vertical slice"
+  },
+  "game_version": {
+    "id": "game-version:release-current-unknown-patch",
+    "label": "Release/current build; exact patch number UNKNOWN",
+    "source_id": "source:steam-dragonsword-awakening",
+    "last_verified": "2026-08-22",
+    "status": "CURRENT_UNVERIFIED_PATCH"
+  },
+  "sources": [
+    {
+      "id": "source:hound13-official-site",
+      "title": "HOUND13 official website",
+      "url": "https://www.hound13.com/ko",
+      "source_type": "official_developer_site",
+      "publisher_owner": "HOUND13 Inc.",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Official source URL and short factual citation only; no media reuse rights assumed.",
+      "game_version_relevance": "Official developer site links the Steam store and official YouTube channel for the released game."
+    },
+    {
+      "id": "source:steam-dragonsword-awakening",
+      "title": "DragonSword : Awakening on Steam",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "source_type": "official_store",
+      "publisher_owner": "HOUND13 Inc.",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Store text may be cited briefly; screenshots/media are not cleared for public reuse.",
+      "game_version_relevance": "Release store page for the current Steam product."
+    },
+    {
+      "id": "source:youtube-dragonsword-awakening-official",
+      "title": "DragonSword Awakening official YouTube channel",
+      "url": "https://www.youtube.com/@DragonSwordAwakening",
+      "source_type": "official_video_channel",
+      "publisher_owner": "HOUND13 Inc. / DragonSword : Awakening",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Official channel is authoritative for metadata and observation; frames remain internal evidence only unless reuse rights are explicit.",
+      "game_version_relevance": "Official channel linked from HOUND13 site; individual video pages require direct verification or indexed recovery notes."
+    },
+    {
+      "id": "source:youtube-video-lute-gameplay-preview",
+      "title": "Lute Gameplay Preview - DragonSword : Awakening",
+      "url": "https://www.youtube.com/watch?v=TpKD1N5K3yo",
+      "source_type": "official_video",
+      "publisher_owner": "DragonSword : Awakening official YouTube channel",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "publish_date": "2026-04-30",
+      "direct_access_status": "OFFICIAL_VIDEO_METADATA_RECOVERED_FRAME_LEVEL_REVIEW_NOT_AVAILABLE",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "No public frame reuse; text metadata only unless separately licensed.",
+      "game_version_relevance": "Pre-launch official gameplay preview for launch-era Lute; exact current patch remains unverified."
+    },
+    {
+      "id": "source:steam-news-tag-combo-lute-castella-aria",
+      "title": "Tag Combo Preview - [Lute & Castella & Aria] - Steam News",
+      "url": "https://store.steampowered.com/news/app/4570720/view/660482877658497673",
+      "source_type": "official_steam_announcement",
+      "publisher_owner": "HOUND13 Inc.",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "publish_date": "2026-05-01",
+      "direct_access_status": "OFFICIAL_TITLE_AVAILABLE_FULL_BODY_FRAME_LEVEL_REVIEW_NOT_AVAILABLE",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Official announcement title and URL only; embedded media frames not public-reuse-cleared.",
+      "game_version_relevance": "Official pre-launch tag-combo preview for launch-era combat composition."
+    },
+    {
+      "id": "source:steam-trailer-metadata-lute-gameplay-preview",
+      "title": "Steam store trailer metadata: Lute Gameplay Preview",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "source_type": "official_store_trailer_metadata",
+      "publisher_owner": "HOUND13 Inc.",
+      "source_type_normalized": "official",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_ceiling": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": true,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Trailer metadata can identify the official trailer; frames are internal evidence only.",
+      "game_version_relevance": "Steam page exposes the Lute Gameplay Preview trailer metadata; no exact skill/status UI text recovered."
+    },
+    {
+      "id": "source:online-station-lute-combo-article",
+      "title": "Online Station article quoting official Lute and tag-combo posts",
+      "url": "https://www.online-station.net/pc-console-game/997698",
+      "source_type": "third_party_article",
+      "publisher_owner": "Online Station",
+      "source_type_normalized": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "evidence_ceiling": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": false,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Use only as candidate discovery/indexed official-post recovery lead.",
+      "game_version_relevance": "Pre-launch article containing embedded official YouTube players and official social-post quotations."
+    },
+    {
+      "id": "source:dsa-net-builds-lute",
+      "title": "Lute Build, Karma, Equipment - DragonSword: Awakening",
+      "url": "https://dragonswordawakening.net/builds/lute",
+      "source_type": "third_party_database",
+      "publisher_owner": "dragonswordawakening.net",
+      "source_type_normalized": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "evidence_ceiling": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "retrieved_date": "2026-08-22",
+      "public_allowed": false,
+      "public_reuse": "PUBLIC_REUSE_UNCLEAR",
+      "copyright_or_reuse_note": "Discovery lead only; never satisfies A/B field requirements.",
+      "game_version_relevance": "Current competitor guide/database lead; patch freshness not independently verified."
+    }
+  ],
+  "official_video_timestamp_review": {
+    "stop_condition": "OFFICIAL_EVIDENCE_EXHAUSTED",
+    "timestamp_evidence_count": 0,
+    "reviewed_videos": [
+      {
+        "id": "video:lute-gameplay-preview",
+        "video": "Lute Gameplay Preview - DragonSword : Awakening",
+        "source_id": "source:youtube-video-lute-gameplay-preview",
+        "steam_trailer_source_id": "source:steam-trailer-metadata-lute-gameplay-preview",
+        "review_status": "REVIEWED_NO_EXACT_FIELD_RECOVERY",
+        "timestamp_rows": [],
+        "fields_sought": [
+          "exact Lute Skill labels",
+          "skill UI text",
+          "Status names",
+          "Signal names",
+          "observable Lute healing/Stun/Knockdown behavior"
+        ],
+        "recovery_result": "No reliable timestamp-level exact skill/status/signal evidence was available through accessible official metadata or text extraction.",
+        "evidence_subtype": "B_DESCRIPTION_ONLY"
+      },
+      {
+        "id": "video:tag-combo-lute-castella-aria",
+        "video": "Tag Combo Preview - [Lute & Castella & Aria]",
+        "source_id": "source:steam-news-tag-combo-lute-castella-aria",
+        "review_status": "REVIEWED_NO_EXACT_FIELD_RECOVERY",
+        "timestamp_rows": [],
+        "fields_sought": [
+          "party order",
+          "Castella to Lute transition",
+          "Lute to Aria transition",
+          "visible Status UI",
+          "visible Signal UI",
+          "repeatable interaction"
+        ],
+        "recovery_result": "Official title supports composition, but no exact timestamp/visible status/signal identifiers were recovered.",
+        "evidence_subtype": "B_DESCRIPTION_ONLY"
+      }
+    ]
+  },
+  "exact_lute_skill_gate": {
+    "result": "EXACT_LUTE_SKILL_B_EVIDENCE_NOT_FOUND",
+    "promotion_allowed": false,
+    "reason": "No official UI/video/caption/news text exposed exact current Lute skill names during accessible official-source review.",
+    "third_party_names_rejected_for_b": [
+      "Sword Slash",
+      "Stun Slash",
+      "Swordgrab",
+      "Healing Circle"
+    ]
+  },
+  "status_signal_observation": {
+    "named_status_ids_recovered": [],
+    "named_signal_ids_recovered": [],
+    "observable_behaviors": [],
+    "named_fact_count": 0,
+    "observable_behavior_count": 0,
+    "result": "NO_EXACT_STATUS_OR_SIGNAL_IDENTIFIER_RECOVERED",
+    "note": "Animations or third-party summaries are insufficient for exact canonical Status/Signal IDs."
+  },
+  "character": {
+    "canonical_id": "character:lute",
+    "display_name": "Lute",
+    "readiness": "RESEARCH_READY",
+    "evidence_level": "B_OFFICIAL",
+    "source_id": "source:steam-dragonsword-awakening",
+    "last_verified": "2026-08-22",
+    "public_allowed": true
+  },
+  "skills": [
+    {
+      "id": "skill:sword-slash-lead",
+      "display_name": "Sword Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    },
+    {
+      "id": "skill:stun-slash-lead",
+      "display_name": "Stun Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    },
+    {
+      "id": "skill:swordgrab-lead",
+      "display_name": "Swordgrab",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    },
+    {
+      "id": "skill:healing-circle-lead",
+      "display_name": "Healing Circle",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "equipment:holy-arbiter-lead",
+      "display_name": "Holy Arbiter",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "karma": [
+    {
+      "id": "karma:a-sword-summoned-for-a-friend-lead",
+      "display_name": "A Sword Summoned for a Friend",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "equipment_karma_official_search": {
+    "equipment_result": "NOT_FOUND",
+    "karma_result": "NOT_FOUND",
+    "official_equipment_records_created": 0,
+    "official_karma_records_created": 0,
+    "note": "Accessible official YouTube/Steam/store/developer sources did not prove factual Lute Equipment or Karma relationships."
+  },
+  "reference_characters": [
+    {
+      "canonical_id": "character:castella",
+      "display_name": "Castella",
+      "identity_status": "EVIDENCE_B_IDENTITY_CONFIRMED",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "public_allowed": true,
+      "last_verified": "2026-08-22",
+      "blocks_primary_chain": false
+    },
+    {
+      "canonical_id": "character:aria",
+      "display_name": "Aria",
+      "identity_status": "EVIDENCE_B_IDENTITY_CONFIRMED",
+      "source_id": "source:steam-news-tag-combo-lute-castella-aria",
+      "evidence_level": "B_OFFICIAL",
+      "public_allowed": true,
+      "last_verified": "2026-08-22",
+      "blocks_primary_chain": false
+    }
+  ],
+  "team_relations": [
+    {
+      "id": "team-relation:castella|lute|official-tag-combo|release-current-unknown-patch",
+      "from_character_id": "character:castella",
+      "to_character_id": "character:lute",
+      "relation_type": "TAG_COMBO_SEQUENCE",
+      "relevant_status_ids": [],
+      "status_ids": [],
+      "rationale": "Official tag-combo title confirms Castella and Lute in the same composition, but exact Status/Signal identifiers were not recovered.",
+      "source_ids": [
+        "source:steam-news-tag-combo-lute-castella-aria"
+      ],
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "classification": "observed_relation",
+      "relation_status": "COMPOSITION_B_CONFIRMED_EXACT_CHAIN_BLOCKED",
+      "game_version": "game-version:release-current-unknown-patch",
+      "confidence": "MEDIUM_FOR_COMPOSITION_LOW_FOR_MECHANICS",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "team-relation:lute|aria|official-tag-combo|release-current-unknown-patch",
+      "from_character_id": "character:lute",
+      "to_character_id": "character:aria",
+      "relation_type": "TAG_COMBO_SEQUENCE",
+      "relevant_status_ids": [],
+      "status_ids": [],
+      "rationale": "Official tag-combo title confirms Lute and Aria in the same composition, but exact Status/Signal identifiers were not recovered.",
+      "source_ids": [
+        "source:steam-news-tag-combo-lute-castella-aria"
+      ],
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "classification": "observed_relation",
+      "relation_status": "COMPOSITION_B_CONFIRMED_EXACT_CHAIN_BLOCKED",
+      "game_version": "game-version:release-current-unknown-patch",
+      "confidence": "MEDIUM_FOR_COMPOSITION_LOW_FOR_MECHANICS",
+      "public_fact_allowed": true
+    }
+  ],
+  "team_chain": {
+    "primary_team_chain": [
+      "character:castella",
+      "character:lute",
+      "character:aria"
+    ],
+    "secondary_research_chain": [
+      "character:lute",
+      "character:roxy",
+      "character:theresia"
+    ],
+    "primary_reason": "Castella/Lute/Aria remains the strongest official-source chain, but Sprint 6 did not recover exact Status/Signal chain identifiers.",
+    "publication_gate": "BLOCKED"
+  },
+  "canonical_facts": [
+    {
+      "id": "fact:lute-official-identity",
+      "entity_id": "character:lute",
+      "field": "official_display_name",
+      "value_summary": "Lute is an official DragonSword: Awakening character.",
+      "source_id": "source:steam-dragonsword-awakening",
+      "source_type": "official_store",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:official-signal-skill-system",
+      "entity_id": "system:combat",
+      "field": "status_ailment_signal_skill_system",
+      "value_summary": "Status Ailments, Active Skills, Signal Skills, and Switching Signals are official combat-system concepts.",
+      "source_id": "source:steam-dragonsword-awakening",
+      "source_type": "official_store",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:lute-johnny-mercenary-newest-recruit",
+      "entity_id": "character:lute",
+      "field": "faction_or_story_identity",
+      "value_summary": "Official video metadata presents Lute as a recruit/member of Johnny Mercenary.",
+      "source_id": "source:youtube-video-lute-gameplay-preview",
+      "source_type": "official_video",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:lute-sword-based-combat",
+      "entity_id": "character:lute",
+      "field": "combat_identity",
+      "value_summary": "Official video metadata supports a sword-based combat identity for Lute.",
+      "source_id": "source:youtube-video-lute-gameplay-preview",
+      "source_type": "official_video",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:combo-lute-castella-aria-official-preview",
+      "entity_id": "team-chain:castella-lute-aria",
+      "field": "official_combo_preview_participants",
+      "value_summary": "Official Steam/video-title evidence identifies Lute, Castella, and Aria in a tag-combo preview.",
+      "source_id": "source:steam-news-tag-combo-lute-castella-aria",
+      "source_type": "official_steam_announcement",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:castella-official-identity",
+      "entity_id": "character:castella",
+      "field": "official_display_name_and_story_identity",
+      "value_summary": "Official Steam story text identifies Castella as a named story character and Elf.",
+      "source_id": "source:steam-dragonsword-awakening",
+      "source_type": "official_store",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:aria-official-combo-identity",
+      "entity_id": "character:aria",
+      "field": "official_display_name",
+      "value_summary": "Official tag-combo preview title identifies Aria as a named participant.",
+      "source_id": "source:steam-news-tag-combo-lute-castella-aria",
+      "source_type": "official_steam_announcement",
+      "evidence_level": "B_OFFICIAL",
+      "evidence_subtype": "B_DESCRIPTION",
+      "game_version": "game-version:release-current-unknown-patch",
+      "last_verified": "2026-08-22",
+      "public_fact_allowed": true
+    }
+  ],
+  "third_party_candidates": [
+    {
+      "id": "candidate:skill:sword-slash",
+      "kind": "skill",
+      "display_name": "Sword Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "status": "RESEARCH_LEAD",
+      "public_fact_allowed": false
+    },
+    {
+      "id": "candidate:skill:stun-slash",
+      "kind": "skill",
+      "display_name": "Stun Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "status": "RESEARCH_LEAD",
+      "public_fact_allowed": false
+    },
+    {
+      "id": "candidate:skill:swordgrab",
+      "kind": "skill",
+      "display_name": "Swordgrab",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "status": "RESEARCH_LEAD",
+      "public_fact_allowed": false
+    },
+    {
+      "id": "candidate:equipment:holy-arbiter",
+      "kind": "equipment",
+      "display_name": "Holy Arbiter",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "status": "RESEARCH_LEAD",
+      "public_fact_allowed": false
+    },
+    {
+      "id": "candidate:karma:a-sword-summoned-for-a-friend",
+      "kind": "karma",
+      "display_name": "A Sword Summoned for a Friend",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "status": "RESEARCH_LEAD",
+      "public_fact_allowed": false
+    }
+  ],
+  "evidence_promotion_rule": {
+    "allowed": [
+      "C_TO_B_OFFICIAL_PRIMARY_SOURCE_ONLY",
+      "C_OR_B_TO_A_GENUINE_FIRST_HAND_GAMEPLAY_ONLY"
+    ],
+    "forbidden": [
+      "MULTIPLE_THIRD_PARTY_AGREEMENT",
+      "AI_REPEATED_EXTRACTION",
+      "COMPETITOR_DATABASE_STRUCTURE",
+      "ANIMATION_ONLY_EXACT_NAME_INFERENCE"
+    ]
+  },
+  "human_capture_request_package": {
+    "status": "REQUIRED",
+    "items": [
+      {
+        "id": "capture:lute-skill-panel",
+        "target": "Lute Skill panel",
+        "required_fields": [
+          "full panel",
+          "skill names",
+          "descriptions",
+          "currently selected skill",
+          "game version if visible"
+        ],
+        "acceptance": "Exact current skill names and descriptions are visible with Lute identity/source context."
+      },
+      {
+        "id": "capture:lute-equipment-screen",
+        "target": "Lute Equipment screen",
+        "required_fields": [
+          "equipment screen",
+          "item type",
+          "compatibility/slot",
+          "Lute identity visible if possible",
+          "game version if visible"
+        ],
+        "acceptance": "Equipment relationship can be tied to Lute and current game context."
+      },
+      {
+        "id": "capture:lute-karma-screen",
+        "target": "Lute Karma screen",
+        "required_fields": [
+          "Karma screen",
+          "Lute association",
+          "description/effect text",
+          "game version if visible"
+        ],
+        "acceptance": "Karma relationship can be tied to Lute and current game context."
+      },
+      {
+        "id": "capture:castella-lute-aria-combo",
+        "target": "Castella/Lute/Aria combo reproduction",
+        "required_fields": [
+          "Castella/Lute/Aria party",
+          "transition sequence",
+          "Status/Signal UI",
+          "repeat attempt",
+          "timestamps or short clips for Castella to Lute and Lute to Aria"
+        ],
+        "acceptance": "Exact Status/Signal identifiers and transition sequence can be recorded without animation-only inference."
+      }
+    ]
+  },
+  "build_artifact": {
+    "id": "build-readiness:lute-sprint-6",
+    "artifact_class": "DERIVED_EDITORIAL_ARTIFACT",
+    "references": [
+      "character:lute",
+      "skill:stun-slash-lead",
+      "equipment:holy-arbiter-lead",
+      "karma:a-sword-summoned-for-a-friend-lead",
+      "team-relation:castella|lute|official-tag-combo|release-current-unknown-patch",
+      "team-relation:lute|aria|official-tag-combo|release-current-unknown-patch",
+      "fact:lute-official-identity",
+      "fact:official-signal-skill-system",
+      "fact:combo-lute-castella-aria-official-preview"
+    ],
+    "duplicated_fact_values": [],
+    "basis_source_ids": [
+      "source:steam-dragonsword-awakening",
+      "source:youtube-video-lute-gameplay-preview",
+      "source:steam-news-tag-combo-lute-castella-aria",
+      "source:dsa-net-builds-lute"
+    ],
+    "game_version": "game-version:release-current-unknown-patch",
+    "editorial_status": "analyst",
+    "confidence": "MEDIUM_FOR_CHARACTER_AND_TEAM_COMPOSITION_LOW_FOR_BUILD",
+    "last_reviewed": "2026-08-22",
+    "publication_gate": "BLOCKED",
+    "readiness": "INCOMPLETE"
+  },
+  "field_evidence_matrix": {
+    "rows": [
+      {
+        "layer": "Lute Character",
+        "required_field": "character:lute.name",
+        "current_evidence": "B_OFFICIAL",
+        "new_evidence": "NO_CHANGE",
+        "status": "READY_FOR_REVIEW"
+      },
+      {
+        "layer": "Lute Skills",
+        "required_field": "exact skill names/descriptions/status relations",
+        "current_evidence": "C_COMMUNITY",
+        "new_evidence": "NOT_FOUND_IN_OFFICIAL_REVIEW",
+        "status": "INCOMPLETE"
+      },
+      {
+        "layer": "Equipment",
+        "required_field": "Lute equipment factual relation",
+        "current_evidence": "C_COMMUNITY",
+        "new_evidence": "NOT_FOUND_IN_OFFICIAL_REVIEW",
+        "status": "INCOMPLETE"
+      },
+      {
+        "layer": "Karma",
+        "required_field": "Lute Karma factual relation",
+        "current_evidence": "C_COMMUNITY",
+        "new_evidence": "NOT_FOUND_IN_OFFICIAL_REVIEW",
+        "status": "INCOMPLETE"
+      },
+      {
+        "layer": "Castella identity",
+        "required_field": "character:castella.name",
+        "current_evidence": "B_OFFICIAL",
+        "new_evidence": "NO_CHANGE",
+        "status": "READY_FOR_REVIEW"
+      },
+      {
+        "layer": "Aria identity",
+        "required_field": "character:aria.name",
+        "current_evidence": "B_OFFICIAL",
+        "new_evidence": "NO_CHANGE",
+        "status": "READY_FOR_REVIEW"
+      },
+      {
+        "layer": "Team Relation",
+        "required_field": "Castella -> Lute -> Aria exact Status/Signal chain",
+        "current_evidence": "B_DESCRIPTION_COMPOSITION",
+        "new_evidence": "EXACT_CHAIN_NOT_FOUND",
+        "status": "RESEARCH_READY"
+      },
+      {
+        "layer": "Build artifact",
+        "required_field": "Character -> Build -> Team relation derived artifact",
+        "current_evidence": "B_PLUS_C",
+        "new_evidence": "NO_EXACT_BUILD_FIELDS_RECOVERED",
+        "status": "INCOMPLETE"
+      }
+    ],
+    "summary": {
+      "required_complete": 4,
+      "required_total": 9,
+      "optional_complete": 0,
+      "optional_total": 4,
+      "required_evidence_c_only": 3,
+      "evidence_completeness": 0.44,
+      "version_freshness": "CURRENT_UNVERIFIED_PATCH",
+      "reference_integrity": "PASS"
+    }
+  },
+  "acquisition_tasks": [
+    {
+      "task_id": "acq-lute-skill-current-verification",
+      "status": "BLOCKED",
+      "goal": "Verify Lute's exact current skill names, effects, and status applications.",
+      "remaining_capture_requirement": "capture:lute-skill-panel",
+      "unblock_condition": "Human/gameplay capture shows full Lute skill panel with names, descriptions, selected skill, and version if visible.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-karma-equipment-verification",
+      "status": "BLOCKED",
+      "goal": "Verify Lute's factual Karma and Equipment relationship.",
+      "remaining_capture_requirement": "capture:lute-equipment-screen and capture:lute-karma-screen",
+      "unblock_condition": "Human/gameplay capture proves current Equipment/Karma relationship to Lute.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-roxy-theresia-team-relation",
+      "status": "SUPERSEDED",
+      "goal": "Validate whether the Lute -> Roxy -> Theresia chain exists in current gameplay.",
+      "remaining_capture_requirement": "N/A for primary chain",
+      "unblock_condition": "Only needed if secondary chain is later selected.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-roxy-theresia-official-identity",
+      "status": "SUPERSEDED",
+      "goal": "Capture official or first-hand identity evidence for Roxy and Theresia.",
+      "remaining_capture_requirement": "N/A for primary chain",
+      "unblock_condition": "Only needed if secondary chain is later selected.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-official-skill-panel-or-frame-review",
+      "status": "BLOCKED",
+      "goal": "Recover B-OBSERVED or A-level exact Lute skill names and status applications.",
+      "remaining_capture_requirement": "capture:lute-skill-panel",
+      "unblock_condition": "Direct first-hand capture or a richer official timestamp source becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-equipment-karma-official-source",
+      "status": "BLOCKED",
+      "goal": "Find official or first-hand Equipment/Karma evidence for Lute.",
+      "remaining_capture_requirement": "capture:lute-equipment-screen and capture:lute-karma-screen",
+      "unblock_condition": "Official panel/source or first-hand current capture is obtained.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-castella-lute-aria-exact-chain-capture",
+      "status": "BLOCKED",
+      "goal": "Recover exact Status/Signal identifiers for Castella -> Lute -> Aria.",
+      "remaining_capture_requirement": "capture:castella-lute-aria-combo",
+      "unblock_condition": "Human/gameplay capture shows party, transition sequence, Status/Signal UI, and repeat attempt.",
+      "publication_state": "APPROVAL_REQUIRED"
+    }
+  ],
+  "evidence_summary": {
+    "evidence_a_count": 0,
+    "evidence_b_count": 7,
+    "evidence_c_lead_count": 5,
+    "timestamp_evidence_count": 0,
+    "exact_lute_skill_b_count": 0,
+    "b_observed_behavior_count": 0,
+    "named_status_id_count": 0,
+    "named_signal_id_count": 0
+  },
+  "readiness": {
+    "character": "RESEARCH_READY",
+    "skills": "INCOMPLETE",
+    "equipment": "INCOMPLETE",
+    "karma": "INCOMPLETE",
+    "team_relation": "RESEARCH_READY",
+    "build_artifact": "INCOMPLETE",
+    "overall": "OFFICIAL_EVIDENCE_EXHAUSTED_FIRST_HAND_REQUIRED"
+  },
+  "vertical_slice_classification": "OFFICIAL_EVIDENCE_EXHAUSTED_FIRST_HAND_REQUIRED",
+  "production_boundary": {
+    "lute_page_created": false,
+    "build_page_created": false,
+    "team_builder_created": false,
+    "character_pages_created": false,
+    "new_url_created": false,
+    "sitemap_changed": false,
+    "navigation_changed": false,
+    "public_seo_content_changed": false,
+    "production_data_exposed": false,
+    "deployment": false,
+    "publish": false
+  }
+}
