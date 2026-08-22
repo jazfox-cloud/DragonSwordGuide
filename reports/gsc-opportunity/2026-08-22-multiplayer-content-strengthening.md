@@ -83,9 +83,9 @@ Secondary diagnosis: `CONTENT_GAP_BLOCKED_BY_EVIDENCE` plus possible `SERP_SNIPP
 
 ## Observation
 
-Production deployment time: `PENDING_DEPLOYMENT_VERIFICATION`
+Production deployment verification time: `2026-08-22T15:23:09Z`
 
-Observation start: after the pushed commit is verified on `https://dragonswordguide.com/multiplayer/`.
+Observation start: `2026-08-22T15:23:09Z`, after commit `bdb64f1` was verified on `https://dragonswordguide.com/multiplayer/`.
 
 Do not judge SEO success immediately. Recheck after at least one complete GSC data window and compare against:
 
