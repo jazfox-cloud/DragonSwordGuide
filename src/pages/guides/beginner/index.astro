@@ -8,6 +8,7 @@ import RelatedGuides from '../../../components/RelatedGuides.astro';
 import SectionHeader from '../../../components/SectionHeader.astro';
 import CTASection from '../../../components/CTASection.astro';
 import AdsterraNativeBanner from '../../../components/AdsterraNativeBanner.astro';
+import AdsterraBanner300x250 from '../../../components/AdsterraBanner300x250.astro';
 import { sourceUrls } from '../../../data/sources';
 
 const title = 'DragonSword Awakening Beginner Guide — First Hours & Combat Basics';
@@ -29,6 +30,7 @@ const sources = [{ label: 'Official Steam store page', href: sourceUrls.steam, n
       <h2>What should a new player prioritize?</h2><p>Use a low-regret decision framework: learn the combat systems, understand the current roster, test how a Hero fits your team, and verify a resource before committing heavily. This guide does not name a first Hero to awaken, a strongest starter or an optimal progression route.</p>
       <AdsterraNativeBanner />
       <h2>Early mistakes to avoid</h2><ul><li>Do not spend every rare material before testing a Hero.</li><li>Do not treat an unverified community tier list as official data.</li><li>Do not assume story or open-world co-op from the store’s Online Co-op label.</li><li>Do not skip the SSD requirement when troubleshooting performance; see the <a href="/system-requirements/">official PC requirements</a>.</li></ul>
+      <AdsterraBanner300x250 />
       <h2>Where to go next</h2><p>Continue with the <a href="/guides/combat-system/">Combat System</a>, then choose the page that matches your question: <a href="/characters/">Characters</a>, <a href="/teams/">Teams</a>, <a href="/builds/">Builds</a>, <a href="/systems/runes/">Runes</a>, <a href="/map/">Map</a>, <a href="/multiplayer/">Multiplayer</a> or the <a href="/roadmap/">Roadmap</a>.</p>
     </div><SourceList sources={sources} /><RelatedGuides links={[{ label: 'Combat System', href: '/guides/combat-system/' }, { label: 'PC Requirements', href: '/system-requirements/' }, { label: 'Characters', href: '/characters/' }, { label: 'Teams', href: '/teams/' }, { label: 'Builds', href: '/builds/' }, { label: 'Runes', href: '/systems/runes/' }, { label: 'Map', href: '/map/' }, { label: 'Multiplayer', href: '/multiplayer/' }, { label: 'Roadmap', href: '/roadmap/' }]} /><CTASection title="Ready for the combat loop?" primaryHref="/guides/combat-system/" primaryLabel="Read Combat System" secondaryHref="/multiplayer/" secondaryLabel="See Multiplayer" /></article></div>
 </BaseLayout>

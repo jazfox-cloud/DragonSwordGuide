@@ -1,0 +1,69 @@
+---
+const bannerKey = '7299e0ee023fed5d547a36a72754aa84';
+const scriptSrc = 'https://www.highrevenueformat.com/7299e0ee023fed5d547a36a72754aa84/invoke.js';
+---
+
+<aside class="adsterra-banner-300x250" aria-label="Advertisement">
+  <span class="adsterra-banner-300x250__label">Advertisement</span>
+  <div class="adsterra-banner-300x250__slot">
+    <script is:inline define:vars={{ bannerKey }}>
+      (() => {
+        window.AstroAdsterraBannerPreviousAtOptions = window.atOptions;
+        window.atOptions = {
+          key: bannerKey,
+          format: 'iframe',
+          height: 250,
+          width: 300,
+          params: {},
+        };
+      })();
+    </script>
+    <script src={scriptSrc}></script>
+    <script is:inline>
+      (() => {
+        if (typeof window.AstroAdsterraBannerPreviousAtOptions === 'undefined') {
+          delete window.atOptions;
+        } else {
+          window.atOptions = window.AstroAdsterraBannerPreviousAtOptions;
+        }
+        delete window.AstroAdsterraBannerPreviousAtOptions;
+      })();
+    </script>
+  </div>
+</aside>
+
+<style>
+  .adsterra-banner-300x250 {
+    display: grid;
+    justify-items: center;
+    max-width: 760px;
+    margin: 2.75rem 0;
+    overflow: hidden;
+  }
+
+  .adsterra-banner-300x250__label {
+    display: block;
+    width: min(300px, 100%);
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .adsterra-banner-300x250__slot {
+    width: 300px;
+    max-width: 100%;
+    height: 250px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  .adsterra-banner-300x250__slot :global(iframe) {
+    display: block;
+    max-width: 100%;
+  }
+</style>
