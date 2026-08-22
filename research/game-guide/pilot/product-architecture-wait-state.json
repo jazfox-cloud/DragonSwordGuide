@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "project": "DragonSwordGuide",
+    "game": "DragonSword: Awakening",
+    "created_at": "2026-08-22T00:00:00Z",
+    "last_verified": "2026-08-22",
+    "scope": "Product Architecture evidence line only",
+    "source_sprint": "Sprint 6",
+    "source_commit": "2281672ff4a197c004d86134524e68458df20fea"
+  },
+  "product_architecture_state": "WAITING_FOR_FIRST_HAND_INPUT",
+  "exact_wait_reason": "OFFICIAL_EVIDENCE_EXHAUSTED_FIRST_HAND_REQUIRED",
+  "current_authoritative_state": {
+    "architecture": "HEALTHY",
+    "reference_integrity": "PASS",
+    "official_evidence_search": "EXHAUSTED",
+    "first_vertical_slice": "NOT_REVIEW_READY",
+    "public_product": "PROHIBITED"
+  },
+  "primary_vertical_chain": [
+    "character:castella",
+    "character:lute",
+    "character:aria"
+  ],
+  "remaining_first_hand_capture_inputs": [
+    {
+      "id": "capture-a-lute-skill-panel",
+      "label": "Capture A — Lute Skill Panel",
+      "raw_input_acceptable": true,
+      "preferred_fields": [
+        "Lute identity visible",
+        "skill names",
+        "skill descriptions",
+        "skill panel",
+        "Status / Signal wording if visible",
+        "game version if visible"
+      ]
+    },
+    {
+      "id": "capture-b-lute-equipment",
+      "label": "Capture B — Lute Equipment",
+      "raw_input_acceptable": true,
+      "preferred_fields": [
+        "Lute identity/context",
+        "equipment slot/type",
+        "item/equipment name",
+        "compatibility relation",
+        "visible description if applicable"
+      ]
+    },
+    {
+      "id": "capture-c-lute-karma",
+      "label": "Capture C — Lute Karma",
+      "raw_input_acceptable": true,
+      "preferred_fields": [
+        "Lute context",
+        "Karma name",
+        "visible effect/description",
+        "relationship to Lute"
+      ]
+    },
+    {
+      "id": "capture-d-castella-lute-aria",
+      "label": "Capture D — Castella → Lute → Aria",
+      "raw_input_acceptable": true,
+      "preferred_fields": [
+        "party composition",
+        "character order",
+        "actual switching",
+        "Status UI",
+        "Signal UI",
+        "ideally one repeated attempt",
+        "screenshot or short recording"
+      ]
+    }
+  ],
+  "sprint_7": {
+    "started": false,
+    "branch_created": false,
+    "trigger": "NEW_FIRST_HAND_CAPTURE_AVAILABLE",
+    "without_trigger": "NO_ACTION_REQUIRED",
+    "allowed_scope_when_triggered": [
+      "ingest screenshot/video",
+      "create Source Record",
+      "classify Evidence A",
+      "extract visible factual fields",
+      "update canonical entities",
+      "update acquisition-task states",
+      "rerun validators",
+      "recompute readiness"
+    ],
+    "forbidden_scope_when_triggered": [
+      "create Lute public page",
+      "create Lute Build page",
+      "create Team Builder",
+      "create new URL",
+      "modify sitemap",
+      "publish",
+      "deploy"
+    ]
+  },
+  "closed_until_first_hand_input": [
+    "repeated official YouTube search",
+    "repeated Steam search for exact Lute skills",
+    "repeated competitor Build scraping",
+    "repeated Roxy/Theresia research",
+    "repeated Map evidence research"
+  ],
+  "evidence_c_policy": {
+    "existing_c_leads_preserved": true,
+    "upgrade_allowed_without_new_primary_source": false
+  },
+  "seo_product_separation": {
+    "normal_seo_operations_frozen": false,
+    "seo_can_continue": [
+      "GSC/GA4 monitoring",
+      "Winner observation",
+      "technical health",
+      "existing-page freshness"
+    ],
+    "seo_signals_can_override_product_architecture_evidence_gate": false
+  },
+  "production_boundary": {
+    "public_lute_page_changed": false,
+    "public_build_page_changed": false,
+    "team_builder_changed": false,
+    "new_url_created": false,
+    "sitemap_changed": false,
+    "navigation_changed": false,
+    "public_routes_changed": false,
+    "deployment": false,
+    "publish": false
+  },
+  "final_status": "WAITING_FOR_FIRST_HAND_INPUT"
+}
