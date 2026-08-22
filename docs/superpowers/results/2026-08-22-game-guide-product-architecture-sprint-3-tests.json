@@ -1,0 +1,57 @@
+{
+  "tests": [
+    {
+      "test": "Lute canonical record remains internal and source-resolved",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence B identity exists but skill records remain unverified",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence C is rejected for factual public fields",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "derived Build artifact is review-bounded and references canonical IDs",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "team relation remains editorial or research-only",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "first-hand verification blocked is explicit",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "reuse integrity fails when canonical source changes",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "stale game version blocks readiness",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "acquisition task lifecycle remains executable",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "readiness transitions stop before public review",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "pass_count": 10,
+  "fail_count": 0,
+  "total": 10
+}

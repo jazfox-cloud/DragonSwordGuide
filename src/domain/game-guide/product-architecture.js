@@ -248,3 +248,161 @@ export const PRODUCT_ARCHITECTURE_ENTITY_BOUNDARY = Object.freeze({
   canonical_entity_types: CANONICAL_ENTITY_TYPES,
   derived_artifact_types: DERIVED_ARTIFACT_TYPES,
 });
+
+function indexById(records = []) {
+  return new Map(records.filter((entry) => entry?.id).map((entry) => [entry.id, entry]));
+}
+
+function countByEvidence(records = []) {
+  return records.reduce((counts, record) => {
+    const level = record?.evidence_level || "UNKNOWN";
+    counts[level] = (counts[level] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+function lifecycleCounts(tasks = []) {
+  return tasks.reduce((counts, task) => {
+    const status = task?.status || "UNKNOWN";
+    counts[status] = (counts[status] || 0) + 1;
+    return counts;
+  }, {
+    COMPLETED: 0,
+    PARTIALLY_COMPLETED: 0,
+    BLOCKED: 0,
+    SUPERSEDED: 0,
+  });
+}
+
+function verifiedSkillCount(skills = []) {
+  return skills.reduce((counts, skill) => {
+    if (skill?.verification_status === "VERIFIED" && skill?.evidence_level) {
+      counts[skill.evidence_level] = (counts[skill.evidence_level] || 0) + 1;
+    }
+    return counts;
+  }, {
+    A_FIRST_HAND: 0,
+    B_OFFICIAL: 0,
+    C_COMMUNITY: 0,
+  });
+}
+
+export function validateVerticalSliceReadinessPackage(pkg = {}) {
+  const errors = [];
+  const sourceIndex = indexById(pkg.sources || []);
+  const currentVersion = pkg.game_version?.id;
+
+  function requireSource(sourceId, owner) {
+    if (!sourceIndex.has(sourceId)) {
+      errors.push({
+        code: "ERR_MISSING_SOURCE",
+        owner,
+        source_id: sourceId,
+      });
+    }
+  }
+
+  for (const source of pkg.sources || []) {
+    if (!source.id || !source.evidence_level || !source.last_verified) {
+      errors.push({
+        code: "ERR_SOURCE_METADATA",
+        owner: source.id || "source:unknown",
+      });
+    }
+  }
+
+  for (const fact of pkg.canonical_facts || []) {
+    requireSource(fact.source_id, fact.id);
+    if (currentVersion && fact.game_version !== currentVersion) {
+      errors.push({
+        code: "ERR_STALE_VERSION",
+        owner: fact.id,
+        game_version: fact.game_version,
+      });
+    }
+    if (fact.evidence_level === "C_COMMUNITY" && fact.public_fact_allowed === true) {
+      errors.push({
+        code: "ERR_C_EVIDENCE_FACT_PROMOTION",
+        owner: fact.id,
+      });
+    }
+  }
+
+  for (const skill of pkg.skills || []) {
+    requireSource(skill.source_id, skill.id);
+    if (skill.evidence_level === "C_COMMUNITY" && skill.public_fact_allowed === true) {
+      errors.push({
+        code: "ERR_C_EVIDENCE_FACT_PROMOTION",
+        owner: skill.id,
+      });
+    }
+  }
+
+  for (const relation of pkg.team_relations || []) {
+    for (const sourceId of relation.source_ids || []) {
+      requireSource(sourceId, relation.id);
+    }
+    if (relation.classification === "official_relation" && relation.evidence_level === "C_COMMUNITY") {
+      errors.push({
+        code: "ERR_COMMUNITY_OFFICIAL_RELATION",
+        owner: relation.id,
+      });
+    }
+  }
+
+  const build = pkg.build_artifact || {};
+  if (build.artifact_class !== "DERIVED_EDITORIAL_ARTIFACT") {
+    errors.push({
+      code: "ERR_BUILD_ARTIFACT_CLASS",
+      owner: build.id || "build-artifact:unknown",
+    });
+  }
+  if (build.publication_gate === "PUBLISHED") {
+    errors.push({
+      code: "ERR_PUBLISHED_FORBIDDEN",
+      owner: build.id || "build-artifact:unknown",
+    });
+  }
+  if (build.duplicated_fact_values?.length > 0) {
+    errors.push({
+      code: "ERR_DERIVED_ARTIFACT_DUPLICATES_FACT",
+      owner: build.id || "build-artifact:unknown",
+    });
+  }
+  for (const ref of build.references || []) {
+    const allKnownIds = new Set([
+      pkg.character?.canonical_id,
+      ...(pkg.skills || []).map((entry) => entry.id),
+      ...(pkg.equipment || []).map((entry) => entry.id),
+      ...(pkg.karma || []).map((entry) => entry.id),
+      ...(pkg.team_relations || []).map((entry) => entry.id),
+      ...(pkg.canonical_facts || []).map((entry) => entry.id),
+    ].filter(Boolean));
+    if (!allKnownIds.has(ref)) {
+      errors.push({
+        code: "ERR_DANGLING_REFERENCE",
+        owner: build.id || "build-artifact:unknown",
+        reference: ref,
+      });
+    }
+  }
+
+  const counts = pkg.field_evidence_matrix?.summary || {};
+  const allRequiredComplete = counts.required_complete === counts.required_total;
+  const noBlockingErrors = errors.length === 0;
+  const noEvidenceCRequired = counts.required_evidence_c_only === 0;
+  const readyForReview = allRequiredComplete && noBlockingErrors && noEvidenceCRequired;
+
+  return {
+    reference_integrity_result: noBlockingErrors ? "PASS" : "FAIL",
+    errors,
+    evidence_counts: countByEvidence(pkg.sources || []),
+    skill_records_verified: verifiedSkillCount(pkg.skills || []),
+    acquisition_lifecycle: lifecycleCounts(pkg.acquisition_tasks || []),
+    team_relation_readiness: pkg.readiness?.team_relation || "INCOMPLETE",
+    ready_for_human_review: readyForReview,
+    overall_vertical_slice_status: readyForReview
+      ? "VERTICAL_SLICE_READY_FOR_REVIEW"
+      : pkg.vertical_slice_classification || "VERTICAL_SLICE_RESEARCH_READY",
+  };
+}
