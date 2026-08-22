@@ -1,0 +1,62 @@
+{
+  "tests": [
+    {
+      "test": "valid ENTITY_CLUSTER handoff is accepted",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "valid UTILITY_TOOL handoff is accepted",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "missing required handoff field returns HANDOFF_INVALID",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "dangling entity reference blocks publication",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "community-only factual claim does not become review-ready",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "missing game version fails handoff validation",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "optional-only incompleteness stays research-ready or approval-bound",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "legitimate HOLD remains HOLD",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "request to auto-publish fails closed",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "request to build UI before readiness stays acquisition-first",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "pilot selection caps at three and requires gate criteria",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "pass_count": 11,
+  "fail_count": 0,
+  "total": 11
+}
