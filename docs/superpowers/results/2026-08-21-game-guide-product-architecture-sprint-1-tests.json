@@ -1,0 +1,87 @@
+{
+  "tests": [
+    {
+      "test": "ID valid + malformed",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "ID collision-aware generation",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence: missing source reference fails",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence: missing required metadata fails",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence: public_allowed=false blocks",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Evidence: C_COMMUNITY factual misuse blocked",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Completeness: required field missing -> acquisition",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Completeness: optional field missing is research-ready",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Reference: dangling character ref fails",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Reference: duplicate canonical id + conflict",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Editorial: missing basis fails, basis present passes",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Version stale detection",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Acquisition task for correction",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Legitimate HOLD does not auto-generate tasks",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Source record and game version remain first-class contracts",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "test": "Publication state has no PUBLISHED",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "pass_count": 16,
+  "fail_count": 0,
+  "total": 16
+}
