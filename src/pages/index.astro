@@ -6,6 +6,7 @@ import StatChip from '../components/StatChip.astro';
 import CharacterCard from '../components/CharacterCard.astro';
 import CTASection from '../components/CTASection.astro';
 import UpdateBadge from '../components/UpdateBadge.astro';
+import AdsterraNativeBanner from '../components/AdsterraNativeBanner.astro';
 import { previewCharacters } from '../data/characters';
 import { sourceUrls, patch108 } from '../data/sources';
 
@@ -43,6 +44,8 @@ const organization = { '@context': 'https://schema.org', '@type': 'Organization'
     <section class="home-section shell systems-section"><SectionHeader eyebrow="The system map" title="The parts that make a team work" /><div class="system-rail"><span>19 Heroes</span><span>Three-Hero Teams</span><span>Status Ailments</span><span>Signal Skills</span><span>Familiars</span><span>Cooking</span><span>Online Co-op</span><span>Open World</span></div></section>
 
     <section class="home-section shell"><SectionHeader eyebrow="Popular guides" title="Choose your next read" /><div class="guide-grid popular"><GuideCard href="/guides/beginner/" title="Beginner Guide" description="A calmer first session checklist." /><GuideCard href="/multiplayer/" title="Multiplayer" description="Co-op activities, lobbies and 1.0.7 matching changes." /><GuideCard href="/guides/combat-system/" title="Combat System" description="The tag-action chain in plain language." /><GuideCard href="/characters/" title="Characters" description="A cautious 19-Hero directory." /><GuideCard href="/map/" title="Map" description="What the official game page confirms about Orbis." /><GuideCard href="/systems/runes/" title="Runes" description="Capacity and synthesis changes, verified." /><GuideCard href="/is-it-gacha/" title="Is It Gacha?" description="Premium purchase and acquisition facts." /><GuideCard href="/gameplay/" title="Gameplay" description="Exploration, combat, cooking and companions." /></div></section>
+
+    <section class="home-section shell"><AdsterraNativeBanner /></section>
 
     <section class="home-section shell character-section"><div class="section-split"><SectionHeader eyebrow="Roster preview" title="Characters, with the uncertainty visible" description="The game confirms 19 Heroes and several official story or update mentions. Exact traits, factions, unlock routes and combat roles still need first-hand testing." /><a class="text-link" href="/characters/">See all 19 names <span aria-hidden="true">↗</span></a></div><div class="character-grid">{previewCharacters.map((character) => <CharacterCard {...character} />)}</div></section>
 

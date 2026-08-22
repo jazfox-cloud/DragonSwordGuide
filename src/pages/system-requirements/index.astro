@@ -5,6 +5,7 @@ import LastVerified from '../../components/LastVerified.astro';
 import QuickAnswer from '../../components/QuickAnswer.astro';
 import SourceList from '../../components/SourceList.astro';
 import RelatedGuides from '../../components/RelatedGuides.astro';
+import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro';
 import { sourceUrls } from '../../data/sources';
 
 const title = 'DragonSword Awakening System Requirements — PC Specs';
@@ -22,6 +23,7 @@ const sources = [{ label: 'Official Steam store page', href: sourceUrls.steam, n
       <div class="spec-table"><div class="spec-row"><strong>Operating system</strong><span>Windows 10, 64-bit processor and operating system</span></div><div class="spec-row"><strong>Processor</strong><span>Intel i5-9400F</span></div><div class="spec-row"><strong>Memory</strong><span>8 GB RAM</span></div><div class="spec-row"><strong>Graphics</strong><span>NVIDIA GeForce GTX 1660</span></div><div class="spec-row"><strong>DirectX</strong><span>Version 12</span></div><div class="spec-row"><strong>Storage</strong><span>25 GB available space</span></div><div class="spec-row"><strong>Additional note</strong><span>An SSD is strictly required for an optimal gameplay experience; Steam warns that an HDD may cause extended loading, texture pop-in, framerate drops or unexpected crashes.</span></div></div>
       <h2>Recommended requirements</h2>
       <div class="spec-table"><div class="spec-row"><strong>Operating system</strong><span>Windows 10, 64-bit processor and operating system</span></div><div class="spec-row"><strong>Processor</strong><span>Intel i7-9700F</span></div><div class="spec-row"><strong>Memory</strong><span>16 GB RAM</span></div><div class="spec-row"><strong>Graphics</strong><span>NVIDIA GeForce RTX 3060</span></div><div class="spec-row"><strong>DirectX</strong><span>Version 12</span></div><div class="spec-row"><strong>Storage</strong><span>25 GB available space</span></div><div class="spec-row"><strong>Additional note</strong><span>An SSD is strictly required for an optimal gameplay experience.</span></div></div>
+      <AdsterraNativeBanner />
       <h2>What these specs mean</h2><p>The CPU and GPU rows describe the processor and graphics class Steam expects for the two requirement tiers. RAM is system memory, and the storage row is the free disk space required for installation. Keep extra free space available for updates, but no additional amount is officially specified here.</p>
       <h2>Performance status</h2><p>These are the developer-published system requirements, not a benchmark. <strong>No verified performance benchmark is published here.</strong> This guide does not promise a frame rate, graphics preset or performance tier for any specific PC.</p>
       <h2>Steam Deck status</h2><p><strong>Steam Deck status is not officially verified here.</strong> Community settings reports are not used as a substitute for an official verified or playable status.</p>

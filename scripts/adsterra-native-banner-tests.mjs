@@ -8,11 +8,32 @@ const nativeContainerId = 'container-5b0f9dec680f68b542b2049fa6fc069d';
 const nativeScriptSrc = 'https://pl30970443.profitableratecpmnetwork.com/5b0f9dec680f68b542b2049fa6fc069d/invoke.js';
 const bannerKey = '7299e0ee023fed5d547a36a72754aa84';
 const bannerScriptSrc = 'https://www.highrevenueformat.com/7299e0ee023fed5d547a36a72754aa84/invoke.js';
-const rolloutPages = [
+const nativePages = [
+  'src/pages/index.astro',
+  'src/pages/characters/index.astro',
+  'src/pages/teams/index.astro',
+  'src/pages/gameplay/index.astro',
+  'src/pages/guides/combat-system/index.astro',
+  'src/pages/price/index.astro',
+  'src/pages/map/index.astro',
+  'src/pages/is-it-gacha/index.astro',
+  'src/pages/multiplayer/index.astro',
+  'src/pages/system-requirements/index.astro',
   'src/pages/systems/runes/index.astro',
   'src/pages/roadmap/index.astro',
   'src/pages/builds/index.astro',
   'src/pages/guides/beginner/index.astro',
+];
+const banner300Pages = [
+  'src/pages/systems/runes/index.astro',
+  'src/pages/roadmap/index.astro',
+  'src/pages/builds/index.astro',
+  'src/pages/guides/beginner/index.astro',
+];
+const excludedPages = [
+  'src/pages/privacy/index.astro',
+  'src/pages/terms/index.astro',
+  'src/pages/404.astro',
 ];
 
 function assert(condition, message) {
@@ -48,10 +69,16 @@ assert(!layout.includes(bannerScriptSrc), 'BaseLayout must not globally inject t
 assert(!layout.includes(bannerKey), 'BaseLayout must not globally inject the 300x250 key');
 assert(!layout.includes('atOptions'), 'BaseLayout must not define Adsterra atOptions');
 
-for (const page of rolloutPages) {
+for (const page of nativePages) {
   const source = readFileSync(join(root, page), 'utf8');
-  assert(source.includes("AdsterraNativeBanner"), `${page} must import/use AdsterraNativeBanner`);
-  assert(source.includes("AdsterraBanner300x250"), `${page} must import/use AdsterraBanner300x250`);
+  const nativeTagCount = (source.match(/<AdsterraNativeBanner\b/g) || []).length;
+  assert(nativeTagCount === 1, `${page} must include exactly one Native banner`);
+}
+
+for (const page of banner300Pages) {
+  const source = readFileSync(join(root, page), 'utf8');
+  const bannerTagCount = (source.match(/<AdsterraBanner300x250\b/g) || []).length;
+  assert(bannerTagCount === 1, `${page} must include exactly one 300x250 banner`);
   assert(source.indexOf('AdsterraNativeBanner') < source.indexOf('AdsterraBanner300x250'), `${page} must place Native before 300x250 banner`);
   const betweenAds = source.slice(source.indexOf('<AdsterraNativeBanner'), source.indexOf('<AdsterraBanner300x250'));
   assert(betweenAds.length > 80, `${page} must keep content between Native and 300x250 banner`);
@@ -59,29 +86,23 @@ for (const page of rolloutPages) {
 }
 
 const allPageFiles = [
-  ...rolloutPages,
-  'src/pages/index.astro',
-  'src/pages/characters/index.astro',
-  'src/pages/teams/index.astro',
-  'src/pages/gameplay/index.astro',
-  'src/pages/guides/combat-system/index.astro',
-  'src/pages/price/index.astro',
-  'src/pages/map/index.astro',
-  'src/pages/is-it-gacha/index.astro',
-  'src/pages/multiplayer/index.astro',
-  'src/pages/system-requirements/index.astro',
-  'src/pages/privacy/index.astro',
-  'src/pages/terms/index.astro',
+  ...nativePages,
+  ...excludedPages,
 ];
 
 for (const page of allPageFiles) {
   const source = readFileSync(join(root, page), 'utf8');
-  const usesAdsterra = source.includes('AdsterraNativeBanner') || source.includes('AdsterraBanner300x250');
-  const shouldUseAdsterra = rolloutPages.includes(page);
-  assert(
-    usesAdsterra === shouldUseAdsterra,
-    `${page} ${shouldUseAdsterra ? 'must include' : 'must not include'} rollout Adsterra components`,
-  );
+  const nativeTagCount = (source.match(/<AdsterraNativeBanner\b/g) || []).length;
+  const bannerTagCount = (source.match(/<AdsterraBanner300x250\b/g) || []).length;
+  assert(nativeTagCount <= 1, `${page} must not include duplicate Native banners`);
+  assert(bannerTagCount <= 1, `${page} must not include duplicate 300x250 banners`);
+  assert(banner300Pages.includes(page) || bannerTagCount === 0, `${page} must not include the 300x250 test banner`);
+}
+
+for (const page of excludedPages) {
+  const source = readFileSync(join(root, page), 'utf8');
+  assert(!source.includes('AdsterraNativeBanner'), `${page} must not include Native ads`);
+  assert(!source.includes('AdsterraBanner300x250'), `${page} must not include 300x250 ads`);
 }
 
 console.log('Adsterra rollout checks passed');
