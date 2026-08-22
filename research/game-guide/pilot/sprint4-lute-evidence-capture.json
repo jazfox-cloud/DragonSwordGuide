@@ -1,0 +1,425 @@
+{
+  "metadata": {
+    "project": "DragonSwordGuide",
+    "game": "DragonSword: Awakening",
+    "created_at": "2026-08-22T00:00:00Z",
+    "last_verified": "2026-08-22",
+    "public_dataset": false,
+    "publication_gate": "BLOCKED",
+    "selected_pilot": "character:lute",
+    "purpose": "Sprint 4 evidence capture attempt for non-public Lute vertical slice"
+  },
+  "game_version": {
+    "id": "game-version:release-current-unknown-patch",
+    "label": "Release/current build; exact patch number UNKNOWN",
+    "source_id": "source:steam-dragonsword-awakening",
+    "last_verified": "2026-08-22",
+    "status": "CURRENT_UNVERIFIED_PATCH"
+  },
+  "sources": [
+    {
+      "id": "source:steam-dragonsword-awakening",
+      "title": "DragonSword : Awakening on Steam",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "source_type": "official",
+      "evidence_level": "B_OFFICIAL",
+      "last_verified": "2026-08-22",
+      "public_allowed": true,
+      "captured_in_sprint_4": true,
+      "supports": [
+        "Lute official character existence and story identity",
+        "Status Ailments, Active Skills, Signal Skills, and Switching Signals are official combat systems"
+      ]
+    },
+    {
+      "id": "source:dsa-net-builds-lute",
+      "title": "Lute Build, Karma, Equipment - DragonSword: Awakening",
+      "url": "https://dragonswordawakening.net/builds/lute",
+      "source_type": "third_party",
+      "evidence_level": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "public_allowed": false,
+      "captured_in_sprint_4": true,
+      "supports": [
+        "Skill name leads: Sword Slash, Dropkick, Kick Combo, Relic Fall, Stun Slash, Healing Circle, Swordgrab",
+        "Karma lead: A Sword Summoned for a Friend",
+        "Equipment lead: Holy Arbiter",
+        "Alternative team leads: Castella/Lute/Aria and Eileen/Charlotte/Lute, not Lute/Roxy/Theresia"
+      ]
+    },
+    {
+      "id": "source:steam-discussion-combat-work",
+      "title": "Steam Discussions combat explanation thread",
+      "url": "https://steamcommunity.com/app/4570720/discussions/0/581677493394799624/",
+      "source_type": "community",
+      "evidence_level": "C_COMMUNITY",
+      "last_verified": "2026-08-22",
+      "public_allowed": false,
+      "captured_in_sprint_4": true,
+      "supports": [
+        "Community explanation of combat and Signal concepts only"
+      ]
+    }
+  ],
+  "capture_attempts": [
+    {
+      "target": "Lute skill panel",
+      "status": "FIRST_HAND_CAPTURE_STILL_BLOCKED",
+      "reason": "No game client, live gameplay session, or user-provided screenshot was available to Codex.",
+      "evidence_a_records_created": 0,
+      "evidence_b_skill_records_created": 0
+    },
+    {
+      "target": "Lute equipment screen",
+      "status": "FIRST_HAND_CAPTURE_STILL_BLOCKED",
+      "reason": "No in-game equipment screen or official equipment source was available.",
+      "evidence_a_records_created": 0,
+      "evidence_b_equipment_records_created": 0
+    },
+    {
+      "target": "Lute Karma screen",
+      "status": "FIRST_HAND_CAPTURE_STILL_BLOCKED",
+      "reason": "No in-game Karma screen or official Karma source was available.",
+      "evidence_a_records_created": 0,
+      "evidence_b_karma_records_created": 0
+    },
+    {
+      "target": "Roxy and Theresia identity",
+      "status": "FIRST_HAND_CAPTURE_STILL_BLOCKED",
+      "reason": "No official/current roster source or first-hand roster screenshot was available.",
+      "evidence_a_records_created": 0,
+      "evidence_b_identity_records_created": 0
+    },
+    {
+      "target": "Lute -> Roxy -> Theresia team chain",
+      "status": "TEAM_CHAIN_REPRODUCTION_BLOCKED",
+      "reason": "No gameplay access was available, and current captured third-party Team Builder evidence did not establish this exact chain as observed or official.",
+      "observed_relation_count": 0,
+      "editorial_relation_count": 0
+    }
+  ],
+  "character": {
+    "canonical_id": "character:lute",
+    "readiness": "RESEARCH_READY",
+    "evidence_level": "B_OFFICIAL",
+    "source_id": "source:steam-dragonsword-awakening"
+  },
+  "skills": [
+    {
+      "id": "skill:sword-slash-lead",
+      "display_name": "Sword Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "UNKNOWN",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    },
+    {
+      "id": "skill:stun-slash-lead",
+      "display_name": "Stun Slash",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    },
+    {
+      "id": "skill:swordgrab-lead",
+      "display_name": "Swordgrab",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "game_version": "game-version:release-current-unknown-patch"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "equipment:holy-arbiter-lead",
+      "display_name": "Holy Arbiter",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "karma": [
+    {
+      "id": "karma:a-sword-summoned-for-a-friend-lead",
+      "display_name": "A Sword Summoned for a Friend",
+      "source_id": "source:dsa-net-builds-lute",
+      "evidence_level": "C_COMMUNITY",
+      "previous_evidence_level": "C_COMMUNITY",
+      "new_evidence_level": "C_COMMUNITY",
+      "verification_status": "RESEARCH_LEAD",
+      "public_fact_allowed": false,
+      "readiness": "INCOMPLETE"
+    }
+  ],
+  "reference_characters": [
+    {
+      "canonical_id": "character:roxy",
+      "display_name": "Roxy",
+      "identity_readiness": "BLOCKED",
+      "evidence_level": "UNKNOWN",
+      "source_id": null,
+      "public_allowed": false
+    },
+    {
+      "canonical_id": "character:theresia",
+      "display_name": "Theresia",
+      "identity_readiness": "BLOCKED",
+      "evidence_level": "UNKNOWN",
+      "source_id": null,
+      "public_allowed": false
+    }
+  ],
+  "team_relations": [],
+  "team_chain": {
+    "id": "team-chain:lute-roxy-theresia",
+    "classification": "TEAM_CHAIN_RESEARCH_REQUIRED",
+    "reproduction_status": "TEAM_CHAIN_REPRODUCTION_BLOCKED",
+    "observed_relation_count": 0,
+    "editorial_relation_count": 0,
+    "publication_gate": "BLOCKED"
+  },
+  "canonical_facts": [
+    {
+      "id": "fact:lute-official-identity",
+      "entity_id": "character:lute",
+      "field": "official_display_name",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "public_fact_allowed": true
+    },
+    {
+      "id": "fact:official-signal-skill-system",
+      "entity_id": "system:combat",
+      "field": "status_ailment_signal_skill_system",
+      "source_id": "source:steam-dragonsword-awakening",
+      "evidence_level": "B_OFFICIAL",
+      "game_version": "game-version:release-current-unknown-patch",
+      "public_fact_allowed": true
+    }
+  ],
+  "build_artifact": {
+    "id": "build-readiness:lute-sprint-4",
+    "artifact_class": "DERIVED_EDITORIAL_ARTIFACT",
+    "references": [
+      "character:lute",
+      "skill:stun-slash-lead",
+      "equipment:holy-arbiter-lead",
+      "karma:a-sword-summoned-for-a-friend-lead",
+      "fact:official-signal-skill-system"
+    ],
+    "duplicated_fact_values": [],
+    "basis_source_ids": [
+      "source:steam-dragonsword-awakening",
+      "source:dsa-net-builds-lute"
+    ],
+    "game_version": "game-version:release-current-unknown-patch",
+    "editorial_status": "analyst",
+    "confidence": "LOW",
+    "last_reviewed": "2026-08-22",
+    "publication_gate": "BLOCKED",
+    "readiness": "INCOMPLETE"
+  },
+  "field_evidence_matrix": {
+    "rows": [
+      {
+        "layer": "Character",
+        "field": "character:lute.name",
+        "required": true,
+        "evidence": "B_OFFICIAL",
+        "readiness": "READY_FOR_REVIEW",
+        "remaining_action": "N/A"
+      },
+      {
+        "layer": "Skills",
+        "field": "skill required fields",
+        "required": true,
+        "evidence": "C_COMMUNITY",
+        "readiness": "INCOMPLETE",
+        "remaining_action": "Capture in-game Lute skill panel or official current skill source."
+      },
+      {
+        "layer": "Equipment",
+        "field": "equipment factual compatibility",
+        "required": true,
+        "evidence": "C_COMMUNITY",
+        "readiness": "INCOMPLETE",
+        "remaining_action": "Capture Lute equipment screen or official equipment record."
+      },
+      {
+        "layer": "Karma",
+        "field": "karma factual relationship",
+        "required": true,
+        "evidence": "C_COMMUNITY",
+        "readiness": "INCOMPLETE",
+        "remaining_action": "Capture Lute Karma screen or official Karma record."
+      },
+      {
+        "layer": "Roxy identity",
+        "field": "character:roxy.name",
+        "required": true,
+        "evidence": "UNKNOWN",
+        "readiness": "BLOCKED",
+        "remaining_action": "Capture official/current roster or first-hand roster screenshot."
+      },
+      {
+        "layer": "Theresia identity",
+        "field": "character:theresia.name",
+        "required": true,
+        "evidence": "UNKNOWN",
+        "readiness": "BLOCKED",
+        "remaining_action": "Capture official/current roster or first-hand roster screenshot."
+      },
+      {
+        "layer": "Team Relation",
+        "field": "team-chain:lute-roxy-theresia",
+        "required": true,
+        "evidence": "UNKNOWN",
+        "readiness": "BLOCKED",
+        "remaining_action": "Reproduce chain in-game after references resolve."
+      },
+      {
+        "layer": "Build artifact",
+        "field": "build-readiness:lute-sprint-4",
+        "required": true,
+        "evidence": "B+C",
+        "readiness": "INCOMPLETE",
+        "remaining_action": "Wait for A/B Skill, Equipment/Karma, and Team Relation evidence."
+      }
+    ],
+    "summary": {
+      "required_complete": 1,
+      "required_total": 8,
+      "optional_complete": 0,
+      "optional_total": 4,
+      "required_evidence_c_only": 3,
+      "evidence_completeness": 0.13
+    }
+  },
+  "acquisition_tasks": [
+    {
+      "task_id": "acq-lute-skill-current-verification",
+      "status": "BLOCKED",
+      "goal": "Verify Lute's exact current skill names, effects, and status applications.",
+      "data_needed": "Current in-game or official Lute skill wording",
+      "fields_needed": [
+        "skill.name",
+        "skill.description",
+        "skill.applies_status_ids",
+        "skill.level",
+        "skill.damage_type"
+      ],
+      "source_candidates": [
+        "first-hand gameplay screenshot/capture",
+        "official guide or patch material"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current skill screen and source metadata, or cite official current material.",
+      "validation_method": "Run evidence wrapper and reference-integrity gates.",
+      "completion_criteria": "All required Skill fields have eligible evidence metadata.",
+      "unblock_condition": "Gameplay access, user screenshot, or official current skill source becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-karma-equipment-verification",
+      "status": "BLOCKED",
+      "goal": "Verify Lute's factual Karma and Equipment relationship.",
+      "data_needed": "Current Lute-compatible Karma and Equipment relation",
+      "fields_needed": [
+        "karma.name",
+        "karma.effect",
+        "equipment.name",
+        "equipment.stats_summary"
+      ],
+      "source_candidates": [
+        "first-hand character build screen",
+        "official equipment/Karma collection"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture in-game screens or official records.",
+      "validation_method": "Validate canonical Karma/Equipment IDs and evidence wrappers.",
+      "completion_criteria": "At least one Karma or Equipment relation is A/B evidence-complete.",
+      "unblock_condition": "Gameplay or official collection evidence is captured.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-lute-roxy-theresia-team-relation",
+      "status": "BLOCKED",
+      "goal": "Validate whether the Lute -> Roxy -> Theresia chain exists in current gameplay.",
+      "data_needed": "Current Signal Skill chain evidence for the requested sequence",
+      "fields_needed": [
+        "team_relation.from_character_id",
+        "team_relation.to_character_id",
+        "team_relation.relation_type",
+        "team_relation.status_ids",
+        "team_relation.rationale"
+      ],
+      "source_candidates": [
+        "first-hand Team Builder reproduction",
+        "official combat guide"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL for factual relation; editorial recommendation requires explicit basis.",
+      "collection_method": "Reproduce the chain in-game after Roxy/Theresia identity is resolved.",
+      "validation_method": "Run reference-integrity gate for character, skill, status, and relation IDs.",
+      "completion_criteria": "Relation candidates resolve canonical refs and carry current version evidence.",
+      "unblock_condition": "Gameplay reproduction or official/current relation evidence becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    },
+    {
+      "task_id": "acq-roxy-theresia-official-identity",
+      "status": "BLOCKED",
+      "goal": "Capture official or first-hand identity evidence for Roxy and Theresia.",
+      "data_needed": "Official roster, in-game roster screenshot, or developer material naming Roxy and Theresia",
+      "fields_needed": [
+        "character.name",
+        "source_record"
+      ],
+      "source_candidates": [
+        "first-hand roster screenshot",
+        "official character page",
+        "developer announcement"
+      ],
+      "required_evidence_level": "A_FIRST_HAND or B_OFFICIAL",
+      "collection_method": "Capture current roster screen or official page with date/version metadata.",
+      "validation_method": "Create Source Records and validate Character wrappers.",
+      "completion_criteria": "Roxy and Theresia factual identity fields become A/B-backed.",
+      "unblock_condition": "Official/current identity source or first-hand capture becomes available.",
+      "publication_state": "APPROVAL_REQUIRED"
+    }
+  ],
+  "readiness": {
+    "character": "RESEARCH_READY",
+    "skills": "INCOMPLETE",
+    "equipment": "INCOMPLETE",
+    "karma": "INCOMPLETE",
+    "roxy_identity": "BLOCKED",
+    "theresia_identity": "BLOCKED",
+    "team_relation": "BLOCKED",
+    "build_artifact": "INCOMPLETE",
+    "overall": "BLOCKED"
+  },
+  "vertical_slice_classification": "VERTICAL_SLICE_BLOCKED",
+  "production_boundary": {
+    "lute_page_created": false,
+    "build_page_created": false,
+    "team_builder_created": false,
+    "new_url_created": false,
+    "sitemap_changed": false,
+    "production_data_exposed": false,
+    "deployment": false
+  }
+}
