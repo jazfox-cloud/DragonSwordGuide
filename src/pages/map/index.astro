@@ -11,7 +11,7 @@ import markerData from '../../data/map-markers.json';
 import { sourceUrls, patch107 } from '../../data/sources';
 
 const title = 'DragonSword Awakening Interactive Map — Orbis Beta';
-const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona and Organa markers with clear verification and conflict labels.';
+const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona, Organa and Warp Point markers with clear verification and conflict labels.';
 const canonical = 'https://dragonswordguide.com/map/';
 const article = {
   '@context': 'https://schema.org',
@@ -26,6 +26,8 @@ const article = {
 const sources = [
   { label: 'Official Steam store page', href: sourceUrls.steam, note: 'Evidence B — confirms Orbis, meadows, watchtower cellars, deep seas, caves and dungeons.' },
   { label: 'Official 1.0.7 update notes', href: patch107.href, note: 'Evidence B — increased saved World Map pins from 100 to 200.' },
+  { label: 'Steam global achievements', href: 'https://steamcommunity.com/stats/4570720/achievements', note: 'Evidence B — confirms Fast Travel Expert for activating all Waypoints.' },
+  { label: 'Waypoint and fast travel guide', href: 'https://www.dragonsword-awakening.wiki/guides/guide/map-waypoints-fast-travel', note: 'Evidence C — explains Waypoints as fast-travel progression objects without exact coordinates.' },
   { label: 'Community interactive-map discussion', href: 'https://www.reddit.com/r/DSwordAwakening/comments/1vap7qr/all_chests_locations_interactive_map/', note: 'Evidence C — demand and discovery signal only; not copied marker coordinates or a complete map claim.' },
 ];
 ---
@@ -41,22 +43,22 @@ const sources = [
       </header>
 
       <QuickAnswer title="Use this beta map for broad Orbis planning, not exact collectible routing.">
-        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. The first Eona pilot markers and the first named Organa expansion markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
+        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. The Eona, named Organa and Warp Point pilot markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
       </QuickAnswer>
 
       <InteractiveMap markerData={markerData} />
 
       <div class="copy">
         <h2>How to use the map</h2>
-        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name or region, and turn Eona's Legacy or Organa Statue categories on and off. Select any marker to read its precision, confidence and evidence boundary.</p>
+        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region or alias, and turn Eona's Legacy, Organa Statue or Warp Point categories on and off. Select any marker to read its precision, confidence and evidence boundary.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a beta set for Eona's Legacy and named Organa Statue markers only. The Eona pilot remains unchanged. Organa coverage is now 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. The map still does not publish a chest database, exact route, respawn rule, copied community pin set or official map asset.</p>
+        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers and eight Warp Point planning anchors. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 8 published / ~20 known. The map still does not publish a chest database, exact route, respawn rule, copied community pin set or official map asset.</p>
 
         <AdsterraNativeBanner />
 
         <h2>Verification status</h2>
-        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 official, video or first-hand verified markers. Published Organa locations are searchable by marker name and region, while the unresolved count conflict stays visible in page metadata.</p>
+        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 official, video or first-hand verified markers. Published Organa locations and Warp Point aliases are searchable, while the unresolved Organa count conflict stays visible in page metadata.</p>
 
         <h2>Updates and data provenance</h2>
         <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Community map threads remain discovery inputs, not production coordinate sources.</p>

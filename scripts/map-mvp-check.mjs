@@ -6,7 +6,8 @@ const dataPath = path.join(root, 'src/data/map-markers.json');
 const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
 const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
-const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE']);
+const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
+const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT']);
 const allowedVerificationStatuses = new Set([
   'OFFICIAL_VERIFIED',
   'FIRST_HAND_VERIFIED',
@@ -75,6 +76,10 @@ let approximateCount = 0;
 let verifiedCount = 0;
 let eonaSecondaryCount = 0;
 let organaCount = 0;
+let warpCount = 0;
+let warpSecondaryCount = 0;
+let warpApproximateCount = 0;
+let warpAliasCount = 0;
 
 for (const marker of markerData.markers) {
   for (const field of requiredMarkerFields) {
@@ -106,6 +111,10 @@ for (const marker of markerData.markers) {
 
   if (!Array.isArray(marker.evidence)) {
     fail(`${marker.id} evidence must be an array`);
+  }
+
+  if ('aliases' in marker && (!Array.isArray(marker.aliases) || marker.aliases.some((alias) => typeof alias !== 'string' || alias.trim().length < 3))) {
+    fail(`${marker.id} aliases must be an array of searchable strings`);
   }
 
   for (const evidence of marker.evidence) {
@@ -141,6 +150,32 @@ for (const marker of markerData.markers) {
       fail(`${marker.id} must be a named Organa production marker, not a generic beta placeholder`);
     }
   }
+
+  if (marker.category === 'WARP_POINT') {
+    warpCount += 1;
+
+    if (marker.verification_status === 'SECONDARY_CORROBORATED') {
+      warpSecondaryCount += 1;
+    }
+
+    if (marker.precision === 'APPROXIMATE' || marker.precision.endsWith('_APPROXIMATE')) {
+      warpApproximateCount += 1;
+    }
+
+    if (!Array.isArray(marker.aliases) || marker.aliases.length < 3) {
+      fail(`${marker.id} must include searchable Warp/Fast Travel/Waypoint aliases`);
+    }
+
+    if (!marker.aliases.some((alias) => alias.toLowerCase().includes('fast travel'))) {
+      fail(`${marker.id} must include a Fast Travel alias`);
+    }
+
+    if (!marker.navigation_note || marker.navigation_note.includes('unlock condition verified')) {
+      fail(`${marker.id} must include an honest navigation_note without unverified unlock claims`);
+    }
+
+    warpAliasCount += marker.aliases.length;
+  }
 }
 
 if (approximateCount < 4) {
@@ -157,6 +192,26 @@ if (eonaSecondaryCount < 3) {
 
 if (organaCount < 13) {
   fail('expected at least 13 named Organa markers after expansion sprint 2');
+}
+
+if (markerData.markers.length < 24) {
+  fail('expected at least 24 production beta markers after Warp Points sprint B1');
+}
+
+if (warpCount < 8) {
+  fail('expected at least 8 Warp Point pilot markers');
+}
+
+if (warpSecondaryCount !== warpCount) {
+  fail('all published Warp Point pilot markers should be SECONDARY_CORROBORATED');
+}
+
+if (warpApproximateCount !== warpCount) {
+  fail('all published Warp Point pilot markers should retain approximate precision');
+}
+
+if (warpAliasCount < warpCount * 3) {
+  fail('Warp Point aliases are too sparse for search coverage');
 }
 
 if (markerData.category_status?.ORGANA_STATUE?.count_conflict !== '13_VS_14_CONFLICT_RETAINED') {
@@ -179,6 +234,36 @@ if (!fs.existsSync(organaSprint2ReportPath)) {
   fail('missing reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 }
 
+if (!fs.existsSync(warpSprintReportPath)) {
+  fail('missing reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
+}
+
+const warpStatus = markerData.category_status?.WARP_POINT;
+
+if (!warpStatus) {
+  fail('missing category_status.WARP_POINT');
+}
+
+if (warpStatus.published_count !== warpCount) {
+  fail('WARP_POINT published_count must match production markers');
+}
+
+if (warpStatus.estimated_total !== '~20') {
+  fail('WARP_POINT estimated_total must be ~20 until better evidence is available');
+}
+
+if (warpStatus.known_candidates !== 20) {
+  fail('WARP_POINT known_candidates must retain the public 20 mapped count');
+}
+
+if (warpStatus.source_count < 4) {
+  fail('WARP_POINT source_count must include at least four source groups');
+}
+
+if (warpStatus.coverage !== '8 published / ~20 known') {
+  fail('WARP_POINT coverage must stay honest for Sprint B1');
+}
+
 const source = fs.readFileSync(sourcePath, 'utf8');
 
 if (source.includes('2026-08-22-map-data-pipeline-pilot.json')) {
@@ -199,7 +284,12 @@ const expectedSnippets = [
   'data-map-action="zoom-out"',
   'data-map-action="reset"',
   'data-marker-search',
+  'data-marker-aliases',
   'data-category-filter',
+  'data-marker-category="WARP_POINT"',
+  'Warp Points',
+  'marker:warp-point:orbis-castle',
+  '8 published / ~20 known',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',
