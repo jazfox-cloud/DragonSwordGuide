@@ -69,7 +69,8 @@ External/manual files used for the fix and verification:
 - `/private/tmp/dragon-gsc-data-tracks.test.mjs`
 - `/private/tmp/dragon-gsc-direct-probe-2026-08-19.mjs`
 
-These files are intentionally not committed to DragonSword because the helper has no identified repository owner.
+At investigation time, these files were intentionally not committed to
+DragonSword because the helper had no identified repository owner.
 
 ## Reporting contract
 
@@ -84,8 +85,35 @@ Do not calculate growth across a window containing both statuses. Do not convert
 - Unit tests: 6 passed, 0 failed.
 - Live run of the extended existing helper: exit 0; legacy report keys remained present and all five new fields were returned.
 - Repository content pages changed: none.
-- Shared infrastructure push: not performed.
+- Governed shared implementation: verified on AIOS branch
+  `codex/governed-gsc-fresh-data` at implementation commit `2e45b42`.
 
-## Durability limitation
+## Governed migration and temporary-helper deprecation
 
-The current source of truth is a temporary external/manual helper under `/private/tmp`; the local fix is therefore not a durable shared-infrastructure release. Persisting it requires an explicit ownership decision and approval to move the tested helper into a governed repository. Until then, this report is the durable DragonSword reporting contract and evidence record.
+Migration verification date: 2026-08-20 (America/Los_Angeles).
+
+- Governed owner: `jazfox-cloud/ai-operating-system`
+- Governed helper: `src/server/gsc-data-tracks.ts`
+- Governed command: `npm run gsc:fresh-data`
+- DragonSword adapter: `npm run gsc:daily-review`
+- Linked-worktree governed-checkout discovery: PASS without
+  `AIOS_GSC_REPO`, using the primary checkout Git common directory.
+- Live readonly property: `sc-domain:dragonswordguide.com`
+- Exact equivalence: PASS for `latest_final_date`,
+  `latest_available_date`, `first_incomplete_date`, every confirmed row,
+  and every early row.
+- Per-day equivalence: PASS for date, clicks, impressions, and data status
+  from 2026-08-10 through the latest available row.
+
+The following files are now **deprecated** and are not required by the
+DragonSword workflow:
+
+- `/private/tmp/dragon-gsc-2026-08-15.mjs`
+- `/private/tmp/dragon-gsc-data-tracks.mjs`
+- `/private/tmp/dragon-gsc-data-tracks.test.mjs`
+- `/private/tmp/dragon-gsc-direct-probe-2026-08-19.mjs`
+
+They remain on disk for recovery and were not deleted. AIOS is the sole
+governed implementation; DragonSword contains only the command adapter and
+does not own authentication, Search Analytics transport, data-state
+classification, or aggregation.
