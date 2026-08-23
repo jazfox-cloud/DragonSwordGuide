@@ -6,6 +6,21 @@ const dataPath = path.join(root, 'src/data/map-markers.json');
 const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
 const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE']);
+const allowedVerificationStatuses = new Set([
+  'OFFICIAL_VERIFIED',
+  'FIRST_HAND_VERIFIED',
+  'VIDEO_VERIFIED',
+  'SECONDARY_CORROBORATED',
+  'APPROXIMATE',
+  'CONFLICTING',
+]);
+const allowedPrecisions = new Set([
+  'REGION_APPROXIMATE',
+  'LANDMARK_APPROXIMATE',
+  'VISUALLY_CORROBORATED',
+  'APPROXIMATE',
+]);
+const allowedConfidence = new Set(['LOW', 'MEDIUM', 'HIGH']);
 const requiredMarkerFields = [
   'id',
   'name',
@@ -20,6 +35,7 @@ const requiredMarkerFields = [
   'game_version',
   'last_checked',
   'description',
+  'evidence',
 ];
 
 function fail(message) {
@@ -73,15 +89,41 @@ for (const marker of markerData.markers) {
     fail(`${marker.id} has invalid category ${marker.category}`);
   }
 
+  if (!allowedVerificationStatuses.has(marker.verification_status)) {
+    fail(`${marker.id} has invalid verification status ${marker.verification_status}`);
+  }
+
+  if (!allowedPrecisions.has(marker.precision)) {
+    fail(`${marker.id} has invalid precision ${marker.precision}`);
+  }
+
+  if (!allowedConfidence.has(marker.confidence)) {
+    fail(`${marker.id} has invalid confidence ${marker.confidence}`);
+  }
+
+  if (!Array.isArray(marker.evidence)) {
+    fail(`${marker.id} evidence must be an array`);
+  }
+
+  for (const evidence of marker.evidence) {
+    if (!evidence.type || !evidence.source || !evidence.url || !evidence.note) {
+      fail(`${marker.id} has incomplete evidence item`);
+    }
+
+    if (evidence.type === 'RESEARCH_ONLY_NOT_FOR_PRODUCTION') {
+      fail(`${marker.id} exposes research-only evidence`);
+    }
+  }
+
   if (typeof marker.x !== 'number' || marker.x < 0 || marker.x > 1 || typeof marker.y !== 'number' || marker.y < 0 || marker.y > 1) {
     fail(`${marker.id} must use normalized x/y coordinates`);
   }
 
-  if (marker.precision === 'APPROXIMATE') {
+  if (marker.precision === 'APPROXIMATE' || marker.precision.endsWith('_APPROXIMATE')) {
     approximateCount += 1;
   }
 
-  if (marker.verification_status === 'FIRST_HAND_VERIFIED' || marker.verification_status === 'OFFICIAL_VERIFIED') {
+  if (marker.verification_status === 'FIRST_HAND_VERIFIED' || marker.verification_status === 'OFFICIAL_VERIFIED' || marker.verification_status === 'VIDEO_VERIFIED') {
     verifiedCount += 1;
   }
 }

@@ -2,54 +2,132 @@
   "base_map_id": "OWN_SCHEMATIC_ORBIS_BASE_MAP",
   "coordinate_system": "IMAGE_RELATIVE_COORDINATES",
   "data_policy": "PRODUCTION_BETA_APPROXIMATE_MARKERS_ONLY",
-  "source_boundary": "Official Orbis context plus secondary discovery signals. Coordinates are owned schematic placements, not copied game pins and not first-hand verified routes.",
+  "source_boundary": "Official Eona system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins and not first-hand verified routes.",
   "game_version": "1.0.8 public update context",
   "last_checked": "2026-08-22",
   "markers": [
     {
-      "id": "marker:eonas-legacy:western-plains-beta",
-      "name": "Eona's Legacy candidate - western plains",
+      "id": "marker:eonas-legacy:meadow-of-beginnings",
+      "name": "Eona's Legacy - Meadow of Beginnings",
       "category": "EONAS_LEGACY",
-      "region": "Western Orbis plains",
-      "x": 0.27,
-      "y": 0.52,
-      "precision": "APPROXIMATE",
+      "region": "Meadow of Beginnings",
+      "x": 0.29,
+      "y": 0.55,
+      "precision": "LANDMARK_APPROXIMATE",
       "verification_status": "SECONDARY_CORROBORATED",
-      "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "confidence": "MEDIUM",
+      "source_summary": "Official sources confirm the Eona system and full-set achievement; two independent secondary guides align on the Meadow missing-cog route.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Region-level beta marker for route planning. This is not an exact in-game pin or first-hand screenshot route."
+      "description": "Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Webzen official game guide",
+          "url": "https://dragonsword.webzen.co.kr/gameinfo/guide/detail/3138",
+          "note": "Confirms Eona's Legacy activation, Alvwyn prerequisite, fog removal, warp availability, and wind path behavior."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/4570720/achievements",
+          "note": "Confirms a tracked achievement for activating all of Eona's Legacy, but not individual coordinates."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Eona guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/eonas-legacy-locations",
+          "note": "Lists Meadow of Beginnings as the first Eona location with a missing-cog route and approximate map context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSwordAwakening.net Eona guide",
+          "url": "https://dragonswordawakening.net/guides/eonas-legacy-and-windmills",
+          "note": "Independently matches the Meadow missing-cog route and completion loop."
+        }
+      ]
     },
     {
-      "id": "marker:eonas-legacy:northern-ruins-beta",
-      "name": "Eona's Legacy candidate - northern ruins",
+      "id": "marker:eonas-legacy:shadowed-woods",
+      "name": "Eona's Legacy - Shadowed Woods",
       "category": "EONAS_LEGACY",
-      "region": "Northern Orbis ruins",
-      "x": 0.48,
-      "y": 0.28,
-      "precision": "APPROXIMATE",
+      "region": "Shadowed Woods",
+      "x": 0.56,
+      "y": 0.42,
+      "precision": "LANDMARK_APPROXIMATE",
       "verification_status": "SECONDARY_CORROBORATED",
-      "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "confidence": "MEDIUM",
+      "source_summary": "Multiple secondary sources align on a web-covered Eona tower and Aria/fire solution; public video stills exist, but no direct timestamped map-view video was verified.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Approximate schematic candidate for beta navigation. Exact puzzle placement remains unverified."
+      "description": "Look for the web-covered Eona structure in Shadowed Woods, use Aria or fire/explosive damage to clear the obstruction, then return to the tower interaction.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Webzen official game guide",
+          "url": "https://dragonsword.webzen.co.kr/gameinfo/guide/detail/3138",
+          "note": "Confirms the Eona system and activation result, but not this individual tower."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Eona guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/eonas-legacy-locations",
+          "note": "Lists Shadowed Woods and the spider-web/fire interaction in the complete Eona set."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSwordAwakening.net Eona guide",
+          "url": "https://dragonswordawakening.net/guides/eonas-legacy-and-windmills",
+          "note": "Independently matches Shadowed Woods, the web-covered tower, and the Aria/explosive solution."
+        },
+        {
+          "type": "SECONDARY_GUIDE_WITH_VIDEO_STILLS",
+          "source": "Nerdschalk Shadowed Woods guide",
+          "url": "https://nerdschalk.com/dragonsword-awakening-how-to-unlock-shadowed-woods-eonas-legacy-guide/",
+          "note": "Shows article-embedded gameplay stills credited to YouTube/WoW Quests, but no direct video URL and timestamp were verified in this sprint."
+        }
+      ]
     },
     {
-      "id": "marker:eonas-legacy:southern-coast-beta",
-      "name": "Eona's Legacy candidate - southern coast",
+      "id": "marker:eonas-legacy:dragonrise-basin",
+      "name": "Eona's Legacy - Dragonrise Basin",
       "category": "EONAS_LEGACY",
-      "region": "Southern Orbis coast",
-      "x": 0.61,
-      "y": 0.77,
-      "precision": "APPROXIMATE",
+      "region": "Dragonrise Basin",
+      "x": 0.68,
+      "y": 0.58,
+      "precision": "REGION_APPROXIMATE",
       "verification_status": "SECONDARY_CORROBORATED",
-      "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "confidence": "MEDIUM",
+      "source_summary": "Two independent secondary guides and a source-linked map reference align on Dragonrise Basin as a platform-trial Eona location; no first-hand or timestamped video route was verified.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Approximate coastal candidate. Treat this as a beta planning marker until first-hand route evidence is captured."
+      "description": "Speak with Alvwyn near the Dragonrise Basin tower, follow the marked platform-trial entrance, finish the route, then return to activate Eona's Legacy.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Webzen official game guide",
+          "url": "https://dragonsword.webzen.co.kr/gameinfo/guide/detail/3138",
+          "note": "Confirms the Eona activation system and fog/warp outcome, but not Dragonrise Basin's exact placement."
+        },
+        {
+          "type": "SECONDARY_MAP_REFERENCE",
+          "source": "DragonSword Awakening Wiki interactive map",
+          "url": "https://www.dragonsword-awakening.wiki/tools/map?marker=eona-dragonrise-basin",
+          "note": "Lists Dragonrise Basin as an approximate, source-linked Eona marker. Coordinates were not copied."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Eona guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/eonas-legacy-locations",
+          "note": "Lists Dragonrise Basin as a platform-trial Eona location."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSwordAwakening.net Eona guide",
+          "url": "https://dragonswordawakening.net/guides/eonas-legacy-and-windmills",
+          "note": "Independently matches Dragonrise Basin, Alvwyn, and the platform-trial route."
+        }
+      ]
     },
     {
       "id": "marker:organa-statue:central-orbis-beta",
@@ -58,13 +136,21 @@
       "region": "Central Orbis",
       "x": 0.49,
       "y": 0.57,
-      "precision": "APPROXIMATE",
-      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "APPROXIMATE",
       "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Central-region beta marker. It should not be used as an exact statue coordinate."
+      "description": "Central-region beta marker. It should not be used as an exact statue coordinate.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/4570720/achievements",
+          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+        }
+      ]
     },
     {
       "id": "marker:organa-statue:eastern-highlands-beta",
@@ -73,13 +159,21 @@
       "region": "Eastern Orbis highlands",
       "x": 0.74,
       "y": 0.39,
-      "precision": "APPROXIMATE",
-      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "APPROXIMATE",
       "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Approximate highland candidate. First-hand screenshots and route anchors are still required."
+      "description": "Approximate highland candidate. First-hand screenshots and route anchors are still required.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/4570720/achievements",
+          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+        }
+      ]
     },
     {
       "id": "marker:organa-statue:watchtower-cellar-beta",
@@ -88,13 +182,21 @@
       "region": "Watchtower approach",
       "x": 0.36,
       "y": 0.68,
-      "precision": "APPROXIMATE",
-      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "APPROXIMATE",
       "confidence": "LOW",
-      "source_summary": "Secondary community discovery signal plus official Orbis context; positioned only on the owned schematic map.",
+      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
       "game_version": "1.0.8 public update context",
       "last_checked": "2026-08-22",
-      "description": "Approximate beta marker near a broad exploration area. It is not a copied pin, chest route, or official coordinate."
+      "description": "Approximate beta marker near a broad exploration area. It is not a copied pin, chest route, or official coordinate.",
+      "evidence": [
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam global achievements",
+          "url": "https://steamcommunity.com/stats/4570720/achievements",
+          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+        }
+      ]
     }
   ]
 }

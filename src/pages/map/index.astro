@@ -41,7 +41,7 @@ const sources = [
       </header>
 
       <QuickAnswer title="Use this beta map for broad Orbis planning, not exact collectible routing.">
-        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. Every published marker is approximate and secondary-corroborated; none is presented as an official or first-hand verified in-game pin.</p>
+        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. The first Eona pilot markers are source-corroborated but still approximate; none is presented as an official or first-hand verified in-game pin.</p>
       </QuickAnswer>
 
       <InteractiveMap markerData={markerData} />
@@ -51,12 +51,12 @@ const sources = [
         <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name or region, and turn Eona's Legacy or Organa Statue categories on and off. Select any marker to read its precision, confidence and evidence boundary.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a small beta set for Eona's Legacy and Organa Statue candidates only. It does not publish a chest database, exact route, full collectible count, respawn rule, copied community pin set or official map asset.</p>
+        <p>This MVP publishes a small beta set for Eona's Legacy and Organa Statue candidates only. The Eona pilot now has named, source-corroborated records where the evidence is strong enough. The map still does not publish a chest database, exact route, full collectible count, respawn rule, copied community pin set or official map asset.</p>
 
         <AdsterraNativeBanner />
 
         <h2>Verification status</h2>
-        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 first-hand verified markers. Specific routes will be upgraded only after first-hand screenshots, stable landmarks and reproducible path notes exist.</p>
+        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 official, video or first-hand verified markers. Specific routes will be upgraded only after first-hand screenshots, stable landmarks and reproducible path notes exist.</p>
 
         <h2>Updates and data provenance</h2>
         <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Community map threads remain discovery inputs, not production coordinate sources.</p>

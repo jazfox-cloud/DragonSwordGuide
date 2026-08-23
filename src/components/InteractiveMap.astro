@@ -30,6 +30,14 @@ const categoryLabels = {
   EONAS_LEGACY: "Eona's Legacy",
   ORGANA_STATUE: 'Organa Statues',
 };
+const statusLabels = {
+  OFFICIAL_VERIFIED: 'Official verified',
+  FIRST_HAND_VERIFIED: 'First-hand verified',
+  VIDEO_VERIFIED: 'Video verified',
+  SECONDARY_CORROBORATED: 'Source corroborated',
+  APPROXIMATE: 'Approximate',
+  CONFLICTING: 'Conflicting',
+};
 const categoryCounts = markerData.markers.reduce<Record<string, number>>((counts, marker) => {
   counts[marker.category] = (counts[marker.category] || 0) + 1;
   return counts;
@@ -94,10 +102,10 @@ const firstMarker = markerData.markers[0];
             <circle cx="490" cy="385" r="46" fill="#243647" stroke="#f6d675" stroke-opacity=".6" stroke-width="3" />
             <path d="M461 386 L490 354 L520 386 L490 419 Z" fill="#f6d675" opacity=".68" />
             <text x="490" y="462" text-anchor="middle" fill="#dcecff" font-size="28" font-weight="700">Central Orbis</text>
-            <text x="249" y="356" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Western Plains</text>
-            <text x="514" y="92" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Northern Ruins</text>
+            <text x="249" y="356" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Meadow Approach</text>
+            <text x="514" y="92" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Shadowed Woods</text>
             <text x="750" y="334" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Eastern Highlands</text>
-            <text x="610" y="626" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Southern Coast</text>
+            <text x="610" y="626" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Dragonrise Basin</text>
             <text x="24" y="48" fill="#dcecff" font-size="24" font-weight="800">Unofficial schematic map</text>
             <text x="24" y="82" fill="#9fb1c4" font-size="20">Not to exact in-game scale</text>
           </svg>
@@ -107,6 +115,7 @@ const firstMarker = markerData.markers[0];
               class={`marker marker-${marker.category.toLowerCase().replace('_', '-')}`}
               data-marker-id={marker.id}
               data-marker-category={marker.category}
+              data-marker-status={marker.verification_status}
               data-marker-name={marker.name}
               data-marker-region={marker.region}
               style={`left:${marker.x * 100}%;top:${marker.y * 100}%;`}
@@ -126,6 +135,7 @@ const firstMarker = markerData.markers[0];
     <aside class="marker-panel" data-marker-panel aria-live="polite">
       <p class="panel-kicker">{categoryLabels[firstMarker.category]}</p>
       <h3>{firstMarker.name}</h3>
+      <span class={`status-badge status-${firstMarker.verification_status.toLowerCase().replaceAll('_', '-')}`}>{statusLabels[firstMarker.verification_status]}</span>
       <dl>
         <div><dt>Region</dt><dd>{firstMarker.region}</dd></div>
         <div><dt>Precision</dt><dd>{firstMarker.precision}</dd></div>
@@ -153,6 +163,14 @@ const firstMarker = markerData.markers[0];
       const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
       const markerButtons = Array.from(root.querySelectorAll('[data-marker-id]'));
       const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues' };
+      const statusLabels = {
+        OFFICIAL_VERIFIED: 'Official verified',
+        FIRST_HAND_VERIFIED: 'First-hand verified',
+        VIDEO_VERIFIED: 'Video verified',
+        SECONDARY_CORROBORATED: 'Source corroborated',
+        APPROXIMATE: 'Approximate',
+        CONFLICTING: 'Conflicting',
+      };
       let scale = 1;
       let offsetX = 0;
       let offsetY = 0;
@@ -166,6 +184,7 @@ const firstMarker = markerData.markers[0];
         panel.innerHTML = `
           <p class="panel-kicker">${labels[marker.category] || marker.category}</p>
           <h3>${marker.name}</h3>
+          <span class="status-badge status-${marker.verification_status.toLowerCase().replaceAll('_', '-')}">${statusLabels[marker.verification_status] || marker.verification_status}</span>
           <dl>
             <div><dt>Region</dt><dd>${marker.region}</dd></div>
             <div><dt>Precision</dt><dd>${marker.precision}</dd></div>
@@ -293,6 +312,10 @@ const firstMarker = markerData.markers[0];
   .marker-panel { padding: 1rem; }
   .panel-kicker { margin: 0 0 0.35rem; color: var(--success); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; }
   .marker-panel h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.2; }
+  .status-badge { display: inline-flex; width: fit-content; margin: 0 0 1rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem 0.55rem; background: hsl(222 32% 8% / 0.72); color: var(--muted-strong); font-size: 0.72rem; font-weight: 900; text-transform: uppercase; }
+  .status-secondary-corroborated { border-color: hsl(165 62% 63% / 0.55); background: hsl(165 62% 26% / 0.22); color: hsl(165 62% 78%); }
+  .status-approximate { border-color: hsl(45 89% 62% / 0.48); background: hsl(45 89% 28% / 0.18); color: hsl(45 89% 76%); }
+  .status-conflicting { border-color: hsl(8 82% 62% / 0.58); background: hsl(8 82% 24% / 0.24); color: hsl(8 82% 78%); }
   .marker-panel dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 0 0 1rem; }
   .marker-panel dl div { border-top: 1px solid var(--line); padding-top: 0.5rem; }
   .marker-panel dt { color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
