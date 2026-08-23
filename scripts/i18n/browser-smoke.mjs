@@ -7,6 +7,7 @@ const baseUrl = process.env.BASE_URL || 'http://127.0.0.1:4321';
 const chromePath = process.env.CHROME_PATH || '/Users/jazfox/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
 const debugPort = Number(process.env.CHROME_DEBUG_PORT || 9333);
 const pages = ['/ja/', '/ja/roadmap/', '/ja/map/', '/ja/systems/runes/', '/ja/multiplayer/', '/ja/builds/'];
+const expectedJaNav = ['ガイド', 'マップ', 'ルーン', 'マルチプレイ', 'ビルド', 'アップデート'];
 const viewports = [
   { name: 'desktop', width: 1440, height: 900 },
   { name: 'mobile', width: 390, height: 844 },
@@ -124,8 +125,18 @@ async function main() {
             lang: document.documentElement.lang,
             h1: document.querySelector('h1')?.textContent || '',
             canonical: document.querySelector('link[rel="canonical"]')?.href || '',
+            hasHeader: !!document.querySelector('[data-site-header][data-locale="ja"]'),
+            navLabels: [...document.querySelectorAll('[data-global-nav] a')].map((item) => item.textContent.trim()),
+            navHrefs: [...document.querySelectorAll('[data-global-nav] a')].map((item) => item.getAttribute('href')),
             hasJaShell: document.body.textContent.includes('非公式ファンガイド') && document.body.textContent.includes('DragonSword Guide は'),
+            hasFooter: !!document.querySelector('[data-site-footer][data-locale="ja"]') && document.body.textContent.includes('プライバシー') && document.body.textContent.includes('利用規約'),
             hasSwitcher: !!document.querySelector('.language-switcher a[href*="/ja/"]') || location.pathname.startsWith('/ja/'),
+            hasOfficialMedia: location.pathname !== '/ja/' || (
+              !!document.querySelector('[data-official-media]') &&
+              document.body.textContent.includes('公式メディア') &&
+              document.body.textContent.includes('プレビュートレーラー') &&
+              document.body.textContent.includes('YouTubeで見る')
+            ),
             overflow: document.documentElement.scrollWidth > window.innerWidth + 1,
             status: document.body.textContent.length > 100
           }))()`,
@@ -134,10 +145,32 @@ async function main() {
         if (value.lang !== 'ja') fail(`${viewport.name} ${page}: lang=${value.lang}`);
         if (!value.h1.includes('ドラゴンソード')) fail(`${viewport.name} ${page}: H1 not Japanese game intent`);
         if (!value.canonical.includes('/ja/')) fail(`${viewport.name} ${page}: canonical not Japanese`);
+        if (!value.hasHeader) fail(`${viewport.name} ${page}: locale-aware header missing`);
+        if (JSON.stringify(value.navLabels) !== JSON.stringify(expectedJaNav)) fail(`${viewport.name} ${page}: Japanese nav mismatch`);
+        if (value.navHrefs.some((href) => href === '/characters/' || href === '/teams/')) fail(`${viewport.name} ${page}: Japanese nav links to English-only route`);
         if (!value.hasJaShell) fail(`${viewport.name} ${page}: Japanese shell/footer missing`);
+        if (!value.hasFooter) fail(`${viewport.name} ${page}: locale-aware footer missing`);
         if (!value.hasSwitcher) fail(`${viewport.name} ${page}: language switcher missing`);
+        if (!value.hasOfficialMedia) fail(`${viewport.name} ${page}: localized official media missing`);
         if (value.overflow) fail(`${viewport.name} ${page}: horizontal overflow`);
         if (!value.status) fail(`${viewport.name} ${page}: body too small`);
+        if (viewport.name === 'mobile') {
+          const mobileResult = await cdp.send('Runtime.evaluate', {
+            returnByValue: true,
+            expression: `(() => {
+              const button = document.querySelector('[data-menu-button]');
+              button?.click();
+              const panel = document.querySelector('[data-menu-panel]');
+              return {
+                opened: panel ? !panel.hidden : false,
+                labels: [...document.querySelectorAll('.mobile-nav-links a')].map((item) => item.textContent.trim()),
+              };
+            })()`,
+          });
+          const mobileValue = mobileResult.result.value;
+          if (!mobileValue.opened) fail(`${viewport.name} ${page}: mobile menu did not open`);
+          if (JSON.stringify(mobileValue.labels) !== JSON.stringify(expectedJaNav)) fail(`${viewport.name} ${page}: mobile nav mismatch`);
+        }
       }
     }
 

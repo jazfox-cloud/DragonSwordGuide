@@ -47,6 +47,12 @@ const defaultLabels = {
     betaMarkers: 'beta markers',
     chests: 'chests',
     firstHandVerified: 'first-hand verified',
+    markerSummary: 'Map marker summary',
+    viewportLabel: 'Unofficial schematic Orbis map. Drag to pan and use controls to zoom.',
+    schematicTitle: 'Unofficial schematic map of Orbis',
+    schematicDescription: 'An owned, approximate schematic base map for DragonSword Awakening beta markers. Not to exact in-game scale.',
+    schematicLabel: 'Unofficial schematic map',
+    scaleNote: 'Not to exact in-game scale',
   },
   categories: {
     EONAS_LEGACY: "Eona's Legacy",
@@ -133,7 +139,7 @@ const firstMarker = markerData.markers[0];
       <h2 id="interactive-map-title">{mapLabels.headings.title}</h2>
       <p>{mapLabels.headings.description}</p>
     </div>
-    <div class="map-stats" aria-label="Map marker summary">
+    <div class="map-stats" aria-label={mapLabels.headings.markerSummary}>
       <span><strong>{markerData.markers.length + chestMarkerCount}</strong> {mapLabels.headings.betaMarkers}</span>
       <span><strong>{chestMarkerCount}</strong> {mapLabels.headings.chests}</span>
       <span><strong>0</strong> {mapLabels.headings.firstHandVerified}</span>
@@ -168,11 +174,11 @@ const firstMarker = markerData.markers[0];
 
   <div class="map-workspace">
     <div class="map-frame">
-      <div class="map-viewport" data-map-viewport aria-label="Unofficial schematic Orbis map. Drag to pan and use controls to zoom.">
+      <div class="map-viewport" data-map-viewport aria-label={mapLabels.headings.viewportLabel}>
         <div class="map-canvas" data-map-canvas>
           <svg class="schematic-map" viewBox="0 0 1000 680" role="img" aria-labelledby="orbis-map-title orbis-map-desc">
-            <title id="orbis-map-title">Unofficial schematic map of Orbis</title>
-            <desc id="orbis-map-desc">An owned, approximate schematic base map for DragonSword Awakening beta markers. Not to exact in-game scale.</desc>
+            <title id="orbis-map-title">{mapLabels.headings.schematicTitle}</title>
+            <desc id="orbis-map-desc">{mapLabels.headings.schematicDescription}</desc>
             <rect width="1000" height="680" rx="8" fill="#0c1726" />
             <path d="M80 462 C146 346 251 288 370 303 C465 190 615 151 735 226 C849 278 905 389 851 486 C765 610 570 626 451 568 C314 624 162 578 80 462 Z" fill="#193649" stroke="#61d7ff" stroke-opacity=".42" stroke-width="3" />
             <path d="M191 444 C242 372 334 352 409 382 C492 324 604 317 684 376 C746 420 772 505 709 552 C607 589 517 563 446 526 C360 561 248 540 191 444 Z" fill="#244d43" opacity=".86" />
@@ -187,8 +193,8 @@ const firstMarker = markerData.markers[0];
             <text x="514" y="92" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Shadowed Woods</text>
             <text x="750" y="334" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Eastern Highlands</text>
             <text x="610" y="626" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Dragonrise Basin</text>
-            <text x="24" y="48" fill="#dcecff" font-size="24" font-weight="800">Unofficial schematic map</text>
-            <text x="24" y="82" fill="#9fb1c4" font-size="20">Not to exact in-game scale</text>
+            <text x="24" y="48" fill="#dcecff" font-size="24" font-weight="800">{mapLabels.headings.schematicLabel}</text>
+            <text x="24" y="82" fill="#9fb1c4" font-size="20">{mapLabels.headings.scaleNote}</text>
           </svg>
           {markerData.markers.map((marker) => (
             <button

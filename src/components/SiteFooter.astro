@@ -1,0 +1,29 @@
+---
+import type { LocaleCode } from '../i18n/locales';
+import { getDictionary } from '../i18n/dictionaries';
+
+interface Props {
+  locale?: LocaleCode;
+}
+
+const { locale = 'en' } = Astro.props;
+const dictionary = getDictionary(locale);
+const homeHref = locale === 'ja' ? '/ja/' : '/';
+---
+
+<footer class="site-footer" data-site-footer data-locale={locale}>
+  <div class="shell footer-grid">
+    <div>
+      <a class="footer-brand" href={homeHref}>{dictionary.brand}</a>
+      <p>{dictionary.shell.footerText}</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://store.steampowered.com/app/4570720/DragonSword__Awakening/">{dictionary.shell.steam}</a>
+      <a href="https://discord.gg/CzZ5ddkMVg">{dictionary.shell.discord}</a>
+      <a href="https://www.youtube.com/@DragonSwordAwakening">{dictionary.shell.youtube}</a>
+      <a href="/privacy/">{dictionary.shell.privacy}</a>
+      <a href="/terms/">{dictionary.shell.terms}</a>
+    </div>
+    <p class="footer-disclaimer">{dictionary.shell.disclaimer}</p>
+  </div>
+</footer>

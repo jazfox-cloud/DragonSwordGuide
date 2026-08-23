@@ -2,13 +2,12 @@ export const ja = {
   brand: 'DragonSword Guide',
   skipLabel: '日本語',
   nav: [
-    { label: 'ガイド', href: '/ja/' },
-    { label: 'キャラクター', href: '/characters/' },
-    { label: 'ビルド', href: '/ja/builds/' },
-    { label: 'チーム編成', href: '/ja/builds/' },
-    { label: 'マップ', href: '/ja/map/' },
-    { label: 'システム', href: '/ja/systems/runes/' },
-    { label: 'アップデート', href: '/ja/roadmap/' },
+    { routeId: 'home', label: 'ガイド', href: '/ja/', localized: true },
+    { routeId: 'map', label: 'マップ', href: '/ja/map/', localized: true },
+    { routeId: 'runes', label: 'ルーン', href: '/ja/systems/runes/', localized: true },
+    { routeId: 'multiplayer', label: 'マルチプレイ', href: '/ja/multiplayer/', localized: true },
+    { routeId: 'builds', label: 'ビルド', href: '/ja/builds/', localized: true },
+    { routeId: 'roadmap', label: 'アップデート', href: '/ja/roadmap/', localized: true },
   ],
   shell: {
     ariaHome: 'DragonSword Guide 日本語ホーム',
@@ -21,6 +20,12 @@ export const ja = {
     youtube: '公式YouTube',
     privacy: 'プライバシー',
     terms: '利用規約',
+  },
+  officialMedia: {
+    eyebrow: '公式メディア',
+    label: 'プレビュートレーラー',
+    title: 'DragonSword: Awakening プレビュートレーラー',
+    cta: 'YouTubeで見る',
   },
   languageSwitcher: {
     label: '言語',

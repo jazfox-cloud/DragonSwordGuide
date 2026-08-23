@@ -2,13 +2,13 @@ export const en = {
   brand: 'DragonSword Guide',
   skipLabel: 'English',
   nav: [
-    { label: 'Guides', href: '/guides/beginner/' },
-    { label: 'Characters', href: '/characters/' },
-    { label: 'Builds', href: '/builds/' },
-    { label: 'Teams', href: '/teams/' },
-    { label: 'Map', href: '/map/' },
-    { label: 'Systems', href: '/systems/runes/' },
-    { label: 'Updates', href: '/roadmap/' },
+    { routeId: 'beginner', label: 'Guides', href: '/guides/beginner/', localized: false },
+    { routeId: 'characters', label: 'Characters', href: '/characters/', localized: false },
+    { routeId: 'builds', label: 'Builds', href: '/builds/', localized: true },
+    { routeId: 'teams', label: 'Teams', href: '/teams/', localized: false },
+    { routeId: 'map', label: 'Map', href: '/map/', localized: true },
+    { routeId: 'runes', label: 'Systems', href: '/systems/runes/', localized: true },
+    { routeId: 'roadmap', label: 'Updates', href: '/roadmap/', localized: true },
   ],
   shell: {
     ariaHome: 'DragonSword Guide home',
@@ -21,6 +21,12 @@ export const en = {
     youtube: 'Official YouTube',
     privacy: 'Privacy',
     terms: 'Terms',
+  },
+  officialMedia: {
+    eyebrow: 'Official media',
+    label: 'Preview Trailer',
+    title: 'DragonSword: Awakening Preview Trailer',
+    cta: 'Open on YouTube',
   },
   languageSwitcher: {
     label: 'Language',

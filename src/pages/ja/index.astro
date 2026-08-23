@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceRevisionMeta from '../../components/SourceRevisionMeta.astro';
+import OfficialMedia from '../../components/OfficialMedia.astro';
 import { homeJa as page } from '../../content/ja/home';
 import { getCanonical, absoluteUrl } from '../../i18n/seo';
 
@@ -25,20 +26,23 @@ const organization = {
 <BaseLayout title={page.title} description={page.description} canonical={canonical} locale="ja" routeId="home" schema={[website, organization]}>
   <div class="ja-page home">
     <section class="hero shell">
-      <p class="eyebrow">DragonSword : Awakening · 非公式ファンガイド</p>
-      <h1>{page.h1}</h1>
-      <p class="lede">アニメ調オープンワールドのオルビスを進めるための、出典重視の攻略ハブです。ロードマップ、マップ、ルーン、マルチプレイ、ビルドを、確認済みの事実と未検証の内容に分けて読めます。</p>
-      <div class="hero-actions">
-        <a class="button primary" href="/ja/map/">マップを開く</a>
-        <a class="button secondary" href="/ja/roadmap/">ロードマップを見る</a>
-        <a class="text-link" href="/ja/multiplayer/">マルチプレイ確認状況</a>
+      <div class="hero-copy">
+        <p class="eyebrow">DragonSword : Awakening · 非公式ファンガイド</p>
+        <h1>{page.h1}</h1>
+        <p class="lede">アニメ調オープンワールドのオルビスを進めるための、出典重視の攻略ハブです。ロードマップ、マップ、ルーン、マルチプレイ、ビルドを、確認済みの事実と未検証の内容に分けて読めます。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="/ja/map/">マップを開く</a>
+          <a class="button secondary" href="/ja/roadmap/">ロードマップを見る</a>
+          <a class="text-link" href="/ja/multiplayer/">マルチプレイ確認状況</a>
+        </div>
+        <div class="stats" aria-label="確認済みの基礎情報">
+          <span><strong>19</strong>英雄</span>
+          <span><strong>1,555</strong>マップマーカー</span>
+          <span><strong>500</strong>ルーン所持上限</span>
+          <span><strong>オンライン</strong>協力プレイ</span>
+        </div>
       </div>
-      <div class="stats" aria-label="確認済みの基礎情報">
-        <span><strong>19</strong>英雄</span>
-        <span><strong>1,555</strong>map markers</span>
-        <span><strong>500</strong>ルーン所持上限</span>
-        <span><strong>Online</strong>協力プレイ</span>
-      </div>
+      <OfficialMedia locale="ja" />
     </section>
 
     <section class="shell section">
@@ -66,7 +70,7 @@ const organization = {
 
 <style>
   .ja-page { overflow: hidden; }
-  .hero { padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 6vw, 4rem); }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); gap: clamp(2rem, 7vw, 6rem); align-items: center; padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 6vw, 4rem); }
   .eyebrow { color: var(--accent-light); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
   h1 { max-width: 13ch; margin: 0; font-size: clamp(2.7rem, 8vw, 5.8rem); line-height: 1.04; letter-spacing: 0; }
   h2 { margin: 0 0 1rem; font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.15; letter-spacing: 0; }
@@ -87,6 +91,7 @@ const organization = {
   .card p, .trust p { margin: 0; color: var(--muted); font-size: 0.86rem; }
   .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .trust-grid div { border-top: 1px solid var(--accent); padding-top: 0.8rem; }
-  @media (max-width: 980px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr 0.8fr; } .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) { .hero { grid-template-columns: 1fr; } }
   @media (max-width: 640px) { .card-grid, .trust-grid { grid-template-columns: 1fr; } }
 </style>

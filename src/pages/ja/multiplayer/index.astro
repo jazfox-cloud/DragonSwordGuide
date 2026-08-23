@@ -13,10 +13,10 @@ const canonical = getCanonical('multiplayer', 'ja');
 const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-22' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'マルチプレイ', path: '/ja/multiplayer/' }]);
 const sources = [
-  { label: 'Steam公式ストア', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'OFFICIAL_VERIFIED - Single-player と Online Co-op を確認。' },
-  { label: '公式1.0.7アップデート', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'OFFICIAL_VERIFIED - Quick Entry とマルチプレイマッチングのロビー検索範囲設定を確認。' },
-  { label: '公式1.0.8アップデート', href: patch108.href, note: 'OFFICIAL_VERIFIED - 最新確認済みアップデート。新しい協力モード追加ではありません。' },
-  { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'OFFICIAL_VERIFIED developer source - Subjugation と Raids を協力コンテンツとして説明。' },
+  { label: 'Steam公式ストア', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: '公式確認済み - Single-player と Online Co-op を確認。' },
+  { label: '公式1.0.7アップデート', href: 'https://steamcommunity.com/app/4570720/announcements/', note: '公式確認済み - Quick Entry とマルチプレイマッチングのロビー検索範囲設定を確認。' },
+  { label: '公式1.0.8アップデート', href: patch108.href, note: '公式確認済み - 最新確認済みアップデート。新しい協力モード追加ではありません。' },
+  { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: '公式開発者情報 - Subjugation と Raids を協力コンテンツとして説明。' },
 ];
 ---
 
@@ -46,7 +46,7 @@ const sources = [
       <h2>協力プレイで遊べる内容</h2>
       <p>SubjugationとRaidsは確認済みです。ストーリー協力とオープンワールド協力は、現在の確認済み情報としては扱いません。</p>
       <h2>まだ確認していないこと</h2>
-      <p class="evidence-note"><strong>NOT_YET_VERIFIED:</strong> 正確なプレイヤー数、解放条件、招待コード、メニュー手順、クロスプレイ、クロスセーブ、進行共有、lootルール、ストーリー協力、オープンワールド協力、地域制限、ホスト/ゲスト仕様。</p>
+      <p class="evidence-note"><strong>未検証:</strong> 正確なプレイヤー数、解放条件、招待コード、メニュー手順、クロスプレイ、クロスセーブ、進行共有、lootルール、ストーリー協力、オープンワールド協力、地域制限、ホスト/ゲスト仕様。</p>
       <h2>PvPはある？</h2>
       <p>このページで確認した一次情報では、PvPは確認していません。確認済みのマルチプレイ情報は協力PvEに関するものです。</p>
       <SourceList title="出典と検証" intro="マルチプレイ機能は一次情報で確認できる範囲だけを確認済みとして扱います。" sources={sources} />

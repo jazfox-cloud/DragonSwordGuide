@@ -1,0 +1,51 @@
+---
+import type { LocaleCode } from '../i18n/locales';
+import { getDictionary } from '../i18n/dictionaries';
+
+interface Props {
+  locale?: LocaleCode;
+  videoUrl?: string;
+  embedUrl?: string;
+  title?: string;
+  label?: string;
+  ctaLabel?: string;
+  eyebrow?: string;
+}
+
+const {
+  locale = 'en',
+  videoUrl = 'https://www.youtube.com/watch?v=bvqGAuu-ZIM',
+  embedUrl = 'https://www.youtube-nocookie.com/embed/bvqGAuu-ZIM?rel=0',
+  title,
+  label,
+  ctaLabel,
+  eyebrow,
+} = Astro.props;
+const dictionary = getDictionary(locale);
+const media = dictionary.officialMedia;
+---
+
+<div class="official-media" data-official-media>
+  <div class="media-label">
+    <span class="media-kicker">{eyebrow || media.eyebrow}</span>
+    <span>{label || media.label}</span>
+  </div>
+  <div class="media-frame">
+    <iframe
+      src={embedUrl}
+      title={title || media.title}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <a class="media-link" href={videoUrl}>{ctaLabel || media.cta} <span aria-hidden="true">↗</span></a>
+</div>
+
+<style>
+  .official-media { position: relative; }
+  .media-label { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.7rem; color: var(--muted-strong); font-size: 0.8rem; font-weight: 800; }
+  .media-kicker { color: var(--accent-light); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .media-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid hsl(199 86% 58% / 0.4); border-radius: 14px 5px 14px 5px; background: var(--paper); box-shadow: 0 22px 55px hsl(222 32% 3% / 0.5); }
+  .media-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+  .media-link { display: block; color: var(--accent-light); background: var(--raised); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; padding: 0.8rem 1rem; font-size: 0.8rem; font-weight: 800; text-decoration: none; }
+</style>

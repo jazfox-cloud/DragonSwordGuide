@@ -1,14 +1,15 @@
 ---
-import { navigation } from '../data/navigation';
+import type { RouteId } from '../i18n/routes';
 import { getDictionary } from '../i18n/dictionaries';
 
 interface Props {
   locale?: 'en' | 'ja';
+  routeId?: RouteId;
 }
 
-const { locale = 'en' } = Astro.props;
+const { locale = 'en', routeId } = Astro.props;
 const dictionary = getDictionary(locale);
-const navItems = locale === 'ja' ? dictionary.nav : navigation;
+const navItems = dictionary.nav;
 ---
 
 <nav class="mobile-nav" data-mobile-nav aria-label={locale === 'ja' ? 'モバイルナビゲーション' : 'Mobile navigation'}>
@@ -19,7 +20,7 @@ const navItems = locale === 'ja' ? dictionary.nav : navigation;
     <div class="mobile-nav-panel-inner">
       <p class="mobile-nav-kicker">{dictionary.brand}</p>
       <div class="mobile-nav-links">
-        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        {navItems.map((item) => <a href={item.href} data-route-id={item.routeId} aria-current={routeId === item.routeId ? 'page' : undefined}>{item.label}</a>)}
       </div>
     </div>
   </div>

@@ -11,13 +11,11 @@ interface Props {
 }
 
 import type { RouteId } from '../i18n/routes';
-import MobileNav from '../components/MobileNav.astro';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
-import { getDictionary } from '../i18n/dictionaries';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import { getAlternates } from '../i18n/seo';
 
 const { title, description, canonical, schema = [], ogType = 'website', noindex = false, locale = 'en', routeId } = Astro.props;
-const dictionary = getDictionary(locale);
 const alternates = routeId ? getAlternates(routeId) : [];
 const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
 ---
@@ -63,42 +61,11 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
       FORM: Information-dense dark guide product, chosen for Read/Persuade; seed key: dragonsword-guide-orbis-fieldbook.
       FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
     -->
-    <header class="site-header">
-      <div class="shell header-inner">
-        <a class="brand" href={locale === 'ja' ? '/ja/' : '/'} aria-label={dictionary.shell.ariaHome}>
-          <span class="brand-visual">
-            <img class="brand-image" src="/brand/logo.png" alt="" width="32" height="32" loading="eager" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
-            <span class="brand-mark brand-fallback" aria-hidden="true" hidden><span></span></span>
-          </span>
-          <span>{dictionary.brand}</span>
-        </a>
-        <nav class="site-nav" aria-label={dictionary.shell.primaryNav}>
-          {dictionary.nav.map((item) => <a href={item.href}>{item.label}</a>)}
-        </nav>
-        <LanguageSwitcher locale={locale} routeId={routeId} />
-        <span class="brand-note">{dictionary.shell.note}</span>
-        <MobileNav locale={locale} />
-      </div>
-    </header>
+    <SiteHeader locale={locale} routeId={routeId} />
     <main>
       <slot />
     </main>
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div>
-          <a class="footer-brand" href={locale === 'ja' ? '/ja/' : '/'}>{dictionary.brand}</a>
-          <p>{dictionary.shell.footerText}</p>
-        </div>
-        <div class="footer-links">
-          <a href="https://store.steampowered.com/app/4570720/DragonSword__Awakening/">{dictionary.shell.steam}</a>
-          <a href="https://discord.gg/CzZ5ddkMVg">{dictionary.shell.discord}</a>
-          <a href="https://www.youtube.com/@DragonSwordAwakening">{dictionary.shell.youtube}</a>
-          <a href="/privacy/">{dictionary.shell.privacy}</a>
-          <a href="/terms/">{dictionary.shell.terms}</a>
-        </div>
-        <p class="footer-disclaimer">{dictionary.shell.disclaimer}</p>
-      </div>
-    </footer>
+    <SiteFooter locale={locale} />
   </body>
 </html>
 

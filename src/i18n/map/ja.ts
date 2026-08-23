@@ -6,6 +6,12 @@ export const mapJa = {
     betaMarkers: 'beta マーカー',
     chests: '宝箱',
     firstHandVerified: '一次確認済み',
+    markerSummary: 'マップマーカー概要',
+    viewportLabel: '非公式のオルビス概略マップ。ドラッグで移動し、操作ボタンでズームできます。',
+    schematicTitle: '非公式オルビス概略マップ',
+    schematicDescription: 'DragonSword: Awakening beta マーカー用の、DragonSwordGuide独自のおおよその概略ベースマップです。ゲーム内の正確な縮尺ではありません。',
+    schematicLabel: '非公式スキーマ図',
+    scaleNote: 'ゲーム内の正確な縮尺ではありません',
   },
   categories: {
     EONAS_LEGACY: "Eona's Legacy",
