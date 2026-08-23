@@ -1,0 +1,353 @@
+{
+  "dataset_version": "chest-full-scale-1500-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "region": "Southeast Coast",
+  "chunk_key": "southeast-coast",
+  "marker_count": 8,
+  "markers": [
+    {
+      "id": "marker:chest:southeast-coast:001",
+      "name": "Treasure Chest - Southeast Coast #001",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.727882,
+      "y": 0.737148,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:1c32782dc791",
+      "source_record_id": "treasure-chest-1c32782dc7915316",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #001 Southeast Coast",
+        "Southeast Coast Treasure Chest #001",
+        "Superior Chest Southeast Coast",
+        "Southeast Coast Superior Chest",
+        "Chest Southeast Coast #001",
+        "Treasure Box Southeast Coast",
+        "Chest local 001",
+        "Chest source 1c32782d"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #001 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:002",
+      "name": "Treasure Chest - Southeast Coast #002",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.70702,
+      "y": 0.749756,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:1d866b765849",
+      "source_record_id": "treasure-chest-1d866b765849dfeb",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #002 Southeast Coast",
+        "Southeast Coast Treasure Chest #002",
+        "Superior Chest Southeast Coast",
+        "Southeast Coast Superior Chest",
+        "Chest Southeast Coast #002",
+        "Treasure Box Southeast Coast",
+        "Chest local 002",
+        "Chest source 1d866b76"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #002 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:003",
+      "name": "Treasure Chest - Southeast Coast #003",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.696365,
+      "y": 0.75263,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:38b5f2e7a064",
+      "source_record_id": "treasure-chest-38b5f2e7a064a36b",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #003 Southeast Coast",
+        "Southeast Coast Treasure Chest #003",
+        "Rare Chest Southeast Coast",
+        "Southeast Coast Rare Chest",
+        "Chest Southeast Coast #003",
+        "Treasure Box Southeast Coast",
+        "Chest local 003",
+        "Chest source 38b5f2e7"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #003 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:004",
+      "name": "Treasure Chest - Southeast Coast #004",
+      "category": "CHEST",
+      "subtype": "LEGENDARY_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.725287,
+      "y": 0.740322,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:3bb21fc3ae62",
+      "source_record_id": "treasure-chest-3bb21fc3ae6229d1",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #004 Southeast Coast",
+        "Southeast Coast Treasure Chest #004",
+        "Legendary Chest Southeast Coast",
+        "Southeast Coast Legendary Chest",
+        "Chest Southeast Coast #004",
+        "Treasure Box Southeast Coast",
+        "Chest local 004",
+        "Chest source 3bb21fc3"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #004 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:005",
+      "name": "Treasure Chest - Southeast Coast #005",
+      "category": "CHEST",
+      "subtype": "NORMAL_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.679828,
+      "y": 0.76041,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:694600175c6b",
+      "source_record_id": "treasure-chest-694600175c6bd869",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #005 Southeast Coast",
+        "Southeast Coast Treasure Chest #005",
+        "Normal Chest Southeast Coast",
+        "Southeast Coast Normal Chest",
+        "Chest Southeast Coast #005",
+        "Treasure Box Southeast Coast",
+        "Chest local 005",
+        "Chest source 69460017"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #005 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:006",
+      "name": "Treasure Chest - Southeast Coast #006",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.741523,
+      "y": 0.752644,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:840513750f5c",
+      "source_record_id": "treasure-chest-840513750f5cc9a1",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #006 Southeast Coast",
+        "Southeast Coast Treasure Chest #006",
+        "Superior Chest Southeast Coast",
+        "Southeast Coast Superior Chest",
+        "Chest Southeast Coast #006",
+        "Treasure Box Southeast Coast",
+        "Chest local 006",
+        "Chest source 84051375"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #006 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:007",
+      "name": "Treasure Chest - Southeast Coast #007",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.724773,
+      "y": 0.753119,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:948ee8a58f4c",
+      "source_record_id": "treasure-chest-948ee8a58f4c4860",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #007 Southeast Coast",
+        "Southeast Coast Treasure Chest #007",
+        "Rare Chest Southeast Coast",
+        "Southeast Coast Rare Chest",
+        "Chest Southeast Coast #007",
+        "Treasure Box Southeast Coast",
+        "Chest local 007",
+        "Chest source 948ee8a5"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #007 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southeast-coast:008",
+      "name": "Treasure Chest - Southeast Coast #008",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southeast Coast",
+      "x": 0.74745,
+      "y": 0.738516,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "MEDIUM",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "MEDIUM",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:ac9f7dfcdcaa",
+      "source_record_id": "treasure-chest-ac9f7dfcdcaa4cec",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southeast-coast",
+      "aliases": [
+        "Treasure Chest #008 Southeast Coast",
+        "Southeast Coast Treasure Chest #008",
+        "Rare Chest Southeast Coast",
+        "Southeast Coast Rare Chest",
+        "Chest Southeast Coast #008",
+        "Treasure Box Southeast Coast",
+        "Chest local 008",
+        "Chest source ac9f7dfc"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #008 is a source-corroborated, approximate Treasure Chest planning marker in Southeast Coast. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    }
+  ]
+}

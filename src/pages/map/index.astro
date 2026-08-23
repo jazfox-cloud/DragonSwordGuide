@@ -12,7 +12,7 @@ import chestManifest from '../../../public/data/map/chests/manifest.json';
 import { sourceUrls, patch107 } from '../../data/sources';
 
 const title = 'DragonSword Awakening Interactive Map — Orbis Beta';
-const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona, Organa, Warp Point, Dungeon, Field Boss and Treasure Chest pilot markers with clear verification labels.';
+const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona, Organa, Warp Point, Dungeon, Field Boss and Treasure Chest markers with clear verification labels.';
 const canonical = 'https://dragonswordguide.com/map/';
 const article = {
   '@context': 'https://schema.org',
@@ -43,8 +43,8 @@ const sources = [
   { label: 'Public Field Boss map labels', href: 'https://dragonsword-awakening.org/maps?type=TOWN', note: 'Evidence C — public map labels list 9 Field Boss names and nearby regions; coordinates and map assets were not copied.' },
   { label: 'GrandWiki Orbis Field Boss layer', href: 'https://dsawakening.grandwiki.com/map', note: 'Evidence C — public map guide says field bosses use current in-game names for location questions and exposes a field-boss layer.' },
   { label: 'World boss name guide', href: 'https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4', note: 'Evidence C — corroborates the world-boss name pool and explicitly does not provide exact map coordinates.' },
-  { label: 'Public chest map layer', href: 'https://dragonswordawakening.net/map', note: 'Evidence C — used as one public position source for the limited Meadow / Field chest pilot, not as a copied full database.' },
-  { label: 'Dragonsword Companion public map', href: 'https://www.dragonswordc.com/', note: 'Evidence C — used as an independent public position comparison source for the 80-marker chest pilot.' },
+  { label: 'Public chest map layer', href: 'https://dragonswordawakening.net/map', note: 'Evidence C — used as one public position source for full-scale Chest position corroboration; exact source coordinates were not republished as-is.' },
+  { label: 'Dragonsword Companion public map', href: 'https://www.dragonswordc.com/', note: 'Evidence C — used as an independent public position comparison source for the full-scale Chest layer.' },
   { label: 'GrandWiki Orbis map', href: 'https://dsawakening.grandwiki.com/map', note: 'Evidence C — confirms dense chest-layer map behavior and grouped search; not used as a copied chest coordinate table.' },
   { label: 'Steam global achievements', href: 'https://steamcommunity.com/stats/4570720/achievements', note: 'Evidence B — confirms Treasure Chest gameplay through the Anything in Here? achievement, not exact locations.' },
   { label: 'Community interactive-map discussion', href: 'https://www.reddit.com/r/DSwordAwakening/comments/1vap7qr/all_chests_locations_interactive_map/', note: 'Evidence C — demand and discovery signal only; not copied marker coordinates or a complete map claim.' },
@@ -63,25 +63,25 @@ const totalMapMarkers = markerData.markers.length + chestManifest.total_publishe
       </header>
 
       <QuickAnswer title="Use this beta map for broad Orbis planning, not exact collectible routing.">
-        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. Eona, Organa, Warp Point, Dungeon, Field Boss and limited Treasure Chest pilot markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
+        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. Eona, Organa, Warp Point, Dungeon, Field Boss and Treasure Chest markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
       </QuickAnswer>
 
       <InteractiveMap markerData={markerData} chestMarkerCount={chestManifest.total_published} />
 
       <div class="copy">
         <h2>How to use the map</h2>
-        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon, Boss or Treasure Chest categories on and off. Treasure Chests are off by default and load as a separate clustered pilot layer.</p>
+        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon, Boss or Treasure Chest categories on and off. Treasure Chests are off by default and load as a separate clustered layer with region filtering.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and 398 Treasure Chest planning markers across 8 regions. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage remains scale-gated, not a full 1,500-marker import.</p>
+        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and 1,484 Treasure Chest planning markers across 20 schematic regions. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage is full-scale published for strong and moderate public position agreement; weak or conflicting positions remain unpublished.</p>
 
         <AdsterraNativeBanner />
 
         <h2>Verification status</h2>
-        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {totalMapMarkers} approximate beta markers and 0 official, video or first-hand verified markers. The Chest pilot uses <strong>MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION</strong> with <strong>LANDMARK_APPROXIMATE</strong> precision; it does not claim exact in-game coordinates, respawn rules or first-hand verification.</p>
+        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {totalMapMarkers} approximate beta markers and 0 official, video or first-hand verified markers. The Chest layer uses <strong>MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION</strong> with <strong>LANDMARK_APPROXIMATE</strong> precision; it does not claim exact in-game coordinates, respawn rules or first-hand verification.</p>
 
         <h2>Updates and data provenance</h2>
-        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Chest sources went through a separate 400-candidate public-coordinate scale gate before the 398-marker layer was exported; conflicting, weak or single-source chest positions remain unpublished.</p>
+        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Chest sources went through a full-scale public-coordinate gate before the 1,484-marker layer was exported; conflicting, weak or single-source chest positions remain unpublished.</p>
       </div>
 
       <SourceList sources={sources} />

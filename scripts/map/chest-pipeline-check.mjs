@@ -24,7 +24,11 @@ for (const file of [
   'public-coordinate-recovery.json',
   'production/manifest.json',
   'production/meadow-of-beginnings.json',
-  'production/field-of-plenty.json'
+  'production/field-of-plenty.json',
+  '../full-scale-validation.json',
+  '../full-scale-performance.json',
+  '../full-scale-dataset-diff.json',
+  '../full-scale-region-report.json'
 ]) {
   if (!fs.existsSync(path.join(PILOT_DIR, file))) {
     fail(`missing ${file}`);
@@ -104,15 +108,61 @@ if (!performance.performance_gate.chunk_size_acceptable || !performance.performa
   fail('scale performance gate must pass static benchmark checks');
 }
 
+const fullValidation = readJson(path.join(process.cwd(), 'reports/map-data/full-scale-validation.json'));
+if (fullValidation.full_scale_gate !== 'CHEST_FULL_SCALE_PUBLISHED') {
+  fail('full-scale validation must publish only passed chest candidates');
+}
+if (fullValidation.raw_chest_candidates !== 1500 || fullValidation.chests_after !== 1484) {
+  fail('full-scale validation must audit 1500 candidates and publish 1484 chests');
+}
+if (fullValidation.chests_rejected !== 16) {
+  fail('full-scale validation must retain 16 weak/conflicting rejected candidates');
+}
+if (fullValidation.classification_counts.STRONG_POSITION_AGREEMENT !== 1290) {
+  fail('full-scale validation strong agreement count changed unexpectedly');
+}
+if (fullValidation.classification_counts.MODERATE_POSITION_AGREEMENT !== 194) {
+  fail('full-scale validation moderate agreement count changed unexpectedly');
+}
+if (fullValidation.classification_counts.WEAK_POSITION_AGREEMENT !== 7) {
+  fail('full-scale validation weak agreement count changed unexpectedly');
+}
+if (fullValidation.classification_counts.CONFLICTING_POSITION !== 9) {
+  fail('full-scale validation conflicting agreement count changed unexpectedly');
+}
+if (fullValidation.classification_counts.INSUFFICIENT_POSITION_DATA !== 0) {
+  fail('full-scale validation should not publish insufficient position data');
+}
+for (const [key, value] of Object.entries(fullValidation.gate_checks || {})) {
+  if (value !== true) fail(`full-scale gate check failed: ${key}`);
+}
+
+const fullDatasetDiff = readJson(path.join(process.cwd(), 'reports/map-data/full-scale-dataset-diff.json'));
+if (!fullDatasetDiff.stable_existing_398) fail('existing 398 chest marker IDs and metadata must stay stable');
+if (fullDatasetDiff.counts.added !== 1086 || fullDatasetDiff.counts.removed !== 0 || fullDatasetDiff.counts.moved !== 0 || fullDatasetDiff.counts.metadata_changed !== 0) {
+  fail('full-scale dataset diff must add 1086 chests without removing, moving, or changing the baseline 398');
+}
+
+const fullPerformance = readJson(path.join(process.cwd(), 'reports/map-data/full-scale-performance.json'));
+if (fullPerformance.cluster_performance.max_visible_dom_markers > 250 || !fullPerformance.cluster_performance.dom_cap_respected) {
+  fail('full-scale visible DOM marker cap must be respected');
+}
+if (!fullPerformance.performance_gate.chunk_size_acceptable || !fullPerformance.performance_gate.no_multi_second_blocking_model) {
+  fail('full-scale performance gate must pass static benchmark checks');
+}
+if (fullPerformance.region_filter.options < 20) {
+  fail('full-scale Chest layer should expose region filter options');
+}
+
 const manifest = readJson(path.join(process.cwd(), 'public/data/map/chests/manifest.json'));
-if (manifest.total_published !== 398) fail(`public manifest should publish 398 scale-gated chest markers, got ${manifest.total_published}`);
-if (manifest.region_count !== 8 || manifest.regions.length !== 8) fail('public manifest should contain eight scale regions');
-if (manifest.publication_gate !== 'CHEST_SCALE_500_READY_FOR_PRODUCTION') fail('public manifest must retain the scale gate decision');
+if (manifest.total_published !== 1484) fail(`public manifest should publish 1484 full-scale chest markers, got ${manifest.total_published}`);
+if (manifest.region_count !== 20 || manifest.regions.length !== 20) fail('public manifest should contain twenty full-scale regions');
+if (manifest.publication_gate !== 'CHEST_FULL_SCALE_PUBLISHED') fail('public manifest must retain the full-scale gate decision');
 const publishedIds = new Set();
 const publishedPositionKeys = new Set();
 let searchableAliasCount = 0;
 for (const region of manifest.regions) {
-  const scaleChunkPath = path.join(process.cwd(), 'reports/map-data/chest-scale-500/production', region.chunk);
+  const scaleChunkPath = path.join(process.cwd(), 'reports/map-data/chest-full-scale-1500/production', region.chunk);
   if (!fs.existsSync(scaleChunkPath)) fail(`missing scale production chunk ${region.chunk}`);
   const scaleChunk = readJson(scaleChunkPath);
   const publicChunkPath = path.join(process.cwd(), 'public/data/map/chests', region.chunk);
@@ -120,7 +170,7 @@ for (const region of manifest.regions) {
   const chunk = readJson(publicChunkPath);
   if (scaleChunk.marker_count !== chunk.marker_count) fail(`scale/public chunk count mismatch for ${region.chunk}`);
   if (chunk.marker_count !== chunk.markers.length) fail(`chunk count mismatch for ${region.chunk}`);
-  if (chunk.marker_count < 48 || chunk.marker_count > 50) fail(`chunk ${region.chunk} should publish 48-50 chest markers`);
+  if (chunk.marker_count < 1 || chunk.marker_count > 150) fail(`chunk ${region.chunk} should publish 1-150 chest markers`);
   for (const marker of chunk.markers) {
     if (publishedIds.has(marker.id)) fail(`duplicate published chest marker id ${marker.id}`);
     publishedIds.add(marker.id);
@@ -157,8 +207,8 @@ for (const region of manifest.regions) {
     searchableAliasCount += marker.aliases.length;
   }
 }
-if (publishedIds.size !== 398) fail(`expected 398 unique published chest ids, got ${publishedIds.size}`);
-if (searchableAliasCount < 398 * 6) fail('published chest aliases are too sparse for search coverage');
+if (publishedIds.size !== 1484) fail(`expected 1484 unique published chest ids, got ${publishedIds.size}`);
+if (searchableAliasCount < 1484 * 6) fail('published chest aliases are too sparse for search coverage');
 
 const diff = readJson(path.join(PILOT_DIR, 'diff-report.json'));
 for (const key of ['added', 'removed', 'moved', 'metadata_changed', 'unchanged']) {
@@ -169,4 +219,4 @@ const pilotPerformance = readJson(path.join(PILOT_DIR, 'performance-report.json'
 if (pilotPerformance.max_visible_dom_markers > 250) fail('pilot visible DOM marker cap too high');
 if (pilotPerformance.published_count !== 80) fail('pilot performance report should retain the 80-chest baseline');
 
-console.log(`chest:pipeline-check ok: pilot=${validation.published_count} scale=${manifest.total_published} rejected=${scaleValidation.rejected}`);
+console.log(`chest:pipeline-check ok: pilot=${validation.published_count} scale500=${scaleValidation.chests_after} fullScale=${manifest.total_published} fullRejected=${fullValidation.chests_rejected}`);

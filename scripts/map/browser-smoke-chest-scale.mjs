@@ -8,11 +8,15 @@ const CHROME_BIN = process.env.CHROME_BIN || '/Applications/Google Chrome.app/Co
 const PORT = Number(process.env.CHEST_SMOKE_PORT || 4328);
 const DEBUG_PORT = Number(process.env.CHEST_SMOKE_DEBUG_PORT || 9338);
 const BASE_URL = `http://127.0.0.1:${PORT}`;
-const OUT_PATH = path.join(ROOT, 'reports/map-data/browser-performance-validation.json');
+const OUT_PATH = path.join(ROOT, 'reports/map-data/full-scale-browser-performance.json');
 
 function writeJson(filePath, data) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`);
+}
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
 function wait(ms) {
@@ -127,6 +131,7 @@ async function runViewport(cdp, viewport) {
     const canvas = document.querySelector('[data-map-canvas]');
     const layer = document.querySelector('[data-chest-layer]');
     const search = document.querySelector('[data-marker-search]');
+    const regionSelect = document.querySelector('[data-chest-region-filter]');
     const result = {
       viewport: { width: ${viewport.width}, height: ${viewport.height}, mobile: ${viewport.mobile} },
       initialChestLoaded: Boolean(root.dataset.chestLoaded),
@@ -148,6 +153,22 @@ async function runViewport(cdp, viewport) {
     result.enableMs = Math.round(performance.now() - enableStart);
     result.lowZoomClusters = document.querySelectorAll('[data-chest-cluster]').length;
     result.lowZoomMarkers = document.querySelectorAll('.marker-chest').length;
+    result.regionOptions = regionSelect ? regionSelect.options.length : 0;
+
+    const regionStart = performance.now();
+    if (regionSelect && Array.from(regionSelect.options).some((option) => option.value === 'skyridge-uplands')) {
+      regionSelect.value = 'skyridge-uplands';
+      regionSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      await waitFor(() => Number(root.dataset.filteredMarkerCount || 0) > 0);
+      result.regionFilterMs = Math.round(performance.now() - regionStart);
+      result.regionFilterCount = Number(root.dataset.filteredMarkerCount || 0);
+      regionSelect.value = '';
+      regionSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      await waitFor(() => Number(root.dataset.filteredMarkerCount || 0) > result.regionFilterCount);
+    } else {
+      result.regionFilterMs = 0;
+      result.regionFilterCount = 0;
+    }
 
     const cluster = document.querySelector('[data-chest-cluster]');
     const expandStart = performance.now();
@@ -203,7 +224,7 @@ async function runViewport(cdp, viewport) {
       .filter((item) => item.right > document.documentElement.clientWidth + 1)
       .slice(0, 8);
     result.domCapRespected = result.highZoomMarkers <= 250;
-    result.controlsUsable = result.enableMs < 3000 && result.searchMs < 1000 && result.markerOpenMs < 1000 && result.zoomMs < 1000 && result.panMs < 1000;
+    result.controlsUsable = result.enableMs < 3000 && result.searchMs < 1000 && result.markerOpenMs < 1000 && result.zoomMs < 1000 && result.panMs < 1000 && result.regionFilterMs < 1000;
     resolve(result);
   })`);
 }
@@ -245,7 +266,7 @@ try {
   cdp.close();
 
   const report = {
-    dataset_version: 'chest-scale-500-2026-08-23',
+    dataset_version: 'chest-full-scale-1500-2026-08-23',
     smoke_type: 'REAL_CHROME_HEADLESS_CDP',
     desktop,
     mobile,
@@ -253,12 +274,19 @@ try {
       no_browser_freeze: true,
       no_severe_interaction_lag: desktop.controlsUsable && mobile.controlsUsable,
       no_horizontal_overflow: !desktop.initialHorizontalOverflow && !desktop.finalHorizontalOverflow && !mobile.initialHorizontalOverflow && !mobile.finalHorizontalOverflow,
-      no_multi_second_blocking_interaction: Math.max(desktop.enableMs, desktop.searchMs, desktop.markerOpenMs, mobile.enableMs, mobile.searchMs, mobile.markerOpenMs) < 3000,
+      no_multi_second_blocking_interaction: Math.max(desktop.enableMs, desktop.searchMs, desktop.markerOpenMs, desktop.regionFilterMs, mobile.enableMs, mobile.searchMs, mobile.markerOpenMs, mobile.regionFilterMs) < 3000,
       dom_cap_respected: desktop.domCapRespected && mobile.domCapRespected,
       map_controls_remain_usable: desktop.controlsUsable && mobile.controlsUsable
     }
   };
   writeJson(OUT_PATH, report);
+  const fullScalePerformancePath = path.join(ROOT, 'reports/map-data/full-scale-performance.json');
+  if (fs.existsSync(fullScalePerformancePath)) {
+    const fullScalePerformance = readJson(fullScalePerformancePath);
+    fullScalePerformance.browser_smoke = report;
+    fullScalePerformance.performance_gate.real_chrome_smoke_passed = Object.values(report.gate).every(Boolean);
+    writeJson(fullScalePerformancePath, fullScalePerformance);
+  }
   console.log(`browser-smoke: desktopEnable=${desktop.enableMs}ms mobileEnable=${mobile.enableMs}ms desktopMarkers=${desktop.highZoomMarkers} mobileMarkers=${mobile.highZoomMarkers}`);
 } catch (error) {
   failed = true;

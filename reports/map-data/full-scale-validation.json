@@ -1,0 +1,1339 @@
+{
+  "dataset_version": "chest-full-scale-1500-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "raw_chest_candidates": 1500,
+  "deduped_candidates": 1500,
+  "companion_treasure_boxes": 1506,
+  "classification_counts": {
+    "STRONG_POSITION_AGREEMENT": 1290,
+    "MODERATE_POSITION_AGREEMENT": 194,
+    "WEAK_POSITION_AGREEMENT": 7,
+    "CONFLICTING_POSITION": 9,
+    "INSUFFICIENT_POSITION_DATA": 0
+  },
+  "strong_moderate_rate": 0.9893,
+  "conflicting_rate": 0.006,
+  "chests_before": 398,
+  "chests_after": 1484,
+  "new_chests_published": 1086,
+  "chests_rejected": 16,
+  "regions_total": 20,
+  "regions_published": 20,
+  "same_entity": 0,
+  "probable_same_entity": 11,
+  "possible_duplicate": 165,
+  "duplicate_production_ids": 0,
+  "duplicate_production_positions": 0,
+  "unresolved_duplicate_production_rows": 0,
+  "rejected_records": [
+    {
+      "candidate_id": "candidate:chest:full-scale:26adc5c17c03",
+      "source_record_id": "treasure-chest-26adc5c17c030d6d",
+      "region": "Meadow East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.024064,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:2bf25630e738",
+      "source_record_id": "treasure-chest-2bf25630e73822ca",
+      "region": "Dragonrise West",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.016884,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:31a7132b84a8",
+      "source_record_id": "treasure-chest-31a7132b84a8070c",
+      "region": "Field East",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.011881,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:387d86665132",
+      "source_record_id": "treasure-chest-387d86665132ad68",
+      "region": "Field East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.023337,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:3d2d9d989bb7",
+      "source_record_id": "treasure-chest-3d2d9d989bb7f402",
+      "region": "Field West",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.031968,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:43c160d64506",
+      "source_record_id": "treasure-chest-43c160d6450631e4",
+      "region": "Dragonrise West",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.006447,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:6181478d1abf",
+      "source_record_id": "treasure-chest-6181478d1abfe196",
+      "region": "Misty Veil Highlands",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.010913,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:85a9268b8c95",
+      "source_record_id": "treasure-chest-85a9268b8c958dfc",
+      "region": "Meadow East",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.016186,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:85e6df7b5339",
+      "source_record_id": "treasure-chest-85e6df7b5339b2aa",
+      "region": "Dragonrise West",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.006177,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:9e3ad5370502",
+      "source_record_id": "treasure-chest-9e3ad53705023ab9",
+      "region": "Central Orbis",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.033071,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:a15f47bc4147",
+      "source_record_id": "treasure-chest-a15f47bc4147fae9",
+      "region": "Meadow East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.036217,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:bbd5e6f61c38",
+      "source_record_id": "treasure-chest-bbd5e6f61c3886d7",
+      "region": "Central Orbis",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.035587,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:bc8eb25ce872",
+      "source_record_id": "treasure-chest-bc8eb25ce8723980",
+      "region": "Meadow East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.039685,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:c0e5b7b4ef4f",
+      "source_record_id": "treasure-chest-c0e5b7b4ef4fd5ce",
+      "region": "Field West",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.013602,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:dfbd82f75062",
+      "source_record_id": "treasure-chest-dfbd82f75062ee92",
+      "region": "Field East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.036158,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:full-scale:f4cc37984f38",
+      "source_record_id": "treasure-chest-f4cc37984f38c26d",
+      "region": "Meadow East",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.027777,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    }
+  ],
+  "resolved_possible_duplicates": [
+    {
+      "a": "candidate:chest:full-scale:00b502a3d288",
+      "b": "candidate:chest:full-scale:0b491b796910",
+      "distance": 0.000493,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:00bf4ab21cda",
+      "b": "candidate:chest:full-scale:67608452bc81",
+      "distance": 0.002824,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:016940e166b1",
+      "b": "candidate:chest:full-scale:2e4db763e236",
+      "distance": 0.002538,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:016940e166b1",
+      "b": "candidate:chest:full-scale:eefad60566a0",
+      "distance": 0.002594,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:01e42c786580",
+      "b": "candidate:chest:full-scale:f04b3e568699",
+      "distance": 0.00007,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:01f029be3d84",
+      "b": "candidate:chest:full-scale:1ec4a78b0037",
+      "distance": 0.00177,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:03be87363dfe",
+      "b": "candidate:chest:full-scale:7062c5a352a7",
+      "distance": 0.002282,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:03be87363dfe",
+      "b": "candidate:chest:full-scale:753bc81db7e9",
+      "distance": 0.000249,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:05a81290143b",
+      "b": "candidate:chest:full-scale:7166858f2b71",
+      "distance": 0.000732,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:06d9b1529b13",
+      "b": "candidate:chest:full-scale:47e0155a540c",
+      "distance": 0.002787,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:07f372529512",
+      "b": "candidate:chest:full-scale:2c4042e88fa7",
+      "distance": 0.002618,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:07f372529512",
+      "b": "candidate:chest:full-scale:55d3489ec672",
+      "distance": 0.000844,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:07f372529512",
+      "b": "candidate:chest:full-scale:9d929820b0e2",
+      "distance": 0.002919,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:07f372529512",
+      "b": "candidate:chest:full-scale:c41760bc6c10",
+      "distance": 0.001738,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0b62085383bf",
+      "b": "candidate:chest:full-scale:76f1648e9bdb",
+      "distance": 0.000581,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0c364dbed03d",
+      "b": "candidate:chest:full-scale:811e1e3bb170",
+      "distance": 0.000502,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0c6ec6612c18",
+      "b": "candidate:chest:full-scale:30d48888e67c",
+      "distance": 0.001153,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0c6ec6612c18",
+      "b": "candidate:chest:full-scale:32ded1e522a1",
+      "distance": 0.002923,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0cbb34766675",
+      "b": "candidate:chest:full-scale:4a0084318b8a",
+      "distance": 0.002698,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0cbb34766675",
+      "b": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "distance": 0.001754,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0cbb34766675",
+      "b": "candidate:chest:full-scale:4eb84b519d28",
+      "distance": 0.002692,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:0cbb34766675",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.00232,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:108171c1efec",
+      "b": "candidate:chest:full-scale:42906c6dff3e",
+      "distance": 0.002416,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:108171c1efec",
+      "b": "candidate:chest:full-scale:ecbaf930bf4e",
+      "distance": 0.002375,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:132055bc9de3",
+      "b": "candidate:chest:full-scale:242a200db6c8",
+      "distance": 0.000373,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:13ce112590e9",
+      "b": "candidate:chest:full-scale:b89381c04afe",
+      "distance": 0.002963,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:14d49abd9bcd",
+      "b": "candidate:chest:full-scale:6cd30c47a549",
+      "distance": 0.002511,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:15b21ad6eee2",
+      "b": "candidate:chest:full-scale:c9a76389f261",
+      "distance": 0.000429,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:1f28e3b8e481",
+      "b": "candidate:chest:full-scale:5d8fc09a459c",
+      "distance": 0.002047,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:1f88b7e5b718",
+      "b": "candidate:chest:full-scale:68f706e5f4e9",
+      "distance": 0.00133,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:1f88b7e5b718",
+      "b": "candidate:chest:full-scale:a952469c7f67",
+      "distance": 0.001503,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:1f88b7e5b718",
+      "b": "candidate:chest:full-scale:ddff5c6ad4e5",
+      "distance": 0.001839,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2301998dbe7a",
+      "b": "candidate:chest:full-scale:2891fa0b417f",
+      "distance": 0.001732,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2301998dbe7a",
+      "b": "candidate:chest:full-scale:6fd96d8235d7",
+      "distance": 0.00173,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2301998dbe7a",
+      "b": "candidate:chest:full-scale:c0341e30dcef",
+      "distance": 0.002731,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:231fa839cfb1",
+      "b": "candidate:chest:full-scale:54bfd1ed3ba2",
+      "distance": 0.002425,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:24520cd7bc3a",
+      "b": "candidate:chest:full-scale:46f5b2c1a70a",
+      "distance": 0.00092,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:24520cd7bc3a",
+      "b": "candidate:chest:full-scale:b40fc8bf6ea9",
+      "distance": 0.001943,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:249ccd61d203",
+      "b": "candidate:chest:full-scale:309daa8a32c5",
+      "distance": 0.000444,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:27f6552c7b40",
+      "b": "candidate:chest:full-scale:324fbce953b6",
+      "distance": 0.002983,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2891fa0b417f",
+      "b": "candidate:chest:full-scale:6f7114b4277f",
+      "distance": 0.002401,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:29cedee5e3e9",
+      "b": "candidate:chest:full-scale:d04437bb6c58",
+      "distance": 0.000404,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2b1fcefe095d",
+      "b": "candidate:chest:full-scale:448090743331",
+      "distance": 0.002314,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2c4042e88fa7",
+      "b": "candidate:chest:full-scale:55d3489ec672",
+      "distance": 0.002062,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2c4042e88fa7",
+      "b": "candidate:chest:full-scale:c41760bc6c10",
+      "distance": 0.001743,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2e4db763e236",
+      "b": "candidate:chest:full-scale:eefad60566a0",
+      "distance": 0.002291,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:2f0394a5df0c",
+      "b": "candidate:chest:full-scale:314678e31995",
+      "distance": 0.002534,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:303ee5c7fb19",
+      "b": "candidate:chest:full-scale:504e48992943",
+      "distance": 0.000562,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:30ad5b07fe38",
+      "b": "candidate:chest:full-scale:455e6f14d99a",
+      "distance": 0.000319,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:30ad5b07fe38",
+      "b": "candidate:chest:full-scale:7d524fa21eec",
+      "distance": 0.001665,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:30ad5b07fe38",
+      "b": "candidate:chest:full-scale:e86de5cbf628",
+      "distance": 0.00279,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3242eaee8a53",
+      "b": "candidate:chest:full-scale:9822be5c2069",
+      "distance": 0.000252,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:334252b1eda0",
+      "b": "candidate:chest:full-scale:6e5e58590871",
+      "distance": 0.001277,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:338bc6ed017f",
+      "b": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "distance": 0.002188,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:338bc6ed017f",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.001896,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:35c3b8421b91",
+      "b": "candidate:chest:full-scale:76f1648e9bdb",
+      "distance": 0.002571,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:35eca1cfc841",
+      "b": "candidate:chest:full-scale:5307425449c8",
+      "distance": 0.002828,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:360d7f6e9535",
+      "b": "candidate:chest:full-scale:37b447834745",
+      "distance": 0.001038,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:360d7f6e9535",
+      "b": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "distance": 0.002874,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:360d7f6e9535",
+      "b": "candidate:chest:full-scale:dccd54fa5d26",
+      "distance": 0.001436,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:360d7f6e9535",
+      "b": "candidate:chest:full-scale:ddff5c6ad4e5",
+      "distance": 0.002923,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:360d7f6e9535",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.002259,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:37b447834745",
+      "b": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "distance": 0.002991,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:37b447834745",
+      "b": "candidate:chest:full-scale:dccd54fa5d26",
+      "distance": 0.000412,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:37b447834745",
+      "b": "candidate:chest:full-scale:ddff5c6ad4e5",
+      "distance": 0.002715,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:37b447834745",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.002595,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:387d86665132",
+      "b": "candidate:chest:full-scale:5fcb27764de9",
+      "distance": 0.002133,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:387d86665132",
+      "b": "candidate:chest:full-scale:af7576829b70",
+      "distance": 0.001338,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:38dda892f6ef",
+      "b": "candidate:chest:full-scale:64d86ef025a9",
+      "distance": 0.002827,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:39c07d69f5f2",
+      "b": "candidate:chest:full-scale:3abd58034712",
+      "distance": 0.002141,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:39c07d69f5f2",
+      "b": "candidate:chest:full-scale:bc211dff557a",
+      "distance": 0.00256,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:39f50293474d",
+      "b": "candidate:chest:full-scale:de2f0311ffbb",
+      "distance": 0.001836,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3abd58034712",
+      "b": "candidate:chest:full-scale:bc211dff557a",
+      "distance": 0.000439,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3abd58034712",
+      "b": "candidate:chest:full-scale:d48a42d5d4f3",
+      "distance": 0.000877,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3abd58034712",
+      "b": "candidate:chest:full-scale:f4ae4cd3d4a0",
+      "distance": 0.002924,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3c132cfcaf7c",
+      "b": "candidate:chest:full-scale:ed01ae1c33a8",
+      "distance": 0.001777,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3cae380cc883",
+      "b": "candidate:chest:full-scale:55d3489ec672",
+      "distance": 0.002973,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3cae380cc883",
+      "b": "candidate:chest:full-scale:c41760bc6c10",
+      "distance": 0.00297,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:3d2d9d989bb7",
+      "b": "candidate:chest:full-scale:f6b310de0d40",
+      "distance": 0.000446,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:40d26ac31d48",
+      "b": "candidate:chest:full-scale:c4e01170650c",
+      "distance": 0.001861,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:42906c6dff3e",
+      "b": "candidate:chest:full-scale:878792abc389",
+      "distance": 0.002157,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:42906c6dff3e",
+      "b": "candidate:chest:full-scale:ecbaf930bf4e",
+      "distance": 0.001032,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:448090743331",
+      "b": "candidate:chest:full-scale:666ff0bf6c9e",
+      "distance": 0.001387,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:452963c8dee0",
+      "b": "candidate:chest:full-scale:7d524fa21eec",
+      "distance": 0.002471,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:452963c8dee0",
+      "b": "candidate:chest:full-scale:adcb1b9262b6",
+      "distance": 0.001634,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:455e6f14d99a",
+      "b": "candidate:chest:full-scale:5998d0eec6e4",
+      "distance": 0.000333,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:455e6f14d99a",
+      "b": "candidate:chest:full-scale:7d524fa21eec",
+      "distance": 0.001653,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:46f5b2c1a70a",
+      "b": "candidate:chest:full-scale:b40fc8bf6ea9",
+      "distance": 0.001275,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4a0084318b8a",
+      "b": "candidate:chest:full-scale:4eb84b519d28",
+      "distance": 0.001092,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4a0084318b8a",
+      "b": "candidate:chest:full-scale:5d18d3eb9794",
+      "distance": 0.002796,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4b05f15e730b",
+      "b": "candidate:chest:full-scale:58c8ecb6871f",
+      "distance": 0.000561,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4e0b121abfcd",
+      "b": "candidate:chest:full-scale:85ebbb555d2e",
+      "distance": 0.002706,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "b": "candidate:chest:full-scale:5d18d3eb9794",
+      "distance": 0.002716,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4e72b1e9bfbf",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.000772,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4e9aab4931f6",
+      "b": "candidate:chest:full-scale:7b9aa4966b9a",
+      "distance": 0.001811,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:4f8e5967df1a",
+      "b": "candidate:chest:full-scale:6b70af434f03",
+      "distance": 0.000604,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:504e48992943",
+      "b": "candidate:chest:full-scale:66cfb60ce806",
+      "distance": 0.000487,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:504e64750cb7",
+      "b": "candidate:chest:full-scale:9a5cd0a9178a",
+      "distance": 0.002776,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:504e64750cb7",
+      "b": "candidate:chest:full-scale:c6e5fef5b758",
+      "distance": 0.002039,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:508a5302811f",
+      "b": "candidate:chest:full-scale:bc0d0f424245",
+      "distance": 0.002098,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:55d3489ec672",
+      "b": "candidate:chest:full-scale:c41760bc6c10",
+      "distance": 0.000894,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:572af99bc6d7",
+      "b": "candidate:chest:full-scale:a12a9d759d4e",
+      "distance": 0.002985,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:5732d78880be",
+      "b": "candidate:chest:full-scale:7eb8ed3d0ef3",
+      "distance": 0.00294,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:58f368aae638",
+      "b": "candidate:chest:full-scale:fa6db5c0febe",
+      "distance": 0.000506,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:591b81611eb3",
+      "b": "candidate:chest:full-scale:bf48268137c5",
+      "distance": 0.002922,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:5998d0eec6e4",
+      "b": "candidate:chest:full-scale:7d524fa21eec",
+      "distance": 0.001954,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:5d7efee5a479",
+      "b": "candidate:chest:full-scale:a29db2fff544",
+      "distance": 0.002311,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6254b3efb1e7",
+      "b": "candidate:chest:full-scale:7056500b6b5e",
+      "distance": 0.000602,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6254b3efb1e7",
+      "b": "candidate:chest:full-scale:f18ad4cc675f",
+      "distance": 0.000593,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:64b8b0768cad",
+      "b": "candidate:chest:full-scale:683e0d8700d0",
+      "distance": 0.000404,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6589759e5f1b",
+      "b": "candidate:chest:full-scale:a15f47bc4147",
+      "distance": 0.00239,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:66144e766719",
+      "b": "candidate:chest:full-scale:a2251edf5f07",
+      "distance": 0.00139,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:66144e766719",
+      "b": "candidate:chest:full-scale:dfc8df20f656",
+      "distance": 0.00058,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:667bf09c0715",
+      "b": "candidate:chest:full-scale:913aa50eaa65",
+      "distance": 0.001164,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:68f706e5f4e9",
+      "b": "candidate:chest:full-scale:a952469c7f67",
+      "distance": 0.001139,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6b094163aa07",
+      "b": "candidate:chest:full-scale:aaf85723c1a8",
+      "distance": 0.001425,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6b5bcf5b784f",
+      "b": "candidate:chest:full-scale:f26861b30330",
+      "distance": 0.002255,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6bd9867ff078",
+      "b": "candidate:chest:full-scale:ed01ae1c33a8",
+      "distance": 0.002041,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6e5e58590871",
+      "b": "candidate:chest:full-scale:d4a4fa38a928",
+      "distance": 0.002107,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6e91953addd1",
+      "b": "candidate:chest:full-scale:96ae374960be",
+      "distance": 0.002684,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6f7114b4277f",
+      "b": "candidate:chest:full-scale:c0341e30dcef",
+      "distance": 0.002527,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:6fe0e7137fa3",
+      "b": "candidate:chest:full-scale:dabb49b1a623",
+      "distance": 0.002557,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:7056500b6b5e",
+      "b": "candidate:chest:full-scale:f18ad4cc675f",
+      "distance": 0.001103,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:7062c5a352a7",
+      "b": "candidate:chest:full-scale:753bc81db7e9",
+      "distance": 0.002276,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:71d5ef207ed6",
+      "b": "candidate:chest:full-scale:a831d38f21c6",
+      "distance": 0.002222,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:752f23955f2a",
+      "b": "candidate:chest:full-scale:826fd2d0a3e1",
+      "distance": 0.001605,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:7c520a922021",
+      "b": "candidate:chest:full-scale:f26861b30330",
+      "distance": 0.002623,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:7d524fa21eec",
+      "b": "candidate:chest:full-scale:adcb1b9262b6",
+      "distance": 0.002999,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:7d524fa21eec",
+      "b": "candidate:chest:full-scale:e86de5cbf628",
+      "distance": 0.002442,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:828b9b03bcd3",
+      "b": "candidate:chest:full-scale:96b8abf60a00",
+      "distance": 0.000963,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:86efb143710e",
+      "b": "candidate:chest:full-scale:cea9c2e4b918",
+      "distance": 0.002065,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:878792abc389",
+      "b": "candidate:chest:full-scale:ecbaf930bf4e",
+      "distance": 0.002223,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:8a64b5b43a98",
+      "b": "candidate:chest:full-scale:977f6787c4e7",
+      "distance": 0.00292,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:8b95fcde201f",
+      "b": "candidate:chest:full-scale:fcb4ca9627bd",
+      "distance": 0.002775,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:938e834d0669",
+      "b": "candidate:chest:full-scale:f545ff04fcb2",
+      "distance": 0.002548,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:96aacba22721",
+      "b": "candidate:chest:full-scale:c1d829b6c9ca",
+      "distance": 0.002901,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:977f6787c4e7",
+      "b": "candidate:chest:full-scale:aa923391248d",
+      "distance": 0.001175,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:97ece6a4f79d",
+      "b": "candidate:chest:full-scale:ecbaf930bf4e",
+      "distance": 0.001584,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:9822be5c2069",
+      "b": "candidate:chest:full-scale:fd78aec273ae",
+      "distance": 0.001293,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:989b6f0b1dd6",
+      "b": "candidate:chest:full-scale:ac45f63d7d3d",
+      "distance": 0.000491,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:9965aead74ec",
+      "b": "candidate:chest:full-scale:cce2a6881032",
+      "distance": 0.002939,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:9d929820b0e2",
+      "b": "candidate:chest:full-scale:f36b01b215eb",
+      "distance": 0.000242,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:a2251edf5f07",
+      "b": "candidate:chest:full-scale:dfc8df20f656",
+      "distance": 0.001066,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:a29db2fff544",
+      "b": "candidate:chest:full-scale:f4eafea61890",
+      "distance": 0.001729,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:a5356a0c11f3",
+      "b": "candidate:chest:full-scale:ae9abbcab727",
+      "distance": 0.000455,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:a6c5f5711ccf",
+      "b": "candidate:chest:full-scale:d022fd6fe51a",
+      "distance": 0.001382,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:a952469c7f67",
+      "b": "candidate:chest:full-scale:ddff5c6ad4e5",
+      "distance": 0.002532,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:b439c69228bc",
+      "b": "candidate:chest:full-scale:c6dcbe5916ac",
+      "distance": 0.002896,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:b45fa5deb8ca",
+      "b": "candidate:chest:full-scale:de35fb9731e4",
+      "distance": 0.001345,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:b8121a2e7bfe",
+      "b": "candidate:chest:full-scale:e7e3bf6c608b",
+      "distance": 0.001987,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:b9057b5357fb",
+      "b": "candidate:chest:full-scale:f0e3e0afa487",
+      "distance": 0.002958,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:bc211dff557a",
+      "b": "candidate:chest:full-scale:d48a42d5d4f3",
+      "distance": 0.000495,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:bc211dff557a",
+      "b": "candidate:chest:full-scale:f4ae4cd3d4a0",
+      "distance": 0.002529,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:c1ef49e280e2",
+      "b": "candidate:chest:full-scale:d5bcac9ca06f",
+      "distance": 0.001805,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:c852b36aecdc",
+      "b": "candidate:chest:full-scale:f6a561dbea42",
+      "distance": 0.002065,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:c90751933a5e",
+      "b": "candidate:chest:full-scale:cefcbf607f9c",
+      "distance": 0.001731,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:d34c8b75434d",
+      "b": "candidate:chest:full-scale:f3c36126dbc4",
+      "distance": 0.002881,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:d48a42d5d4f3",
+      "b": "candidate:chest:full-scale:f4ae4cd3d4a0",
+      "distance": 0.002048,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:daddfecd8dc9",
+      "b": "candidate:chest:full-scale:ddfb0d19b9ee",
+      "distance": 0.001429,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:dccd54fa5d26",
+      "b": "candidate:chest:full-scale:ddff5c6ad4e5",
+      "distance": 0.002612,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:dccd54fa5d26",
+      "b": "candidate:chest:full-scale:f0d94d636715",
+      "distance": 0.002914,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:eb444784355a",
+      "b": "candidate:chest:full-scale:fb676b2fee22",
+      "distance": 0.002825,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:ec7fc36f9de1",
+      "b": "candidate:chest:full-scale:ee0e34aee5d4",
+      "distance": 0.002827,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:ecf7e2d29932",
+      "b": "candidate:chest:full-scale:ef56d1714870",
+      "distance": 0.000821,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:full-scale:f4d973242e11",
+      "b": "candidate:chest:full-scale:fa03342e6f6e",
+      "distance": 0.001002,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    }
+  ],
+  "source_family_integrity": {
+    "minimum_source_family_count": 3,
+    "position_sources": [
+      "DragonSwordAwakening.net public map",
+      "Dragonsword Companion public map"
+    ],
+    "context_sources": [
+      "GrandWiki Orbis map",
+      "DragonSword-Awakening.org public map",
+      "Steam achievements"
+    ],
+    "note": "Common game-data-family sources are retained as context and not counted as independent coordinate sources."
+  },
+  "gate_checks": {
+    "strong_moderate_at_least_95_percent": true,
+    "conflicting_at_most_1_percent": true,
+    "duplicate_ids_zero": true,
+    "duplicate_positions_zero": true,
+    "unresolved_duplicates_zero": true,
+    "stable_existing_398": true,
+    "no_conflicting_production_rows": true,
+    "all_coordinates_in_bounds": true
+  },
+  "full_scale_gate": "CHEST_FULL_SCALE_PUBLISHED"
+}

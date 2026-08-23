@@ -100,6 +100,12 @@ const firstMarker = markerData.markers[0];
         </label>
       ))}
     </div>
+    <label class="chest-region-field">
+      <span>Chest region</span>
+      <select data-chest-region-filter disabled>
+        <option value="">All loaded regions</option>
+      </select>
+    </label>
     <div class="zoom-actions" aria-label="Map view controls">
       <button type="button" data-map-action="zoom-out" aria-label="Zoom out">-</button>
       <button type="button" data-map-action="reset">Reset</button>
@@ -190,6 +196,7 @@ const firstMarker = markerData.markers[0];
       const panel = root.querySelector('[data-marker-panel]');
       const search = root.querySelector('[data-marker-search]');
       const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
+      const chestRegionFilter = root.querySelector('[data-chest-region-filter]');
       const chestLayer = root.querySelector('[data-chest-layer]');
       const chestManifestUrl = root.dataset.chestManifestUrl;
       const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points', DUNGEON: 'Dungeons', BOSS: 'Bosses', CHEST: 'Treasure Chests' };
@@ -266,6 +273,10 @@ const firstMarker = markerData.markers[0];
         return !query || haystack.includes(query);
       }
 
+      function markerMatchesChestRegion(marker) {
+        return !chestRegionFilter || !chestRegionFilter.value || marker.chunk_key === chestRegionFilter.value;
+      }
+
       function clusterChestMarkers(markers) {
         const cell = scale < 1 ? 64 : scale < 1.45 ? 42 : 24;
         const buckets = new Map();
@@ -295,7 +306,7 @@ const firstMarker = markerData.markers[0];
           return;
         }
 
-        const visibleChestMarkers = chestMarkers.filter((marker) => markerMatches(marker, query));
+        const visibleChestMarkers = chestMarkers.filter((marker) => markerMatches(marker, query) && markerMatchesChestRegion(marker));
         if (scale < 1.45) {
           const clusters = clusterChestMarkers(visibleChestMarkers);
           chestLayer.innerHTML = clusters.map((cluster, index) => `
@@ -335,6 +346,12 @@ const firstMarker = markerData.markers[0];
           chestLoadPromise = fetch(chestManifestUrl)
             .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest manifest ${response.status}`)))
             .then(async (manifest) => {
+              if (chestRegionFilter) {
+                chestRegionFilter.innerHTML = '<option value="">All loaded regions</option>' + (manifest.regions || []).map((region) =>
+                  `<option value="${region.slug}">${region.name} (${region.marker_count})</option>`
+                ).join('');
+                chestRegionFilter.disabled = false;
+              }
               const chunks = await Promise.all((manifest.regions || []).map((region) =>
                 fetch(`/data/map/chests/${region.chunk}`)
                   .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest chunk ${region.chunk} ${response.status}`)))
@@ -370,7 +387,7 @@ const firstMarker = markerData.markers[0];
 
         renderChestLayer();
         if (categories.has('CHEST')) {
-          shown += chestMarkers.filter((marker) => markerMatches(marker, query)).length;
+          shown += chestMarkers.filter((marker) => markerMatches(marker, query) && markerMatchesChestRegion(marker)).length;
         }
         root.dataset.filteredMarkerCount = String(shown);
       }
@@ -435,6 +452,7 @@ const firstMarker = markerData.markers[0];
 
       search.addEventListener('input', () => void applyFilters());
       filters.forEach((input) => input.addEventListener('change', () => void applyFilters()));
+      chestRegionFilter?.addEventListener('change', () => void applyFilters());
       setTransform();
       void applyFilters();
     })();
@@ -449,9 +467,10 @@ const firstMarker = markerData.markers[0];
   .map-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: end; }
   .map-stats span { display: grid; min-width: 120px; padding: 0.7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--muted); font-size: 0.78rem; }
   .map-stats strong { color: var(--ink); font-size: 1.25rem; line-height: 1.1; }
-  .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) auto; gap: 0.75rem; align-items: end; padding: 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: hsl(219 24% 16% / 0.72); }
-  .search-field { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
-  .search-field input { width: 100%; min-height: 42px; border: 1px solid hsl(199 86% 58% / 0.35); border-radius: 6px; background: hsl(222 32% 8% / 0.8); color: var(--ink); padding: 0.65rem 0.75rem; font: inherit; }
+  .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) minmax(180px, 220px) auto; gap: 0.75rem; align-items: end; padding: 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: hsl(219 24% 16% / 0.72); }
+  .search-field, .chest-region-field { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
+  .search-field input, .chest-region-field select { width: 100%; min-height: 42px; border: 1px solid hsl(199 86% 58% / 0.35); border-radius: 6px; background: hsl(222 32% 8% / 0.8); color: var(--ink); padding: 0.65rem 0.75rem; font: inherit; }
+  .chest-region-field select:disabled { opacity: 0.55; }
   .filter-group, .zoom-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .filter-pill { cursor: pointer; }
   .filter-pill input { position: absolute; opacity: 0; pointer-events: none; }

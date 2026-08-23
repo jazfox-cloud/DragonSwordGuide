@@ -1,0 +1,353 @@
+{
+  "dataset_version": "chest-full-scale-1500-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "region": "Southwest Lowlands",
+  "chunk_key": "southwest-lowlands",
+  "marker_count": 8,
+  "markers": [
+    {
+      "id": "marker:chest:southwest-lowlands:001",
+      "name": "Treasure Chest - Southwest Lowlands #001",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.246565,
+      "y": 0.801505,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:130daf35fd22",
+      "source_record_id": "treasure-chest-130daf35fd22679d",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #001 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #001",
+        "Rare Chest Southwest Lowlands",
+        "Southwest Lowlands Rare Chest",
+        "Chest Southwest Lowlands #001",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 001",
+        "Chest source 130daf35"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #001 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:002",
+      "name": "Treasure Chest - Southwest Lowlands #002",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.253773,
+      "y": 0.791538,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:8035ff497bc8",
+      "source_record_id": "treasure-chest-8035ff497bc8507d",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #002 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #002",
+        "Superior Chest Southwest Lowlands",
+        "Southwest Lowlands Superior Chest",
+        "Chest Southwest Lowlands #002",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 002",
+        "Chest source 8035ff49"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #002 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:003",
+      "name": "Treasure Chest - Southwest Lowlands #003",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.248362,
+      "y": 0.760509,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:88e7172c7e80",
+      "source_record_id": "treasure-chest-88e7172c7e80be9b",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #003 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #003",
+        "Superior Chest Southwest Lowlands",
+        "Southwest Lowlands Superior Chest",
+        "Chest Southwest Lowlands #003",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 003",
+        "Chest source 88e7172c"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #003 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:004",
+      "name": "Treasure Chest - Southwest Lowlands #004",
+      "category": "CHEST",
+      "subtype": "SUPERIOR_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.254977,
+      "y": 0.764027,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:c2e014ed89a7",
+      "source_record_id": "treasure-chest-c2e014ed89a7ca8f",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #004 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #004",
+        "Superior Chest Southwest Lowlands",
+        "Southwest Lowlands Superior Chest",
+        "Chest Southwest Lowlands #004",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 004",
+        "Chest source c2e014ed"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #004 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:005",
+      "name": "Treasure Chest - Southwest Lowlands #005",
+      "category": "CHEST",
+      "subtype": "EPIC_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.257204,
+      "y": 0.770735,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:cf7d85dca5ce",
+      "source_record_id": "treasure-chest-cf7d85dca5ced72f",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #005 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #005",
+        "Epic Chest Southwest Lowlands",
+        "Southwest Lowlands Epic Chest",
+        "Chest Southwest Lowlands #005",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 005",
+        "Chest source cf7d85dc"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #005 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:006",
+      "name": "Treasure Chest - Southwest Lowlands #006",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.252686,
+      "y": 0.778639,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:d8115661fcdc",
+      "source_record_id": "treasure-chest-d8115661fcdc945d",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #006 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #006",
+        "Rare Chest Southwest Lowlands",
+        "Southwest Lowlands Rare Chest",
+        "Chest Southwest Lowlands #006",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 006",
+        "Chest source d8115661"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #006 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:007",
+      "name": "Treasure Chest - Southwest Lowlands #007",
+      "category": "CHEST",
+      "subtype": "RARE_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.22298,
+      "y": 0.790144,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:dc876853951f",
+      "source_record_id": "treasure-chest-dc876853951ff9b5",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #007 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #007",
+        "Rare Chest Southwest Lowlands",
+        "Southwest Lowlands Rare Chest",
+        "Chest Southwest Lowlands #007",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 007",
+        "Chest source dc876853"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #007 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    },
+    {
+      "id": "marker:chest:southwest-lowlands:008",
+      "name": "Treasure Chest - Southwest Lowlands #008",
+      "category": "CHEST",
+      "subtype": "EPIC_CHEST",
+      "region": "Southwest Lowlands",
+      "x": 0.256285,
+      "y": 0.781829,
+      "status": "SECONDARY_CORROBORATED",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "precision": "LANDMARK_APPROXIMATE",
+      "coordinate_confidence": "HIGH",
+      "coordinate_provenance": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+      "confidence": "HIGH",
+      "dataset_version": "chest-full-scale-1500-2026-08-23",
+      "source_ref": "candidate:chest:full-scale:ee36e9e6bbea",
+      "source_record_id": "treasure-chest-ee36e9e6bbea6bdd",
+      "source_family_count": 3,
+      "position_sources": [
+        "dragon_sword_awakening_net_map",
+        "dragonsword_companion_map"
+      ],
+      "context_sources": [
+        "grandwiki_orbis_map",
+        "dragon_sword_awakening_org_map",
+        "steam_achievements"
+      ],
+      "chunk_key": "southwest-lowlands",
+      "aliases": [
+        "Treasure Chest #008 Southwest Lowlands",
+        "Southwest Lowlands Treasure Chest #008",
+        "Epic Chest Southwest Lowlands",
+        "Southwest Lowlands Epic Chest",
+        "Chest Southwest Lowlands #008",
+        "Treasure Box Southwest Lowlands",
+        "Chest local 008",
+        "Chest source ee36e9e6"
+      ],
+      "game_version": "steam-24375914 source-context-only",
+      "last_checked": "2026-08-23",
+      "description": "Treasure Chest #008 is a source-corroborated, approximate Treasure Chest planning marker in Southwest Lowlands. It is not an exact in-game pin.",
+      "source_summary": "Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates."
+    }
+  ]
+}

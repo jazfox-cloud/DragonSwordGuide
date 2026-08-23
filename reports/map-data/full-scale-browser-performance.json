@@ -1,0 +1,68 @@
+{
+  "dataset_version": "chest-full-scale-1500-2026-08-23",
+  "smoke_type": "REAL_CHROME_HEADLESS_CDP",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "mobile": false
+    },
+    "initialChestLoaded": false,
+    "initialHorizontalOverflow": false,
+    "enableMs": 39,
+    "lowZoomClusters": 103,
+    "lowZoomMarkers": 0,
+    "regionOptions": 21,
+    "regionFilterMs": 8,
+    "regionFilterCount": 172,
+    "clusterExpansionMs": 7,
+    "highZoomMarkers": 250,
+    "markerOpenMs": 1,
+    "zoomMs": 9,
+    "panMs": 6,
+    "canvasTransformed": true,
+    "searchMs": 4,
+    "searchCount": 151,
+    "disableCleanupMs": 0,
+    "finalHorizontalOverflow": false,
+    "overflowElements": [],
+    "domCapRespected": true,
+    "controlsUsable": true
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "mobile": true
+    },
+    "initialChestLoaded": false,
+    "initialHorizontalOverflow": false,
+    "enableMs": 17,
+    "lowZoomClusters": 34,
+    "lowZoomMarkers": 0,
+    "regionOptions": 21,
+    "regionFilterMs": 4,
+    "regionFilterCount": 172,
+    "clusterExpansionMs": 6,
+    "highZoomMarkers": 250,
+    "markerOpenMs": 0,
+    "zoomMs": 7,
+    "panMs": 8,
+    "canvasTransformed": true,
+    "searchMs": 5,
+    "searchCount": 151,
+    "disableCleanupMs": 0,
+    "finalHorizontalOverflow": false,
+    "overflowElements": [],
+    "domCapRespected": true,
+    "controlsUsable": true
+  },
+  "gate": {
+    "no_browser_freeze": true,
+    "no_severe_interaction_lag": true,
+    "no_horizontal_overflow": true,
+    "no_multi_second_blocking_interaction": true,
+    "dom_cap_respected": true,
+    "map_controls_remain_usable": true
+  }
+}
