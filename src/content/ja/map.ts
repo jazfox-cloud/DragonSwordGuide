@@ -11,7 +11,7 @@ export const mapJaPage = {
     source_url: sourcePages.map.sourceUrl,
     source_file: sourcePages.map.sourceFile,
     source_revision: sourceRevisionGitCommit,
-    source_hash: '7ed1849d5716118c6cbea5ac5744db4d29acb7d58f73e726924af38384f19b3f',
+    source_hash: '7c7f712bea9932e210b90a0506c06785048882bff9936c2377302bb85768c949',
     source_updated_at: sourcePages.map.sourceUpdatedAt,
     translation_status: 'AI_TRANSLATED',
     last_translated_at: '2026-08-23',

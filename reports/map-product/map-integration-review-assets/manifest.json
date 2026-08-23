@@ -1,0 +1,540 @@
+{
+  "baseUrl": "http://127.0.0.1:4324",
+  "screenshots": {
+    "enDefaultDesktop": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/en-default-desktop.png",
+    "enChestsDesktop": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/en-chests-desktop.png",
+    "enZoomDesktop": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/en-zoom-desktop.png",
+    "enSelectedDesktop": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/en-selected-desktop.png",
+    "jaDefaultDesktop": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/ja-default-desktop.png",
+    "mobileDefault": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/mobile-default.png",
+    "mobileSelected": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/mobile-selected.png",
+    "anchorCalibration": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/coordinate-anchor-calibration-desktop.png",
+    "markerAlignment50": "/Users/jazfox/Documents/ChatGPT/DragonSwordGuide/reports/map-product/map-integration-review-assets/marker-alignment-50-sample.png"
+  },
+  "smoke": {
+    "enDefault": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 71,
+      "chestLoaded": false,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": " Eona's Legacy Eona's Legacy - Meadow of Beginnings Source corroborated  RegionMeadow of Beginnings  PrecisionApproximate location StatusSource corroborated ConfidenceMedium  Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.   Official sources confirm the Eona system and full-set achievement; a stop-loss recheck found no individual official/video location proof, while two independent se"
+    },
+    "enChests": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 1555,
+      "chestLoaded": true,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": " Eona's Legacy Eona's Legacy - Meadow of Beginnings Source corroborated  RegionMeadow of Beginnings  PrecisionApproximate location StatusSource corroborated ConfidenceMedium  Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.   Official sources confirm the Eona system and full-set achievement; a stop-loss recheck found no individual official/video location proof, while two independent se"
+    },
+    "enSelected": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 1555,
+      "chestLoaded": true,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": "\n          Eona's Legacy\n          Eona's Legacy - Meadow of Beginnings\n          Source corroborated\n          \n            RegionMeadow of Beginnings\n            \n            PrecisionApproximate location\n            StatusSource corroborated\n            ConfidenceMedium\n          \n          Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.\n          \n          \n          Official sou"
+    },
+    "jaDefault": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 71,
+      "chestLoaded": false,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": " Eona's Legacy Eona's Legacy - Meadow of Beginnings 複数ソースで確認  地域Meadow of Beginnings  精度おおよその位置 状態複数ソースで確認 信頼度中  Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.   Official sources confirm the Eona system and full-set achievement; a stop-loss recheck found no individual official/video location proof, while two independent secondary guides align on the Meadow missing-cog route.  "
+    },
+    "mobileDefault": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 71,
+      "chestLoaded": false,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": " Eona's Legacy Eona's Legacy - Meadow of Beginnings Source corroborated  RegionMeadow of Beginnings  PrecisionApproximate location StatusSource corroborated ConfidenceMedium  Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.   Official sources confirm the Eona system and full-set achievement; a stop-loss recheck found no individual official/video location proof, while two independent se"
+    },
+    "mobileSelected": {
+      "markerCount": 1555,
+      "chestCount": 1484,
+      "filteredMarkerCount": 71,
+      "chestLoaded": false,
+      "chestLoadError": "",
+      "baseMapComplete": true,
+      "baseMapSrc": "http://127.0.0.1:4324/map/base-map-candidate-v2.webp",
+      "overflow": false,
+      "panelHasRawEnum": false,
+      "panelText": "\n          Eona's Legacy\n          Eona's Legacy - Meadow of Beginnings\n          Source corroborated\n          \n            RegionMeadow of Beginnings\n            \n            PrecisionApproximate location\n            StatusSource corroborated\n            ConfidenceMedium\n          \n          Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.\n          \n          \n          Official sou"
+    }
+  },
+  "alignmentSample": [
+    {
+      "id": "marker:eonas-legacy:meadow-of-beginnings",
+      "category": "EONAS_LEGACY",
+      "region": "Meadow of Beginnings",
+      "old_x": 0.29,
+      "old_y": 0.55,
+      "render_x": 0.28,
+      "render_y": 0.47
+    },
+    {
+      "id": "marker:eonas-legacy:shadowed-woods",
+      "category": "EONAS_LEGACY",
+      "region": "Shadowed Woods",
+      "old_x": 0.56,
+      "old_y": 0.42,
+      "render_x": 0.49,
+      "render_y": 0.4
+    },
+    {
+      "id": "marker:eonas-legacy:dragonrise-basin",
+      "category": "EONAS_LEGACY",
+      "region": "Dragonrise Basin",
+      "old_x": 0.68,
+      "old_y": 0.58,
+      "render_x": 0.7,
+      "render_y": 0.63
+    },
+    {
+      "id": "marker:organa-statue:shaded-tree-hill",
+      "category": "ORGANA_STATUE",
+      "region": "Shaded Tree Hill",
+      "old_x": 0.37,
+      "old_y": 0.52,
+      "render_x": 0.377926,
+      "render_y": 0.480254
+    },
+    {
+      "id": "marker:organa-statue:autumnleaf-zone",
+      "category": "ORGANA_STATUE",
+      "region": "Autumnleaf Zone",
+      "old_x": 0.45,
+      "old_y": 0.63,
+      "render_x": 0.461053,
+      "render_y": 0.600977
+    },
+    {
+      "id": "marker:organa-statue:worms-valley",
+      "category": "ORGANA_STATUE",
+      "region": "Worm's Valley",
+      "old_x": 0.76,
+      "old_y": 0.34,
+      "render_x": 0.801469,
+      "render_y": 0.335475
+    },
+    {
+      "id": "marker:organa-statue:ruined-temple",
+      "category": "ORGANA_STATUE",
+      "region": "Ruined Temple",
+      "old_x": 0.63,
+      "old_y": 0.29,
+      "render_x": 0.64605,
+      "render_y": 0.263674
+    },
+    {
+      "id": "marker:organa-statue:echo-canyon",
+      "category": "ORGANA_STATUE",
+      "region": "Echo Canyon",
+      "old_x": 0.33,
+      "old_y": 0.66,
+      "render_x": 0.330833,
+      "render_y": 0.623151
+    },
+    {
+      "id": "marker:organa-statue:dragons-stonepeak",
+      "category": "ORGANA_STATUE",
+      "region": "Dragon's Stonepeak",
+      "old_x": 0.78,
+      "old_y": 0.48,
+      "render_x": 0.830362,
+      "render_y": 0.490216
+    },
+    {
+      "id": "marker:organa-statue:skyfeather-ridge",
+      "category": "ORGANA_STATUE",
+      "region": "Skyfeather Ridge",
+      "old_x": 0.71,
+      "old_y": 0.24,
+      "render_x": 0.74,
+      "render_y": 0.2
+    },
+    {
+      "id": "marker:organa-statue:barren-old-trading-post",
+      "category": "ORGANA_STATUE",
+      "region": "The Barren Old Trading Post",
+      "old_x": 0.59,
+      "old_y": 0.72,
+      "render_x": 0.589111,
+      "render_y": 0.71269
+    },
+    {
+      "id": "marker:organa-statue:a-forgotten-haven",
+      "category": "ORGANA_STATUE",
+      "region": "A Forgotten Haven",
+      "old_x": 0.23,
+      "old_y": 0.73,
+      "render_x": 0.213115,
+      "render_y": 0.732452
+    },
+    {
+      "id": "marker:organa-statue:two-lakes-hill",
+      "category": "ORGANA_STATUE",
+      "region": "Two Lakes Hill",
+      "old_x": 0.52,
+      "old_y": 0.67,
+      "render_x": 0.53315,
+      "render_y": 0.658119
+    },
+    {
+      "id": "marker:organa-statue:stronghold-ridge",
+      "category": "ORGANA_STATUE",
+      "region": "Stronghold Ridge",
+      "old_x": 0.58,
+      "old_y": 0.51,
+      "render_x": 0.593942,
+      "render_y": 0.506804
+    },
+    {
+      "id": "marker:organa-statue:hill-of-journey",
+      "category": "ORGANA_STATUE",
+      "region": "Hill of Journey",
+      "old_x": 0.41,
+      "old_y": 0.74,
+      "render_x": 0.42,
+      "render_y": 0.73
+    },
+    {
+      "id": "marker:organa-statue:seagull-village",
+      "category": "ORGANA_STATUE",
+      "region": "Seagull Village",
+      "old_x": 0.18,
+      "old_y": 0.58,
+      "render_x": 0.14,
+      "render_y": 0.54
+    },
+    {
+      "id": "marker:dungeon:dragon-worshipper-ruins",
+      "category": "DUNGEON",
+      "region": "Meadow of Beginnings",
+      "old_x": 0.24,
+      "old_y": 0.58,
+      "render_x": 0.23,
+      "render_y": 0.5
+    },
+    {
+      "id": "marker:dungeon:rusted-tusk-bandits-treasure-vault",
+      "category": "DUNGEON",
+      "region": "Skyridge Uplands",
+      "old_x": 0.35,
+      "old_y": 0.3,
+      "render_x": 0.398316,
+      "render_y": 0.276632
+    },
+    {
+      "id": "marker:dungeon:goblin-bandits-cave",
+      "category": "DUNGEON",
+      "region": "Meadow of Beginnings",
+      "old_x": 0.28,
+      "old_y": 0.62,
+      "render_x": 0.271961,
+      "render_y": 0.55438
+    },
+    {
+      "id": "marker:dungeon:silver-tusk-bandits-supply-depot",
+      "category": "DUNGEON",
+      "region": "Field of Plenty",
+      "old_x": 0.36,
+      "old_y": 0.72,
+      "render_x": 0.370006,
+      "render_y": 0.695932
+    },
+    {
+      "id": "marker:dungeon:residual-worm-cleanup-zone",
+      "category": "DUNGEON",
+      "region": "Skyridge Uplands",
+      "old_x": 0.38,
+      "old_y": 0.24,
+      "render_x": 0.427402,
+      "render_y": 0.221711
+    },
+    {
+      "id": "marker:dungeon:fang-bandits-arena",
+      "category": "DUNGEON",
+      "region": "Orbis Castle Approach",
+      "old_x": 0.39,
+      "old_y": 0.45,
+      "render_x": 0.42,
+      "render_y": 0.42
+    },
+    {
+      "id": "marker:dungeon:corrupted-bedchamber",
+      "category": "DUNGEON",
+      "region": "Shadowed Woods",
+      "old_x": 0.43,
+      "old_y": 0.53,
+      "render_x": 0.433821,
+      "render_y": 0.500983
+    },
+    {
+      "id": "marker:dungeon:warg-cave",
+      "category": "DUNGEON",
+      "region": "Shadowed Woods",
+      "old_x": 0.41,
+      "old_y": 0.6,
+      "render_x": 0.406348,
+      "render_y": 0.555576
+    },
+    {
+      "id": "marker:dungeon:endless-summoning-grounds",
+      "category": "DUNGEON",
+      "region": "Field of Plenty",
+      "old_x": 0.44,
+      "old_y": 0.7,
+      "render_x": 0.457629,
+      "render_y": 0.675229
+    },
+    {
+      "id": "marker:dungeon:mantius-of-amplitude",
+      "category": "DUNGEON",
+      "region": "Shadowed Woods",
+      "old_x": 0.48,
+      "old_y": 0.55,
+      "render_x": 0.494713,
+      "render_y": 0.514401
+    },
+    {
+      "id": "marker:dungeon:underground-goblin-village",
+      "category": "DUNGEON",
+      "region": "Shadowed Woods",
+      "old_x": 0.5,
+      "old_y": 0.58,
+      "render_x": 0.514071,
+      "render_y": 0.550828
+    },
+    {
+      "id": "marker:dungeon:eroded-underground-cemetery",
+      "category": "DUNGEON",
+      "region": "Misty Veil Highlands",
+      "old_x": 0.53,
+      "old_y": 0.25,
+      "render_x": 0.55,
+      "render_y": 0.23
+    },
+    {
+      "id": "marker:dungeon:coastal-cliff-cave-outpost",
+      "category": "DUNGEON",
+      "region": "Silver Ford Lake",
+      "old_x": 0.56,
+      "old_y": 0.63,
+      "render_x": 0.577661,
+      "render_y": 0.627286
+    },
+    {
+      "id": "marker:dungeon:dark-swamp",
+      "category": "DUNGEON",
+      "region": "Misty Veil Highlands",
+      "old_x": 0.58,
+      "old_y": 0.34,
+      "render_x": 0.571982,
+      "render_y": 0.323316
+    },
+    {
+      "id": "marker:dungeon:warg-enclosure",
+      "category": "DUNGEON",
+      "region": "Steelheart Fortress",
+      "old_x": 0.6,
+      "old_y": 0.47,
+      "render_x": 0.607209,
+      "render_y": 0.462612
+    },
+    {
+      "id": "marker:dungeon:rock-tribe-base",
+      "category": "DUNGEON",
+      "region": "Dragonrise Basin",
+      "old_x": 0.64,
+      "old_y": 0.31,
+      "render_x": 0.659538,
+      "render_y": 0.29588
+    },
+    {
+      "id": "marker:dungeon:collapsed-sanctuary",
+      "category": "DUNGEON",
+      "region": "Dragonrise Basin",
+      "old_x": 0.66,
+      "old_y": 0.27,
+      "render_x": 0.678828,
+      "render_y": 0.257301
+    },
+    {
+      "id": "marker:dungeon:the-graveyard-where-tragedy-sleeps",
+      "category": "DUNGEON",
+      "region": "Moss Forest Logging Site",
+      "old_x": 0.66,
+      "old_y": 0.7,
+      "render_x": 0.676636,
+      "render_y": 0.727753
+    },
+    {
+      "id": "marker:dungeon:forest-of-entangled-roots",
+      "category": "DUNGEON",
+      "region": "Starshade Forest",
+      "old_x": 0.69,
+      "old_y": 0.4,
+      "render_x": 0.724906,
+      "render_y": 0.399383
+    },
+    {
+      "id": "marker:dungeon:trace-of-the-giant",
+      "category": "DUNGEON",
+      "region": "Dragonrise Basin",
+      "old_x": 0.73,
+      "old_y": 0.32,
+      "render_x": 0.78,
+      "render_y": 0.32
+    },
+    {
+      "id": "marker:dungeon:ashen-ruins",
+      "category": "DUNGEON",
+      "region": "Moss Forest Logging Site",
+      "old_x": 0.78,
+      "old_y": 0.66,
+      "render_x": 0.81,
+      "render_y": 0.7
+    },
+    {
+      "id": "marker:warp-point:orbis-royal-castle",
+      "category": "WARP_POINT",
+      "region": "Orbis Castle",
+      "old_x": 0.49,
+      "old_y": 0.56,
+      "render_x": 0.52,
+      "render_y": 0.5
+    },
+    {
+      "id": "marker:warp-point:autumnleaf-zone",
+      "category": "WARP_POINT",
+      "region": "Autumnleaf Zone",
+      "old_x": 0.43,
+      "old_y": 0.66,
+      "render_x": 0.44387,
+      "render_y": 0.632376
+    },
+    {
+      "id": "marker:warp-point:ruined-temple",
+      "category": "WARP_POINT",
+      "region": "Ruined Temple",
+      "old_x": 0.62,
+      "old_y": 0.32,
+      "render_x": 0.632669,
+      "render_y": 0.299318
+    },
+    {
+      "id": "marker:warp-point:starshade-forest",
+      "category": "WARP_POINT",
+      "region": "Starshade Forest",
+      "old_x": 0.53,
+      "old_y": 0.2,
+      "render_x": 0.539486,
+      "render_y": 0.189935
+    },
+    {
+      "id": "marker:warp-point:bluehill-wetlands",
+      "category": "WARP_POINT",
+      "region": "Bluehill Wetlands",
+      "old_x": 0.56,
+      "old_y": 0.55,
+      "render_x": 0.592229,
+      "render_y": 0.562528
+    },
+    {
+      "id": "marker:warp-point:stronghold-ridge",
+      "category": "WARP_POINT",
+      "region": "Stronghold Ridge",
+      "old_x": 0.57,
+      "old_y": 0.5,
+      "render_x": 0.575688,
+      "render_y": 0.487311
+    },
+    {
+      "id": "marker:warp-point:blue-plateau",
+      "category": "WARP_POINT",
+      "region": "Blue Plateau",
+      "old_x": 0.65,
+      "old_y": 0.45,
+      "render_x": 0.674402,
+      "render_y": 0.448941
+    },
+    {
+      "id": "marker:warp-point:seagull-village",
+      "category": "WARP_POINT",
+      "region": "Seagull Village",
+      "old_x": 0.18,
+      "old_y": 0.58,
+      "render_x": 0.14,
+      "render_y": 0.54
+    },
+    {
+      "id": "marker:warp-point:dusktone-slope",
+      "category": "WARP_POINT",
+      "region": "Dusktone Slope",
+      "old_x": 0.43,
+      "old_y": 0.36,
+      "render_x": 0.441172,
+      "render_y": 0.340967
+    },
+    {
+      "id": "marker:warp-point:two-lakes-hill",
+      "category": "WARP_POINT",
+      "region": "Two Lakes Hill",
+      "old_x": 0.54,
+      "old_y": 0.68,
+      "render_x": 0.551629,
+      "render_y": 0.672282
+    },
+    {
+      "id": "marker:warp-point:morninglight-farm",
+      "category": "WARP_POINT",
+      "region": "Morninglight Farm",
+      "old_x": 0.31,
+      "old_y": 0.59,
+      "render_x": 0.305858,
+      "render_y": 0.53372
+    },
+    {
+      "id": "marker:warp-point:twilight-field",
+      "category": "WARP_POINT",
+      "region": "Twilight Field",
+      "old_x": 0.31,
+      "old_y": 0.24,
+      "render_x": 0.37,
+      "render_y": 0.22
+    },
+    {
+      "id": "marker:warp-point:amber-harbor",
+      "category": "WARP_POINT",
+      "region": "Amber Harbor",
+      "old_x": 0.67,
+      "old_y": 0.74,
+      "render_x": 0.68,
+      "render_y": 0.8
+    }
+  ]
+}

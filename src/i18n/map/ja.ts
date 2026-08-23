@@ -29,6 +29,16 @@ export const mapJa = {
     APPROXIMATE: 'おおよその位置',
     CONFLICTING: '情報が競合',
   },
+  precision: {
+    LANDMARK_APPROXIMATE: 'おおよその位置',
+    REGION_APPROXIMATE: 'おおよその地域',
+    APPROXIMATE: 'おおよその位置',
+  },
+  confidence: {
+    HIGH: '高',
+    MEDIUM: '中',
+    LOW: '低',
+  },
   controls: {
     toolbar: 'マップ操作',
     searchLabel: '場所を検索',
