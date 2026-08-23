@@ -5,6 +5,7 @@ const root = process.cwd();
 const dataPath = path.join(root, 'src/data/map-markers.json');
 const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
+const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE']);
 const allowedVerificationStatuses = new Set([
   'OFFICIAL_VERIFIED',
@@ -65,8 +66,8 @@ if (String(markerData.data_policy).includes('RESEARCH_ONLY_NOT_FOR_PRODUCTION'))
   fail('production data must not be research-only');
 }
 
-if (!Array.isArray(markerData.markers) || markerData.markers.length < 8) {
-  fail('expected at least 8 production beta markers after Organa expansion start');
+if (!Array.isArray(markerData.markers) || markerData.markers.length < 16) {
+  fail('expected at least 16 production beta markers after Organa expansion sprint 2');
 }
 
 const ids = new Set();
@@ -154,12 +155,28 @@ if (eonaSecondaryCount < 3) {
   fail('expected at least 3 secondary-corroborated Eona markers');
 }
 
-if (organaCount < 5) {
-  fail('expected at least 5 named Organa markers after expansion start');
+if (organaCount < 13) {
+  fail('expected at least 13 named Organa markers after expansion sprint 2');
 }
 
 if (markerData.category_status?.ORGANA_STATUE?.count_conflict !== '13_VS_14_CONFLICT_RETAINED') {
   fail('Organa 13 vs 14 count conflict must be retained in production metadata');
+}
+
+if (markerData.category_status?.ORGANA_STATUE?.published_count !== 13) {
+  fail('Organa published_count must be 13 after expansion sprint 2');
+}
+
+if (markerData.category_status?.ORGANA_STATUE?.estimated_total !== '13-14') {
+  fail('Organa estimated_total must remain 13-14 until the extra/missing entry is identified');
+}
+
+if (markerData.category_status?.ORGANA_STATUE?.conflict_verdict !== 'UNRESOLVED_13_VS_14') {
+  fail('Organa conflict_verdict must stay UNRESOLVED_13_VS_14 without a named 14th entry');
+}
+
+if (!fs.existsSync(organaSprint2ReportPath)) {
+  fail('missing reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 }
 
 const source = fs.readFileSync(sourcePath, 'utf8');

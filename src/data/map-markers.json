@@ -12,10 +12,14 @@
       "note": "Meadow of Beginnings and Dragonrise Basin received a stop-loss source recheck; no VIDEO_VERIFIED or OFFICIAL_VERIFIED individual-location evidence was found."
     },
     "ORGANA_STATUE": {
-      "status": "EXPANSION_STARTED",
+      "status": "EXPANDED_NEAR_COMPLETE",
       "count_conflict": "13_VS_14_CONFLICT_RETAINED",
-      "published_count": 5,
-      "conflict_note": "Multiple public guide sources list 13 Statue of Organa locations; prior public-map/source inventory retained an ecosystem-level 13 vs 14 conflict. This sprint publishes only five individually corroborated Organa markers and does not assert a complete set count."
+      "published_count": 13,
+      "estimated_total": "13-14",
+      "coverage": "13 published / 13-14 known",
+      "conflict_verdict": "UNRESOLVED_13_VS_14",
+      "extra_or_missing_entry": "UNKNOWN_UNNAMED_14TH_MAP_LAYER_ENTRY",
+      "conflict_note": "Four public guide-style sources and one trophy-style target source converge on 13 restoration entries; one public map guide reports 14 mapped Statue of Organa layer points without exposing a named 14th restoration entry. The production map publishes the 13 corroborated named entries and retains the 13 vs 14 conflict."
     }
   },
   "markers": [
@@ -350,6 +354,334 @@
           "source": "VGTimes Organa guide",
           "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
           "note": "Independently includes Echo Canyon in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:dragons-stonepeak",
+      "name": "Statue of Organa - Dragon's Stonepeak",
+      "category": "ORGANA_STATUE",
+      "region": "Dragon's Stonepeak",
+      "x": 0.78,
+      "y": 0.48,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Dragon's Stonepeak, the enemy-camp context and nearby southern tree, northeast hut and stair-side bush landmarks.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Dragon's Stonepeak enemy camp, southern cliff-edge tree, northeast hut and stair-side bushes as approximate anchors. This is not an exact pin.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Dragon's Stonepeak with southern tree, northeast hut and stair-side bush landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Dragon's Stonepeak and matches the enemy-camp route anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Dragon's Stonepeak in a 13-statue public guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Dragon's Stonepeak and the same near-camp landmark pattern."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:skyfeather-ridge",
+      "name": "Statue of Organa - Skyfeather Ridge",
+      "category": "ORGANA_STATUE",
+      "region": "Skyfeather Ridge",
+      "x": 0.71,
+      "y": 0.24,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Skyfeather Ridge, dead-tree vertical landmarks south of the statue and a western lower-cliff piece route.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Skyfeather Ridge dead trees south of the statue and the western lower cliff as approximate anchors. Expect vertical search rather than a flat ground route.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Skyfeather Ridge with two dead-tree landmarks and a western lower-cliff route."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Skyfeather Ridge and matches the dead-tree and western cliff anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Skyfeather Ridge in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Skyfeather Ridge and its vertical dead-tree context."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:barren-old-trading-post",
+      "name": "Statue of Organa - The Barren Old Trading Post",
+      "category": "ORGANA_STATUE",
+      "region": "The Barren Old Trading Post",
+      "x": 0.59,
+      "y": 0.72,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on The Barren Old Trading Post, Level 55 camp pressure and nearby pillar, barrel and western enemy-position landmarks.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the old trading post camp, the pillar above the statue, eastern barrels and western enemy position as approximate anchors. Treat level and boss notes as patch-sensitive.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Barren Old Trading Post with camp, pillar, barrel and enemy-position landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists The Barren Old Trading Post and matches the camp, pillar and barrel context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes The Barren Old Trading Post in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes The Barren Old Trading Post and its high-level camp warning."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:a-forgotten-haven",
+      "name": "Statue of Organa - A Forgotten Haven",
+      "category": "ORGANA_STATUE",
+      "region": "A Forgotten Haven",
+      "x": 0.23,
+      "y": 0.73,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on A Forgotten Haven, a beach-side ruin context and rear pillar, hollow tree trunk and water-rock landmarks.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the beach-side ruin, rear pillar, hollow tree trunk and water rocks as approximate anchors. The map placement is a planning marker only.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists A Forgotten Haven with rear pillar, tree trunk and water-rock landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists A Forgotten Haven and matches the beach-side ruin context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes A Forgotten Haven in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes A Forgotten Haven in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:two-lakes-hill",
+      "name": "Statue of Organa - Two Lakes Hill",
+      "category": "ORGANA_STATUE",
+      "region": "Two Lakes Hill",
+      "x": 0.52,
+      "y": 0.67,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Two Lakes Hill and the upper/lower arc-shaped stone platform landmarks associated with the statue.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Two Lakes Hill statue and its upper and lower arc-shaped stone platforms as approximate anchors. Check vertical levels before widening the search.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Two Lakes Hill with two arc-shaped platform landmarks above and below the statue."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Two Lakes Hill and matches the simple two-platform route."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Two Lakes Hill in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Two Lakes Hill in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:stronghold-ridge",
+      "name": "Statue of Organa - Stronghold Ridge",
+      "category": "ORGANA_STATUE",
+      "region": "Stronghold Ridge",
+      "x": 0.58,
+      "y": 0.51,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Stronghold Ridge and the stone arcs, front path, southeast cliff and lake campfire landmarks.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Stronghold Ridge stone arcs, front approach path, southeast cliff and lake-side campfire area as approximate anchors.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Stronghold Ridge with stone arcs, path, southeast cliff and lake campfire landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Stronghold Ridge and matches the arc, path, cliff and campfire anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Stronghold Ridge in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Stronghold Ridge in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:hill-of-journey",
+      "name": "Statue of Organa - Hill of Journey",
+      "category": "ORGANA_STATUE",
+      "region": "Hill of Journey",
+      "x": 0.41,
+      "y": 0.74,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Hill of Journey and the approach stairs, nearby campfire and southern bush landmarks.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Hill of Journey stair approach, enemy campfire and southern bushes as approximate anchors. Vegetation can hide the route context.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Hill of Journey with stairs, campfire and southern bush landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Hill of Journey and matches the stairs, campfire and bush anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Hill of Journey in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Hill of Journey in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:seagull-village",
+      "name": "Statue of Organa - Seagull Village",
+      "category": "ORGANA_STATUE",
+      "region": "Seagull Village",
+      "x": 0.18,
+      "y": 0.58,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Seagull Village, rear-side path and bush landmarks plus a reported post-restoration beast encounter.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Seagull Village rear-side route, wall, path and bushes behind the statue as approximate anchors. Treat encounter details as patch-sensitive.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Seagull Village with rear path, bushes and a Level 25 beast warning."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Seagull Village and matches the rear path, bush and beast encounter context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Seagull Village in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Seagull Village in its Statue of Organa location guide."
         }
       ]
     }
