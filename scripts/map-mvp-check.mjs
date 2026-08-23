@@ -7,6 +7,7 @@ const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
 const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
+const warpCompletionSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-completion-sprint.md');
 const dungeonSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
 const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT', 'DUNGEON']);
 const allowedDungeonSubtypes = new Set(['NORMAL_DUNGEON', 'TRAIT_DUNGEON', 'CURRENCY_DUNGEON', 'STORY_DUNGEON']);
@@ -241,8 +242,8 @@ if (markerData.markers.length < 24) {
   fail('expected at least 24 production beta markers after Warp Points sprint B1');
 }
 
-if (warpCount < 8) {
-  fail('expected at least 8 Warp Point pilot markers');
+if (warpCount < 20) {
+  fail('expected 20 Warp Point markers after completion sprint B3');
 }
 
 if (warpSecondaryCount !== warpCount) {
@@ -257,8 +258,8 @@ if (warpAliasCount < warpCount * 3) {
   fail('Warp Point aliases are too sparse for search coverage');
 }
 
-if (markerData.markers.length < 45) {
-  fail('expected at least 45 production beta markers after Dungeons sprint B2');
+if (markerData.markers.length < 57) {
+  fail('expected at least 57 production beta markers after Warp completion sprint B3');
 }
 
 if (dungeonCount < 21) {
@@ -301,6 +302,10 @@ if (!fs.existsSync(warpSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
 }
 
+if (!fs.existsSync(warpCompletionSprintReportPath)) {
+  fail('missing reports/map-product/2026-08-23-warp-points-completion-sprint.md');
+}
+
 if (!fs.existsSync(dungeonSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
 }
@@ -327,8 +332,8 @@ if (warpStatus.source_count < 4) {
   fail('WARP_POINT source_count must include at least four source groups');
 }
 
-if (warpStatus.coverage !== '8 published / ~20 known') {
-  fail('WARP_POINT coverage must stay honest for Sprint B1');
+if (warpStatus.coverage !== '20 published / 20 known') {
+  fail('WARP_POINT coverage must stay honest for Sprint B3');
 }
 
 const dungeonStatus = markerData.category_status?.DUNGEON;
@@ -380,10 +385,12 @@ const expectedSnippets = [
   'data-marker-subtype',
   'Warp Points',
   'Dungeons',
-  'marker:warp-point:orbis-castle',
+  'marker:warp-point:orbis-royal-castle',
+  'marker:warp-point:twilight-field',
+  'marker:warp-point:seagull-village',
   'marker:dungeon:warg-cave',
   'marker:dungeon:dragon-worshipper-ruins',
-  '8 published / ~20 known',
+  '20 published / 20 known',
   '21 published / 26 mapped entrances',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
