@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dragonswordguide.com/schemas/chest-candidate.schema.json",
+  "title": "DragonSwordGuide Chest Candidate Record",
+  "description": "Research-only schema for DragonSword: Awakening treasure chest candidates. Candidate records are not production markers until provenance, dedupe, coordinate, and evidence gates pass.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "source_ids",
+    "name",
+    "category",
+    "subtype",
+    "region",
+    "source_positions",
+    "normalized_position",
+    "verification_status",
+    "confidence",
+    "source_families",
+    "game_build",
+    "dataset_version",
+    "source_snapshot_date",
+    "last_checked",
+    "dedupe",
+    "conflicts",
+    "publication",
+    "notes"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^candidate:chest:[a-z0-9][a-z0-9:-]*$"
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "source_family", "record_id", "url", "allowed_use"],
+        "properties": {
+          "source": { "type": "string", "minLength": 1 },
+          "source_family": {
+            "type": "string",
+            "enum": [
+              "COMMON_GAME_DATA_FAMILY",
+              "INDEPENDENT_GUIDE",
+              "OFFICIAL",
+              "COMMUNITY",
+              "FIRST_HAND"
+            ]
+          },
+          "record_id": { "type": ["string", "null"] },
+          "url": { "type": ["string", "null"], "format": "uri" },
+          "allowed_use": {
+            "type": "string",
+            "enum": [
+              "COUNT_ONLY",
+              "SINGLE_FACT_REFERENCE",
+              "SCHEMA_REFERENCE_ONLY",
+              "PRODUCT_BEHAVIOR_REFERENCE_ONLY",
+              "LICENSED_DATA",
+              "OWNED_FIRST_HAND_EVIDENCE",
+              "NOT_FOR_PUBLICATION"
+            ]
+          },
+          "snapshot_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "const": "CHEST" },
+    "subtype": {
+      "type": "string",
+      "enum": [
+        "NORMAL_CHEST",
+        "SUPERIOR_CHEST",
+        "RARE_CHEST",
+        "EPIC_CHEST",
+        "LEGENDARY_CHEST",
+        "PREMIUM_CHEST",
+        "HERO_CHEST",
+        "REGULAR_CHEST",
+        "UNKNOWN_CHEST"
+      ]
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["world", "region_name", "subregion_name", "landmark_hint"],
+      "properties": {
+        "world": { "type": "string", "minLength": 1 },
+        "region_name": { "type": ["string", "null"] },
+        "subregion_name": { "type": ["string", "null"] },
+        "landmark_hint": { "type": ["string", "null"] }
+      }
+    },
+    "source_positions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "coordinate_model", "x", "y", "precision", "reuse_status"],
+        "properties": {
+          "source": { "type": "string" },
+          "coordinate_model": {
+            "type": "string",
+            "enum": [
+              "NORMALIZED_0_1",
+              "PIXEL_4096",
+              "PIXEL_1024",
+              "PERCENT",
+              "TILE_LOCAL",
+              "OWN_SCHEMATIC_ORBIS_BASE_MAP",
+              "UNKNOWN"
+            ]
+          },
+          "x": { "type": ["number", "null"] },
+          "y": { "type": ["number", "null"] },
+          "tile": { "type": ["string", "null"] },
+          "precision": {
+            "type": "string",
+            "enum": ["EXACT_SOURCE_VALUE", "PIN_CENTER", "APPROXIMATE", "REGION_ONLY", "UNKNOWN"]
+          },
+          "reuse_status": {
+            "type": "string",
+            "enum": [
+              "RESEARCH_ONLY_DO_NOT_COPY",
+              "OWNED_PLACEMENT",
+              "LICENSED_PLACEMENT",
+              "FIRST_HAND_PLACEMENT"
+            ]
+          }
+        }
+      }
+    },
+    "normalized_position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["map_base_id", "x", "y", "coordinate_confidence", "precision"],
+      "properties": {
+        "map_base_id": { "type": ["string", "null"] },
+        "x": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "y": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "coordinate_confidence": {
+          "type": "string",
+          "enum": ["HIGH", "MEDIUM", "LOW", "UNRESOLVED"]
+        },
+        "precision": {
+          "type": "string",
+          "enum": ["PIN_CENTER", "APPROXIMATE", "REGION_APPROXIMATE", "UNRESOLVED"]
+        }
+      }
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "GAME_DATA_CORROBORATED",
+        "MULTI_SOURCE_CORROBORATED",
+        "VIDEO_VERIFIED",
+        "FIRST_HAND_VERIFIED",
+        "OFFICIAL_VERIFIED",
+        "CONFLICTING",
+        "SOURCE_ONLY"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW", "CONFLICTING"]
+    },
+    "source_families": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "COMMON_GAME_DATA_FAMILY",
+          "INDEPENDENT_GUIDE",
+          "OFFICIAL",
+          "COMMUNITY",
+          "FIRST_HAND"
+        ]
+      }
+    },
+    "game_build": { "type": ["string", "null"] },
+    "dataset_version": { "type": "string", "minLength": 1 },
+    "source_snapshot_date": { "type": "string", "format": "date" },
+    "last_checked": { "type": "string", "format": "date" },
+    "dedupe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dedupe_status", "canonical_candidate_id", "matches"],
+      "properties": {
+        "dedupe_status": {
+          "type": "string",
+          "enum": [
+            "UNIQUE",
+            "SAME_ENTITY",
+            "PROBABLE_SAME_ENTITY",
+            "POSSIBLE_DUPLICATE",
+            "UNREVIEWED"
+          ]
+        },
+        "canonical_candidate_id": { "type": ["string", "null"] },
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["candidate_id", "match_type", "reason"],
+            "properties": {
+              "candidate_id": { "type": "string" },
+              "match_type": {
+                "type": "string",
+                "enum": ["SAME_ENTITY", "PROBABLE_SAME_ENTITY", "POSSIBLE_DUPLICATE"]
+              },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["conflict_type", "status", "note"],
+        "properties": {
+          "conflict_type": {
+            "type": "string",
+            "enum": [
+              "CONFLICTING_COORDINATE",
+              "CONFLICTING_REGION",
+              "CONFLICTING_IDENTITY",
+              "SOURCE_ONLY"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["OPEN", "RESOLVED", "REJECTED"]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "diff_status", "published_marker_id"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["RESEARCH_ONLY", "PILOT_ELIGIBLE", "PUBLISHED", "REJECTED"]
+        },
+        "diff_status": {
+          "type": "string",
+          "enum": ["NEW", "UNCHANGED", "MOVED", "REMOVED", "CONFLICTING"]
+        },
+        "published_marker_id": { "type": ["string", "null"] }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

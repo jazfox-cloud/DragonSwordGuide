@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dragonswordguide.com/schemas/chest-production.schema.json",
+  "title": "DragonSwordGuide Production Chest Marker",
+  "description": "Slim client-facing chest marker schema. Full provenance remains in research/build artifacts, not in the shipped marker chunk.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "subtype",
+    "region",
+    "x",
+    "y",
+    "status",
+    "precision",
+    "coordinate_confidence",
+    "dataset_version",
+    "source_ref",
+    "chunk_key"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^marker:chest:[a-z0-9][a-z0-9:-]*$"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "const": "CHEST" },
+    "subtype": {
+      "type": "string",
+      "enum": [
+        "NORMAL_CHEST",
+        "SUPERIOR_CHEST",
+        "RARE_CHEST",
+        "EPIC_CHEST",
+        "LEGENDARY_CHEST",
+        "UNKNOWN_CHEST"
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "region": { "type": "string", "minLength": 1 },
+    "subregion": { "type": ["string", "null"] },
+    "landmark_hint": { "type": ["string", "null"] },
+    "x": { "type": "number", "minimum": 0, "maximum": 1 },
+    "y": { "type": "number", "minimum": 0, "maximum": 1 },
+    "status": {
+      "type": "string",
+      "enum": [
+        "MULTI_SOURCE_CORROBORATED",
+        "VIDEO_VERIFIED",
+        "FIRST_HAND_VERIFIED",
+        "OFFICIAL_VERIFIED"
+      ]
+    },
+    "precision": {
+      "type": "string",
+      "enum": ["PIN_CENTER", "APPROXIMATE", "REGION_APPROXIMATE"]
+    },
+    "coordinate_confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    },
+    "description": { "type": "string" },
+    "dataset_version": { "type": "string", "minLength": 1 },
+    "source_ref": {
+      "type": "string",
+      "description": "Opaque build-time provenance reference, not a copied source URL list."
+    },
+    "chunk_key": {
+      "type": "string",
+      "description": "Region or layer chunk identifier used by the client loader."
+    }
+  }
+}
