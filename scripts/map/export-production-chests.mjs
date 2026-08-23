@@ -18,20 +18,51 @@ const publishable = snapshot.candidates.filter((candidate) => !rejectedIds.has(c
 const productionDir = path.join(PILOT_DIR, 'production');
 const regions = [];
 
+function subtypeLabel(subtype) {
+  return subtype
+    .replace('_CHEST', '')
+    .split('_')
+    .map((part) => `${part.slice(0, 1)}${part.slice(1).toLowerCase()}`)
+    .join(' ');
+}
+
 for (const region of PILOT_REGIONS) {
   const markers = publishable
     .filter((candidate) => candidate.region.region_name === region.name)
-    .map((candidate, index) => ({
-      id: `marker:chest:${region.slug}:${String(index + 1).padStart(2, '0')}`,
-      name: candidate.name,
-      category: 'CHEST',
-      subtype: candidate.canonical_subtype,
-      region: candidate.region.region_name,
-      x: candidate.normalized_position.x,
-      y: candidate.normalized_position.y,
-      status: candidate.verification_status,
-      precision: candidate.normalized_position.precision
-    }));
+    .map((candidate, index) => {
+      const markerNumber = String(index + 1).padStart(2, '0');
+      const label = subtypeLabel(candidate.canonical_subtype);
+      return {
+        id: `marker:chest:${region.slug}:${markerNumber}`,
+        name: candidate.name,
+        category: 'CHEST',
+        subtype: candidate.canonical_subtype,
+        region: candidate.region.region_name,
+        x: candidate.normalized_position.x,
+        y: candidate.normalized_position.y,
+        status: candidate.verification_status,
+        verification_status: candidate.verification_status,
+        precision: candidate.normalized_position.precision,
+        coordinate_confidence: candidate.normalized_position.coordinate_confidence,
+        coordinate_provenance: candidate.coordinate_gate,
+        confidence: candidate.confidence,
+        dataset_version: DATASET_VERSION,
+        source_ref: candidate.publication.published_marker_id || candidate.candidate_id,
+        chunk_key: region.slug,
+        aliases: [
+          candidate.name,
+          `Treasure Chest ${region.name}`,
+          `${label} Chest`,
+          `${region.name} ${label} Chest`,
+          `Chest ${region.name} #${markerNumber}`,
+          `Treasure Box ${region.name}`
+        ],
+        game_version: candidate.game_build,
+        last_checked: candidate.last_checked,
+        description: `${candidate.name} is a source-corroborated, approximate Treasure Chest planning marker in ${region.name}. It is not an exact in-game pin.`,
+        source_summary: 'Position is derived from multi-source public position corroboration across public map products and then placed on DragonSwordGuide schematic coordinates.'
+      };
+    });
   const chunk = {
     dataset_version: DATASET_VERSION,
     region: region.name,

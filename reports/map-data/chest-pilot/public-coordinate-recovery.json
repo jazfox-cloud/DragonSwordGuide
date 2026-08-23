@@ -1,0 +1,2218 @@
+{
+  "dataset_version": "chest-pilot-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "last_checked": "2026-08-23",
+  "game_build": "steam-24375914 source-context-only",
+  "method": "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
+  "sample_checked": 20,
+  "sample_strong_or_moderate": 20,
+  "public_position_recovery": "PUBLIC_POSITION_RECOVERY_VIABLE",
+  "classification_counts": {
+    "STRONG_POSITION_AGREEMENT": 80
+  },
+  "companion_treasure_box_count": 1506,
+  "sample": [
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:01-06dd7453",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.310119,
+        "y": 0.550823
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10305,
+        "x": 0.3108,
+        "y": 0.5507
+      },
+      "delta_x": 0.000681,
+      "delta_y": -0.000123,
+      "distance": 0.000692,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:02-1300e3c7",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.33776,
+        "y": 0.585035
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10282,
+        "x": 0.3382,
+        "y": 0.5849
+      },
+      "delta_x": 0.00044,
+      "delta_y": -0.000135,
+      "distance": 0.00046,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:03-145658f0",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.308382,
+        "y": 0.521084
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10291,
+        "x": 0.3091,
+        "y": 0.5209
+      },
+      "delta_x": 0.000718,
+      "delta_y": -0.000184,
+      "distance": 0.000741,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:04-199415ba",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.30356,
+        "y": 0.514016
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10252,
+        "x": 0.3043,
+        "y": 0.5138
+      },
+      "delta_x": 0.00074,
+      "delta_y": -0.000216,
+      "distance": 0.000771,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:05-1a3c7108",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.352296,
+        "y": 0.640937
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11017,
+        "x": 0.3527,
+        "y": 0.6408
+      },
+      "delta_x": 0.000404,
+      "delta_y": -0.000137,
+      "distance": 0.000427,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:06-1a6d6fa4",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.200635,
+        "y": 0.622182
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10376,
+        "x": 0.202,
+        "y": 0.6221
+      },
+      "delta_x": 0.001365,
+      "delta_y": -0.000082,
+      "distance": 0.001367,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:07-1ad11ede",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.247421,
+        "y": 0.596277
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10346,
+        "x": 0.2485,
+        "y": 0.5961
+      },
+      "delta_x": 0.001079,
+      "delta_y": -0.000177,
+      "distance": 0.001093,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:08-1d8701b9",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.309925,
+        "y": 0.658935
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10212,
+        "x": 0.3106,
+        "y": 0.6588
+      },
+      "delta_x": 0.000675,
+      "delta_y": -0.000135,
+      "distance": 0.000688,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:09-1e3507f4",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Legendary Chest",
+      "canonical_subtype": "LEGENDARY_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.258498,
+        "y": 0.628863
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10344,
+        "x": 0.2595,
+        "y": 0.6287
+      },
+      "delta_x": 0.001002,
+      "delta_y": -0.000163,
+      "distance": 0.001015,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:10-1e5f8f79",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.367811,
+        "y": 0.618551
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10373,
+        "x": 0.3681,
+        "y": 0.6184
+      },
+      "delta_x": 0.000289,
+      "delta_y": -0.000151,
+      "distance": 0.000326,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:01-00553a3a",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.428593,
+        "y": 0.677149
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10442,
+        "x": 0.4285,
+        "y": 0.677
+      },
+      "delta_x": -0.000093,
+      "delta_y": -0.000149,
+      "distance": 0.000176,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:02-011ee18e",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.3821,
+        "y": 0.640726
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10402,
+        "x": 0.3823,
+        "y": 0.6406
+      },
+      "delta_x": 0.0002,
+      "delta_y": -0.000126,
+      "distance": 0.000236,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:03-055b5f49",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.384175,
+        "y": 0.681165
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10261,
+        "x": 0.3843,
+        "y": 0.6811
+      },
+      "delta_x": 0.000125,
+      "delta_y": -0.000065,
+      "distance": 0.000141,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:04-09bd8531",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.33806,
+        "y": 0.714209
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10436,
+        "x": 0.3385,
+        "y": 0.7141
+      },
+      "delta_x": 0.00044,
+      "delta_y": -0.000109,
+      "distance": 0.000453,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:05-0abb8aca",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.388877,
+        "y": 0.725582
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10467,
+        "x": 0.389,
+        "y": 0.7255
+      },
+      "delta_x": 0.000123,
+      "delta_y": -0.000082,
+      "distance": 0.000148,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:06-0b523df1",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.332123,
+        "y": 0.779656
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10765,
+        "x": 0.3326,
+        "y": 0.7796
+      },
+      "delta_x": 0.000477,
+      "delta_y": -0.000056,
+      "distance": 0.00048,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:07-0b620853",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.47073,
+        "y": 0.725944
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10478,
+        "x": 0.4703,
+        "y": 0.7259
+      },
+      "delta_x": -0.00043,
+      "delta_y": -0.000044,
+      "distance": 0.000432,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:08-0cad1fd6",
+      "region": "Field of Plenty",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.463544,
+        "y": 0.73796
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11019,
+        "x": 0.4632,
+        "y": 0.7379
+      },
+      "delta_x": -0.000344,
+      "delta_y": -0.00006,
+      "distance": 0.000349,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:09-108eb77d",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.353344,
+        "y": 0.741419
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11007,
+        "x": 0.3537,
+        "y": 0.7414
+      },
+      "delta_x": 0.000356,
+      "delta_y": -0.000019,
+      "distance": 0.000357,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:10-1304ef21",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.420072,
+        "y": 0.703084
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10489,
+        "x": 0.42,
+        "y": 0.703
+      },
+      "delta_x": -0.000072,
+      "delta_y": -0.000084,
+      "distance": 0.000111,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    }
+  ],
+  "reviewed": [
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:01-06dd7453",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.310119,
+        "y": 0.550823
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10305,
+        "x": 0.3108,
+        "y": 0.5507
+      },
+      "delta_x": 0.000681,
+      "delta_y": -0.000123,
+      "distance": 0.000692,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:02-1300e3c7",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.33776,
+        "y": 0.585035
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10282,
+        "x": 0.3382,
+        "y": 0.5849
+      },
+      "delta_x": 0.00044,
+      "delta_y": -0.000135,
+      "distance": 0.00046,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:03-145658f0",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.308382,
+        "y": 0.521084
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10291,
+        "x": 0.3091,
+        "y": 0.5209
+      },
+      "delta_x": 0.000718,
+      "delta_y": -0.000184,
+      "distance": 0.000741,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:04-199415ba",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.30356,
+        "y": 0.514016
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10252,
+        "x": 0.3043,
+        "y": 0.5138
+      },
+      "delta_x": 0.00074,
+      "delta_y": -0.000216,
+      "distance": 0.000771,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:05-1a3c7108",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.352296,
+        "y": 0.640937
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11017,
+        "x": 0.3527,
+        "y": 0.6408
+      },
+      "delta_x": 0.000404,
+      "delta_y": -0.000137,
+      "distance": 0.000427,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:06-1a6d6fa4",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.200635,
+        "y": 0.622182
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10376,
+        "x": 0.202,
+        "y": 0.6221
+      },
+      "delta_x": 0.001365,
+      "delta_y": -0.000082,
+      "distance": 0.001367,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:07-1ad11ede",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.247421,
+        "y": 0.596277
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10346,
+        "x": 0.2485,
+        "y": 0.5961
+      },
+      "delta_x": 0.001079,
+      "delta_y": -0.000177,
+      "distance": 0.001093,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:08-1d8701b9",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.309925,
+        "y": 0.658935
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10212,
+        "x": 0.3106,
+        "y": 0.6588
+      },
+      "delta_x": 0.000675,
+      "delta_y": -0.000135,
+      "distance": 0.000688,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:09-1e3507f4",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Legendary Chest",
+      "canonical_subtype": "LEGENDARY_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.258498,
+        "y": 0.628863
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10344,
+        "x": 0.2595,
+        "y": 0.6287
+      },
+      "delta_x": 0.001002,
+      "delta_y": -0.000163,
+      "distance": 0.001015,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:10-1e5f8f79",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.367811,
+        "y": 0.618551
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10373,
+        "x": 0.3681,
+        "y": 0.6184
+      },
+      "delta_x": 0.000289,
+      "delta_y": -0.000151,
+      "distance": 0.000326,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:11-1ea2a190",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.354767,
+        "y": 0.602809
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10509,
+        "x": 0.3551,
+        "y": 0.6027
+      },
+      "delta_x": 0.000333,
+      "delta_y": -0.000109,
+      "distance": 0.00035,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:12-231fa839",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.279172,
+        "y": 0.624272
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10356,
+        "x": 0.28,
+        "y": 0.6241
+      },
+      "delta_x": 0.000828,
+      "delta_y": -0.000172,
+      "distance": 0.000846,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:13-26a79136",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.289221,
+        "y": 0.544526
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10299,
+        "x": 0.29,
+        "y": 0.5444
+      },
+      "delta_x": 0.000779,
+      "delta_y": -0.000126,
+      "distance": 0.000789,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:14-26d23f19",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.369409,
+        "y": 0.589058
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10284,
+        "x": 0.3697,
+        "y": 0.5889
+      },
+      "delta_x": 0.000291,
+      "delta_y": -0.000158,
+      "distance": 0.000331,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:15-27ed1f3b",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.302191,
+        "y": 0.651191
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10360,
+        "x": 0.3029,
+        "y": 0.6511
+      },
+      "delta_x": 0.000709,
+      "delta_y": -0.000091,
+      "distance": 0.000715,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:16-290b5dba",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.354667,
+        "y": 0.645654
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10555,
+        "x": 0.355,
+        "y": 0.6455
+      },
+      "delta_x": 0.000333,
+      "delta_y": -0.000154,
+      "distance": 0.000367,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:17-2d3116f2",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.227993,
+        "y": 0.608023
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10445,
+        "x": 0.2292,
+        "y": 0.6079
+      },
+      "delta_x": 0.001207,
+      "delta_y": -0.000123,
+      "distance": 0.001213,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:18-2ee11c43",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.314853,
+        "y": 0.60017
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10556,
+        "x": 0.3155,
+        "y": 0.6
+      },
+      "delta_x": 0.000647,
+      "delta_y": -0.00017,
+      "distance": 0.000669,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:19-327f6505",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.246472,
+        "y": 0.566589
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10808,
+        "x": 0.2476,
+        "y": 0.5664
+      },
+      "delta_x": 0.001128,
+      "delta_y": -0.000189,
+      "distance": 0.001144,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:20-34bf8d57",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.27857,
+        "y": 0.584032
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10350,
+        "x": 0.2794,
+        "y": 0.5839
+      },
+      "delta_x": 0.00083,
+      "delta_y": -0.000132,
+      "distance": 0.00084,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:21-36006f56",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.318247,
+        "y": 0.649356
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10365,
+        "x": 0.3189,
+        "y": 0.6492
+      },
+      "delta_x": 0.000653,
+      "delta_y": -0.000156,
+      "distance": 0.000671,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:22-3929a8fb",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.335739,
+        "y": 0.526277
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10296,
+        "x": 0.3362,
+        "y": 0.5261
+      },
+      "delta_x": 0.000461,
+      "delta_y": -0.000177,
+      "distance": 0.000494,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:23-4218813a",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.280363,
+        "y": 0.61203
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10448,
+        "x": 0.2812,
+        "y": 0.6119
+      },
+      "delta_x": 0.000837,
+      "delta_y": -0.00013,
+      "distance": 0.000847,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:24-421cca4c",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.328375,
+        "y": 0.578288
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10398,
+        "x": 0.3289,
+        "y": 0.5781
+      },
+      "delta_x": 0.000525,
+      "delta_y": -0.000188,
+      "distance": 0.000558,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:25-474644a9",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.289511,
+        "y": 0.519749
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10289,
+        "x": 0.2903,
+        "y": 0.5196
+      },
+      "delta_x": 0.000789,
+      "delta_y": -0.000149,
+      "distance": 0.000803,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:26-48f01796",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.30773,
+        "y": 0.650756
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10359,
+        "x": 0.3084,
+        "y": 0.6506
+      },
+      "delta_x": 0.00067,
+      "delta_y": -0.000156,
+      "distance": 0.000688,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:27-49923d66",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.230354,
+        "y": 0.590988
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10345,
+        "x": 0.2316,
+        "y": 0.5908
+      },
+      "delta_x": 0.001246,
+      "delta_y": -0.000188,
+      "distance": 0.00126,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:28-4b303260",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.215225,
+        "y": 0.614809
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10342,
+        "x": 0.2165,
+        "y": 0.6147
+      },
+      "delta_x": 0.001275,
+      "delta_y": -0.000109,
+      "distance": 0.00128,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:29-4b3b3684",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.319672,
+        "y": 0.623979
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10401,
+        "x": 0.3203,
+        "y": 0.6239
+      },
+      "delta_x": 0.000628,
+      "delta_y": -0.000079,
+      "distance": 0.000633,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:30-4ba0f56b",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.296911,
+        "y": 0.603065
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10353,
+        "x": 0.2977,
+        "y": 0.6029
+      },
+      "delta_x": 0.000789,
+      "delta_y": -0.000165,
+      "distance": 0.000806,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:31-4bc1dbdb",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.342202,
+        "y": 0.532693
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10319,
+        "x": 0.3426,
+        "y": 0.5325
+      },
+      "delta_x": 0.000398,
+      "delta_y": -0.000193,
+      "distance": 0.000442,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:32-4c87984e",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.323267,
+        "y": 0.501116
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10513,
+        "x": 0.3238,
+        "y": 0.5009
+      },
+      "delta_x": 0.000533,
+      "delta_y": -0.000216,
+      "distance": 0.000575,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:33-4c8d85ab",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.246356,
+        "y": 0.613872
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10406,
+        "x": 0.2474,
+        "y": 0.6137
+      },
+      "delta_x": 0.001044,
+      "delta_y": -0.000172,
+      "distance": 0.001058,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:34-4d39e26d",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.285654,
+        "y": 0.598195
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10470,
+        "x": 0.2865,
+        "y": 0.5981
+      },
+      "delta_x": 0.000846,
+      "delta_y": -0.000095,
+      "distance": 0.000851,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:35-4d5712ef",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.261386,
+        "y": 0.615218
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10407,
+        "x": 0.2624,
+        "y": 0.6151
+      },
+      "delta_x": 0.001014,
+      "delta_y": -0.000118,
+      "distance": 0.001021,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:36-4d74ecac",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.312019,
+        "y": 0.508291
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10338,
+        "x": 0.3127,
+        "y": 0.5081
+      },
+      "delta_x": 0.000681,
+      "delta_y": -0.000191,
+      "distance": 0.000707,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:37-4e70f793",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.350158,
+        "y": 0.537826
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10673,
+        "x": 0.3506,
+        "y": 0.5377
+      },
+      "delta_x": 0.000442,
+      "delta_y": -0.000126,
+      "distance": 0.00046,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:38-504e6475",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.294482,
+        "y": 0.510079
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10675,
+        "x": 0.2952,
+        "y": 0.5099
+      },
+      "delta_x": 0.000718,
+      "delta_y": -0.000179,
+      "distance": 0.00074,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:39-508a5302",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.285161,
+        "y": 0.521863
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10334,
+        "x": 0.286,
+        "y": 0.5217
+      },
+      "delta_x": 0.000839,
+      "delta_y": -0.000163,
+      "distance": 0.000855,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:40-532f40ed",
+      "region": "Meadow of Beginnings",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.365521,
+        "y": 0.655856
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10505,
+        "x": 0.3658,
+        "y": 0.6557
+      },
+      "delta_x": 0.000279,
+      "delta_y": -0.000156,
+      "distance": 0.00032,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:01-00553a3a",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.428593,
+        "y": 0.677149
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10442,
+        "x": 0.4285,
+        "y": 0.677
+      },
+      "delta_x": -0.000093,
+      "delta_y": -0.000149,
+      "distance": 0.000176,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:02-011ee18e",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.3821,
+        "y": 0.640726
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10402,
+        "x": 0.3823,
+        "y": 0.6406
+      },
+      "delta_x": 0.0002,
+      "delta_y": -0.000126,
+      "distance": 0.000236,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:03-055b5f49",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.384175,
+        "y": 0.681165
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10261,
+        "x": 0.3843,
+        "y": 0.6811
+      },
+      "delta_x": 0.000125,
+      "delta_y": -0.000065,
+      "distance": 0.000141,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:04-09bd8531",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.33806,
+        "y": 0.714209
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10436,
+        "x": 0.3385,
+        "y": 0.7141
+      },
+      "delta_x": 0.00044,
+      "delta_y": -0.000109,
+      "distance": 0.000453,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:05-0abb8aca",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.388877,
+        "y": 0.725582
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10467,
+        "x": 0.389,
+        "y": 0.7255
+      },
+      "delta_x": 0.000123,
+      "delta_y": -0.000082,
+      "distance": 0.000148,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:06-0b523df1",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.332123,
+        "y": 0.779656
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10765,
+        "x": 0.3326,
+        "y": 0.7796
+      },
+      "delta_x": 0.000477,
+      "delta_y": -0.000056,
+      "distance": 0.00048,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:07-0b620853",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.47073,
+        "y": 0.725944
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10478,
+        "x": 0.4703,
+        "y": 0.7259
+      },
+      "delta_x": -0.00043,
+      "delta_y": -0.000044,
+      "distance": 0.000432,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:08-0cad1fd6",
+      "region": "Field of Plenty",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.463544,
+        "y": 0.73796
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11019,
+        "x": 0.4632,
+        "y": 0.7379
+      },
+      "delta_x": -0.000344,
+      "delta_y": -0.00006,
+      "distance": 0.000349,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:09-108eb77d",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.353344,
+        "y": 0.741419
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11007,
+        "x": 0.3537,
+        "y": 0.7414
+      },
+      "delta_x": 0.000356,
+      "delta_y": -0.000019,
+      "distance": 0.000357,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:10-1304ef21",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.420072,
+        "y": 0.703084
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10489,
+        "x": 0.42,
+        "y": 0.703
+      },
+      "delta_x": -0.000072,
+      "delta_y": -0.000084,
+      "distance": 0.000111,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:11-1361757e",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.325077,
+        "y": 0.731891
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10431,
+        "x": 0.3256,
+        "y": 0.7318
+      },
+      "delta_x": 0.000523,
+      "delta_y": -0.000091,
+      "distance": 0.000531,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:12-13976dc2",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.425344,
+        "y": 0.768081
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10487,
+        "x": 0.4252,
+        "y": 0.768
+      },
+      "delta_x": -0.000144,
+      "delta_y": -0.000081,
+      "distance": 0.000165,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:13-13fce2fb",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.355225,
+        "y": 0.671235
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10374,
+        "x": 0.3556,
+        "y": 0.6711
+      },
+      "delta_x": 0.000375,
+      "delta_y": -0.000135,
+      "distance": 0.000399,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:14-17dccd7f",
+      "region": "Field of Plenty",
+      "source_subtype": "Legendary Chest",
+      "canonical_subtype": "LEGENDARY_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.408842,
+        "y": 0.709393
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11128,
+        "x": 0.4088,
+        "y": 0.7093
+      },
+      "delta_x": -0.000042,
+      "delta_y": -0.000093,
+      "distance": 0.000102,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:15-189a5889",
+      "region": "Field of Plenty",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.37897,
+        "y": 0.769504
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10917,
+        "x": 0.3792,
+        "y": 0.7695
+      },
+      "delta_x": 0.00023,
+      "delta_y": -0.000004,
+      "distance": 0.00023,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:16-19f9ad54",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.394091,
+        "y": 0.630956
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10375,
+        "x": 0.3942,
+        "y": 0.6308
+      },
+      "delta_x": 0.000109,
+      "delta_y": -0.000156,
+      "distance": 0.00019,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:17-1a12be39",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.406802,
+        "y": 0.746384
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10700,
+        "x": 0.4068,
+        "y": 0.7463
+      },
+      "delta_x": -0.000002,
+      "delta_y": -0.000084,
+      "distance": 0.000084,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:18-1a20c5fb",
+      "region": "Field of Plenty",
+      "source_subtype": "Legendary Chest",
+      "canonical_subtype": "LEGENDARY_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.344667,
+        "y": 0.723719
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11366,
+        "x": 0.3451,
+        "y": 0.7236
+      },
+      "delta_x": 0.000433,
+      "delta_y": -0.000119,
+      "distance": 0.000449,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:19-1b624912",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.365732,
+        "y": 0.711595
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10545,
+        "x": 0.366,
+        "y": 0.7115
+      },
+      "delta_x": 0.000268,
+      "delta_y": -0.000095,
+      "distance": 0.000284,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:20-1c88ed93",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.419198,
+        "y": 0.694398
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10999,
+        "x": 0.4191,
+        "y": 0.6943
+      },
+      "delta_x": -0.000098,
+      "delta_y": -0.000098,
+      "distance": 0.000139,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:21-1d9d5abf",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.35426,
+        "y": 0.662767
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10399,
+        "x": 0.3546,
+        "y": 0.6627
+      },
+      "delta_x": 0.00034,
+      "delta_y": -0.000067,
+      "distance": 0.000347,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:22-1daa3c5d",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.346032,
+        "y": 0.694789
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11040,
+        "x": 0.3465,
+        "y": 0.6947
+      },
+      "delta_x": 0.000468,
+      "delta_y": -0.000089,
+      "distance": 0.000476,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:23-20afb6f7",
+      "region": "Field of Plenty",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.42516,
+        "y": 0.701518
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10710,
+        "x": 0.425,
+        "y": 0.7014
+      },
+      "delta_x": -0.00016,
+      "delta_y": -0.000118,
+      "distance": 0.000199,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:24-280c6025",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.379493,
+        "y": 0.750547
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10459,
+        "x": 0.3797,
+        "y": 0.7505
+      },
+      "delta_x": 0.000207,
+      "delta_y": -0.000047,
+      "distance": 0.000212,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:25-28d4bf21",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.384047,
+        "y": 0.653853
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10432,
+        "x": 0.3842,
+        "y": 0.6537
+      },
+      "delta_x": 0.000153,
+      "delta_y": -0.000153,
+      "distance": 0.000216,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:26-297a2809",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.40094,
+        "y": 0.663675
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10480,
+        "x": 0.401,
+        "y": 0.6636
+      },
+      "delta_x": 0.00006,
+      "delta_y": -0.000075,
+      "distance": 0.000096,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:27-2d0f0740",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.483633,
+        "y": 0.680644
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10168,
+        "x": 0.4831,
+        "y": 0.6805
+      },
+      "delta_x": -0.000533,
+      "delta_y": -0.000144,
+      "distance": 0.000552,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:28-2daccc97",
+      "region": "Field of Plenty",
+      "source_subtype": "Legendary Chest",
+      "canonical_subtype": "LEGENDARY_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.322009,
+        "y": 0.667249
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11334,
+        "x": 0.3226,
+        "y": 0.6671
+      },
+      "delta_x": 0.000591,
+      "delta_y": -0.000149,
+      "distance": 0.000609,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:29-3340c784",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.374895,
+        "y": 0.641721
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10220,
+        "x": 0.3751,
+        "y": 0.6416
+      },
+      "delta_x": 0.000205,
+      "delta_y": -0.000121,
+      "distance": 0.000238,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:30-34c0f704",
+      "region": "Field of Plenty",
+      "source_subtype": "Hero Chest",
+      "canonical_subtype": "EPIC_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.34746,
+        "y": 0.707588
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10265,
+        "x": 0.3479,
+        "y": 0.7075
+      },
+      "delta_x": 0.00044,
+      "delta_y": -0.000088,
+      "distance": 0.000449,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:31-35c3b842",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.468932,
+        "y": 0.723516
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10496,
+        "x": 0.4685,
+        "y": 0.7234
+      },
+      "delta_x": -0.000432,
+      "delta_y": -0.000116,
+      "distance": 0.000447,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:32-35eca1cf",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.41207,
+        "y": 0.65097
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10263,
+        "x": 0.412,
+        "y": 0.6509
+      },
+      "delta_x": -0.00007,
+      "delta_y": -0.00007,
+      "distance": 0.000099,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:33-395646c4",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.347246,
+        "y": 0.767775
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 11008,
+        "x": 0.3477,
+        "y": 0.7677
+      },
+      "delta_x": 0.000454,
+      "delta_y": -0.000075,
+      "distance": 0.00046,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:34-39c0feed",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.40106,
+        "y": 0.707075
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10233,
+        "x": 0.4011,
+        "y": 0.707
+      },
+      "delta_x": 0.00004,
+      "delta_y": -0.000075,
+      "distance": 0.000085,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:35-3a43ea2a",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.403616,
+        "y": 0.754104
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10450,
+        "x": 0.4036,
+        "y": 0.754
+      },
+      "delta_x": -0.000016,
+      "delta_y": -0.000104,
+      "distance": 0.000105,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:36-3ac4a444",
+      "region": "Field of Plenty",
+      "source_subtype": "Rare Chest",
+      "canonical_subtype": "RARE_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.334563,
+        "y": 0.682007
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10435,
+        "x": 0.3351,
+        "y": 0.6819
+      },
+      "delta_x": 0.000537,
+      "delta_y": -0.000107,
+      "distance": 0.000548,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:37-3c947588",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.322588,
+        "y": 0.673435
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10420,
+        "x": 0.3232,
+        "y": 0.6733
+      },
+      "delta_x": 0.000612,
+      "delta_y": -0.000135,
+      "distance": 0.000627,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:38-3cdcc593",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.373198,
+        "y": 0.745861
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10481,
+        "x": 0.3734,
+        "y": 0.7458
+      },
+      "delta_x": 0.000202,
+      "delta_y": -0.000061,
+      "distance": 0.000211,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:39-3d24cb7b",
+      "region": "Field of Plenty",
+      "source_subtype": "Regular Chest",
+      "canonical_subtype": "NORMAL_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.443618,
+        "y": 0.709202
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10998,
+        "x": 0.4434,
+        "y": 0.7091
+      },
+      "delta_x": -0.000218,
+      "delta_y": -0.000102,
+      "distance": 0.000241,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:40-3e9ce57a",
+      "region": "Field of Plenty",
+      "source_subtype": "Premium Chest",
+      "canonical_subtype": "SUPERIOR_CHEST",
+      "source_a_position": {
+        "source": "DragonSwordAwakening.net public map sample",
+        "x": 0.484642,
+        "y": 0.72637
+      },
+      "source_b_position": {
+        "source": "Dragonsword Companion public map",
+        "companion_index": 10424,
+        "x": 0.4841,
+        "y": 0.7263
+      },
+      "delta_x": -0.000542,
+      "delta_y": -0.00007,
+      "distance": 0.000547,
+      "classification": "STRONG_POSITION_AGREEMENT",
+      "publication_decision": "PUBLISH_AS_SECONDARY_CORROBORATED"
+    }
+  ]
+}

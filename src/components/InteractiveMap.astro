@@ -2,7 +2,7 @@
 interface Marker {
   id: string;
   name: string;
-  category: 'EONAS_LEGACY' | 'ORGANA_STATUE' | 'WARP_POINT' | 'DUNGEON' | 'BOSS';
+  category: 'EONAS_LEGACY' | 'ORGANA_STATUE' | 'WARP_POINT' | 'DUNGEON' | 'BOSS' | 'CHEST';
   subtype?: string;
   region: string;
   x: number;
@@ -37,12 +37,14 @@ interface MarkerData {
 }
 
 const { markerData } = Astro.props as { markerData: MarkerData };
+const { chestMarkerCount = 0 } = Astro.props as { chestMarkerCount?: number };
 const categoryLabels = {
   EONAS_LEGACY: "Eona's Legacy",
   ORGANA_STATUE: 'Organa Statues',
   WARP_POINT: 'Warp Points',
   DUNGEON: 'Dungeons',
   BOSS: 'Bosses',
+  CHEST: 'Treasure Chests',
 };
 const statusLabels = {
   OFFICIAL_VERIFIED: 'Official verified',
@@ -56,6 +58,7 @@ const categoryCounts = markerData.markers.reduce<Record<string, number>>((counts
   counts[marker.category] = (counts[marker.category] || 0) + 1;
   return counts;
 }, {});
+categoryCounts.CHEST = chestMarkerCount;
 const firstMarker = markerData.markers[0];
 ---
 
@@ -66,7 +69,9 @@ const firstMarker = markerData.markers[0];
   data-coordinate-system={markerData.coordinate_system}
   data-organa-count-conflict={markerData.category_status?.ORGANA_STATUE?.count_conflict}
   data-organa-conflict-verdict={markerData.category_status?.ORGANA_STATUE?.conflict_verdict}
-  data-marker-count={markerData.markers.length}
+  data-marker-count={markerData.markers.length + chestMarkerCount}
+  data-chest-marker-count={chestMarkerCount}
+  data-chest-manifest-url="/data/map/chests/manifest.json"
   aria-labelledby="interactive-map-title"
 >
   <div class="map-heading">
@@ -76,7 +81,8 @@ const firstMarker = markerData.markers[0];
       <p>Search, filter, pan and zoom approximate Orbis markers while exact routes are still being verified.</p>
     </div>
     <div class="map-stats" aria-label="Map marker summary">
-      <span><strong>{markerData.markers.length}</strong> beta markers</span>
+      <span><strong>{markerData.markers.length + chestMarkerCount}</strong> beta markers</span>
+      <span><strong>{chestMarkerCount}</strong> chest pilot</span>
       <span><strong>0</strong> first-hand verified</span>
     </div>
   </div>
@@ -89,7 +95,7 @@ const firstMarker = markerData.markers[0];
     <div class="filter-group" aria-label="Marker categories">
       {Object.entries(categoryLabels).map(([category, label]) => (
         <label class="filter-pill">
-          <input data-category-filter type="checkbox" value={category} checked />
+          <input data-category-filter type="checkbox" value={category} checked={category !== 'CHEST'} />
           <span>{label} <small>{categoryCounts[category] || 0}</small></span>
         </label>
       ))}
@@ -142,6 +148,7 @@ const firstMarker = markerData.markers[0];
               <span aria-hidden="true"></span>
             </button>
           ))}
+          <div class="chest-layer" data-chest-layer aria-live="polite"></div>
         </div>
       </div>
       <div class="map-scale-note">
@@ -177,14 +184,15 @@ const firstMarker = markerData.markers[0];
       if (!root) return;
 
       const markerDataScript = root.querySelector('#map-marker-data');
-      const markers = JSON.parse(markerDataScript.textContent || '[]');
+      const baseMarkers = JSON.parse(markerDataScript.textContent || '[]');
       const canvas = root.querySelector('[data-map-canvas]');
       const viewport = root.querySelector('[data-map-viewport]');
       const panel = root.querySelector('[data-marker-panel]');
       const search = root.querySelector('[data-marker-search]');
       const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
-      const markerButtons = Array.from(root.querySelectorAll('[data-marker-id]'));
-      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points', DUNGEON: 'Dungeons', BOSS: 'Bosses' };
+      const chestLayer = root.querySelector('[data-chest-layer]');
+      const chestManifestUrl = root.dataset.chestManifestUrl;
+      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points', DUNGEON: 'Dungeons', BOSS: 'Bosses', CHEST: 'Treasure Chests' };
       const statusLabels = {
         OFFICIAL_VERIFIED: 'Official verified',
         FIRST_HAND_VERIFIED: 'First-hand verified',
@@ -193,6 +201,8 @@ const firstMarker = markerData.markers[0];
         APPROXIMATE: 'Approximate',
         CONFLICTING: 'Conflicting',
       };
+      const chestMarkers = [];
+      let chestLoadPromise = null;
       let scale = 1;
       let offsetX = 0;
       let offsetY = 0;
@@ -200,6 +210,15 @@ const firstMarker = markerData.markers[0];
 
       function setTransform() {
         canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+        renderChestLayer();
+      }
+
+      function markerButtons() {
+        return Array.from(root.querySelectorAll('[data-marker-id]'));
+      }
+
+      function allMarkers() {
+        return baseMarkers.concat(chestMarkers);
       }
 
       function renderPanel(marker) {
@@ -228,9 +247,9 @@ const firstMarker = markerData.markers[0];
       }
 
       function selectMarker(id) {
-        const marker = markers.find((item) => item.id === id);
+        const marker = allMarkers().find((item) => item.id === id);
         if (!marker) return;
-        markerButtons.forEach((button) => button.toggleAttribute('data-active-marker', button.dataset.markerId === id));
+        markerButtons().forEach((button) => button.toggleAttribute('data-active-marker', button.dataset.markerId === id));
         renderPanel(marker);
       }
 
@@ -242,18 +261,117 @@ const firstMarker = markerData.markers[0];
         return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
       }
 
-      function applyFilters() {
+      function markerMatches(marker, query) {
+        const haystack = normalizeSearchText(`${marker.name} ${marker.region} ${marker.subtype || ''} ${(marker.aliases || []).join(' ')}`);
+        return !query || haystack.includes(query);
+      }
+
+      function clusterChestMarkers(markers) {
+        const cell = scale < 1 ? 64 : scale < 1.45 ? 42 : 24;
+        const buckets = new Map();
+        markers.forEach((marker) => {
+          const key = `${Math.floor(marker.x * viewport.clientWidth * scale / cell)}:${Math.floor(marker.y * viewport.clientHeight * scale / cell)}`;
+          const bucket = buckets.get(key) || { count: 0, x: 0, y: 0, markers: [] };
+          bucket.count += 1;
+          bucket.x += marker.x;
+          bucket.y += marker.y;
+          if (bucket.markers.length < 6) bucket.markers.push(marker);
+          buckets.set(key, bucket);
+        });
+        return Array.from(buckets.values()).map((bucket) => ({
+          count: bucket.count,
+          x: bucket.x / bucket.count,
+          y: bucket.y / bucket.count,
+          markers: bucket.markers,
+        }));
+      }
+
+      function renderChestLayer() {
+        if (!chestLayer || !root.dataset.chestLoaded) return;
         const query = normalizeSearchText(search.value);
         const categories = visibleCategories();
+        if (!categories.has('CHEST')) {
+          chestLayer.innerHTML = '';
+          return;
+        }
+
+        const visibleChestMarkers = chestMarkers.filter((marker) => markerMatches(marker, query));
+        if (scale < 1.45) {
+          const clusters = clusterChestMarkers(visibleChestMarkers);
+          chestLayer.innerHTML = clusters.map((cluster, index) => `
+            <button
+              type="button"
+              class="chest-cluster"
+              data-chest-cluster
+              data-cluster-x="${cluster.x}"
+              data-cluster-y="${cluster.y}"
+              style="left:${cluster.x * 100}%;top:${cluster.y * 100}%;"
+              aria-label="${cluster.count} Treasure Chests"
+            >${cluster.count}</button>
+          `).join('');
+          return;
+        }
+
+        chestLayer.innerHTML = visibleChestMarkers.slice(0, 250).map((marker) => `
+          <button
+            type="button"
+            class="marker marker-chest"
+            data-marker-id="${marker.id}"
+            data-marker-category="CHEST"
+            data-marker-status="${marker.verification_status}"
+            data-marker-name="${marker.name}"
+            data-marker-region="${marker.region}"
+            data-marker-subtype="${marker.subtype || ''}"
+            data-marker-aliases="${(marker.aliases || []).join(' ')}"
+            style="left:${marker.x * 100}%;top:${marker.y * 100}%;"
+            aria-label="${marker.name}, ${marker.region}, ${String(marker.precision).toLowerCase()}"
+          ><span aria-hidden="true"></span></button>
+        `).join('');
+      }
+
+      async function loadChestMarkers() {
+        if (root.dataset.chestLoaded || !chestManifestUrl) return;
+        if (!chestLoadPromise) {
+          chestLoadPromise = fetch(chestManifestUrl)
+            .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest manifest ${response.status}`)))
+            .then(async (manifest) => {
+              const chunks = await Promise.all((manifest.regions || []).map((region) =>
+                fetch(`/data/map/chests/${region.chunk}`)
+                  .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest chunk ${region.chunk} ${response.status}`)))
+              ));
+              chestMarkers.splice(0, chestMarkers.length, ...chunks.flatMap((chunk) => chunk.markers || []).map((marker) => ({
+                ...marker,
+                category: 'CHEST',
+                verification_status: marker.verification_status || marker.status,
+              })));
+              root.dataset.chestLoaded = 'true';
+              root.dataset.chestPublishedCount = String(chestMarkers.length);
+            })
+            .catch((error) => {
+              root.dataset.chestLoadError = String(error.message || error);
+              throw error;
+            });
+        }
+        await chestLoadPromise;
+      }
+
+      async function applyFilters() {
+        const query = normalizeSearchText(search.value);
+        const categories = visibleCategories();
+        if (categories.has('CHEST')) await loadChestMarkers();
         let shown = 0;
 
-        markerButtons.forEach((button) => {
+        Array.from(root.querySelectorAll('[data-marker-id]:not(.marker-chest)')).forEach((button) => {
           const haystack = normalizeSearchText(`${button.dataset.markerName} ${button.dataset.markerRegion} ${button.dataset.markerSubtype} ${button.dataset.markerAliases}`);
           const visible = categories.has(button.dataset.markerCategory) && (!query || haystack.includes(query));
           button.hidden = !visible;
           if (visible) shown += 1;
         });
 
+        renderChestLayer();
+        if (categories.has('CHEST')) {
+          shown += chestMarkers.filter((marker) => markerMatches(marker, query)).length;
+        }
         root.dataset.filteredMarkerCount = String(shown);
       }
 
@@ -280,6 +398,17 @@ const firstMarker = markerData.markers[0];
         if (markerButton) {
           selectMarker(markerButton.dataset.markerId);
         }
+
+        const clusterButton = event.target.closest('[data-chest-cluster]');
+        if (clusterButton) {
+          const x = Number(clusterButton.dataset.clusterX);
+          const y = Number(clusterButton.dataset.clusterY);
+          scale = Math.min(2.4, Math.max(1.55, Number((scale + 0.55).toFixed(2))));
+          offsetX = Math.round(viewport.clientWidth / 2 - x * viewport.clientWidth * scale);
+          offsetY = Math.round(viewport.clientHeight / 2 - y * viewport.clientHeight * scale);
+          setTransform();
+          void applyFilters();
+        }
       });
 
       viewport.addEventListener('pointerdown', (event) => {
@@ -304,10 +433,10 @@ const firstMarker = markerData.markers[0];
         zoomBy(event.deltaY > 0 ? -0.12 : 0.12);
       }, { passive: false });
 
-      search.addEventListener('input', applyFilters);
-      filters.forEach((input) => input.addEventListener('change', applyFilters));
+      search.addEventListener('input', () => void applyFilters());
+      filters.forEach((input) => input.addEventListener('change', () => void applyFilters()));
       setTransform();
-      applyFilters();
+      void applyFilters();
     })();
   </script>
 </section>
@@ -345,7 +474,12 @@ const firstMarker = markerData.markers[0];
   .marker-warp-point span { background: #70c8ff; }
   .marker-dungeon span { background: #ff9a6c; }
   .marker-boss span { background: #ff6b7a; }
+  .marker-chest span { background: #d5a451; width: 14px; height: 14px; border-radius: 4px; transform: rotate(45deg); }
   .marker:hover span, .marker[data-active-marker] span { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
+  .chest-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .chest-layer .marker, .chest-layer .chest-cluster { pointer-events: auto; }
+  .chest-cluster { position: absolute; z-index: 4; min-width: 30px; height: 30px; border: 2px solid #07101b; border-radius: 999px; transform: translate(-50%, -50%); background: #d5a451; color: #07101b; box-shadow: 0 0 0 2px hsl(0 0% 100% / 0.22), 0 8px 20px hsl(0 0% 0% / 0.35); font-size: 0.75rem; font-weight: 900; cursor: pointer; }
+  .chest-cluster:hover { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
   .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0.75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
   .marker-panel { padding: 1rem; }
   .panel-kicker { margin: 0 0 0.35rem; color: var(--success); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; }

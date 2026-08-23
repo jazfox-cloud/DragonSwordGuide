@@ -50,7 +50,8 @@
               "INDEPENDENT_GUIDE",
               "OFFICIAL",
               "COMMUNITY",
-              "FIRST_HAND"
+              "FIRST_HAND",
+              "UNKNOWN"
             ]
           },
           "record_id": { "type": ["string", "null"] },
@@ -173,6 +174,7 @@
         "OWNED_OR_LICENSED",
         "FIRST_HAND",
         "INDEPENDENTLY_ESTABLISHED",
+        "MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION",
         "POSITION_RESEARCH_ONLY",
         "REGION_UNRESOLVED"
       ]
@@ -204,7 +206,8 @@
           "INDEPENDENT_GUIDE",
           "OFFICIAL",
           "COMMUNITY",
-          "FIRST_HAND"
+          "FIRST_HAND",
+          "UNKNOWN"
         ]
       }
     },

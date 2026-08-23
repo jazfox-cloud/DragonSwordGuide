@@ -23,13 +23,24 @@ for (const candidate of snapshot.candidates) {
     reasons.push('UNRESOLVED_CONFLICT');
     conflicts.push(candidate.candidate_id);
   }
-  if (candidate.coordinate_gate !== 'OWNED_OR_LICENSED' && candidate.coordinate_gate !== 'FIRST_HAND' && candidate.coordinate_gate !== 'INDEPENDENTLY_ESTABLISHED') {
+  if (
+    candidate.coordinate_gate !== 'OWNED_OR_LICENSED' &&
+    candidate.coordinate_gate !== 'FIRST_HAND' &&
+    candidate.coordinate_gate !== 'INDEPENDENTLY_ESTABLISHED' &&
+    candidate.coordinate_gate !== 'MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION'
+  ) {
     reasons.push('COORDINATE_PROVENANCE_NOT_PUBLISHABLE');
   }
   if (candidate.normalized_position.x == null || candidate.normalized_position.y == null) {
     reasons.push('NORMALIZED_POSITION_UNRESOLVED');
   }
-  if (candidate.verification_status !== 'MULTI_SOURCE_CORROBORATED' && candidate.verification_status !== 'VIDEO_VERIFIED' && candidate.verification_status !== 'FIRST_HAND_VERIFIED' && candidate.verification_status !== 'OFFICIAL_VERIFIED') {
+  if (
+    candidate.verification_status !== 'SECONDARY_CORROBORATED' &&
+    candidate.verification_status !== 'MULTI_SOURCE_CORROBORATED' &&
+    candidate.verification_status !== 'VIDEO_VERIFIED' &&
+    candidate.verification_status !== 'FIRST_HAND_VERIFIED' &&
+    candidate.verification_status !== 'OFFICIAL_VERIFIED'
+  ) {
     reasons.push('INSUFFICIENT_INDEPENDENT_CORROBORATION');
   }
   if (candidate.publication.status === 'RESEARCH_ONLY') {
@@ -58,8 +69,8 @@ const report = {
   unknown_category_count: snapshot.candidates.filter((candidate) => candidate.category !== 'CHEST').length,
   unresolved_published_conflicts: publishable.filter((candidate) => candidate.conflicts.some((conflict) => conflict.status === 'OPEN')).length,
   research_only_published_count: publishable.filter((candidate) => candidate.publication.status === 'RESEARCH_ONLY').length,
-  coordinate_provenance: 'POSITION_RESEARCH_ONLY',
-  verification_level: 'GAME_DATA_CORROBORATED_RESEARCH_ONLY',
+  coordinate_provenance: publishable.length > 0 ? 'MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION' : 'POSITION_RESEARCH_ONLY',
+  verification_level: publishable.length > 0 ? 'SECONDARY_CORROBORATED' : 'GAME_DATA_CORROBORATED_RESEARCH_ONLY',
   rejected
 };
 

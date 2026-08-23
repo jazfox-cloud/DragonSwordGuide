@@ -51,6 +51,17 @@
     "status": {
       "type": "string",
       "enum": [
+        "SECONDARY_CORROBORATED",
+        "MULTI_SOURCE_CORROBORATED",
+        "VIDEO_VERIFIED",
+        "FIRST_HAND_VERIFIED",
+        "OFFICIAL_VERIFIED"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "SECONDARY_CORROBORATED",
         "MULTI_SOURCE_CORROBORATED",
         "VIDEO_VERIFIED",
         "FIRST_HAND_VERIFIED",
@@ -59,7 +70,11 @@
     },
     "precision": {
       "type": "string",
-      "enum": ["PIN_CENTER", "APPROXIMATE", "REGION_APPROXIMATE"]
+      "enum": ["PIN_CENTER", "APPROXIMATE", "LANDMARK_APPROXIMATE", "REGION_APPROXIMATE"]
+    },
+    "coordinate_provenance": {
+      "type": "string",
+      "enum": ["MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION"]
     },
     "coordinate_confidence": {
       "type": "string",

@@ -5,6 +5,7 @@ const root = process.cwd();
 const dataPath = path.join(root, 'src/data/map-markers.json');
 const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
+const chestManifestPath = path.join(root, 'public/data/map/chests/manifest.json');
 const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
 const warpCompletionSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-completion-sprint.md');
@@ -60,6 +61,8 @@ function readJson(filePath) {
 }
 
 const markerData = readJson(dataPath);
+const chestManifest = readJson(chestManifestPath);
+const chestPublishedCount = chestManifest.total_published;
 
 if (markerData.base_map_id !== 'OWN_SCHEMATIC_ORBIS_BASE_MAP') {
   fail('base_map_id must be OWN_SCHEMATIC_ORBIS_BASE_MAP');
@@ -75,6 +78,17 @@ if (String(markerData.data_policy).includes('RESEARCH_ONLY_NOT_FOR_PRODUCTION'))
 
 if (!Array.isArray(markerData.markers) || markerData.markers.length < 16) {
   fail('expected at least 16 production beta markers after Organa expansion sprint 2');
+}
+
+if (chestPublishedCount !== 80) {
+  fail('expected 80 Treasure Chest pilot markers in public chest manifest');
+}
+
+for (const region of chestManifest.regions || []) {
+  const chunk = readJson(path.join(root, 'public/data/map/chests', region.chunk));
+  if (chunk.marker_count !== 40 || chunk.markers.length !== 40) {
+    fail(`expected 40 Treasure Chest markers in ${region.chunk}`);
+  }
 }
 
 const ids = new Set();
@@ -497,7 +511,10 @@ const expectedSnippets = [
   'data-marker-category="WARP_POINT"',
   'data-marker-category="DUNGEON"',
   'data-marker-category="BOSS"',
+  'data-chest-marker-count="80"',
+  'data-chest-manifest-url="/data/map/chests/manifest.json"',
   'data-marker-subtype',
+  'Treasure Chests',
   'Warp Points',
   'Dungeons',
   'Bosses',
@@ -517,6 +534,8 @@ const expectedSnippets = [
   '20 published / 20 known',
   '26 published / 26 mapped entrances',
   '9 published / 9 mapped Field Bosses',
+  '80-marker Treasure Chest pilot',
+  'Chest coverage is a pilot, not a full 1,500-marker import.',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',
@@ -527,6 +546,19 @@ for (const snippet of expectedSnippets) {
   if (!html.includes(snippet)) {
     fail(`dist map page missing ${snippet}`);
   }
+}
+
+const chestFilterMatch = html.match(/<input[^>]+data-category-filter[^>]+value="CHEST"[^>]*>/);
+if (!chestFilterMatch) {
+  fail('dist map page missing CHEST category filter');
+}
+
+if (/\schecked(?:\s|>|=)/.test(chestFilterMatch[0])) {
+  fail('CHEST category filter must be unchecked by default');
+}
+
+if (!html.includes('<strong data-astro-cid-nky5wbf5>151</strong> beta markers') && !html.includes('151</strong> beta markers')) {
+  fail('dist map page missing total 151 beta marker count');
 }
 
 if (!/<h1[^>]*>\s*DragonSword Awakening Interactive Map\s*<\/h1>/.test(html)) {
