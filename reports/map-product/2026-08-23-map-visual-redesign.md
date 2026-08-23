@@ -142,4 +142,12 @@ The atlas is still an independent approximate interpretation rather than an offi
 
 ## Deployment
 
-Pending commit, push, deploy and production smoke.
+Completed through GitHub-backed Cloudflare Pages production deployment.
+
+Production smoke:
+
+- Cloudflare Pages production deployment active for commit `01b2930` during visual-release smoke.
+- `https://dragonswordguide.com/map/` - HTTP 200.
+- `https://dragonswordguide.com/ja/map/` - HTTP 200.
+- `https://dragonswordguide.com/map/orbis-atlas-v1.svg` - HTTP 200, `image/svg+xml`.
+- `BASE_URL=https://dragonswordguide.com node scripts/i18n/browser-smoke.mjs` - pass.
