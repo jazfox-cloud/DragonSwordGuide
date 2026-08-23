@@ -63,22 +63,22 @@ const totalMapMarkers = markerData.markers.length + chestManifest.total_publishe
       </header>
 
       <QuickAnswer title="Use this beta map for broad Orbis planning, not exact collectible routing.">
-        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. Eona, Organa, Warp Point, Dungeon, Field Boss and Treasure Chest markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
+        <p>The current DragonSword Awakening Interactive Map uses a DragonSwordGuide-owned Orbis atlas and normalized relative placement. Eona, Organa, Warp Point, Dungeon, Field Boss and Treasure Chest markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
       </QuickAnswer>
 
       <InteractiveMap markerData={markerData} chestMarkerCount={chestManifest.total_published} />
 
       <div class="copy">
         <h2>How to use the map</h2>
-        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon, Boss or Treasure Chest categories on and off. Treasure Chests are off by default and load as a separate clustered layer with region filtering.</p>
+        <p>Drag the atlas to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon, Boss or Treasure Chest categories on and off. Treasure Chests are off by default and load as a separate clustered layer with region filtering.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and 1,484 Treasure Chest planning markers across 20 schematic regions. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage is full-scale published for strong and moderate public position agreement; weak or conflicting positions remain unpublished.</p>
+        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and 1,484 Treasure Chest planning markers across 20 atlas regions. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage is full-scale published for strong and moderate public position agreement; weak or conflicting positions remain unpublished.</p>
 
         <AdsterraNativeBanner />
 
         <h2>Verification status</h2>
-        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {totalMapMarkers} approximate beta markers and 0 official, video or first-hand verified markers. The Chest layer uses <strong>MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION</strong> with <strong>LANDMARK_APPROXIMATE</strong> precision; it does not claim exact in-game coordinates, respawn rules or first-hand verification.</p>
+        <p>Markers are plotted on the independent Orbis atlas with normalized relative placement. The live dataset contains {totalMapMarkers} approximate beta markers and 0 official, video or first-hand verified markers. The Chest layer uses multi-source public position corroboration with landmark-approximate precision; it does not claim exact in-game coordinates, respawn rules or first-hand verification.</p>
 
         <h2>Updates and data provenance</h2>
         <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Chest sources went through a full-scale public-coordinate gate before the 1,484-marker layer was exported; conflicting, weak or single-source chest positions remain unpublished.</p>

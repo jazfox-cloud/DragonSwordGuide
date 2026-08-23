@@ -1,17 +1,17 @@
 export const mapJa = {
   headings: {
-    eyebrow: 'インタラクティブ beta · 非公式スキーマ図',
+    eyebrow: 'インタラクティブ beta · 独自オルビス地図',
     title: 'ドラゴンソード:アウェイクニング インタラクティブマップ beta',
     description: '検証中のおおよそのオルビス位置を、検索・絞り込み・パン・ズームで確認できます。',
     betaMarkers: 'beta マーカー',
     chests: '宝箱',
     firstHandVerified: '一次確認済み',
     markerSummary: 'マップマーカー概要',
-    viewportLabel: '非公式のオルビス概略マップ。ドラッグで移動し、操作ボタンでズームできます。',
-    schematicTitle: '非公式オルビス概略マップ',
-    schematicDescription: 'DragonSword: Awakening beta マーカー用の、DragonSwordGuide独自のおおよその概略ベースマップです。ゲーム内の正確な縮尺ではありません。',
-    schematicLabel: '非公式スキーマ図',
-    scaleNote: 'ゲーム内の正確な縮尺ではありません',
+    viewportLabel: '独自制作のオルビス地図。ドラッグで移動し、操作ボタンでズームできます。',
+    schematicTitle: '独自制作のオルビス地図',
+    schematicDescription: 'DragonSword: Awakening beta マーカー用にDragonSwordGuideが独自制作したオルビス地図です。ゲーム内の正確な縮尺ではありません。',
+    schematicLabel: '独自オルビス地図',
+    scaleNote: '正確なゲーム内座標ではありません',
   },
   categories: {
     EONAS_LEGACY: "Eona's Legacy",

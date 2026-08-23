@@ -41,18 +41,18 @@ const { chestMarkerCount = 0 } = Astro.props as { chestMarkerCount?: number };
 const { labels: suppliedLabels = {}, locale = 'en' } = Astro.props as { labels?: Record<string, any>; locale?: 'en' | 'ja' };
 const defaultLabels = {
   headings: {
-    eyebrow: 'Interactive beta · Unofficial schematic',
+    eyebrow: 'Interactive beta · Independent Orbis atlas',
     title: 'DragonSword Awakening Interactive Map Beta',
     description: 'Search, filter, pan and zoom approximate Orbis markers while exact routes are still being verified.',
     betaMarkers: 'beta markers',
     chests: 'chests',
     firstHandVerified: 'first-hand verified',
     markerSummary: 'Map marker summary',
-    viewportLabel: 'Unofficial schematic Orbis map. Drag to pan and use controls to zoom.',
-    schematicTitle: 'Unofficial schematic map of Orbis',
-    schematicDescription: 'An owned, approximate schematic base map for DragonSword Awakening beta markers. Not to exact in-game scale.',
-    schematicLabel: 'Unofficial schematic map',
-    scaleNote: 'Not to exact in-game scale',
+    viewportLabel: 'Independent Orbis atlas. Drag to pan and use controls to zoom.',
+    schematicTitle: 'Independent Orbis atlas',
+    schematicDescription: 'A DragonSwordGuide-owned illustrated Orbis atlas for approximate DragonSword Awakening beta markers. Not to exact in-game scale.',
+    schematicLabel: 'Independent Orbis atlas',
+    scaleNote: 'Approximate layout, not exact in-game coordinates',
   },
   categories: {
     EONAS_LEGACY: "Eona's Legacy",
@@ -118,6 +118,16 @@ const categoryCounts = markerData.markers.reduce<Record<string, number>>((counts
 }, {});
 categoryCounts.CHEST = chestMarkerCount;
 const firstMarker = markerData.markers[0];
+const regionLabels = [
+  { name: 'Skyridge Uplands', x: 0.47, y: 0.25 },
+  { name: 'Shadowed Woods', x: 0.36, y: 0.48 },
+  { name: 'Central Orbis', x: 0.5, y: 0.53 },
+  { name: 'Eastern Highlands', x: 0.73, y: 0.45 },
+  { name: 'Field of Plenty', x: 0.42, y: 0.68 },
+  { name: 'Misty Veil Highlands', x: 0.6, y: 0.31 },
+  { name: 'Dragonrise Basin', x: 0.69, y: 0.7 },
+  { name: 'Meadow of Beginnings', x: 0.25, y: 0.58 },
+];
 ---
 
 <section
@@ -176,26 +186,12 @@ const firstMarker = markerData.markers[0];
     <div class="map-frame">
       <div class="map-viewport" data-map-viewport aria-label={mapLabels.headings.viewportLabel}>
         <div class="map-canvas" data-map-canvas>
-          <svg class="schematic-map" viewBox="0 0 1000 680" role="img" aria-labelledby="orbis-map-title orbis-map-desc">
-            <title id="orbis-map-title">{mapLabels.headings.schematicTitle}</title>
-            <desc id="orbis-map-desc">{mapLabels.headings.schematicDescription}</desc>
-            <rect width="1000" height="680" rx="8" fill="#0c1726" />
-            <path d="M80 462 C146 346 251 288 370 303 C465 190 615 151 735 226 C849 278 905 389 851 486 C765 610 570 626 451 568 C314 624 162 578 80 462 Z" fill="#193649" stroke="#61d7ff" stroke-opacity=".42" stroke-width="3" />
-            <path d="M191 444 C242 372 334 352 409 382 C492 324 604 317 684 376 C746 420 772 505 709 552 C607 589 517 563 446 526 C360 561 248 540 191 444 Z" fill="#244d43" opacity=".86" />
-            <path d="M341 221 L415 108 L486 230 L552 132 L660 273 Z" fill="#2c3f52" stroke="#d9f3ff" stroke-opacity=".36" stroke-width="3" />
-            <path d="M686 270 C758 298 812 365 809 438 C776 415 727 407 686 424 C704 368 698 318 686 270 Z" fill="#344d36" opacity=".82" />
-            <path d="M151 489 C264 536 366 534 455 493 C530 548 645 576 748 540" fill="none" stroke="#89e3c1" stroke-opacity=".42" stroke-width="7" stroke-linecap="round" />
-            <path d="M506 171 C513 251 502 321 468 389 C439 447 443 512 486 568" fill="none" stroke="#70c8ff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round" />
-            <circle cx="490" cy="385" r="46" fill="#243647" stroke="#f6d675" stroke-opacity=".6" stroke-width="3" />
-            <path d="M461 386 L490 354 L520 386 L490 419 Z" fill="#f6d675" opacity=".68" />
-            <text x="490" y="462" text-anchor="middle" fill="#dcecff" font-size="28" font-weight="700">Central Orbis</text>
-            <text x="249" y="356" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Meadow Approach</text>
-            <text x="514" y="92" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Shadowed Woods</text>
-            <text x="750" y="334" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Eastern Highlands</text>
-            <text x="610" y="626" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Dragonrise Basin</text>
-            <text x="24" y="48" fill="#dcecff" font-size="24" font-weight="800">{mapLabels.headings.schematicLabel}</text>
-            <text x="24" y="82" fill="#9fb1c4" font-size="20">{mapLabels.headings.scaleNote}</text>
-          </svg>
+          <img class="orbis-atlas-map" src="/map/orbis-atlas-v1.svg" alt={mapLabels.headings.schematicDescription} width="1600" height="1088" loading="eager" />
+          <div class="region-labels" aria-hidden="true">
+            {regionLabels.map((label) => (
+              <span style={`left:${label.x * 100}%;top:${label.y * 100}%;`}>{regionLabel(label.name)}</span>
+            ))}
+          </div>
           {markerData.markers.map((marker) => (
             <button
               type="button"
@@ -216,9 +212,9 @@ const firstMarker = markerData.markers[0];
           <div class="chest-layer" data-chest-layer aria-live="polite"></div>
         </div>
       </div>
-      <div class="map-scale-note">
-        <span>{markerData.base_map_id}</span>
-        <span>{markerData.coordinate_system}</span>
+      <div class="map-scale-note" aria-label={mapLabels.headings.scaleNote}>
+        <span>{mapLabels.headings.schematicLabel}</span>
+        <span>{mapLabels.headings.scaleNote}</span>
       </div>
     </div>
 
@@ -393,7 +389,7 @@ const firstMarker = markerData.markers[0];
       }
 
       function clusterChestMarkers(markers) {
-        const cell = scale < 1 ? 64 : scale < 1.45 ? 42 : 24;
+        const cell = scale < 1 ? 150 : scale < 1.45 ? 96 : 36;
         const buckets = new Map();
         markers.forEach((marker) => {
           const key = `${Math.floor(marker.x * viewport.clientWidth * scale / cell)}:${Math.floor(marker.y * viewport.clientHeight * scale / cell)}`;
@@ -581,73 +577,96 @@ const firstMarker = markerData.markers[0];
 </section>
 
 <style>
-  .interactive-map { display: grid; gap: 1rem; margin: 1.4rem 0 2.5rem; }
+  .interactive-map { display: grid; gap: 0.85rem; margin: 1.2rem 0 2.5rem; }
   .map-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: end; }
-  .map-heading h2 { margin: 0.35rem 0 0.35rem; }
-  .map-heading p { max-width: 64ch; margin: 0; color: var(--muted-strong); }
-  .map-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: end; }
-  .map-stats span { display: grid; min-width: 120px; padding: 0.7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--muted); font-size: 0.78rem; }
-  .map-stats strong { color: var(--ink); font-size: 1.25rem; line-height: 1.1; }
-  .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) minmax(180px, 220px) auto; gap: 0.75rem; align-items: end; padding: 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: hsl(219 24% 16% / 0.72); }
-  .search-field, .chest-region-field { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
-  .search-field input, .chest-region-field select { width: 100%; min-height: 42px; border: 1px solid hsl(199 86% 58% / 0.35); border-radius: 6px; background: hsl(222 32% 8% / 0.8); color: var(--ink); padding: 0.65rem 0.75rem; font: inherit; }
+  .map-heading h2 { max-width: 18ch; margin: 0.15rem 0 0.3rem; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.02; }
+  .map-heading p { max-width: 58ch; margin: 0; color: var(--muted-strong); }
+  .map-stats { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: end; }
+  .map-stats span { display: grid; min-width: 102px; padding: 0.55rem 0.65rem; border: 1px solid hsl(199 86% 58% / 0.22); border-radius: 8px; background: hsl(221 27% 12% / 0.72); color: var(--muted); font-size: 0.72rem; }
+  .map-stats strong { color: var(--ink); font-size: 1.08rem; line-height: 1.1; }
+  .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.35fr) minmax(170px, 220px) auto; gap: 0.55rem; align-items: end; padding: 0.62rem; border: 1px solid hsl(199 86% 58% / 0.2); border-radius: 10px; background: hsl(219 24% 12% / 0.88); box-shadow: 0 16px 34px hsl(222 32% 3% / 0.28); }
+  .search-field, .chest-region-field { display: grid; gap: 0.28rem; color: var(--muted); font-size: 0.72rem; font-weight: 800; }
+  .search-field input, .chest-region-field select { width: 100%; min-height: 38px; border: 1px solid hsl(199 86% 58% / 0.32); border-radius: 8px; background: hsl(222 32% 6% / 0.88); color: var(--ink); padding: 0.56rem 0.68rem; font: inherit; }
   .chest-region-field select:disabled { opacity: 0.55; }
-  .filter-group, .zoom-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .filter-group, .zoom-actions { display: flex; flex-wrap: wrap; gap: 0.38rem; }
   .filter-pill { cursor: pointer; }
   .filter-pill input { position: absolute; opacity: 0; pointer-events: none; }
-  .filter-pill span, .zoom-actions button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--muted-strong); padding: 0.55rem 0.7rem; font-size: 0.82rem; font-weight: 800; }
-  .filter-pill input:checked + span { border-color: hsl(165 62% 63% / 0.7); color: var(--ink); background: hsl(165 62% 26% / 0.35); }
-  .filter-pill small { color: var(--muted); margin-left: 0.35rem; }
-  .zoom-actions button { min-width: 44px; cursor: pointer; }
+  .filter-pill span, .zoom-actions button { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; border: 1px solid hsl(217 20% 28%); border-radius: 999px; background: hsl(221 27% 12% / 0.82); color: var(--muted-strong); padding: 0.42rem 0.6rem; font-size: 0.74rem; font-weight: 850; }
+  .filter-pill input:checked + span { border-color: hsl(165 62% 63% / 0.58); color: var(--ink); background: hsl(165 45% 24% / 0.62); }
+  .filter-pill small { color: hsl(192 42% 76%); margin-left: 0.32rem; }
+  .zoom-actions button { min-width: 38px; cursor: pointer; }
   .zoom-actions button:hover { border-color: var(--accent); color: var(--accent-light); }
-  .map-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: 1rem; align-items: stretch; }
-  .map-frame, .marker-panel { border: 1px solid hsl(199 86% 58% / 0.28); border-radius: 8px; background: var(--paper); }
-  .map-frame { overflow: hidden; }
-  .map-viewport { position: relative; overflow: hidden; min-height: 560px; cursor: grab; touch-action: none; background: #07101b; }
+  .map-workspace { position: relative; min-height: 680px; }
+  .map-frame, .marker-panel { border: 1px solid hsl(199 86% 58% / 0.24); border-radius: 12px; background: var(--paper); }
+  .map-frame { overflow: hidden; height: 100%; min-height: 680px; box-shadow: 0 24px 70px hsl(222 32% 3% / 0.48); }
+  .map-viewport { position: relative; overflow: hidden; min-height: 640px; height: 100%; cursor: grab; touch-action: none; background: #061321; }
+  .map-viewport::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 0 1px hsl(199 86% 58% / 0.12), inset 0 0 90px hsl(222 32% 2% / 0.52); }
   .map-viewport:active { cursor: grabbing; }
-  .map-canvas { position: absolute; inset: 0; min-width: 100%; min-height: 100%; transform-origin: 0 0; transition: transform 140ms ease; }
-  .schematic-map { display: block; width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
-  .marker { position: absolute; z-index: 2; width: 24px; height: 24px; border: 0; border-radius: 999px; transform: translate(-50%, -50%); background: transparent; cursor: pointer; }
-  .marker span { display: block; width: 18px; height: 18px; border: 2px solid #07101b; border-radius: 999px; box-shadow: 0 0 0 2px hsl(0 0% 100% / 0.22), 0 8px 20px hsl(0 0% 0% / 0.35); }
-  .marker-eonas-legacy span { background: #8ee6c8; }
-  .marker-organa-statue span { background: #f6d675; }
-  .marker-warp-point span { background: #70c8ff; }
-  .marker-dungeon span { background: #ff9a6c; }
-  .marker-boss span { background: #ff6b7a; }
-  .marker-chest span { background: #d5a451; width: 14px; height: 14px; border-radius: 4px; transform: rotate(45deg); }
-  .marker:hover span, .marker[data-active-marker] span { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
-  .chest-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .map-canvas { position: absolute; inset: 0; width: 100%; height: 100%; min-width: 100%; min-height: 100%; transform-origin: 0 0; transition: transform 140ms ease; }
+  .orbis-atlas-map { display: block; width: 100%; height: 100%; min-height: 640px; object-fit: fill; user-select: none; -webkit-user-drag: none; }
+  .region-labels { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+  .region-labels span { position: absolute; transform: translate(-50%, -50%); color: hsl(199 60% 88% / 0.68); font-size: clamp(0.62rem, 1vw, 0.86rem); font-weight: 850; letter-spacing: 0.04em; text-transform: uppercase; text-shadow: 0 2px 8px hsl(222 32% 3% / 0.85); white-space: nowrap; }
+  .marker { --marker: #b9d6e8; position: absolute; z-index: 4; width: 26px; height: 26px; border: 0; border-radius: 999px; transform: translate(-50%, -50%); background: transparent; cursor: pointer; }
+  .marker span { position: relative; display: block; width: 18px; height: 18px; margin: 4px; border: 2px solid hsl(222 32% 5% / 0.92); border-radius: 999px; background: hsl(218 26% 11% / 0.86); box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.26), 0 8px 18px hsl(222 32% 2% / 0.62); }
+  .marker span::before { content: ""; position: absolute; inset: 4px; border-radius: inherit; background: var(--marker); box-shadow: 0 0 14px color-mix(in oklab, var(--marker), transparent 45%); }
+  .marker-eonas-legacy { --marker: #9ce8cc; }
+  .marker-organa-statue { --marker: #ead178; }
+  .marker-warp-point { --marker: #83d7ff; }
+  .marker-dungeon { --marker: #dca070; }
+  .marker-boss { --marker: #e66f72; }
+  .marker-chest { --marker: #d5b05f; width: 20px; height: 20px; }
+  .marker-chest span { width: 13px; height: 13px; margin: 3px; border-radius: 4px; transform: rotate(45deg); }
+  .marker-chest span::before { inset: 3px; border-radius: 2px; }
+  .marker-organa-statue span { border-radius: 4px; transform: rotate(45deg); }
+  .marker-organa-statue span::before { border-radius: 2px; }
+  .marker-dungeon span { border-radius: 5px; }
+  .marker-dungeon span::before { inset: 3px 5px; border-radius: 1px 1px 5px 5px; }
+  .marker-boss span::before { clip-path: polygon(50% 0, 100% 86%, 0 86%); border-radius: 0; }
+  .marker-warp-point span::before { inset: 3px; border: 2px solid var(--marker); background: transparent; }
+  .marker:hover span, .marker[data-active-marker] span, .marker:focus-visible span { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.42), 0 10px 24px hsl(222 32% 2% / 0.7); }
+  .chest-layer { display: contents; pointer-events: none; }
   .chest-layer .marker, .chest-layer .chest-cluster { pointer-events: auto; }
-  .chest-cluster { position: absolute; z-index: 4; min-width: 30px; height: 30px; border: 2px solid #07101b; border-radius: 999px; transform: translate(-50%, -50%); background: #d5a451; color: #07101b; box-shadow: 0 0 0 2px hsl(0 0% 100% / 0.22), 0 8px 20px hsl(0 0% 0% / 0.35); font-size: 0.75rem; font-weight: 900; cursor: pointer; }
-  .chest-cluster:hover { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
-  .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0.75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
-  .marker-panel { padding: 1rem; }
+  :global(.chest-layer .marker) { --marker: #d5b05f; position: absolute; z-index: 4; width: 20px; height: 20px; border: 0; border-radius: 999px; transform: translate(-50%, -50%); background: transparent; cursor: pointer; pointer-events: auto; }
+  :global(.chest-layer .marker span) { position: relative; display: block; width: 13px; height: 13px; margin: 3px; border: 2px solid hsl(222 32% 5% / 0.92); border-radius: 4px; background: hsl(218 26% 11% / 0.86); box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.26), 0 8px 18px hsl(222 32% 2% / 0.62); transform: rotate(45deg); }
+  :global(.chest-layer .marker span::before) { content: ""; position: absolute; inset: 3px; border-radius: 2px; background: var(--marker); box-shadow: 0 0 14px color-mix(in oklab, var(--marker), transparent 45%); }
+  :global(.chest-layer .marker:hover span), :global(.chest-layer .marker[data-active-marker] span), :global(.chest-layer .marker:focus-visible span) { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.42), 0 10px 24px hsl(222 32% 2% / 0.7); }
+  .chest-cluster { position: absolute; z-index: 5; min-width: 34px; height: 34px; border: 2px solid hsl(222 32% 5% / 0.94); border-radius: 999px; transform: translate(-50%, -50%); background: radial-gradient(circle at 38% 32%, #f4dc92 0 18%, #c79945 19% 100%); color: #07101b; box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.25), 0 10px 24px hsl(222 32% 2% / 0.62); font-size: 0.72rem; font-weight: 950; cursor: pointer; }
+  .chest-cluster:hover, .chest-cluster:focus-visible { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.44), 0 10px 24px hsl(222 32% 2% / 0.62); }
+  :global(.chest-cluster) { position: absolute; z-index: 5; min-width: 34px; height: 34px; border: 2px solid hsl(222 32% 5% / 0.94); border-radius: 999px; transform: translate(-50%, -50%); background: radial-gradient(circle at 38% 32%, #f4dc92 0 18%, #c79945 19% 100%); color: #07101b; box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.25), 0 10px 24px hsl(222 32% 2% / 0.62); font-size: 0.72rem; font-weight: 950; cursor: pointer; pointer-events: auto; }
+  :global(.chest-cluster:hover), :global(.chest-cluster:focus-visible) { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.44), 0 10px 24px hsl(222 32% 2% / 0.62); }
+  .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0.72rem; border-top: 1px solid hsl(199 86% 58% / 0.14); color: hsl(215 18% 74%); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; background: hsl(222 32% 8% / 0.86); }
+  .marker-panel { position: absolute; z-index: 7; top: 1rem; right: 1rem; width: min(342px, calc(100% - 2rem)); max-height: calc(100% - 2rem); overflow: auto; padding: 0.92rem; background: hsl(221 27% 10% / 0.92); backdrop-filter: blur(14px); box-shadow: 0 18px 44px hsl(222 32% 2% / 0.52); }
+  .marker-panel * { min-width: 0; overflow-wrap: anywhere; }
   .panel-kicker { margin: 0 0 0.35rem; color: var(--success); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; }
-  .marker-panel h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.2; }
-  .status-badge { display: inline-flex; width: fit-content; margin: 0 0 1rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem 0.55rem; background: hsl(222 32% 8% / 0.72); color: var(--muted-strong); font-size: 0.72rem; font-weight: 900; text-transform: uppercase; }
+  .marker-panel h3 { margin: 0 0 0.72rem; font-size: 1.08rem; line-height: 1.22; }
+  .status-badge { display: inline-flex; width: fit-content; margin: 0 0 0.82rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.22rem 0.5rem; background: hsl(222 32% 8% / 0.72); color: var(--muted-strong); font-size: 0.68rem; font-weight: 900; text-transform: uppercase; }
   .status-secondary-corroborated { border-color: hsl(165 62% 63% / 0.55); background: hsl(165 62% 26% / 0.22); color: hsl(165 62% 78%); }
   .status-approximate { border-color: hsl(45 89% 62% / 0.48); background: hsl(45 89% 28% / 0.18); color: hsl(45 89% 76%); }
   .status-conflicting { border-color: hsl(8 82% 62% / 0.58); background: hsl(8 82% 24% / 0.24); color: hsl(8 82% 78%); }
-  .marker-panel dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 0 0 1rem; }
+  .marker-panel dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0.52rem; margin: 0 0 0.82rem; }
   .marker-panel dl div { border-top: 1px solid var(--line); padding-top: 0.5rem; }
   .marker-panel dt { color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
   .marker-panel dd { margin: 0.15rem 0 0; color: var(--muted-strong); font-size: 0.86rem; }
-  .marker-panel p { color: var(--muted-strong); font-size: 0.9rem; }
+  .marker-panel p { color: var(--muted-strong); font-size: 0.84rem; }
   .source-note, .navigation-note, .activity-note, .location-note, .map-boundary { color: var(--muted); font-size: 0.82rem; }
   .navigation-note, .location-note { border-top: 1px solid var(--line); margin-top: 0.9rem; padding-top: 0.75rem; }
-  .activity-note { border-left: 3px solid hsl(18 100% 72% / 0.58); padding-left: 0.65rem; }
-  .map-boundary { margin: 0; padding: 0.75rem; border-left: 3px solid var(--success); background: hsl(165 62% 26% / 0.16); }
+  .activity-note { padding: 0.62rem 0.68rem; border: 1px solid hsl(18 100% 72% / 0.28); border-radius: 8px; background: hsl(18 60% 24% / 0.14); }
+  .map-boundary { margin: 0; padding: 0.72rem; border: 1px solid hsl(165 62% 63% / 0.24); border-radius: 8px; background: hsl(165 62% 26% / 0.16); }
   @media (max-width: 900px) {
-    .map-heading, .map-toolbar, .map-workspace { grid-template-columns: 1fr; }
+    .map-heading, .map-toolbar { grid-template-columns: 1fr; }
     .map-stats { justify-content: start; }
-    .map-viewport, .schematic-map { min-height: 440px; }
+    .map-workspace, .map-frame { min-height: 600px; }
+    .map-viewport, .orbis-atlas-map { min-height: 560px; }
+    .marker-panel { top: auto; right: 0.7rem; bottom: 0.7rem; width: calc(100% - 1.4rem); max-height: 42%; }
   }
   @media (max-width: 560px) {
     .interactive-map { margin-top: 1rem; }
     .map-toolbar { padding: 0.65rem; }
     .filter-group, .zoom-actions { width: 100%; }
     .filter-pill, .zoom-actions button { flex: 1 1 auto; }
-    .map-viewport, .schematic-map { min-height: 360px; }
+    .map-workspace, .map-frame { min-height: 540px; }
+    .map-viewport, .orbis-atlas-map { min-height: 500px; }
+    .region-labels span { font-size: 0.56rem; }
     .map-scale-note, .marker-panel dl { grid-template-columns: 1fr; display: grid; }
   }
 </style>

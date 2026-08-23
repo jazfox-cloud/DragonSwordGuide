@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1088" viewBox="0 0 1600 1088" preserveAspectRatio="none" role="img" aria-labelledby="title desc">
+  <title id="title">Independent illustrated Orbis atlas base map</title>
+  <desc id="desc">A dark fantasy world-map style base layer drawn for DragonSwordGuide marker overlays.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#061321"/>
+      <stop offset="0.55" stop-color="#0b2233"/>
+      <stop offset="1" stop-color="#04101b"/>
+    </linearGradient>
+    <linearGradient id="land" x1="0.18" x2="0.88" y1="0.1" y2="0.95">
+      <stop offset="0" stop-color="#365344"/>
+      <stop offset="0.36" stop-color="#254934"/>
+      <stop offset="0.68" stop-color="#395139"/>
+      <stop offset="1" stop-color="#263b32"/>
+    </linearGradient>
+    <linearGradient id="upland" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#667181"/>
+      <stop offset="0.55" stop-color="#3d4a58"/>
+      <stop offset="1" stop-color="#222f3d"/>
+    </linearGradient>
+    <linearGradient id="plain" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#4e6a46"/>
+      <stop offset="1" stop-color="#2d5137"/>
+    </linearGradient>
+    <filter id="soft" x="-8%" y="-8%" width="116%" height="116%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <pattern id="forest" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M18 4l9 20H9z" fill="#163829" opacity=".42"/>
+      <path d="M5 16l6 14H0zM30 15l7 15H23z" fill="#102e24" opacity=".34"/>
+    </pattern>
+    <pattern id="shoal" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path d="M2 28c13-9 27-9 50 0" fill="none" stroke="#8bd6e8" stroke-opacity=".08" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1088" fill="url(#sea)"/>
+  <rect width="1600" height="1088" fill="url(#shoal)" opacity=".65"/>
+  <path d="M170 706c-42-92-2-203 94-277 81-63 179-88 292-90 71-116 212-203 367-207 130-3 250 53 327 143 117 23 207 90 244 188 45 120-16 254-135 328-108 67-248 83-377 51-98 70-244 102-382 75-83-17-155-55-207-106-92 13-179-17-223-105z" fill="#07101b" opacity=".56" filter="url(#soft)"/>
+  <path d="M151 679c-20-84 19-168 105-238 85-69 191-92 319-88 58-105 190-191 344-202 142-11 267 45 346 139 116 25 198 91 232 181 42 111-16 233-129 303-113 70-258 82-386 45-95 74-239 107-371 76-84-20-151-59-199-112-105 26-226-11-261-104z" fill="url(#land)" stroke="#79d6d9" stroke-opacity=".38" stroke-width="5"/>
+
+  <path d="M226 650c75 70 176 91 293 65 75 79 202 120 341 88 94-22 171-68 226-132 106 38 230 28 316-32" fill="none" stroke="#6fae91" stroke-opacity=".28" stroke-width="24" stroke-linecap="round"/>
+  <path d="M252 636c75 52 167 67 274 42 79 65 197 96 320 67 87-20 160-59 213-118 93 27 203 20 284-27" fill="none" stroke="#9adfb9" stroke-opacity=".36" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M480 339c58-101 191-177 337-185 128-8 243 40 319 122-60 26-117 62-172 109-152-62-308-71-484-46z" fill="url(#upland)" opacity=".9"/>
+  <path d="M529 322l71-127 66 120 70-138 79 151 82-139 70 143 86-80 90 118" fill="none" stroke="#d6edf1" stroke-opacity=".28" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M538 343l62-112 55 103 74-131 80 151 76-131 77 151 89-83 93 121" fill="none" stroke="#1a2735" stroke-opacity=".5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M224 610c49-117 174-199 325-208 39 107 11 209-70 291-96 31-191 4-255-83z" fill="url(#plain)" opacity=".92"/>
+  <path d="M574 406c131-37 268-20 391 45-25 99-88 180-182 226-113-22-201-86-264-188z" fill="#2f5a3f" opacity=".9"/>
+  <path d="M967 401c139-42 274-16 368 74 22 88-18 176-106 226-89-15-163-60-222-133 19-55 9-111-40-167z" fill="#405b38" opacity=".92"/>
+  <path d="M1112 306c97 27 169 88 194 168 15 49 4 101-28 146 72-24 133-82 154-148-25-70-101-134-210-164z" fill="#293f33" opacity=".85"/>
+  <path d="M636 695c98 62 225 62 349 1 51 44 130 72 211 68-71 73-194 116-326 116-113 0-213-31-284-84z" fill="#344936" opacity=".9"/>
+
+  <path d="M816 242c-34 129-41 240-18 331 16 62 12 126-19 194" fill="none" stroke="#9dddf0" stroke-opacity=".48" stroke-width="9" stroke-linecap="round"/>
+  <path d="M798 573c74-31 153-39 236-20" fill="none" stroke="#9dddf0" stroke-opacity=".28" stroke-width="7" stroke-linecap="round"/>
+  <path d="M558 536c87-31 168-18 244 39" fill="none" stroke="#9dddf0" stroke-opacity=".22" stroke-width="6" stroke-linecap="round"/>
+  <path d="M996 552c70-77 150-116 240-117" fill="none" stroke="#9dddf0" stroke-opacity=".22" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M224 610c49-117 174-199 325-208 39 107 11 209-70 291-96 31-191 4-255-83z" fill="url(#forest)" opacity=".56"/>
+  <path d="M574 406c131-37 268-20 391 45-25 99-88 180-182 226-113-22-201-86-264-188z" fill="url(#forest)" opacity=".38"/>
+  <path d="M967 401c139-42 274-16 368 74 22 88-18 176-106 226-89-15-163-60-222-133 19-55 9-111-40-167z" fill="url(#forest)" opacity=".34"/>
+
+  <circle cx="794" cy="574" r="66" fill="#273744" stroke="#f4d77c" stroke-opacity=".56" stroke-width="5"/>
+  <path d="M754 575l40-43 43 43-43 45z" fill="#f4d77c" opacity=".68"/>
+  <path d="M713 570c-92-43-180-52-264-25M902 604c97-3 181 20 252 70M848 507c73-70 156-110 251-120" fill="none" stroke="#dfc681" stroke-opacity=".18" stroke-width="4" stroke-dasharray="10 12"/>
+
+  <path d="M125 710c-29 30-59 49-99 59M1476 761c43 13 78 34 104 64M1328 221c55-22 104-19 149 7M290 341c-49-26-98-33-147-18" fill="none" stroke="#9dddf0" stroke-opacity=".19" stroke-width="5" stroke-linecap="round"/>
+  <path d="M140 679c-12-80 10-150 66-211M1400 418c47 71 54 148 20 231M563 151c82-71 187-109 316-114" fill="none" stroke="#e5f8ff" stroke-opacity=".08" stroke-width="2"/>
+</svg>

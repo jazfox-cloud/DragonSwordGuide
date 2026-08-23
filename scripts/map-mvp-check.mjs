@@ -535,12 +535,12 @@ const expectedSnippets = [
   '20 published / 20 known',
   '26 published / 26 mapped entrances',
   '9 published / 9 mapped Field Bosses',
-  '1,484 Treasure Chest planning markers across 20 schematic regions',
+  '1,484 Treasure Chest planning markers across 20 atlas regions',
   'Chest coverage is full-scale published for strong and moderate public position agreement',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
-  'Unofficial schematic map',
-  'Not to exact in-game scale',
+  'Independent Orbis atlas',
+  'Approximate layout, not exact in-game coordinates',
 ];
 
 for (const snippet of expectedSnippets) {
