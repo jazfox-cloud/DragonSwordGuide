@@ -2,9 +2,22 @@
   "base_map_id": "OWN_SCHEMATIC_ORBIS_BASE_MAP",
   "coordinate_system": "IMAGE_RELATIVE_COORDINATES",
   "data_policy": "PRODUCTION_BETA_APPROXIMATE_MARKERS_ONLY",
-  "source_boundary": "Official Eona system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins and not first-hand verified routes.",
+  "source_boundary": "Official Eona and Organa system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins, not imported map coordinates and not first-hand verified routes.",
   "game_version": "1.0.8 public update context",
-  "last_checked": "2026-08-22",
+  "last_checked": "2026-08-23",
+  "category_status": {
+    "EONAS_LEGACY": {
+      "status": "SECONDARY_CORROBORATED",
+      "published_count": 3,
+      "note": "Meadow of Beginnings and Dragonrise Basin received a stop-loss source recheck; no VIDEO_VERIFIED or OFFICIAL_VERIFIED individual-location evidence was found."
+    },
+    "ORGANA_STATUE": {
+      "status": "EXPANSION_STARTED",
+      "count_conflict": "13_VS_14_CONFLICT_RETAINED",
+      "published_count": 5,
+      "conflict_note": "Multiple public guide sources list 13 Statue of Organa locations; prior public-map/source inventory retained an ecosystem-level 13 vs 14 conflict. This sprint publishes only five individually corroborated Organa markers and does not assert a complete set count."
+    }
+  },
   "markers": [
     {
       "id": "marker:eonas-legacy:meadow-of-beginnings",
@@ -16,9 +29,9 @@
       "precision": "LANDMARK_APPROXIMATE",
       "verification_status": "SECONDARY_CORROBORATED",
       "confidence": "MEDIUM",
-      "source_summary": "Official sources confirm the Eona system and full-set achievement; two independent secondary guides align on the Meadow missing-cog route.",
+      "source_summary": "Official sources confirm the Eona system and full-set achievement; a stop-loss recheck found no individual official/video location proof, while two independent secondary guides align on the Meadow missing-cog route.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
+      "last_checked": "2026-08-23",
       "description": "Start at Alvwyn beside Eona's Legacy, follow the marked hideout objective, recover the missing cog, and return to the tower. Schematic placement is approximate.",
       "evidence": [
         {
@@ -59,7 +72,7 @@
       "confidence": "MEDIUM",
       "source_summary": "Multiple secondary sources align on a web-covered Eona tower and Aria/fire solution; public video stills exist, but no direct timestamped map-view video was verified.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
+      "last_checked": "2026-08-23",
       "description": "Look for the web-covered Eona structure in Shadowed Woods, use Aria or fire/explosive damage to clear the obstruction, then return to the tower interaction.",
       "evidence": [
         {
@@ -98,9 +111,9 @@
       "precision": "REGION_APPROXIMATE",
       "verification_status": "SECONDARY_CORROBORATED",
       "confidence": "MEDIUM",
-      "source_summary": "Two independent secondary guides and a source-linked map reference align on Dragonrise Basin as a platform-trial Eona location; no first-hand or timestamped video route was verified.",
+      "source_summary": "Two independent secondary guides and a source-linked map reference align on Dragonrise Basin as a platform-trial Eona location; no first-hand, official individual-location or timestamped video route was verified.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
+      "last_checked": "2026-08-23",
       "description": "Speak with Alvwyn near the Dragonrise Basin tower, follow the marked platform-trial entrance, finish the route, then return to activate Eona's Legacy.",
       "evidence": [
         {
@@ -130,71 +143,213 @@
       ]
     },
     {
-      "id": "marker:organa-statue:central-orbis-beta",
-      "name": "Organa Statue candidate - central Orbis",
+      "id": "marker:organa-statue:shaded-tree-hill",
+      "name": "Statue of Organa - Shaded Tree Hill",
       "category": "ORGANA_STATUE",
-      "region": "Central Orbis",
-      "x": 0.49,
-      "y": 0.57,
-      "precision": "REGION_APPROXIMATE",
-      "verification_status": "APPROXIMATE",
-      "confidence": "LOW",
-      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
+      "region": "Shaded Tree Hill",
+      "x": 0.37,
+      "y": 0.52,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "At least four independent public guides align on Shaded Tree Hill as an Organa statue location and on nearby piece landmarks around wall, water, camp and cliffs.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
-      "description": "Central-region beta marker. It should not be used as an exact statue coordinate.",
+      "last_checked": "2026-08-23",
+      "description": "Use the statue's Shaded Tree Hill area and nearby collapsed wall, water-side bushes, enemy camp and southeast cliff as approximate anchors. Schematic placement is not an exact pin.",
       "evidence": [
         {
           "type": "OFFICIAL_CONTEXT",
           "source": "Steam global achievements",
           "url": "https://steamcommunity.com/stats/4570720/achievements",
-          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+          "note": "Confirms Statue of Organa restoration is a tracked system, but not this individual location."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Shaded Tree Hill as an Organa statue location with nearby restoration-piece landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Shaded Tree Hill and the same wall, water, camp and cliff retrieval anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Shaded Tree Hill in a 13-statue public guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Shaded Tree Hill in its Statue of Organa location guide."
         }
       ]
     },
     {
-      "id": "marker:organa-statue:eastern-highlands-beta",
-      "name": "Organa Statue candidate - eastern highlands",
+      "id": "marker:organa-statue:autumnleaf-zone",
+      "name": "Statue of Organa - Autumnleaf Zone",
       "category": "ORGANA_STATUE",
-      "region": "Eastern Orbis highlands",
-      "x": 0.74,
-      "y": 0.39,
-      "precision": "REGION_APPROXIMATE",
-      "verification_status": "APPROXIMATE",
-      "confidence": "LOW",
-      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
+      "region": "Autumnleaf Zone",
+      "x": 0.45,
+      "y": 0.63,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Autumnleaf Zone and its lake-centered statue context; placement is approximate on the owned schematic map.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
-      "description": "Approximate highland candidate. First-hand screenshots and route anchors are still required.",
+      "last_checked": "2026-08-23",
+      "description": "Use the Autumnleaf lake, stone railing, southeast lake rock and western pillar as approximate anchors. Do not treat this as a frame-perfect coordinate.",
       "evidence": [
         {
-          "type": "OFFICIAL_CONTEXT",
-          "source": "Steam global achievements",
-          "url": "https://steamcommunity.com/stats/4570720/achievements",
-          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Autumnleaf Zone as an Organa statue location with lake and pillar landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Autumnleaf Zone and matches the lake, railing, rock and pillar anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Autumnleaf Zone in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Autumnleaf Zone in its Statue of Organa location guide."
         }
       ]
     },
     {
-      "id": "marker:organa-statue:watchtower-cellar-beta",
-      "name": "Organa Statue candidate - watchtower approach",
+      "id": "marker:organa-statue:worms-valley",
+      "name": "Statue of Organa - Worm's Valley",
       "category": "ORGANA_STATUE",
-      "region": "Watchtower approach",
-      "x": 0.36,
-      "y": 0.68,
-      "precision": "REGION_APPROXIMATE",
-      "verification_status": "APPROXIMATE",
-      "confidence": "LOW",
-      "source_summary": "Organa remains outside Sprint A1 scope; this marker is retained as a broad schematic beta candidate.",
+      "region": "Worm's Valley",
+      "x": 0.76,
+      "y": 0.34,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Worm's Valley and nearby stairs, cave gate and locked-chest context; schematic placement remains approximate.",
       "game_version": "1.0.8 public update context",
-      "last_checked": "2026-08-22",
-      "description": "Approximate beta marker near a broad exploration area. It is not a copied pin, chest route, or official coordinate.",
+      "last_checked": "2026-08-23",
+      "description": "Use the Worm's Valley statue, rear stairs, cave-entrance path and narrow gate as approximate anchors. The marker is a planning aid, not copied coordinates.",
       "evidence": [
         {
-          "type": "OFFICIAL_CONTEXT",
-          "source": "Steam global achievements",
-          "url": "https://steamcommunity.com/stats/4570720/achievements",
-          "note": "Confirms Organa restoration as a tracked system, but this individual marker was not verified in Sprint A1."
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Worm's Valley with stairs and cave-gate landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Worm's Valley and matches the stairs, cave gate and locked-chest context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Worm's Valley in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Worm's Valley in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:ruined-temple",
+      "name": "Statue of Organa - Ruined Temple",
+      "category": "ORGANA_STATUE",
+      "region": "Ruined Temple",
+      "x": 0.63,
+      "y": 0.29,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Ruined Temple as an Organa statue location and nearby temple, staircase and boss-chamber landmarks; exact placement remains low precision.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Ruined Temple high structure, rear pillar, descending stair route and boss-chamber approach as approximate anchors. This marker intentionally stays region-approximate.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Ruined Temple with temple-top, pillar, stair and boss-chamber landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Ruined Temple and matches the temple, staircase and boss-chamber context."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Ruined Temple in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Ruined Temple in its Statue of Organa location guide."
+        }
+      ]
+    },
+    {
+      "id": "marker:organa-statue:echo-canyon",
+      "name": "Statue of Organa - Echo Canyon",
+      "category": "ORGANA_STATUE",
+      "region": "Echo Canyon",
+      "x": 0.33,
+      "y": 0.66,
+      "precision": "LANDMARK_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "MEDIUM",
+      "source_summary": "Independent public guides align on Echo Canyon and its entrance path, stone half-wall and northwest cliff/camp landmarks; schematic placement is approximate.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Use the Echo Canyon entrance path, half-pillar, stone half-wall and northwest cliff enemy-camp route as approximate anchors. The marker is not an exact route pin.",
+      "evidence": [
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "DragonSword Awakening Wiki Organa guide",
+          "url": "https://www.dragonsword-awakening.wiki/guides/guide/goddess-statues-organa-locations",
+          "note": "Lists Echo Canyon with entrance path, half-wall and northwest cliff landmarks."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "GAMES.GG Organa guide",
+          "url": "https://games.gg/dragonsword-awakening/guides/dragonsword-awakening-guide-how-to-restore-all-statues-of-organa/",
+          "note": "Independently lists Echo Canyon and matches the entrance path, half-wall and northwest cliff anchors."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "SmartCDKeys Organa guide",
+          "url": "https://smartcdkeys.com/en/blog/dragonsword-awakening-where-to-find-all-statue-of-organa-pieces",
+          "note": "Independently includes Echo Canyon in a public Statue of Organa guide."
+        },
+        {
+          "type": "SECONDARY_GUIDE",
+          "source": "VGTimes Organa guide",
+          "url": "https://vgtimes.com/guides/163103-dragonsword-awakening-statue-of-organa-locations-guide.html",
+          "note": "Independently includes Echo Canyon in its Statue of Organa location guide."
         }
       ]
     }

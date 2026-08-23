@@ -65,13 +65,15 @@ if (String(markerData.data_policy).includes('RESEARCH_ONLY_NOT_FOR_PRODUCTION'))
   fail('production data must not be research-only');
 }
 
-if (!Array.isArray(markerData.markers) || markerData.markers.length < 4) {
-  fail('expected at least 4 production beta markers');
+if (!Array.isArray(markerData.markers) || markerData.markers.length < 8) {
+  fail('expected at least 8 production beta markers after Organa expansion start');
 }
 
 const ids = new Set();
 let approximateCount = 0;
 let verifiedCount = 0;
+let eonaSecondaryCount = 0;
+let organaCount = 0;
 
 for (const marker of markerData.markers) {
   for (const field of requiredMarkerFields) {
@@ -126,6 +128,18 @@ for (const marker of markerData.markers) {
   if (marker.verification_status === 'FIRST_HAND_VERIFIED' || marker.verification_status === 'OFFICIAL_VERIFIED' || marker.verification_status === 'VIDEO_VERIFIED') {
     verifiedCount += 1;
   }
+
+  if (marker.category === 'EONAS_LEGACY' && marker.verification_status === 'SECONDARY_CORROBORATED') {
+    eonaSecondaryCount += 1;
+  }
+
+  if (marker.category === 'ORGANA_STATUE') {
+    organaCount += 1;
+
+    if (marker.id.includes('-beta') || marker.name.toLowerCase().includes('candidate')) {
+      fail(`${marker.id} must be a named Organa production marker, not a generic beta placeholder`);
+    }
+  }
 }
 
 if (approximateCount < 4) {
@@ -134,6 +148,18 @@ if (approximateCount < 4) {
 
 if (verifiedCount !== 0) {
   fail('MVP must not claim verified markers without first-hand evidence');
+}
+
+if (eonaSecondaryCount < 3) {
+  fail('expected at least 3 secondary-corroborated Eona markers');
+}
+
+if (organaCount < 5) {
+  fail('expected at least 5 named Organa markers after expansion start');
+}
+
+if (markerData.category_status?.ORGANA_STATUE?.count_conflict !== '13_VS_14_CONFLICT_RETAINED') {
+  fail('Organa 13 vs 14 count conflict must be retained in production metadata');
 }
 
 const source = fs.readFileSync(sourcePath, 'utf8');
