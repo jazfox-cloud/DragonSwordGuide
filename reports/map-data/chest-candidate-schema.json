@@ -11,9 +11,12 @@
     "name",
     "category",
     "subtype",
+    "source_subtype",
+    "canonical_subtype",
     "region",
     "source_positions",
     "normalized_position",
+    "coordinate_gate",
     "verification_status",
     "confidence",
     "source_families",
@@ -84,6 +87,18 @@
         "UNKNOWN_CHEST"
       ]
     },
+    "source_subtype": { "type": "string", "minLength": 1 },
+    "canonical_subtype": {
+      "type": "string",
+      "enum": [
+        "NORMAL_CHEST",
+        "SUPERIOR_CHEST",
+        "RARE_CHEST",
+        "EPIC_CHEST",
+        "LEGENDARY_CHEST",
+        "UNKNOWN_CHEST"
+      ]
+    },
     "region": {
       "type": "object",
       "additionalProperties": false,
@@ -151,6 +166,16 @@
           "enum": ["PIN_CENTER", "APPROXIMATE", "REGION_APPROXIMATE", "UNRESOLVED"]
         }
       }
+    },
+    "coordinate_gate": {
+      "type": "string",
+      "enum": [
+        "OWNED_OR_LICENSED",
+        "FIRST_HAND",
+        "INDEPENDENTLY_ESTABLISHED",
+        "POSITION_RESEARCH_ONLY",
+        "REGION_UNRESOLVED"
+      ]
     },
     "verification_status": {
       "type": "string",

@@ -1,0 +1,34 @@
+{
+  "dataset_version": "chest-pilot-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "source_inventory": [
+    {
+      "source": "DragonSwordAwakening.net Orbis map sample",
+      "source_family": "COMMON_GAME_DATA_FAMILY",
+      "url": "https://dragonswordawakening.net/map",
+      "role": "candidate_source_position_research_only",
+      "allowed_use": "SINGLE_FACT_REFERENCE"
+    },
+    {
+      "source": "DragonSword-Awakening.org public map",
+      "source_family": "COMMON_GAME_DATA_FAMILY",
+      "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+      "role": "count_category_context",
+      "allowed_use": "COUNT_ONLY"
+    },
+    {
+      "source": "GrandWiki Orbis map manifest",
+      "source_family": "COMMON_GAME_DATA_FAMILY",
+      "url": "https://dsawakening.grandwiki.com/map",
+      "role": "count_version_context",
+      "allowed_use": "SCHEMA_REFERENCE_ONLY"
+    },
+    {
+      "source": "Steam store context",
+      "source_family": "OFFICIAL",
+      "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+      "role": "official_world_context",
+      "allowed_use": "SINGLE_FACT_REFERENCE"
+    }
+  ]
+}

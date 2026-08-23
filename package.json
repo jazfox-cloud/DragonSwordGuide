@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "node scripts/map-mvp-check.mjs",
+    "test": "node scripts/map-mvp-check.mjs && node scripts/map/chest-pipeline-check.mjs",
     "map:mvp-check": "node scripts/map-mvp-check.mjs"
   },
   "dependencies": {

@@ -1,0 +1,23 @@
+{
+  "dataset_version": "chest-pilot-2026-08-23",
+  "total_published": 0,
+  "regions": [
+    {
+      "slug": "meadow-of-beginnings",
+      "name": "Meadow of Beginnings",
+      "chunk": "meadow-of-beginnings.json",
+      "published_count": 0,
+      "payload_bytes": 141
+    },
+    {
+      "slug": "field-of-plenty",
+      "name": "Field of Plenty",
+      "chunk": "field-of-plenty.json",
+      "published_count": 0,
+      "payload_bytes": 131
+    }
+  ],
+  "game_build": "steam-24375914 source-context-only",
+  "updated_at": "2026-08-23",
+  "publication_gate": "CHEST_PIPELINE_PILOT_BLOCKED_BY_COORDINATE_PROVENANCE"
+}

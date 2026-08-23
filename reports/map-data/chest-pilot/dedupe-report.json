@@ -1,0 +1,11 @@
+{
+  "dataset_version": "chest-pilot-2026-08-23",
+  "raw_count": 80,
+  "deduped_count": 80,
+  "auto_merged": 0,
+  "review_required": 0,
+  "unresolved_duplicates": 0,
+  "auto_merged_records": [],
+  "review_required_records": [],
+  "unresolved_duplicate_records": []
+}

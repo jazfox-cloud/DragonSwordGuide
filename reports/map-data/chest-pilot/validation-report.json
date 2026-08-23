@@ -1,0 +1,737 @@
+{
+  "dataset_version": "chest-pilot-2026-08-23",
+  "candidate_count": 80,
+  "deduped_count": 80,
+  "published_count": 0,
+  "rejected_count": 80,
+  "conflict_count": 0,
+  "duplicate_id_count": 0,
+  "invalid_coordinate_count": 0,
+  "unknown_category_count": 0,
+  "unresolved_published_conflicts": 0,
+  "research_only_published_count": 0,
+  "coordinate_provenance": "POSITION_RESEARCH_ONLY",
+  "verification_level": "GAME_DATA_CORROBORATED_RESEARCH_ONLY",
+  "rejected": [
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:01-06dd7453",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:02-1300e3c7",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:03-145658f0",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:04-199415ba",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:05-1a3c7108",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:06-1a6d6fa4",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:07-1ad11ede",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:08-1d8701b9",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:09-1e3507f4",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:10-1e5f8f79",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:11-1ea2a190",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:12-231fa839",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:13-26a79136",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:14-26d23f19",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:15-27ed1f3b",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:16-290b5dba",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:17-2d3116f2",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:18-2ee11c43",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:19-327f6505",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:20-34bf8d57",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:21-36006f56",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:22-3929a8fb",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:23-4218813a",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:24-421cca4c",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:25-474644a9",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:26-48f01796",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:27-49923d66",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:28-4b303260",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:29-4b3b3684",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:30-4ba0f56b",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:31-4bc1dbdb",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:32-4c87984e",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:33-4c8d85ab",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:34-4d39e26d",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:35-4d5712ef",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:36-4d74ecac",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:37-4e70f793",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:38-504e6475",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:39-508a5302",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:meadow-of-beginnings:40-532f40ed",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:01-00553a3a",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:02-011ee18e",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:03-055b5f49",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:04-09bd8531",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:05-0abb8aca",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:06-0b523df1",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:07-0b620853",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:08-0cad1fd6",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:09-108eb77d",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:10-1304ef21",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:11-1361757e",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:12-13976dc2",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:13-13fce2fb",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:14-17dccd7f",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:15-189a5889",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:16-19f9ad54",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:17-1a12be39",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:18-1a20c5fb",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:19-1b624912",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:20-1c88ed93",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:21-1d9d5abf",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:22-1daa3c5d",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:23-20afb6f7",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:24-280c6025",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:25-28d4bf21",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:26-297a2809",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:27-2d0f0740",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:28-2daccc97",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:29-3340c784",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:30-34c0f704",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:31-35c3b842",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:32-35eca1cf",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:33-395646c4",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:34-39c0feed",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:35-3a43ea2a",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:36-3ac4a444",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:37-3c947588",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:38-3cdcc593",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:39-3d24cb7b",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    },
+    {
+      "candidate_id": "candidate:chest:field-of-plenty:40-3e9ce57a",
+      "reasons": [
+        "COORDINATE_PROVENANCE_NOT_PUBLISHABLE",
+        "NORMALIZED_POSITION_UNRESOLVED",
+        "INSUFFICIENT_INDEPENDENT_CORROBORATION",
+        "RESEARCH_ONLY_ROW"
+      ]
+    }
+  ]
+}
