@@ -25,6 +25,7 @@ interface MarkerData {
   category_status?: {
     ORGANA_STATUE?: {
       count_conflict?: string;
+      conflict_verdict?: string;
     };
   };
   markers: Marker[];
@@ -56,6 +57,7 @@ const firstMarker = markerData.markers[0];
   data-base-map-id={markerData.base_map_id}
   data-coordinate-system={markerData.coordinate_system}
   data-organa-count-conflict={markerData.category_status?.ORGANA_STATUE?.count_conflict}
+  data-organa-conflict-verdict={markerData.category_status?.ORGANA_STATUE?.conflict_verdict}
   data-marker-count={markerData.markers.length}
   aria-labelledby="interactive-map-title"
 >

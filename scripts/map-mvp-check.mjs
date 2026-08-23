@@ -201,6 +201,7 @@ const expectedSnippets = [
   'data-marker-search',
   'data-category-filter',
   '13_VS_14_CONFLICT_RETAINED',
+  'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',
   'Not to exact in-game scale',
 ];
