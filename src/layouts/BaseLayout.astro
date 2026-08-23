@@ -6,21 +6,30 @@ interface Props {
   schema?: Record<string, unknown>[];
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  locale?: 'en' | 'ja';
+  routeId?: RouteId;
 }
 
+import type { RouteId } from '../i18n/routes';
 import MobileNav from '../components/MobileNav.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import { getDictionary } from '../i18n/dictionaries';
+import { getAlternates } from '../i18n/seo';
 
-const { title, description, canonical, schema = [], ogType = 'website', noindex = false } = Astro.props;
+const { title, description, canonical, schema = [], ogType = 'website', noindex = false, locale = 'en', routeId } = Astro.props;
+const dictionary = getDictionary(locale);
+const alternates = routeId ? getAlternates(routeId) : [];
 const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
+    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.lang} href={alternate.href} />)}
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="shortcut icon" href="/favicon.ico?v=3" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png?v=3" />
@@ -56,24 +65,19 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
     -->
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href="/" aria-label="DragonSword Guide home">
+        <a class="brand" href={locale === 'ja' ? '/ja/' : '/'} aria-label={dictionary.shell.ariaHome}>
           <span class="brand-visual">
             <img class="brand-image" src="/brand/logo.png" alt="" width="32" height="32" loading="eager" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
             <span class="brand-mark brand-fallback" aria-hidden="true" hidden><span></span></span>
           </span>
-          <span>DragonSword Guide</span>
+          <span>{dictionary.brand}</span>
         </a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="/guides/beginner/">Guides</a>
-          <a href="/characters/">Characters</a>
-          <a href="/builds/">Builds</a>
-          <a href="/teams/">Teams</a>
-          <a href="/map/">Map</a>
-          <a href="/systems/runes/">Systems</a>
-          <a href="/roadmap/">Updates</a>
+        <nav class="site-nav" aria-label={dictionary.shell.primaryNav}>
+          {dictionary.nav.map((item) => <a href={item.href}>{item.label}</a>)}
         </nav>
-        <span class="brand-note">Unofficial fan-made guide</span>
-        <MobileNav />
+        <LanguageSwitcher locale={locale} routeId={routeId} />
+        <span class="brand-note">{dictionary.shell.note}</span>
+        <MobileNav locale={locale} />
       </div>
     </header>
     <main>
@@ -82,17 +86,17 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
-          <a class="footer-brand" href="/">DragonSword Guide</a>
-          <p>DragonSword Guide is an independent fan-made guide for DragonSword: Awakening. We publish practical guides for characters, builds, teams, maps, progression, combat systems and current game updates.</p>
+          <a class="footer-brand" href={locale === 'ja' ? '/ja/' : '/'}>{dictionary.brand}</a>
+          <p>{dictionary.shell.footerText}</p>
         </div>
         <div class="footer-links">
-          <a href="https://store.steampowered.com/app/4570720/DragonSword__Awakening/">Steam</a>
-          <a href="https://discord.gg/CzZ5ddkMVg">Official Discord</a>
-          <a href="https://www.youtube.com/@DragonSwordAwakening">Official YouTube</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
+          <a href="https://store.steampowered.com/app/4570720/DragonSword__Awakening/">{dictionary.shell.steam}</a>
+          <a href="https://discord.gg/CzZ5ddkMVg">{dictionary.shell.discord}</a>
+          <a href="https://www.youtube.com/@DragonSwordAwakening">{dictionary.shell.youtube}</a>
+          <a href="/privacy/">{dictionary.shell.privacy}</a>
+          <a href="/terms/">{dictionary.shell.terms}</a>
         </div>
-        <p class="footer-disclaimer">DragonSword Guide is an unofficial fan-made website and is not affiliated with or endorsed by Hound13 Inc.</p>
+        <p class="footer-disclaimer">{dictionary.shell.disclaimer}</p>
       </div>
     </footer>
   </body>
@@ -121,13 +125,13 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
   a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
   .shell { width: min(100% - 2rem, 1220px); margin-inline: auto; }
   .site-header { background: hsl(222 32% 8% / 0.94); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; min-height: 72px; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
   .brand, .footer-brand { display: inline-flex; align-items: center; gap: 0.65rem; color: var(--ink); font-size: 1.05rem; font-weight: 800; text-decoration: none; letter-spacing: -0.025em; white-space: nowrap; }
   .brand-visual { display: inline-grid; width: 32px; height: 32px; place-items: center; }
   .brand-image, .brand-fallback { grid-area: 1 / 1; width: 32px; height: 32px; object-fit: contain; }
   .brand-mark { width: 26px; height: 26px; border: 1px solid var(--accent); border-radius: 8px 3px 8px 3px; display: grid; place-items: center; transform: rotate(-12deg); }
   .brand-mark span { display: block; width: 11px; height: 2px; background: var(--accent-light); transform: rotate(-35deg); box-shadow: 5px 5px 0 -0.5px var(--accent); }
-  .site-nav { display: flex; align-items: center; gap: 1rem; }
+  .site-nav { display: flex; align-items: center; gap: 0.85rem; }
   .site-nav a { color: var(--muted-strong); font-size: 0.82rem; text-decoration: none; }
   .site-nav a:hover { color: var(--accent-light); }
   .brand-note { color: var(--muted); font-size: 0.72rem; white-space: nowrap; }

@@ -1,0 +1,36 @@
+---
+import { locales, type LocaleCode } from '../i18n/locales';
+import { getAlternates } from '../i18n/seo';
+import type { RouteId } from '../i18n/routes';
+import { getDictionary } from '../i18n/dictionaries';
+
+interface Props {
+  locale?: LocaleCode;
+  routeId?: RouteId;
+}
+
+const { locale = 'en', routeId } = Astro.props;
+const dictionary = getDictionary(locale);
+const alternates = routeId ? getAlternates(routeId).filter((item) => item.lang === 'en' || item.lang === 'ja') : [];
+---
+
+{alternates.length > 0 && (
+  <nav class="language-switcher" aria-label={dictionary.languageSwitcher.label}>
+    {alternates.map((alternate) => {
+      const code = alternate.lang as LocaleCode;
+      const isCurrent = code === locale;
+      return (
+        <a href={alternate.href} aria-current={isCurrent ? 'true' : undefined}>
+          <span>{locales[code].label}</span>
+        </a>
+      );
+    })}
+  </nav>
+)}
+
+<style>
+  .language-switcher { display: inline-flex; align-items: center; gap: 0.25rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem; background: var(--paper); }
+  .language-switcher a { display: inline-flex; min-height: 32px; align-items: center; justify-content: center; border-radius: 999px; padding: 0.25rem 0.55rem; color: var(--muted-strong); font-size: 0.74rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
+  .language-switcher a[aria-current="true"] { color: var(--wash); background: var(--accent); }
+  @media (max-width: 980px) { .language-switcher { display: none; } }
+</style>

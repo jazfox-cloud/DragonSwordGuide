@@ -1,16 +1,25 @@
 ---
 import { navigation } from '../data/navigation';
+import { getDictionary } from '../i18n/dictionaries';
+
+interface Props {
+  locale?: 'en' | 'ja';
+}
+
+const { locale = 'en' } = Astro.props;
+const dictionary = getDictionary(locale);
+const navItems = locale === 'ja' ? dictionary.nav : navigation;
 ---
 
-<nav class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+<nav class="mobile-nav" data-mobile-nav aria-label={locale === 'ja' ? 'モバイルナビゲーション' : 'Mobile navigation'}>
   <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" data-menu-button>
-    <span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="menu-label">{locale === 'ja' ? 'メニュー' : 'Menu'}</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
   </button>
   <div class="mobile-nav-panel" id="mobile-nav-panel" data-menu-panel hidden>
     <div class="mobile-nav-panel-inner">
-      <p class="mobile-nav-kicker">DragonSword Guide</p>
+      <p class="mobile-nav-kicker">{dictionary.brand}</p>
       <div class="mobile-nav-links">
-        {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
       </div>
     </div>
   </div>

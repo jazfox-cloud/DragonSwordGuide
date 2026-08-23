@@ -6,12 +6,13 @@ interface Breadcrumb {
 
 interface Props {
   items: Breadcrumb[];
+  ariaLabel?: string;
 }
 
-const { items } = Astro.props;
+const { items, ariaLabel = 'Breadcrumb' } = Astro.props;
 ---
 
-<nav class="breadcrumbs" aria-label="Breadcrumb">
+<nav class="breadcrumbs" aria-label={ariaLabel}>
   {items.map((item, index) => (
     <>
       {index > 0 && <span aria-hidden="true">/</span>}

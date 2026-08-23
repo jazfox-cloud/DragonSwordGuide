@@ -1,0 +1,9 @@
+---
+interface Props {
+  metadata: Record<string, unknown>;
+}
+
+const { metadata } = Astro.props;
+---
+
+<script type="application/json" id="source-revision-data" set:html={JSON.stringify(metadata)} />

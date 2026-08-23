@@ -2,13 +2,14 @@
 interface Props {
   message?: string;
   links?: { label: string; href: string }[];
+  title?: string;
 }
 
-const { message = 'Continue with another verified guide.', links = [] } = Astro.props;
+const { message = 'Continue with another verified guide.', links = [], title = 'Related guides' } = Astro.props;
 ---
 
 <section class="related" aria-labelledby="related-title">
-  <h2 id="related-title">Related guides</h2>
+  <h2 id="related-title">{title}</h2>
   <p>{message}</p>
   {links.length > 0 && <ul>{links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul>}
 </section>

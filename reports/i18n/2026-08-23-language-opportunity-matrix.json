@@ -1,0 +1,149 @@
+{
+  "report_date": "2026-08-23",
+  "site": "dragonswordguide.com",
+  "gsc_window": {
+    "property": "sc-domain:dragonswordguide.com",
+    "start_date": "2026-08-01",
+    "end_date": "2026-08-20",
+    "data_state": "final",
+    "latest_complete_date": "2026-08-20"
+  },
+  "official_language_support": [
+    { "language": "English", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Korean", "official_ui": true, "subtitles": true, "full_audio": true, "support_confidence": "HIGH" },
+    { "language": "Japanese", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Simplified Chinese", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Traditional Chinese", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "French", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "German", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Spanish - Spain", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Russian", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Thai", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" },
+    { "language": "Portuguese - Brazil", "official_ui": true, "subtitles": true, "full_audio": false, "support_confidence": "HIGH" }
+  ],
+  "gsc_country_focus": {
+    "usa": { "clicks": 31, "impressions": 1070, "ctr": 0.0289719626, "average_position": 7.7738 },
+    "jpn": { "clicks": 7, "impressions": 75, "ctr": 0.0933333333, "average_position": 9.1467 },
+    "sgp": { "clicks": 0, "impressions": 66, "ctr": 0, "average_position": 6.5758 },
+    "kor": { "clicks": 0, "impressions": 27, "ctr": 0, "average_position": 8.5926 },
+    "twn": { "clicks": 2, "impressions": 22, "ctr": 0.0909090909, "average_position": 8.9091 },
+    "hkg": { "clicks": 1, "impressions": 20, "ctr": 0.05, "average_position": 10.6 },
+    "chn": { "clicks": 0, "impressions": 3, "ctr": 0, "average_position": 7 },
+    "gbr": { "clicks": 6, "impressions": 173, "ctr": 0.0346820809, "average_position": 7.5434 },
+    "can": { "clicks": 8, "impressions": 186, "ctr": 0.0430107527, "average_position": 7.0376 },
+    "aus": { "clicks": 7, "impressions": 117, "ctr": 0.0598290598, "average_position": 7.5214 },
+    "tha": { "clicks": 8, "impressions": 112, "ctr": 0.0714285714, "average_position": 9.1964 },
+    "vnm": { "clicks": 4, "impressions": 47, "ctr": 0.0851063829, "average_position": 9.383 },
+    "bra": { "clicks": 11, "impressions": 175, "ctr": 0.0628571429, "average_position": 8.24 },
+    "esp": { "clicks": 6, "impressions": 80, "ctr": 0.075, "average_position": 7.8875 }
+  },
+  "gsc_query_language_summary": {
+    "English": {
+      "queries": 149,
+      "clicks": 109,
+      "impressions": 1983,
+      "representative_queries": [
+        "dragonsword awakening roadmap",
+        "dragon sword awakening roadmap",
+        "dragonsword interactive map",
+        "dragonsword awakening runes",
+        "dragon sword awakening coop"
+      ]
+    },
+    "Japanese": {
+      "queries": 3,
+      "clicks": 1,
+      "impressions": 13,
+      "representative_queries": [
+        "ドラゴンソード アウェイクニング ロードマップ",
+        "ドラゴンソード ロードマップ",
+        "ドラゴンソード アウェイクニング マルチプレイ"
+      ]
+    },
+    "Korean": { "queries": 0, "clicks": 0, "impressions": 0, "representative_queries": [] },
+    "Traditional Chinese": { "queries": 0, "clicks": 0, "impressions": 0, "representative_queries": [] },
+    "Simplified Chinese": { "queries": 0, "clicks": 0, "impressions": 0, "representative_queries": [] },
+    "Other": { "queries": 0, "clicks": 0, "impressions": 0, "representative_queries": [] },
+    "Unknown": { "queries": 0, "clicks": 0, "impressions": 0, "representative_queries": [] }
+  },
+  "language_priority_scores": [
+    {
+      "language": "Japanese",
+      "demand": 4,
+      "competition_gap": 3,
+      "map_opportunity": 4,
+      "maintenance": 3,
+      "official_support": 4,
+      "overall": 4,
+      "priority": "NOW",
+      "decision": "PILOT_LANGUAGE"
+    },
+    {
+      "language": "Traditional Chinese",
+      "demand": 2,
+      "competition_gap": 3,
+      "map_opportunity": 3,
+      "maintenance": 3,
+      "official_support": 4,
+      "overall": 3,
+      "priority": "NEXT",
+      "decision": "SECOND_LANGUAGE_AFTER_PILOT_IF_JA_WORKS"
+    },
+    {
+      "language": "Korean",
+      "demand": 1,
+      "competition_gap": 2,
+      "map_opportunity": 2,
+      "maintenance": 3,
+      "official_support": 5,
+      "overall": 3,
+      "priority": "LATER",
+      "decision": "HOLD_FOR_NOW_STRONG_LOCAL_MAP_COMPETITION_AND_NO_GSC_QUERY_SIGNAL"
+    },
+    {
+      "language": "Simplified Chinese",
+      "demand": 2,
+      "competition_gap": 2,
+      "map_opportunity": 2,
+      "maintenance": 2,
+      "official_support": 4,
+      "overall": 2,
+      "priority": "HOLD",
+      "decision": "REQUIRES_SEPARATE_BAIDU_BILIBILI_TAPTAP_DISTRIBUTION_PLAN"
+    }
+  ],
+  "recommended_architecture": {
+    "primary_language": "English",
+    "pilot_language": "Japanese",
+    "second_language": "Traditional Chinese",
+    "third_language": "Korean",
+    "url_model": "LANGUAGE_SUBDIRECTORIES_KEEP_ENGLISH_AT_ROOT",
+    "hreflang_model": "SELF_CANONICAL_RECIPROCAL_HREFLANG_WITH_X_DEFAULT_ROOT",
+    "canonical_model": "EACH_LOCALIZED_URL_SELF_CANONICAL_ENGLISH_ROOT_UNCHANGED",
+    "sitemap_model": "SITEMAP_INDEX_WITH_PER_LANGUAGE_SITEMAPS_WHEN_PILOT_EXPANDS",
+    "map_i18n_model": "SHARED_MARKER_IDENTITY_AND_COORDINATES_PLUS_LOCALIZED_LABEL_LAYER",
+    "content_sync_model": "ENGLISH_SOURCE_UPDATE_MARKS_TRANSLATIONS_STALE_UNTIL_REFRESHED",
+    "translation_model": "OFFICIAL_TERM_LOCKED_PLUS_HUMAN_REVIEWED_HIGH_VALUE_PAGES"
+  },
+  "pilot_pages": [
+    "/ja/",
+    "/ja/roadmap/",
+    "/ja/map/",
+    "/ja/systems/runes/",
+    "/ja/multiplayer/",
+    "/ja/builds/"
+  ],
+  "sources": [
+    "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+    "https://steamcommunity.com/app/4570720",
+    "https://steamdb.info/app/4570720/info/",
+    "https://dsmaps.com/",
+    "https://appmedia.jp/dragonsword_awakening",
+    "https://dsawakening.grandwiki.com/map",
+    "https://dsawakening.grandwiki.com/ja/guides/beginner-progression-route",
+    "https://dsawakening.grandwiki.com/tw/guides",
+    "https://www.gamersky.com/handbook/202608/2184445.shtml",
+    "https://www.bilibili.com/video/BV1Gcg469EsP/",
+    "https://forum.gamer.com.tw/C.php?bsn=76636&snA=47"
+  ]
+}

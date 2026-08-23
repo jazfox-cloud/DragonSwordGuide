@@ -17,7 +17,7 @@ const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'D
 const organization = { '@context': 'https://schema.org', '@type': 'Organization', name: 'DragonSword Guide', url: canonical, description: 'Independent fan-made DragonSword: Awakening guide and reference site.' };
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} schema={[website, organization]}>
+<BaseLayout title={title} description={description} canonical={canonical} routeId="home" schema={[website, organization]}>
   <div class="home-page">
     <section class="hero shell">
       <div class="hero-copy">

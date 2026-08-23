@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import LastVerified from '../../../../components/LastVerified.astro';
+import QuickAnswer from '../../../../components/QuickAnswer.astro';
+import SourceList from '../../../../components/SourceList.astro';
+import SourceRevisionMeta from '../../../../components/SourceRevisionMeta.astro';
+import { runesJa as page } from '../../../../content/ja/runes';
+import { sourceUrls, patch107 } from '../../../../data/sources';
+import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../../i18n/seo';
+
+const canonical = getCanonical('runes', 'ja');
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-11' });
+const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'システム', path: '/ja/systems/runes/' }, { name: 'ルーン', path: '/ja/systems/runes/' }]);
+const sources = [{ label: '公式1.0.7アップデート', href: sourceUrls.announcements, note: 'Evidence B - 所持上限200 -> 500、所持数表示、4星ルーン合成から5星が出る可能性を確認。' }];
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={canonical} locale="ja" routeId="runes" ogType="article" schema={[article, breadcrumb]}>
+  <div class="shell page-wrap">
+    <Breadcrumbs ariaLabel="パンくずリスト" items={[{ label: 'DragonSword Guide', href: '/ja/' }, { label: 'システム', href: '/ja/systems/runes/' }, { label: 'ルーン' }]} />
+    <article class="copy">
+      <header class="article-header"><p class="eyebrow">システム · ルーン所持枠</p><h1>{page.h1}</h1><LastVerified date="2026年8月11日" label="最終確認" /></header>
+      <QuickAnswer eyebrow="要点" title="公式1.0.7で確認できるのは、所持上限と合成に関する狭い事実です。">
+        <p>ルーン所持上限は200から500に増加し、所持数表示が追加され、4星ルーン合成から5星ルーンが出る可能性が確認されています。ドロップ率、ステータス上限、最適周回ルートは未検証です。</p>
+      </QuickAnswer>
+      <a class="update-badge" href={patch107.href}>{patch107.label} · ルーン変更</a>
+      <h2>ルーンとは？</h2>
+      <p>ルーンは、英雄の役割、戦闘行動、チーム編成と一緒に考える育成リソースです。公式アップデートは一部のシステム変更を確認できますが、完全なルーンランキングや最適セットを示しているわけではありません。</p>
+      <h2>所持枠の変更</h2>
+      <div class="metrics"><div><strong>500</strong><span>現在確認できる上限</span></div><div><strong>200 -> 500</strong><span>1.0.7での変更</span></div><div><strong>所持数表示</strong><span>インベントリ改善</span></div></div>
+      <p>1.0.7ではルーン所持上限が200から500へ増え、所持しているルーン数を確認しやすくなりました。</p>
+      <h2>ルーン合成</h2>
+      <p>公式ノートでは、4星ルーン合成から5星ルーンが出る可能性があると確認されています。これは「出る可能性がある」という意味であり、毎回保証されるという意味ではありません。</p>
+      <h2>ビルドでの扱い</h2>
+      <p>ルーンはビルドの一部ですが、単独のランキングではありません。まず英雄の役割と、状態異常からシグナルスキルへつながる流れを確認し、そのうえでルーンを検討します。関連する考え方は <a href="/ja/builds/">ビルド</a> ページでも扱います。</p>
+      <h2>まだ確認していないこと</h2>
+      <p class="evidence-note"><strong>NOT_YET_VERIFIED:</strong> 最強ルーン、セット効果の優先度、正確なドロップ率、ステータス上限、合成結果の保証、最適な周回場所やルート。</p>
+      <SourceList title="出典と検証" intro="公式アップデートで確認できる事実だけを、確認済みとして扱います。" sources={sources} />
+    </article>
+  </div>
+  <SourceRevisionMeta metadata={page.translation} />
+</BaseLayout>
+
+<style>
+  .page-wrap { padding: 1.25rem 0 2rem; }
+  .copy { max-width: 800px; }
+  .eyebrow { color: var(--accent-light); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  h1, h2 { line-height: 1.15; letter-spacing: 0; }
+  h1 { font-size: clamp(2.3rem, 7vw, 4.8rem); margin: 0 0 0.7rem; }
+  h2 { margin: 2.2rem 0 0.7rem; }
+  p, li { color: var(--muted-strong); }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin: 1rem 0; }
+  .metrics div { display: grid; gap: 0.25rem; padding: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  .metrics strong { color: var(--accent-light); font-size: 1.25rem; }
+  .metrics span { color: var(--muted); font-size: 0.78rem; }
+  .update-badge { display: inline-flex; width: fit-content; color: var(--accent-light); border: 1px solid hsl(199 86% 58% / 0.35); border-radius: 999px; padding: 0.3rem 0.6rem; font-size: 0.72rem; font-weight: 800; text-decoration: none; }
+  .evidence-note { padding: 1rem; border-left: 3px solid var(--accent); background: var(--paper); }
+  @media (max-width: 650px) { .metrics { grid-template-columns: 1fr; } }
+</style>

@@ -7,14 +7,20 @@ interface Source {
 
 interface Props {
   sources: Source[];
+  title?: string;
+  intro?: string;
 }
 
-const { sources } = Astro.props;
+const {
+  sources,
+  title = 'Sources & verification',
+  intro = 'Evidence level: B (primary-source verified), with C (community verification) clearly labeled where live behavior could not be confirmed.',
+} = Astro.props;
 ---
 
 <section class="sources" aria-labelledby="sources-title">
-  <h2 id="sources-title">Sources &amp; verification</h2>
-  <p>Evidence level: B (primary-source verified), with C (community verification) clearly labeled where live behavior could not be confirmed.</p>
+  <h2 id="sources-title">{title}</h2>
+  <p>{intro}</p>
   <ol>
     {sources.map((source) => <li><a href={source.href}>{source.label}</a> — {source.note}</li>)}
   </ol>

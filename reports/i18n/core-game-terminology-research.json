@@ -1,0 +1,163 @@
+{
+  "report_date": "2026-08-23",
+  "status": "RESEARCH_GLOSSARY_ONLY_NOT_IMPLEMENTED",
+  "source_policy": "Prefer official localized terminology from Steam/store/community materials. Use community wording only when official term is not confirmed. Do not translate proprietary names by guesswork.",
+  "localized_game_titles": {
+    "en": "DragonSword : Awakening",
+    "ko": "드래곤소드 : 어웨이크닝",
+    "ja": "ドラゴンソード:アウェイクニング",
+    "zh-Hans": "龙之剑:觉醒",
+    "zh-Hant": "龍之劍:覺醒",
+    "source": "Steam store / SteamDB localized app names"
+  },
+  "terms": [
+    {
+      "concept": "Roadmap",
+      "en": "Roadmap",
+      "ko": "로드맵",
+      "ja": "ロードマップ",
+      "zh-Hant": "路線圖",
+      "zh-Hans": "路线图",
+      "confidence": "COMMUNITY_COMMON",
+      "notes": "Japanese term appears in GSC queries; English official announcements use Roadmap."
+    },
+    {
+      "concept": "Interactive Map",
+      "en": "Interactive Map",
+      "ko": "인터랙티브 지도",
+      "ja": "インタラクティブマップ",
+      "zh-Hant": "互動地圖",
+      "zh-Hans": "互动地图",
+      "confidence": "COMMUNITY_COMMON",
+      "notes": "Korean dsmaps uses 인터랙티브 지도; Chinese competitors use 互动地图 / 地图."
+    },
+    {
+      "concept": "Treasure Chest",
+      "en": "Treasure Chest",
+      "ko": "보물상자",
+      "ja": "宝箱",
+      "zh-Hant": "寶箱",
+      "zh-Hans": "宝箱",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Warp Point",
+      "en": "Warp Point",
+      "ko": "이동 지점",
+      "ja": "ウェイポイント",
+      "zh-Hant": "傳送點",
+      "zh-Hans": "传送点",
+      "confidence": "MIXED_OFFICIAL_COMMUNITY",
+      "notes": "Keep English alias searchable until official localized in-game marker labels are extracted."
+    },
+    {
+      "concept": "Dungeon",
+      "en": "Dungeon",
+      "ko": "던전",
+      "ja": "ダンジョン",
+      "zh-Hant": "副本",
+      "zh-Hans": "副本",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Field Boss",
+      "en": "Field Boss",
+      "ko": "필드 보스",
+      "ja": "フィールドボス",
+      "zh-Hant": "野外首領",
+      "zh-Hans": "野外BOSS",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Rune",
+      "en": "Rune",
+      "ko": "룬",
+      "ja": "ルーン",
+      "zh-Hant": "符文",
+      "zh-Hans": "符文",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Rune Synthesis",
+      "en": "Rune Synthesis",
+      "ko": "룬 합성",
+      "ja": "ルーン合成",
+      "zh-Hant": "符文合成",
+      "zh-Hans": "符文合成",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Build",
+      "en": "Build",
+      "ko": "빌드",
+      "ja": "ビルド",
+      "zh-Hant": "構築",
+      "zh-Hans": "配装 / 构筑",
+      "confidence": "COMMUNITY_COMMON",
+      "notes": "Simplified Chinese search/media often uses 配装 for equipment-oriented builds."
+    },
+    {
+      "concept": "Team",
+      "en": "Team",
+      "ko": "파티 / 팀",
+      "ja": "編成",
+      "zh-Hant": "隊伍",
+      "zh-Hans": "队伍",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Multiplayer",
+      "en": "Multiplayer",
+      "ko": "멀티플레이",
+      "ja": "マルチプレイ",
+      "zh-Hant": "多人遊戲",
+      "zh-Hans": "多人游戏",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "Co-op",
+      "en": "Co-op",
+      "ko": "협동 / 협동 플레이",
+      "ja": "協力プレイ",
+      "zh-Hant": "合作 / 共鬥",
+      "zh-Hans": "合作 / 共斗",
+      "confidence": "COMMUNITY_COMMON"
+    },
+    {
+      "concept": "System Requirements",
+      "en": "System Requirements",
+      "ko": "시스템 요구 사항",
+      "ja": "動作環境",
+      "zh-Hant": "系統需求",
+      "zh-Hans": "配置要求",
+      "confidence": "STORE_COMMON"
+    },
+    {
+      "concept": "Beginner Guide",
+      "en": "Beginner Guide",
+      "ko": "초보자 가이드",
+      "ja": "序盤攻略",
+      "zh-Hant": "新手攻略",
+      "zh-Hans": "新手攻略",
+      "confidence": "SERP_COMMON"
+    },
+    {
+      "concept": "Organa Statue",
+      "en": "Organa Statue",
+      "ko": "오르가나 석상",
+      "ja": "オルガナ像",
+      "zh-Hant": "奧爾加納神像",
+      "zh-Hans": "奥尔加纳神像",
+      "confidence": "COMMUNITY_COMMON_NEEDS_OFFICIAL_LOCK"
+    },
+    {
+      "concept": "Eona's Legacy",
+      "en": "Eona's Legacy",
+      "ko": "이오나의 유산",
+      "ja": "エオナの遺産",
+      "zh-Hant": "艾歐娜的遺產",
+      "zh-Hans": "艾欧娜的遗产",
+      "confidence": "COMMUNITY_COMMON_NEEDS_OFFICIAL_LOCK"
+    }
+  ]
+}

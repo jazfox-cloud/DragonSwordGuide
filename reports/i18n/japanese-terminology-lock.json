@@ -1,0 +1,318 @@
+{
+  "report_date": "2026-08-23",
+  "locale": "ja",
+  "status": "PHASE_0_TERMINOLOGY_LOCK_NOT_IMPLEMENTED",
+  "source_policy": "Prefer official Japanese terminology from Steam/store/community announcements. Use community wording only when official Japanese wording is not confirmed. Keep English proper nouns when no reliable Japanese official source exists.",
+  "counts": {
+    "terms_reviewed": 26,
+    "OFFICIAL_TERM_LOCKED": 7,
+    "COMMUNITY_STANDARD": 15,
+    "KEEP_ENGLISH": 2,
+    "UNRESOLVED": 2
+  },
+  "sources": {
+    "steam_ja_store": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/?l=japanese",
+    "steamdb_app": "https://steamdb.info/app/4570720/info/",
+    "steam_ja_community": "https://steamcommunity.com/app/4570720/?l=japanese",
+    "steam_community_qna": "https://steamcommunity.com/app/4570720",
+    "appmedia_hub": "https://appmedia.jp/dragonsword_awakening",
+    "appmedia_puzzle": "https://appmedia.jp/dragonsword_awakening/80109265",
+    "grandwiki_map": "https://dsawakening.grandwiki.com/map",
+    "grandwiki_ja_beginner": "https://dsawakening.grandwiki.com/ja/guides/beginner-progression-route",
+    "dragon_sword_wiki_guides": "https://dragonswordawakening.wiki/ja/guides/"
+  },
+  "terms": [
+    {
+      "english": "DragonSword: Awakening",
+      "official_japanese": "ドラゴンソード:アウェイクニング",
+      "community_variant": "ドラゴンソード アウェイクニング",
+      "romanized_or_common_english_variant": "DragonSword Awakening",
+      "preferred_site_term": "ドラゴンソード:アウェイクニング",
+      "source": ["steam_ja_store", "steamdb_app"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam Japanese store and SteamDB localized app name agree."
+    },
+    {
+      "english": "Orbis",
+      "official_japanese": "オルビス",
+      "community_variant": "Orbis",
+      "romanized_or_common_english_variant": "Orbis",
+      "preferred_site_term": "オルビス",
+      "source": ["steam_ja_store"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam Japanese page uses オルビス大陸."
+    },
+    {
+      "english": "Roadmap",
+      "official_japanese": "ロードマップ",
+      "community_variant": "ロードマップ",
+      "romanized_or_common_english_variant": "roadmap",
+      "preferred_site_term": "ロードマップ",
+      "source": ["steam_ja_community"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Japanese Steam community announcement references ロードマップ生放送."
+    },
+    {
+      "english": "Interactive Map",
+      "official_japanese": null,
+      "community_variant": "インタラクティブマップ",
+      "romanized_or_common_english_variant": "interactive map",
+      "preferred_site_term": "インタラクティブマップ",
+      "source": ["grandwiki_map"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "No official Japanese term found; use natural Japanese product term and keep English alias searchable."
+    },
+    {
+      "english": "Treasure Chest",
+      "official_japanese": null,
+      "community_variant": "宝箱",
+      "romanized_or_common_english_variant": "treasure chest",
+      "preferred_site_term": "宝箱",
+      "source": ["appmedia_puzzle", "grandwiki_map"],
+      "confidence": "HIGH",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "AppMedia uses 宝箱 for puzzle rewards; map sources use treasure/chest categories."
+    },
+    {
+      "english": "Warp Point",
+      "official_japanese": null,
+      "community_variant": "ウェイポイント",
+      "romanized_or_common_english_variant": "Waypoint / Warp Point / Fast Travel",
+      "preferred_site_term": "ウェイポイント",
+      "source": ["grandwiki_ja_beginner", "grandwiki_map"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "GrandWiki Japanese guide uses ウェイポイント; keep ワープポイント, Warp Point, Waypoint, Fast Travel aliases."
+    },
+    {
+      "english": "Dungeon",
+      "official_japanese": "ダンジョン",
+      "community_variant": "ダンジョン",
+      "romanized_or_common_english_variant": "dungeon",
+      "preferred_site_term": "ダンジョン",
+      "source": ["steam_ja_store", "appmedia_hub"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam Japanese store copy uses ダンジョン."
+    },
+    {
+      "english": "Normal Dungeon",
+      "official_japanese": null,
+      "community_variant": "通常ダンジョン",
+      "romanized_or_common_english_variant": "Normal Dungeon",
+      "preferred_site_term": "通常ダンジョン",
+      "source": ["steam_community_qna", "grandwiki_map"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Official English Q&A mentions Normal Dungeon; Japanese subtype label should remain source-bounded."
+    },
+    {
+      "english": "Trait Dungeon",
+      "official_japanese": null,
+      "community_variant": "特性ダンジョン",
+      "romanized_or_common_english_variant": "Trait Dungeon",
+      "preferred_site_term": "Trait Dungeon",
+      "source": ["steam_community_qna", "grandwiki_map"],
+      "confidence": "LOW",
+      "status": "UNRESOLVED",
+      "notes": "Do not publish 特性ダンジョン as official until in-game or official Japanese wording is captured."
+    },
+    {
+      "english": "Currency Dungeon",
+      "official_japanese": null,
+      "community_variant": "通貨ダンジョン",
+      "romanized_or_common_english_variant": "Currency Dungeon",
+      "preferred_site_term": "Currency Dungeon",
+      "source": ["steam_community_qna", "grandwiki_map"],
+      "confidence": "LOW",
+      "status": "UNRESOLVED",
+      "notes": "通貨ダンジョン is literal and awkward; keep English subtype internally until official Japanese wording is available."
+    },
+    {
+      "english": "Field Boss",
+      "official_japanese": null,
+      "community_variant": "フィールドボス",
+      "romanized_or_common_english_variant": "field boss",
+      "preferred_site_term": "フィールドボス",
+      "source": ["grandwiki_map", "appmedia_hub"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Natural Japanese gaming term; no official Japanese Field Boss string confirmed in this pass."
+    },
+    {
+      "english": "Rune",
+      "official_japanese": null,
+      "community_variant": "ルーン",
+      "romanized_or_common_english_variant": "Rune",
+      "preferred_site_term": "ルーン",
+      "source": ["steam_community_qna", "grandwiki_map"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Official English update/Q&A confirms Rune systems; Japanese public sources support ルーン as the natural term."
+    },
+    {
+      "english": "Rune Synthesis",
+      "official_japanese": null,
+      "community_variant": "ルーン合成",
+      "romanized_or_common_english_variant": "Rune Synthesis",
+      "preferred_site_term": "ルーン合成",
+      "source": ["steam_community_qna"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Official English Q&A says Rune synthesis; Japanese label should not imply guaranteed outcomes."
+    },
+    {
+      "english": "Build",
+      "official_japanese": null,
+      "community_variant": "ビルド",
+      "romanized_or_common_english_variant": "build",
+      "preferred_site_term": "ビルド",
+      "source": ["appmedia_hub", "grandwiki_map"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Use ビルド for the page intent, but avoid unsupported 最強ビルド claims."
+    },
+    {
+      "english": "Team",
+      "official_japanese": "チームを編成",
+      "community_variant": "編成",
+      "romanized_or_common_english_variant": "team / party",
+      "preferred_site_term": "チーム編成",
+      "source": ["steam_ja_store", "appmedia_hub"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam Japanese copy uses チームを編成; search pages should also support 編成."
+    },
+    {
+      "english": "Multiplayer",
+      "official_japanese": null,
+      "community_variant": "マルチプレイ",
+      "romanized_or_common_english_variant": "multiplayer",
+      "preferred_site_term": "マルチプレイ",
+      "source": ["steam_ja_store", "steamdb_app"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Steam feature wording directly confirms online co-op; マルチプレイ is the search-intent wording."
+    },
+    {
+      "english": "Co-op",
+      "official_japanese": "オンライン協力プレイ",
+      "community_variant": "協力プレイ",
+      "romanized_or_common_english_variant": "co-op",
+      "preferred_site_term": "オンライン協力プレイ",
+      "source": ["steam_ja_store"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam Japanese feature list uses オンライン協力プレイ."
+    },
+    {
+      "english": "System Requirements",
+      "official_japanese": "システム要件",
+      "community_variant": "動作環境",
+      "romanized_or_common_english_variant": "system requirements",
+      "preferred_site_term": "動作環境",
+      "source": ["steam_ja_store"],
+      "confidence": "HIGH",
+      "status": "OFFICIAL_TERM_LOCKED",
+      "notes": "Steam uses システム要件; Japanese SEO title can use 動作環境 with the official term present in body/schema."
+    },
+    {
+      "english": "Beginner Guide",
+      "official_japanese": null,
+      "community_variant": "序盤攻略",
+      "romanized_or_common_english_variant": "beginner guide",
+      "preferred_site_term": "序盤攻略",
+      "source": ["appmedia_hub", "grandwiki_ja_beginner"],
+      "confidence": "HIGH",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Japanese guide SERP/user intent is more naturally 序盤攻略 than 初心者ガイド."
+    },
+    {
+      "english": "Statue of Organa",
+      "official_japanese": null,
+      "community_variant": "オルガナ像",
+      "romanized_or_common_english_variant": "Organa Statue / Statue of Organa",
+      "preferred_site_term": "Organa Statue",
+      "source": ["grandwiki_map"],
+      "confidence": "LOW",
+      "status": "KEEP_ENGLISH",
+      "notes": "No reliable official Japanese proper-noun string found. Keep English marker name and use a Japanese explanation around it."
+    },
+    {
+      "english": "Eona's Legacy",
+      "official_japanese": null,
+      "community_variant": "エオナの遺産",
+      "romanized_or_common_english_variant": "Eona's Legacy",
+      "preferred_site_term": "Eona's Legacy",
+      "source": ["grandwiki_map"],
+      "confidence": "LOW",
+      "status": "KEEP_ENGLISH",
+      "notes": "No reliable official Japanese proper-noun string found. Keep English marker/category label until captured."
+    },
+    {
+      "english": "Search locations",
+      "official_japanese": null,
+      "community_variant": "場所を検索",
+      "romanized_or_common_english_variant": "search locations",
+      "preferred_site_term": "場所を検索",
+      "source": ["site_ui"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Site UI label; no game-source lock required."
+    },
+    {
+      "english": "Approximate location",
+      "official_japanese": null,
+      "community_variant": "おおよその位置",
+      "romanized_or_common_english_variant": "approximate",
+      "preferred_site_term": "おおよその位置",
+      "source": ["site_ui"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Must retain approximate precision and never imply exact in-game pins."
+    },
+    {
+      "english": "Source corroborated",
+      "official_japanese": null,
+      "community_variant": "複数ソースで確認",
+      "romanized_or_common_english_variant": "source corroborated",
+      "preferred_site_term": "複数ソースで確認",
+      "source": ["site_ui"],
+      "confidence": "MEDIUM",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Site evidence label; should not be translated as official verification."
+    },
+    {
+      "english": "Reset",
+      "official_japanese": null,
+      "community_variant": "リセット",
+      "romanized_or_common_english_variant": "reset",
+      "preferred_site_term": "リセット",
+      "source": ["site_ui"],
+      "confidence": "HIGH",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Generic UI term."
+    },
+    {
+      "english": "Show / Hide",
+      "official_japanese": null,
+      "community_variant": "表示 / 非表示",
+      "romanized_or_common_english_variant": "show / hide",
+      "preferred_site_term": "表示 / 非表示",
+      "source": ["site_ui"],
+      "confidence": "HIGH",
+      "status": "COMMUNITY_STANDARD",
+      "notes": "Generic UI term."
+    }
+  ],
+  "proper_noun_rule": {
+    "default": "Keep English proper noun if official Japanese is not found.",
+    "publish_pattern": "English proper noun + concise Japanese explanatory noun only when useful.",
+    "do_not_invent": ["region names", "dungeon names", "boss names", "warp point names", "Eona names", "Organa names"]
+  },
+  "last_verified": "2026-08-23"
+}

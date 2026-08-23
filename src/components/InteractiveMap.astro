@@ -38,22 +38,74 @@ interface MarkerData {
 
 const { markerData } = Astro.props as { markerData: MarkerData };
 const { chestMarkerCount = 0 } = Astro.props as { chestMarkerCount?: number };
-const categoryLabels = {
-  EONAS_LEGACY: "Eona's Legacy",
-  ORGANA_STATUE: 'Organa Statues',
-  WARP_POINT: 'Warp Points',
-  DUNGEON: 'Dungeons',
-  BOSS: 'Bosses',
-  CHEST: 'Treasure Chests',
+const { labels: suppliedLabels = {}, locale = 'en' } = Astro.props as { labels?: Record<string, any>; locale?: 'en' | 'ja' };
+const defaultLabels = {
+  headings: {
+    eyebrow: 'Interactive beta · Unofficial schematic',
+    title: 'DragonSword Awakening Interactive Map Beta',
+    description: 'Search, filter, pan and zoom approximate Orbis markers while exact routes are still being verified.',
+    betaMarkers: 'beta markers',
+    chests: 'chests',
+    firstHandVerified: 'first-hand verified',
+  },
+  categories: {
+    EONAS_LEGACY: "Eona's Legacy",
+    ORGANA_STATUE: 'Organa Statues',
+    WARP_POINT: 'Warp Points',
+    DUNGEON: 'Dungeons',
+    BOSS: 'Bosses',
+    CHEST: 'Treasure Chests',
+  },
+  statuses: {
+    OFFICIAL_VERIFIED: 'Official verified',
+    FIRST_HAND_VERIFIED: 'First-hand verified',
+    VIDEO_VERIFIED: 'Video verified',
+    SECONDARY_CORROBORATED: 'Source corroborated',
+    APPROXIMATE: 'Approximate',
+    CONFLICTING: 'Conflicting',
+  },
+  controls: {
+    toolbar: 'Interactive map controls',
+    searchLabel: 'Search markers',
+    searchPlaceholder: 'Search name or region',
+    filters: 'Marker categories',
+    chestRegion: 'Chest region',
+    allLoadedRegions: 'All loaded regions',
+    zoomControls: 'Map view controls',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    reset: 'Reset',
+    noMatches: 'No matching locations',
+  },
+  panel: {
+    region: 'Region',
+    subtype: 'Subtype',
+    bossType: 'Boss type',
+    precision: 'Precision',
+    status: 'Status',
+    confidence: 'Confidence',
+  },
+  chest: {
+    displayPrefix: 'Treasure Chest',
+    clusterLabel: 'Treasure Chests',
+    subtypeLabels: {},
+  },
+  regions: {},
 };
-const statusLabels = {
-  OFFICIAL_VERIFIED: 'Official verified',
-  FIRST_HAND_VERIFIED: 'First-hand verified',
-  VIDEO_VERIFIED: 'Video verified',
-  SECONDARY_CORROBORATED: 'Source corroborated',
-  APPROXIMATE: 'Approximate',
-  CONFLICTING: 'Conflicting',
+const mapLabels = {
+  ...defaultLabels,
+  ...suppliedLabels,
+  headings: { ...defaultLabels.headings, ...(suppliedLabels.headings || {}) },
+  categories: { ...defaultLabels.categories, ...(suppliedLabels.categories || {}) },
+  statuses: { ...defaultLabels.statuses, ...(suppliedLabels.statuses || {}) },
+  controls: { ...defaultLabels.controls, ...(suppliedLabels.controls || {}) },
+  panel: { ...defaultLabels.panel, ...(suppliedLabels.panel || {}) },
+  chest: { ...defaultLabels.chest, ...(suppliedLabels.chest || {}) },
+  regions: { ...defaultLabels.regions, ...(suppliedLabels.regions || {}) },
 };
+const categoryLabels = mapLabels.categories;
+const statusLabels = mapLabels.statuses;
+const regionLabel = (region: string) => mapLabels.regions[region] || region;
 const categoryCounts = markerData.markers.reduce<Record<string, number>>((counts, marker) => {
   counts[marker.category] = (counts[marker.category] || 0) + 1;
   return counts;
@@ -72,27 +124,28 @@ const firstMarker = markerData.markers[0];
   data-marker-count={markerData.markers.length + chestMarkerCount}
   data-chest-marker-count={chestMarkerCount}
   data-chest-manifest-url="/data/map/chests/manifest.json"
+  data-locale={locale}
   aria-labelledby="interactive-map-title"
 >
   <div class="map-heading">
     <div>
-      <p class="eyebrow">Interactive beta · Unofficial schematic</p>
-      <h2 id="interactive-map-title">DragonSword Awakening Interactive Map Beta</h2>
-      <p>Search, filter, pan and zoom approximate Orbis markers while exact routes are still being verified.</p>
+      <p class="eyebrow">{mapLabels.headings.eyebrow}</p>
+      <h2 id="interactive-map-title">{mapLabels.headings.title}</h2>
+      <p>{mapLabels.headings.description}</p>
     </div>
     <div class="map-stats" aria-label="Map marker summary">
-      <span><strong>{markerData.markers.length + chestMarkerCount}</strong> beta markers</span>
-      <span><strong>{chestMarkerCount}</strong> chests</span>
-      <span><strong>0</strong> first-hand verified</span>
+      <span><strong>{markerData.markers.length + chestMarkerCount}</strong> {mapLabels.headings.betaMarkers}</span>
+      <span><strong>{chestMarkerCount}</strong> {mapLabels.headings.chests}</span>
+      <span><strong>0</strong> {mapLabels.headings.firstHandVerified}</span>
     </div>
   </div>
 
-  <div class="map-toolbar" aria-label="Interactive map controls">
+  <div class="map-toolbar" aria-label={mapLabels.controls.toolbar}>
     <label class="search-field">
-      <span>Search markers</span>
-      <input data-marker-search type="search" placeholder="Search name or region" autocomplete="off" />
+      <span>{mapLabels.controls.searchLabel}</span>
+      <input data-marker-search type="search" placeholder={mapLabels.controls.searchPlaceholder} autocomplete="off" />
     </label>
-    <div class="filter-group" aria-label="Marker categories">
+    <div class="filter-group" aria-label={mapLabels.controls.filters}>
       {Object.entries(categoryLabels).map(([category, label]) => (
         <label class="filter-pill">
           <input data-category-filter type="checkbox" value={category} checked={category !== 'CHEST'} />
@@ -101,15 +154,15 @@ const firstMarker = markerData.markers[0];
       ))}
     </div>
     <label class="chest-region-field">
-      <span>Chest region</span>
+      <span>{mapLabels.controls.chestRegion}</span>
       <select data-chest-region-filter disabled>
-        <option value="">All loaded regions</option>
+        <option value="">{mapLabels.controls.allLoadedRegions}</option>
       </select>
     </label>
-    <div class="zoom-actions" aria-label="Map view controls">
-      <button type="button" data-map-action="zoom-out" aria-label="Zoom out">-</button>
-      <button type="button" data-map-action="reset">Reset</button>
-      <button type="button" data-map-action="zoom-in" aria-label="Zoom in">+</button>
+    <div class="zoom-actions" aria-label={mapLabels.controls.zoomControls}>
+      <button type="button" data-map-action="zoom-out" aria-label={mapLabels.controls.zoomOut}>-</button>
+      <button type="button" data-map-action="reset">{mapLabels.controls.reset}</button>
+      <button type="button" data-map-action="zoom-in" aria-label={mapLabels.controls.zoomIn}>+</button>
     </div>
   </div>
 
@@ -145,11 +198,11 @@ const firstMarker = markerData.markers[0];
               data-marker-category={marker.category}
               data-marker-status={marker.verification_status}
               data-marker-name={marker.name}
-              data-marker-region={marker.region}
+              data-marker-region={regionLabel(marker.region)}
               data-marker-subtype={marker.subtype || ''}
-              data-marker-aliases={(marker.aliases || []).join(' ')}
+              data-marker-aliases={[...(marker.aliases || []), categoryLabels[marker.category], marker.region, regionLabel(marker.region)].join(' ')}
               style={`left:${marker.x * 100}%;top:${marker.y * 100}%;`}
-              aria-label={`${marker.name}, ${marker.region}, ${marker.precision.toLowerCase()}`}
+              aria-label={`${marker.name}, ${regionLabel(marker.region)}, ${marker.precision.toLowerCase()}`}
             >
               <span aria-hidden="true"></span>
             </button>
@@ -168,11 +221,11 @@ const firstMarker = markerData.markers[0];
       <h3>{firstMarker.name}</h3>
       <span class={`status-badge status-${firstMarker.verification_status.toLowerCase().replaceAll('_', '-')}`}>{statusLabels[firstMarker.verification_status]}</span>
       <dl>
-        <div><dt>Region</dt><dd>{firstMarker.region}</dd></div>
-        {firstMarker.subtype && <div><dt>{firstMarker.category === 'BOSS' ? 'Boss type' : 'Subtype'}</dt><dd>{firstMarker.subtype}</dd></div>}
-        <div><dt>Precision</dt><dd>{firstMarker.precision}</dd></div>
-        <div><dt>Status</dt><dd>{firstMarker.verification_status}</dd></div>
-        <div><dt>Confidence</dt><dd>{firstMarker.confidence}</dd></div>
+        <div><dt>{mapLabels.panel.region}</dt><dd>{regionLabel(firstMarker.region)}</dd></div>
+        {firstMarker.subtype && <div><dt>{firstMarker.category === 'BOSS' ? mapLabels.panel.bossType : mapLabels.panel.subtype}</dt><dd>{firstMarker.subtype}</dd></div>}
+        <div><dt>{mapLabels.panel.precision}</dt><dd>{firstMarker.precision}</dd></div>
+        <div><dt>{mapLabels.panel.status}</dt><dd>{firstMarker.verification_status}</dd></div>
+        <div><dt>{mapLabels.panel.confidence}</dt><dd>{firstMarker.confidence}</dd></div>
       </dl>
       <p>{firstMarker.description}</p>
       {firstMarker.activity_note && <p class="activity-note">{firstMarker.activity_note}</p>}
@@ -184,13 +237,16 @@ const firstMarker = markerData.markers[0];
 
   <p class="map-boundary">{markerData.source_boundary}</p>
   <script type="application/json" id="map-marker-data" set:html={JSON.stringify(markerData.markers)} />
+  <script type="application/json" id="map-label-data" set:html={JSON.stringify(mapLabels)} />
   <script is:inline>
     (() => {
       const root = document.querySelector('[data-map-mvp]');
       if (!root) return;
 
       const markerDataScript = root.querySelector('#map-marker-data');
+      const labelDataScript = root.querySelector('#map-label-data');
       const baseMarkers = JSON.parse(markerDataScript.textContent || '[]');
+      const mapLabels = JSON.parse(labelDataScript.textContent || '{}');
       const canvas = root.querySelector('[data-map-canvas]');
       const viewport = root.querySelector('[data-map-viewport]');
       const panel = root.querySelector('[data-marker-panel]');
@@ -199,15 +255,11 @@ const firstMarker = markerData.markers[0];
       const chestRegionFilter = root.querySelector('[data-chest-region-filter]');
       const chestLayer = root.querySelector('[data-chest-layer]');
       const chestManifestUrl = root.dataset.chestManifestUrl;
-      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points', DUNGEON: 'Dungeons', BOSS: 'Bosses', CHEST: 'Treasure Chests' };
-      const statusLabels = {
-        OFFICIAL_VERIFIED: 'Official verified',
-        FIRST_HAND_VERIFIED: 'First-hand verified',
-        VIDEO_VERIFIED: 'Video verified',
-        SECONDARY_CORROBORATED: 'Source corroborated',
-        APPROXIMATE: 'Approximate',
-        CONFLICTING: 'Conflicting',
-      };
+      const labels = mapLabels.categories || {};
+      const statusLabels = mapLabels.statuses || {};
+      const panelLabels = mapLabels.panel || {};
+      const chestLabels = mapLabels.chest || {};
+      const regionLabels = mapLabels.regions || {};
       const chestMarkers = [];
       let chestLoadPromise = null;
       let scale = 1;
@@ -220,6 +272,61 @@ const firstMarker = markerData.markers[0];
         renderChestLayer();
       }
 
+      function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>"']/g, (char) => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;',
+        }[char]));
+      }
+
+      function localizedRegion(region) {
+        return regionLabels[region] || region;
+      }
+
+      function localizedChestName(marker, index = 0) {
+        const raw = String(marker.id || index + 1);
+        const numeric = raw.match(/\d+/g)?.join('').slice(-4) || String(index + 1);
+        return `${chestLabels.displayPrefix || 'Treasure Chest'} #${numeric} — ${localizedRegion(marker.region || marker.chunk_key || '')}`;
+      }
+
+      function localizedMarker(marker) {
+        if (marker.category !== 'CHEST') {
+          return {
+            ...marker,
+            display_name: marker.name,
+            display_region: localizedRegion(marker.region),
+            search_aliases: [
+              marker.name,
+              marker.region,
+              localizedRegion(marker.region),
+              labels[marker.category],
+              marker.subtype,
+              ...(marker.aliases || []),
+            ],
+          };
+        }
+        const displayName = marker.display_name || localizedChestName(marker);
+        const subtypeLabel = chestLabels.subtypeLabels?.[marker.subtype] || marker.subtype || '';
+        return {
+          ...marker,
+          display_name: displayName,
+          display_region: localizedRegion(marker.region),
+          search_aliases: [
+            displayName,
+            marker.name,
+            marker.region,
+            localizedRegion(marker.region),
+            marker.subtype,
+            subtypeLabel,
+            labels.CHEST,
+            ...(marker.aliases || []),
+          ],
+        };
+      }
+
       function markerButtons() {
         return Array.from(root.querySelectorAll('[data-marker-id]'));
       }
@@ -229,26 +336,27 @@ const firstMarker = markerData.markers[0];
       }
 
       function renderPanel(marker) {
-        const navigationNote = marker.navigation_note ? `<p class="navigation-note">${marker.navigation_note}</p>` : '';
-        const subtypeLabel = marker.category === 'BOSS' ? 'Boss type' : 'Subtype';
-        const subtypeRow = marker.subtype ? `<div><dt>${subtypeLabel}</dt><dd>${marker.subtype}</dd></div>` : '';
-        const activityNote = marker.activity_note ? `<p class="activity-note">${marker.activity_note}</p>` : '';
-        const locationNote = marker.location_note ? `<p class="location-note">${marker.location_note}</p>` : '';
+        const localized = localizedMarker(marker);
+        const navigationNote = marker.navigation_note ? `<p class="navigation-note">${escapeHtml(marker.navigation_note)}</p>` : '';
+        const subtypeLabel = marker.category === 'BOSS' ? panelLabels.bossType || 'Boss type' : panelLabels.subtype || 'Subtype';
+        const subtypeRow = marker.subtype ? `<div><dt>${escapeHtml(subtypeLabel)}</dt><dd>${escapeHtml(marker.subtype)}</dd></div>` : '';
+        const activityNote = marker.activity_note ? `<p class="activity-note">${escapeHtml(marker.activity_note)}</p>` : '';
+        const locationNote = marker.location_note ? `<p class="location-note">${escapeHtml(marker.location_note)}</p>` : '';
         panel.innerHTML = `
-          <p class="panel-kicker">${labels[marker.category] || marker.category}</p>
-          <h3>${marker.name}</h3>
-          <span class="status-badge status-${marker.verification_status.toLowerCase().replaceAll('_', '-')}">${statusLabels[marker.verification_status] || marker.verification_status}</span>
+          <p class="panel-kicker">${escapeHtml(labels[marker.category] || marker.category)}</p>
+          <h3>${escapeHtml(localized.display_name || marker.name)}</h3>
+          <span class="status-badge status-${marker.verification_status.toLowerCase().replaceAll('_', '-')}">${escapeHtml(statusLabels[marker.verification_status] || marker.verification_status)}</span>
           <dl>
-            <div><dt>Region</dt><dd>${marker.region}</dd></div>
+            <div><dt>${escapeHtml(panelLabels.region || 'Region')}</dt><dd>${escapeHtml(localized.display_region || marker.region)}</dd></div>
             ${subtypeRow}
-            <div><dt>Precision</dt><dd>${marker.precision}</dd></div>
-            <div><dt>Status</dt><dd>${marker.verification_status}</dd></div>
-            <div><dt>Confidence</dt><dd>${marker.confidence}</dd></div>
+            <div><dt>${escapeHtml(panelLabels.precision || 'Precision')}</dt><dd>${escapeHtml(marker.precision)}</dd></div>
+            <div><dt>${escapeHtml(panelLabels.status || 'Status')}</dt><dd>${escapeHtml(marker.verification_status)}</dd></div>
+            <div><dt>${escapeHtml(panelLabels.confidence || 'Confidence')}</dt><dd>${escapeHtml(marker.confidence)}</dd></div>
           </dl>
-          <p>${marker.description}</p>
+          <p>${escapeHtml(marker.description)}</p>
           ${activityNote}
           ${locationNote}
-          <p class="source-note">${marker.source_summary}</p>
+          <p class="source-note">${escapeHtml(marker.source_summary)}</p>
           ${navigationNote}
         `;
       }
@@ -265,11 +373,12 @@ const firstMarker = markerData.markers[0];
       }
 
       function normalizeSearchText(value) {
-        return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+        return String(value || '').normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
       }
 
       function markerMatches(marker, query) {
-        const haystack = normalizeSearchText(`${marker.name} ${marker.region} ${marker.subtype || ''} ${(marker.aliases || []).join(' ')}`);
+        const localized = localizedMarker(marker);
+        const haystack = normalizeSearchText(`${marker.name} ${marker.region} ${marker.subtype || ''} ${(marker.aliases || []).join(' ')} ${(localized.search_aliases || []).join(' ')}`);
         return !query || haystack.includes(query);
       }
 
@@ -317,26 +426,31 @@ const firstMarker = markerData.markers[0];
               data-cluster-x="${cluster.x}"
               data-cluster-y="${cluster.y}"
               style="left:${cluster.x * 100}%;top:${cluster.y * 100}%;"
-              aria-label="${cluster.count} Treasure Chests"
+              aria-label="${cluster.count} ${escapeHtml(chestLabels.clusterLabel || 'Treasure Chests')}"
             >${cluster.count}</button>
           `).join('');
           return;
         }
 
         chestLayer.innerHTML = visibleChestMarkers.slice(0, 250).map((marker) => `
+          ${(() => {
+            const localized = localizedMarker(marker);
+            return `
           <button
             type="button"
             class="marker marker-chest"
             data-marker-id="${marker.id}"
             data-marker-category="CHEST"
             data-marker-status="${marker.verification_status}"
-            data-marker-name="${marker.name}"
-            data-marker-region="${marker.region}"
+            data-marker-name="${escapeHtml(localized.display_name || marker.name)}"
+            data-marker-region="${escapeHtml(localized.display_region || marker.region)}"
             data-marker-subtype="${marker.subtype || ''}"
-            data-marker-aliases="${(marker.aliases || []).join(' ')}"
+            data-marker-aliases="${escapeHtml((localized.search_aliases || []).join(' '))}"
             style="left:${marker.x * 100}%;top:${marker.y * 100}%;"
-            aria-label="${marker.name}, ${marker.region}, ${String(marker.precision).toLowerCase()}"
+            aria-label="${escapeHtml(localized.display_name || marker.name)}, ${escapeHtml(localized.display_region || marker.region)}, ${escapeHtml(String(marker.precision).toLowerCase())}"
           ><span aria-hidden="true"></span></button>
+            `;
+          })()}
         `).join('');
       }
 
@@ -347,8 +461,8 @@ const firstMarker = markerData.markers[0];
             .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest manifest ${response.status}`)))
             .then(async (manifest) => {
               if (chestRegionFilter) {
-                chestRegionFilter.innerHTML = '<option value="">All loaded regions</option>' + (manifest.regions || []).map((region) =>
-                  `<option value="${region.slug}">${region.name} (${region.marker_count})</option>`
+                chestRegionFilter.innerHTML = `<option value="">${escapeHtml(mapLabels.controls?.allLoadedRegions || 'All loaded regions')}</option>` + (manifest.regions || []).map((region) =>
+                  `<option value="${escapeHtml(region.slug)}">${escapeHtml(localizedRegion(region.name))} (${region.marker_count})</option>`
                 ).join('');
                 chestRegionFilter.disabled = false;
               }
@@ -356,10 +470,11 @@ const firstMarker = markerData.markers[0];
                 fetch(`/data/map/chests/${region.chunk}`)
                   .then((response) => response.ok ? response.json() : Promise.reject(new Error(`Chest chunk ${region.chunk} ${response.status}`)))
               ));
-              chestMarkers.splice(0, chestMarkers.length, ...chunks.flatMap((chunk) => chunk.markers || []).map((marker) => ({
+              chestMarkers.splice(0, chestMarkers.length, ...chunks.flatMap((chunk) => chunk.markers || []).map((marker, index) => ({
                 ...marker,
                 category: 'CHEST',
                 verification_status: marker.verification_status || marker.status,
+                display_name: localizedChestName(marker, index),
               })));
               root.dataset.chestLoaded = 'true';
               root.dataset.chestPublishedCount = String(chestMarkers.length);

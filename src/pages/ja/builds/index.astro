@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import LastVerified from '../../../components/LastVerified.astro';
+import QuickAnswer from '../../../components/QuickAnswer.astro';
+import SourceList from '../../../components/SourceList.astro';
+import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
+import { buildsJa as page } from '../../../content/ja/builds';
+import { sourceUrls } from '../../../data/sources';
+import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
+
+const canonical = getCanonical('builds', 'ja');
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-11' });
+const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'ビルド', path: '/ja/builds/' }]);
+const sources = [{ label: 'Steam公式ストア', href: sourceUrls.steam, note: 'Evidence B - 19人の英雄、状態異常、シグナルスキル、スイッチングの戦闘文脈を確認。' }];
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={canonical} locale="ja" routeId="builds" ogType="article" schema={[article, breadcrumb]}>
+  <div class="shell page-wrap">
+    <Breadcrumbs ariaLabel="パンくずリスト" items={[{ label: 'DragonSword Guide', href: '/ja/' }, { label: 'ビルド' }]} />
+    <article class="copy">
+      <header class="article-header"><p class="eyebrow">ビルド · 検証優先の考え方</p><h1>{page.h1}</h1><LastVerified date="2026年8月11日" label="最終確認" /></header>
+      <QuickAnswer eyebrow="要点" title="ビルドは、1人の英雄を3英雄の戦闘計画の中でどう使うかを整理するものです。">
+        <p>英雄の役割、戦闘行動、状態異常、シグナルスキル、交代順、ルーン、Karma、チーム編成を順に考えます。このページは最強ビルド表ではなく、公式に確認できる戦闘ループをもとにした実用的な整理です。</p>
+      </QuickAnswer>
+      <h2>ビルドを構成する要素</h2>
+      <ol>
+        <li><strong>英雄の役割:</strong> その英雄が現在の戦闘で何を担当するのかを決めます。</li>
+        <li><strong>スキルと行動:</strong> 安定して実行できる動きを確認します。</li>
+        <li><strong>状態異常:</strong> どの状態を作る、または利用するかを整理します。</li>
+        <li><strong>シグナルスキル:</strong> 交代を単独火力ではなく、流れの一部として扱います。</li>
+        <li><strong>交代順:</strong> 次の英雄が有効なタイミングで入れるかを試します。</li>
+        <li><strong>ルーン:</strong> <a href="/ja/systems/runes/">ルーン</a>は育成リソースとして扱い、未検証の最適セットにはしません。</li>
+        <li><strong>チーム編成:</strong> 1英雄の計画を、3英雄全体の流れと比較します。</li>
+      </ol>
+      <h2>ビルドとチーム編成の違い</h2>
+      <p>ビルドは、1人の英雄のリソースと再現可能な行動パターンです。チーム編成は、その英雄を含む複数英雄の役割、受け渡し、条件づくりを考えるものです。強いチーム案が、そのまま万能ビルドを証明するわけではありません。</p>
+      <h2>ルーンとKarma</h2>
+      <p>ルーンはビルドのリソース層にあります。Karmaは別の計画要素ですが、正確な優先度や最適化はこのページでは未検証です。</p>
+      <h2>掲載しないもの</h2>
+      <p class="evidence-note">現時点では、絶対的な最強ビルド、S-tierランキング、DPSランキング、未確認のスキル優先度、未確認の装備推奨を掲載しません。</p>
+      <SourceList title="出典と検証" intro="ビルドの説明は公式に確認できる戦闘ループを土台にし、未検証の最適化を混ぜません。" sources={sources} />
+    </article>
+  </div>
+  <SourceRevisionMeta metadata={page.translation} />
+</BaseLayout>
+
+<style>
+  .page-wrap { padding: 1.25rem 0 2rem; }
+  .copy { max-width: 800px; }
+  .eyebrow { color: var(--accent-light); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  h1, h2 { line-height: 1.15; letter-spacing: 0; }
+  h1 { font-size: clamp(2.3rem, 7vw, 4.8rem); margin: 0 0 0.7rem; }
+  h2 { margin: 2.2rem 0 0.7rem; }
+  p, li { color: var(--muted-strong); }
+  li { margin: 0.4rem 0; }
+  .evidence-note { padding: 1rem; border-left: 3px solid var(--accent); background: var(--paper); }
+</style>

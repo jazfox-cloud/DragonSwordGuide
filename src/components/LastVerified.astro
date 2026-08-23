@@ -2,14 +2,16 @@
 interface Props {
   date: string;
   gameVersion?: string;
+  label?: string;
+  gameVersionLabel?: string;
 }
 
-const { date, gameVersion } = Astro.props;
+const { date, gameVersion, label = 'Last verified', gameVersionLabel = 'Game version' } = Astro.props;
 ---
 
 <p class="meta">
-  Last verified: {date}
-  {gameVersion && <><span aria-hidden="true"> · </span>Game version: {gameVersion}</>}
+  {label}: {date}
+  {gameVersion && <><span aria-hidden="true"> · </span>{gameVersionLabel}: {gameVersion}</>}
 </p>
 
 <style>

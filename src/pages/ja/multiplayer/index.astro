@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import LastVerified from '../../../components/LastVerified.astro';
+import QuickAnswer from '../../../components/QuickAnswer.astro';
+import SourceList from '../../../components/SourceList.astro';
+import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
+import { multiplayerJa as page } from '../../../content/ja/multiplayer';
+import { patch108 } from '../../../data/sources';
+import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
+
+const canonical = getCanonical('multiplayer', 'ja');
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-22' });
+const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'マルチプレイ', path: '/ja/multiplayer/' }]);
+const sources = [
+  { label: 'Steam公式ストア', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'OFFICIAL_VERIFIED - Single-player と Online Co-op を確認。' },
+  { label: '公式1.0.7アップデート', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'OFFICIAL_VERIFIED - Quick Entry とマルチプレイマッチングのロビー検索範囲設定を確認。' },
+  { label: '公式1.0.8アップデート', href: patch108.href, note: 'OFFICIAL_VERIFIED - 最新確認済みアップデート。新しい協力モード追加ではありません。' },
+  { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'OFFICIAL_VERIFIED developer source - Subjugation と Raids を協力コンテンツとして説明。' },
+];
+---
+
+<BaseLayout title={page.title} description={page.description} canonical={canonical} locale="ja" routeId="multiplayer" ogType="article" schema={[article, breadcrumb]}>
+  <div class="shell page-wrap">
+    <Breadcrumbs ariaLabel="パンくずリスト" items={[{ label: 'DragonSword Guide', href: '/ja/' }, { label: 'マルチプレイ' }]} />
+    <article class="copy">
+      <header class="article-header"><p class="eyebrow">ガイド · 現在の協力プレイ</p><h1>{page.h1}</h1><LastVerified date="2026年8月22日" label="最終確認" /></header>
+      <QuickAnswer eyebrow="要点" title="はい。ただし確認済みなのは、選択されたオンライン協力プレイです。">
+        <p>SteamはSingle-playerとOnline Co-opを掲載しています。Hound13はSubjugationとRaidsを協力コンテンツとして説明し、公式1.0.7ではQuick Entryとロビー検索範囲設定が確認されています。プレイヤー数、招待手順、クロスプレイ、共有進行、ストーリー協力、オープンワールド協力は未検証です。</p>
+      </QuickAnswer>
+      <div class="status-grid">
+        <div><strong>オンライン協力プレイ</strong><span>Steamで確認</span></div>
+        <div><strong>Subjugation / Raids</strong><span>Hound13が説明</span></div>
+        <div><strong>Quick Entry</strong><span>公式1.0.7で追加</span></div>
+        <div><strong>ロビー検索範囲</strong><span>公式1.0.7で追加</span></div>
+      </div>
+      <h2>マルチプレイはどう動く？</h2>
+      <p>DragonSword: Awakeningは、まずシングルプレイヤーRPGとして成立し、その一部にオンライン協力プレイがあります。現在確認できる範囲は狭いですが、協力プレイの存在、対象アクティビティ、マッチング機能の一部は一次情報で確認できます。</p>
+      <div class="table-wrap"><table><thead><tr><th>項目</th><th>現在の状態</th><th>根拠</th></tr></thead><tbody>
+        <tr><th>マルチプレイ / 協力プレイ</th><td>確認済み</td><td>SteamがOnline Co-opを掲載。</td></tr>
+        <tr><th>Subjugation</th><td>協力アクティビティとして確認</td><td>Hound13 developer discussion。</td></tr>
+        <tr><th>Raids</th><td>協力アクティビティとして確認</td><td>Hound13 developer discussion。</td></tr>
+        <tr><th>Quick Entry</th><td>確認済み</td><td>公式1.0.7アップデート。</td></tr>
+        <tr><th>プレイヤー数 / 招待手順 / クロスプレイ</th><td>未検証</td><td>このページの一次情報では確認できません。</td></tr>
+      </tbody></table></div>
+      <h2>協力プレイで遊べる内容</h2>
+      <p>SubjugationとRaidsは確認済みです。ストーリー協力とオープンワールド協力は、現在の確認済み情報としては扱いません。</p>
+      <h2>まだ確認していないこと</h2>
+      <p class="evidence-note"><strong>NOT_YET_VERIFIED:</strong> 正確なプレイヤー数、解放条件、招待コード、メニュー手順、クロスプレイ、クロスセーブ、進行共有、lootルール、ストーリー協力、オープンワールド協力、地域制限、ホスト/ゲスト仕様。</p>
+      <h2>PvPはある？</h2>
+      <p>このページで確認した一次情報では、PvPは確認していません。確認済みのマルチプレイ情報は協力PvEに関するものです。</p>
+      <SourceList title="出典と検証" intro="マルチプレイ機能は一次情報で確認できる範囲だけを確認済みとして扱います。" sources={sources} />
+    </article>
+  </div>
+  <SourceRevisionMeta metadata={page.translation} />
+</BaseLayout>
+
+<style>
+  .page-wrap { padding: 1.25rem 0 2rem; }
+  .copy { max-width: 840px; }
+  .eyebrow { color: var(--accent-light); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  h1, h2 { line-height: 1.15; letter-spacing: 0; }
+  h1 { font-size: clamp(2.2rem, 7vw, 4.6rem); margin: 0 0 0.7rem; }
+  h2 { margin: 2.2rem 0 0.7rem; }
+  p, td, th { color: var(--muted-strong); }
+  .status-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin: 1rem 0 2rem; }
+  .status-grid div { display: grid; gap: 0.3rem; padding: 1rem; border-top: 1px solid var(--accent); background: var(--paper); }
+  .status-grid span { color: var(--muted); font-size: 0.76rem; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+  table { width: 100%; min-width: 620px; border-collapse: collapse; }
+  th, td { border-bottom: 1px solid var(--line); padding: 0.8rem; text-align: left; vertical-align: top; }
+  .evidence-note { padding: 1rem; border-left: 3px solid var(--accent); background: var(--paper); }
+  @media (max-width: 760px) { .status-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .status-grid { grid-template-columns: 1fr; } }
+</style>

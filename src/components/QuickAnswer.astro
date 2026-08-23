@@ -1,13 +1,14 @@
 ---
 interface Props {
   title: string;
+  eyebrow?: string;
 }
 
-const { title } = Astro.props;
+const { title, eyebrow = 'Quick answer' } = Astro.props;
 ---
 
 <aside class="quick-answer" aria-labelledby="quick-answer-title">
-  <p class="eyebrow">Quick answer</p>
+  <p class="eyebrow">{eyebrow}</p>
   <h2 id="quick-answer-title">{title}</h2>
   <slot />
 </aside>
