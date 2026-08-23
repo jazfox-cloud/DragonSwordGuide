@@ -1,0 +1,45 @@
+{
+  "dataset_version": "chest-scale-500-2026-08-23",
+  "total_chest_data_size": 583489,
+  "min_chunk_size": 70904,
+  "max_chunk_size": 74631,
+  "median_chunk_size": 72191,
+  "total_chest_data_size_bytes": 583489,
+  "max_region_chunk_size": 74631,
+  "region_to_subregion_chunking_needed": false,
+  "lazy_loading": {
+    "chest_default_off": true,
+    "manifest_loaded_only_when_chest_enabled": true,
+    "current_strategy": "CHEST_ON_LOADS_MANIFEST_AND_ALL_REGION_CHUNKS",
+    "acceptable_at_398_markers": true
+  },
+  "cluster_performance": {
+    "desktop_low_zoom_cluster_count": 158,
+    "desktop_low_zoom_cluster_compute_ms": 0.24,
+    "desktop_mid_zoom_cluster_count": 205,
+    "desktop_mid_zoom_cluster_compute_ms": 0.132,
+    "desktop_high_zoom_visible_individual_markers": 250,
+    "desktop_high_zoom_compute_ms": 0.004,
+    "mobile_low_zoom_cluster_count": 58,
+    "mobile_low_zoom_cluster_compute_ms": 0.074,
+    "mobile_mid_zoom_cluster_count": 87,
+    "mobile_mid_zoom_cluster_compute_ms": 0.097,
+    "mobile_high_zoom_visible_individual_markers": 250,
+    "mobile_high_zoom_compute_ms": 0.004,
+    "max_visible_dom_markers": 250,
+    "dom_cap_respected": true
+  },
+  "search": {
+    "query": "skyridge",
+    "latency_ms": 0.151,
+    "result_count": 50,
+    "stable_region_local_ids": true,
+    "subtype_aliases_present": true
+  },
+  "performance_gate": {
+    "no_multi_second_blocking_model": true,
+    "dom_cap_respected": true,
+    "chunk_size_acceptable": true,
+    "map_controls_remain_usable_static_check": true
+  }
+}

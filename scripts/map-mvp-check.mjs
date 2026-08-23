@@ -80,14 +80,14 @@ if (!Array.isArray(markerData.markers) || markerData.markers.length < 16) {
   fail('expected at least 16 production beta markers after Organa expansion sprint 2');
 }
 
-if (chestPublishedCount !== 80) {
-  fail('expected 80 Treasure Chest pilot markers in public chest manifest');
+if (chestPublishedCount !== 398) {
+  fail('expected 398 scale-gated Treasure Chest markers in public chest manifest');
 }
 
 for (const region of chestManifest.regions || []) {
   const chunk = readJson(path.join(root, 'public/data/map/chests', region.chunk));
-  if (chunk.marker_count !== 40 || chunk.markers.length !== 40) {
-    fail(`expected 40 Treasure Chest markers in ${region.chunk}`);
+  if (chunk.marker_count < 48 || chunk.marker_count > 50 || chunk.markers.length !== chunk.marker_count) {
+    fail(`expected 48-50 Treasure Chest markers in ${region.chunk}`);
   }
 }
 
@@ -511,7 +511,7 @@ const expectedSnippets = [
   'data-marker-category="WARP_POINT"',
   'data-marker-category="DUNGEON"',
   'data-marker-category="BOSS"',
-  'data-chest-marker-count="80"',
+  'data-chest-marker-count="398"',
   'data-chest-manifest-url="/data/map/chests/manifest.json"',
   'data-marker-subtype',
   'Treasure Chests',
@@ -534,8 +534,8 @@ const expectedSnippets = [
   '20 published / 20 known',
   '26 published / 26 mapped entrances',
   '9 published / 9 mapped Field Bosses',
-  '80-marker Treasure Chest pilot',
-  'Chest coverage is a pilot, not a full 1,500-marker import.',
+  '398 Treasure Chest planning markers across 8 regions',
+  'Chest coverage remains scale-gated, not a full 1,500-marker import.',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',
@@ -557,8 +557,8 @@ if (/\schecked(?:\s|>|=)/.test(chestFilterMatch[0])) {
   fail('CHEST category filter must be unchecked by default');
 }
 
-if (!html.includes('<strong data-astro-cid-nky5wbf5>151</strong> beta markers') && !html.includes('151</strong> beta markers')) {
-  fail('dist map page missing total 151 beta marker count');
+if (!html.includes('<strong data-astro-cid-nky5wbf5>469</strong> beta markers') && !html.includes('469</strong> beta markers')) {
+  fail('dist map page missing total 469 beta marker count');
 }
 
 if (!/<h1[^>]*>\s*DragonSword Awakening Interactive Map\s*<\/h1>/.test(html)) {

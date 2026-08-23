@@ -1,0 +1,310 @@
+{
+  "dataset_version": "chest-scale-500-2026-08-23",
+  "source_snapshot_date": "2026-08-23",
+  "target_chest_count": "300-500",
+  "regions_before": 2,
+  "regions_after": 8,
+  "chests_before": 80,
+  "chests_after": 398,
+  "new_chests_published": 318,
+  "candidates_checked": 400,
+  "new_candidates_checked": 320,
+  "classification_counts": {
+    "STRONG_POSITION_AGREEMENT": 353,
+    "MODERATE_POSITION_AGREEMENT": 45,
+    "CONFLICTING_POSITION": 1,
+    "WEAK_POSITION_AGREEMENT": 1
+  },
+  "strong_moderate_rate": 0.995,
+  "conflicting_rate": 0.0025,
+  "raw": 400,
+  "deduped": 400,
+  "same_entity": 0,
+  "probable_same_entity": 0,
+  "possible_duplicate": 17,
+  "unresolved": 0,
+  "rejected": 2,
+  "rejected_records": [
+    {
+      "candidate_id": "candidate:chest:orbis-castle-approach:28-26adc5c1",
+      "marker_id": "marker:chest:orbis-castle-approach:28",
+      "region": "Orbis Castle Approach",
+      "classification": "CONFLICTING_POSITION",
+      "distance": 0.024064,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    },
+    {
+      "candidate_id": "candidate:chest:orbis-castle-approach:30-2bf25630",
+      "marker_id": "marker:chest:orbis-castle-approach:30",
+      "region": "Orbis Castle Approach",
+      "classification": "WEAK_POSITION_AGREEMENT",
+      "distance": 0.016884,
+      "decision": "REJECT_POSITION_NOT_STRONG_OR_MODERATE"
+    }
+  ],
+  "conflicts": {
+    "found": 1,
+    "resolved": 0,
+    "rejected": 1
+  },
+  "duplicate_ids": [],
+  "unresolved_duplicate_production_rows": 0,
+  "resolved_possible_duplicates": [
+    {
+      "a": "candidate:chest:meadow-of-beginnings:12-231fa839",
+      "b": "candidate:chest:meadow-of-beginnings:42-54bfd1ed",
+      "distance": 0.002425,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:skyridge-uplands:03-00bf4ab2",
+      "b": "candidate:chest:skyridge-uplands:48-67608452",
+      "distance": 0.002824,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:skyridge-uplands:18-249ccd61",
+      "b": "candidate:chest:skyridge-uplands:21-309daa8a",
+      "distance": 0.000444,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:03-00b502a3",
+      "b": "candidate:chest:shadowed-woods:11-0b491b79",
+      "distance": 0.000493,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:14-0cbb3476",
+      "b": "candidate:chest:shadowed-woods:50-4a008431",
+      "distance": 0.002698,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:16-108171c1",
+      "b": "candidate:chest:shadowed-woods:43-42906c6d",
+      "distance": 0.002416,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:25-2301998d",
+      "b": "candidate:chest:shadowed-woods:28-2891fa0b",
+      "distance": 0.001732,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:32-30ad5b07",
+      "b": "candidate:chest:shadowed-woods:46-455e6f14",
+      "distance": 0.000319,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:37-360d7f6e",
+      "b": "candidate:chest:shadowed-woods:38-37b44783",
+      "distance": 0.001038,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:shadowed-woods:39-39c07d69",
+      "b": "candidate:chest:shadowed-woods:40-3abd5803",
+      "distance": 0.002141,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:misty-veil-highlands:13-2b1fcefe",
+      "b": "candidate:chest:misty-veil-highlands:27-44809074",
+      "distance": 0.002314,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:eastern-highlands:01-01f029be",
+      "b": "candidate:chest:eastern-highlands:12-1ec4a78b",
+      "distance": 0.00177,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:eastern-highlands:06-14d49abd",
+      "b": "candidate:chest:eastern-highlands:43-6cd30c47",
+      "distance": 0.002511,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:dragonrise-basin:09-0c6ec661",
+      "b": "candidate:chest:dragonrise-basin:34-30d48888",
+      "distance": 0.001153,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:dragonrise-basin:09-0c6ec661",
+      "b": "candidate:chest:dragonrise-basin:37-32ded1e5",
+      "distance": 0.002923,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:dragonrise-basin:32-2f0394a5",
+      "b": "candidate:chest:dragonrise-basin:35-314678e3",
+      "distance": 0.002534,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    },
+    {
+      "a": "candidate:chest:dragonrise-basin:33-303ee5c7",
+      "b": "candidate:chest:dragonrise-basin:44-504e4899",
+      "distance": 0.000562,
+      "reason": "nearby but distinct source record and subtype context",
+      "resolution": "RESOLVED_AS_DISTINCT_SOURCE_RECORDS"
+    }
+  ],
+  "source_family_integrity": {
+    "minimum_source_family_count": 3,
+    "position_sources": [
+      "DragonSwordAwakening.net public map",
+      "Dragonsword Companion public map"
+    ],
+    "context_sources": [
+      "GrandWiki Orbis map",
+      "DragonSword-Awakening.org public map",
+      "Steam achievements"
+    ],
+    "note": "Common game-data-family sources are retained as context and not counted as independent coordinate sources."
+  },
+  "regions": [
+    {
+      "slug": "meadow-of-beginnings",
+      "region": "Meadow of Beginnings",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 74631,
+      "box": {
+        "minX": 0.18,
+        "maxX": 0.37,
+        "minY": 0.48,
+        "maxY": 0.66
+      }
+    },
+    {
+      "slug": "field-of-plenty",
+      "region": "Field of Plenty",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 71576,
+      "box": {
+        "minX": 0.32,
+        "maxX": 0.52,
+        "minY": 0.62,
+        "maxY": 0.78
+      }
+    },
+    {
+      "slug": "skyridge-uplands",
+      "region": "Skyridge Uplands",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 72195,
+      "box": {
+        "minX": 0.24,
+        "maxX": 0.44,
+        "minY": 0.22,
+        "maxY": 0.42
+      }
+    },
+    {
+      "slug": "shadowed-woods",
+      "region": "Shadowed Woods",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 70904,
+      "box": {
+        "minX": 0.42,
+        "maxX": 0.62,
+        "minY": 0.18,
+        "maxY": 0.38
+      }
+    },
+    {
+      "slug": "misty-veil-highlands",
+      "region": "Misty Veil Highlands",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 74552,
+      "box": {
+        "minX": 0.5,
+        "maxX": 0.68,
+        "minY": 0.28,
+        "maxY": 0.48
+      }
+    },
+    {
+      "slug": "eastern-highlands",
+      "region": "Eastern Highlands",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 72881,
+      "box": {
+        "minX": 0.66,
+        "maxX": 0.84,
+        "minY": 0.28,
+        "maxY": 0.52
+      }
+    },
+    {
+      "slug": "orbis-castle-approach",
+      "region": "Orbis Castle Approach",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "48/50 strong_or_moderate",
+      "chunk_size": 72191,
+      "box": {
+        "minX": 0.36,
+        "maxX": 0.56,
+        "minY": 0.4,
+        "maxY": 0.6
+      }
+    },
+    {
+      "slug": "dragonrise-basin",
+      "region": "Dragonrise Basin",
+      "candidate_count": 50,
+      "source_availability": "SUFFICIENT_FOR_TARGET",
+      "position_agreement": "50/50 strong_or_moderate",
+      "chunk_size": 72135,
+      "box": {
+        "minX": 0.58,
+        "maxX": 0.78,
+        "minY": 0.48,
+        "maxY": 0.68
+      }
+    }
+  ],
+  "gate_checks": {
+    "strong_moderate_at_least_95_percent": true,
+    "conflicting_at_most_1_percent": true,
+    "duplicate_ids_zero": true,
+    "unresolved_duplicates_zero": true,
+    "stable_existing_80": true,
+    "no_conflicting_production_rows": true
+  },
+  "scale_gate": "CHEST_SCALE_500_READY_FOR_PRODUCTION",
+  "full_1500_readiness": "FULL_1500_READY_WITH_ADDITIONAL_OPTIMIZATION"
+}

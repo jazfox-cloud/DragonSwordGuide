@@ -73,7 +73,7 @@ const totalMapMarkers = markerData.markers.length + chestManifest.total_publishe
         <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon, Boss or Treasure Chest categories on and off. Treasure Chests are off by default and load as a separate clustered pilot layer.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and an 80-marker Treasure Chest pilot limited to Meadow of Beginnings and Field of Plenty. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage is a pilot, not a full 1,500-marker import.</p>
+        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 26 Dungeon entrance planning markers, 9 open-world Field Boss planning markers and 398 Treasure Chest planning markers across 8 regions. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 26 published / 26 mapped entrances. Boss coverage is 9 published / 9 mapped Field Bosses. Chest coverage remains scale-gated, not a full 1,500-marker import.</p>
 
         <AdsterraNativeBanner />
 
@@ -81,7 +81,7 @@ const totalMapMarkers = markerData.markers.length + chestManifest.total_publishe
         <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {totalMapMarkers} approximate beta markers and 0 official, video or first-hand verified markers. The Chest pilot uses <strong>MULTI_SOURCE_PUBLIC_POSITION_CORROBORATION</strong> with <strong>LANDMARK_APPROXIMATE</strong> precision; it does not claim exact in-game coordinates, respawn rules or first-hand verification.</p>
 
         <h2>Updates and data provenance</h2>
-        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Chest sources went through a separate 20-marker public-coordinate sample before the 80-marker pilot was exported; conflicting or single-source chest positions remain unpublished.</p>
+        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Chest sources went through a separate 400-candidate public-coordinate scale gate before the 398-marker layer was exported; conflicting, weak or single-source chest positions remain unpublished.</p>
       </div>
 
       <SourceList sources={sources} />
@@ -99,4 +99,5 @@ const totalMapMarkers = markerData.markers.length + chestManifest.total_publishe
   h2 { font-size: clamp(1.45rem, 3vw, 2rem); margin: 2.5rem 0 0.7rem; }
   .copy { max-width: 820px; }
   .copy p { color: var(--muted-strong); }
+  .copy strong { overflow-wrap: anywhere; }
 </style>

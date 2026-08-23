@@ -1,0 +1,62 @@
+{
+  "dataset_version": "chest-scale-500-2026-08-23",
+  "smoke_type": "REAL_CHROME_HEADLESS_CDP",
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "mobile": false
+    },
+    "initialChestLoaded": false,
+    "initialHorizontalOverflow": false,
+    "enableMs": 12,
+    "lowZoomClusters": 76,
+    "lowZoomMarkers": 0,
+    "clusterExpansionMs": 4,
+    "highZoomMarkers": 250,
+    "markerOpenMs": 0,
+    "zoomMs": 6,
+    "panMs": 6,
+    "canvasTransformed": true,
+    "searchMs": 2,
+    "searchCount": 53,
+    "disableCleanupMs": 0,
+    "finalHorizontalOverflow": false,
+    "overflowElements": [],
+    "domCapRespected": true,
+    "controlsUsable": true
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "mobile": true
+    },
+    "initialChestLoaded": false,
+    "initialHorizontalOverflow": false,
+    "enableMs": 15,
+    "lowZoomClusters": 28,
+    "lowZoomMarkers": 0,
+    "clusterExpansionMs": 4,
+    "highZoomMarkers": 250,
+    "markerOpenMs": 0,
+    "zoomMs": 6,
+    "panMs": 7,
+    "canvasTransformed": true,
+    "searchMs": 2,
+    "searchCount": 53,
+    "disableCleanupMs": 0,
+    "finalHorizontalOverflow": false,
+    "overflowElements": [],
+    "domCapRespected": true,
+    "controlsUsable": true
+  },
+  "gate": {
+    "no_browser_freeze": true,
+    "no_severe_interaction_lag": true,
+    "no_horizontal_overflow": true,
+    "no_multi_second_blocking_interaction": true,
+    "dom_cap_respected": true,
+    "map_controls_remain_usable": true
+  }
+}
