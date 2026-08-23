@@ -9,8 +9,10 @@ const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-
 const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
 const warpCompletionSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-completion-sprint.md');
 const dungeonSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
-const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT', 'DUNGEON']);
+const bossesSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-bosses-expansion-sprint.md');
+const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT', 'DUNGEON', 'BOSS']);
 const allowedDungeonSubtypes = new Set(['NORMAL_DUNGEON', 'TRAIT_DUNGEON', 'CURRENCY_DUNGEON', 'STORY_DUNGEON']);
+const allowedBossSubtypes = new Set(['FIELD_BOSS', 'WORLD_BOSS', 'OTHER']);
 const allowedVerificationStatuses = new Set([
   'OFFICIAL_VERIFIED',
   'FIRST_HAND_VERIFIED',
@@ -87,7 +89,12 @@ let dungeonCount = 0;
 let dungeonSecondaryCount = 0;
 let dungeonApproximateCount = 0;
 let dungeonAliasCount = 0;
+let bossCount = 0;
+let bossSecondaryCount = 0;
+let bossApproximateCount = 0;
+let bossAliasCount = 0;
 const dungeonCanonicalNames = new Set();
+const bossCanonicalNames = new Set();
 
 for (const marker of markerData.markers) {
   for (const field of requiredMarkerFields) {
@@ -220,6 +227,46 @@ for (const marker of markerData.markers) {
 
     dungeonAliasCount += marker.aliases.length;
   }
+
+  if (marker.category === 'BOSS') {
+    bossCount += 1;
+
+    const canonicalName = marker.name.toLowerCase();
+    if (bossCanonicalNames.has(canonicalName)) {
+      fail(`duplicate canonical Boss marker name ${marker.name}`);
+    }
+    bossCanonicalNames.add(canonicalName);
+
+    if (!marker.subtype || !allowedBossSubtypes.has(marker.subtype)) {
+      fail(`${marker.id} must include a valid Boss subtype`);
+    }
+
+    if (marker.verification_status === 'SECONDARY_CORROBORATED') {
+      bossSecondaryCount += 1;
+    }
+
+    if (marker.precision === 'APPROXIMATE' || marker.precision.endsWith('_APPROXIMATE')) {
+      bossApproximateCount += 1;
+    }
+
+    if (!Array.isArray(marker.aliases) || marker.aliases.length < 3) {
+      fail(`${marker.id} must include searchable Boss aliases`);
+    }
+
+    if (!marker.aliases.some((alias) => alias.toLowerCase().includes('field boss'))) {
+      fail(`${marker.id} must include a Field Boss alias`);
+    }
+
+    if (!marker.location_note || /respawn|spawn schedule|drop rate|loot table|recommended power|party size/i.test(marker.location_note)) {
+      fail(`${marker.id} must include a safe location_note without unverified mechanics`);
+    }
+
+    if (/respawn|spawn schedule|drop rate|loot table|recommended power|party size/i.test(marker.description)) {
+      fail(`${marker.id} description must not claim unverified boss mechanics`);
+    }
+
+    bossAliasCount += marker.aliases.length;
+  }
 }
 
 if (approximateCount < 4) {
@@ -262,6 +309,10 @@ if (markerData.markers.length < 57) {
   fail('expected at least 57 production beta markers after Warp completion sprint B3');
 }
 
+if (markerData.markers.length < 66) {
+  fail('expected at least 66 production beta markers after Boss sprint B4');
+}
+
 if (dungeonCount < 21) {
   fail('expected at least 21 Dungeon pilot markers');
 }
@@ -276,6 +327,22 @@ if (dungeonApproximateCount !== dungeonCount) {
 
 if (dungeonAliasCount < dungeonCount * 3) {
   fail('Dungeon aliases are too sparse for search coverage');
+}
+
+if (bossCount < 9) {
+  fail('expected at least 9 open-world Boss markers after sprint B4');
+}
+
+if (bossSecondaryCount !== bossCount) {
+  fail('all published Boss pilot markers should be SECONDARY_CORROBORATED');
+}
+
+if (bossApproximateCount !== bossCount) {
+  fail('all published Boss pilot markers should retain approximate precision');
+}
+
+if (bossAliasCount < bossCount * 3) {
+  fail('Boss aliases are too sparse for search coverage');
 }
 
 if (markerData.category_status?.ORGANA_STATUE?.count_conflict !== '13_VS_14_CONFLICT_RETAINED') {
@@ -308,6 +375,10 @@ if (!fs.existsSync(warpCompletionSprintReportPath)) {
 
 if (!fs.existsSync(dungeonSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
+}
+
+if (!fs.existsSync(bossesSprintReportPath)) {
+  fail('missing reports/map-product/2026-08-23-bosses-expansion-sprint.md');
 }
 
 const warpStatus = markerData.category_status?.WARP_POINT;
@@ -358,6 +429,32 @@ if (dungeonStatus.coverage !== '21 published / 26 mapped entrances') {
   fail('DUNGEON coverage must stay honest for Sprint B2');
 }
 
+const bossStatus = markerData.category_status?.BOSS;
+
+if (!bossStatus) {
+  fail('missing category_status.BOSS');
+}
+
+if (bossStatus.published_count !== bossCount) {
+  fail('BOSS published_count must match production markers');
+}
+
+if (bossStatus.known_candidates !== 9) {
+  fail('BOSS known_candidates must retain the public 9 mapped Field Boss count');
+}
+
+if (bossStatus.estimated_total !== '9 mapped Field Bosses') {
+  fail('BOSS estimated_total must separate open-world Field Bosses from dungeon/raid/internal bosses');
+}
+
+if (bossStatus.field_boss_count !== 9) {
+  fail('BOSS field_boss_count must be 9 for the Sprint B4 published set');
+}
+
+if (bossStatus.coverage !== '9 published / 9 mapped Field Bosses') {
+  fail('BOSS coverage must stay honest for Sprint B4');
+}
+
 const source = fs.readFileSync(sourcePath, 'utf8');
 
 if (source.includes('2026-08-22-map-data-pipeline-pilot.json')) {
@@ -382,16 +479,22 @@ const expectedSnippets = [
   'data-category-filter',
   'data-marker-category="WARP_POINT"',
   'data-marker-category="DUNGEON"',
+  'data-marker-category="BOSS"',
   'data-marker-subtype',
   'Warp Points',
   'Dungeons',
+  'Bosses',
   'marker:warp-point:orbis-royal-castle',
   'marker:warp-point:twilight-field',
   'marker:warp-point:seagull-village',
   'marker:dungeon:warg-cave',
   'marker:dungeon:dragon-worshipper-ruins',
+  'marker:boss:scraping-brack',
+  'marker:boss:horg-the-roamer',
+  'marker:boss:flaming-ash-feather-lavanis',
   '20 published / 20 known',
   '21 published / 26 mapped entrances',
+  '9 published / 9 mapped Field Bosses',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',

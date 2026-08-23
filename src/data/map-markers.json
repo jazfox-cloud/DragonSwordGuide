@@ -2,7 +2,7 @@
   "base_map_id": "OWN_SCHEMATIC_ORBIS_BASE_MAP",
   "coordinate_system": "IMAGE_RELATIVE_COORDINATES",
   "data_policy": "PRODUCTION_BETA_APPROXIMATE_MARKERS_ONLY",
-  "source_boundary": "Official Eona, Organa, Waypoint and dungeon-system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins, not imported map coordinates and not first-hand verified routes.",
+  "source_boundary": "Official Eona, Organa, Waypoint, dungeon-system and game-context sources plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins, not imported map coordinates and not first-hand verified routes.",
   "game_version": "1.0.8 public update context",
   "last_checked": "2026-08-23",
   "category_status": {
@@ -68,6 +68,18 @@
         "Where the Giant Sleeps"
       ],
       "note": "Sprint B2 publishes mapped entrances with independent activity/name corroboration. Story-only mapped entrances remain KNOWN_ACTIVITY_LOCATION_UNRESOLVED until independent corroboration is added."
+    },
+    "BOSS": {
+      "status": "FIELD_BOSS_LOCATION_PILOT_COMPLETE",
+      "published_count": 9,
+      "known_candidates": 9,
+      "estimated_total": "9 mapped Field Bosses",
+      "field_boss_count": 9,
+      "other_boss_count": "LOCATION_UNRESOLVED_NOT_PUBLISHED",
+      "source_count": 5,
+      "source_independence": "COMMON_GAME_DATA_FAMILY_MAP + PUBLIC_TECHNICAL_MODEL + INDEPENDENT_GUIDE_CONTEXT + OFFICIAL_CONTEXT",
+      "coverage": "9 published / 9 mapped Field Bosses",
+      "note": "Sprint B4 publishes open-world Field Boss map markers only. Dungeon, raid and internal boss encounters are not published as world-map markers, and dynamic mechanics are not claimed."
     }
   },
   "markers": [
@@ -2880,6 +2892,510 @@
           "source": "DragonSwordAwakening.net exploration and map icons guide",
           "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
           "note": "Explains using Waypoints as cleanup-loop anchors and reports the 20 mapped Warp Points layer."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:scraping-brack",
+      "name": "Scraping Brack",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Autumnleaf Zone",
+      "x": 0.42,
+      "y": 0.62,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Scraping Brack as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Scraping Brack near Autumnleaf Zone. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Autumnleaf Zone. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Scraping Brack Field Boss",
+        "World Boss - Scraping Brack",
+        "Boss - Autumnleaf Zone",
+        "Autumnleaf Zone Field Boss",
+        "Brack Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Scraping Brack as Field Bosses in Autumnleaf Zone. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Scraping Brack in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:horg-the-roamer",
+      "name": "Horg the Roamer",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Hill of Journey",
+      "x": 0.39,
+      "y": 0.72,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Horg the Roamer as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Horg the Roamer near Hill of Journey. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Hill of Journey. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Horg the Roamer Field Boss",
+        "World Boss - Horg the Roamer",
+        "Boss - Hill of Journey",
+        "Hill of Journey Field Boss",
+        "Horg Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Horg the Roamer as Field Bosses in Hill of Journey. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net Orbis map data",
+          "url": "https://dragonswordawakening.net/map",
+          "note": "Public field-boss layer exposes Horg the Roamer with Firefly Forest context; coordinates were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Horg the Roamer in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:hagen-the-dark-necromancer",
+      "name": "Hagen the Dark Necromancer",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Ruined Temple",
+      "x": 0.6,
+      "y": 0.28,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Hagen the Dark Necromancer as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Hagen the Dark Necromancer near Ruined Temple. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Ruined Temple. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Hagen the Dark Necromancer Field Boss",
+        "World Boss - Hagen the Dark Necromancer",
+        "Boss - Ruined Temple",
+        "Ruined Temple Field Boss",
+        "Hagen Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Hagen the Dark Necromancer as Field Bosses in Ruined Temple. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Hagen the Dark Necromancer in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:andras-the-cave-predator",
+      "name": "Andras the Cave Predator",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Bluehill Wetlands",
+      "x": 0.57,
+      "y": 0.54,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Andras the Cave Predator as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Andras the Cave Predator near Bluehill Wetlands. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Bluehill Wetlands. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Andras the Cave Predator Field Boss",
+        "World Boss - Andras the Cave Predator",
+        "Boss - Bluehill Wetlands",
+        "Bluehill Wetlands Field Boss",
+        "Andras Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Andras the Cave Predator as Field Bosses in Bluehill Wetlands. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Andras the Cave Predator in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:barpedin-the-crushing-darkness",
+      "name": "Barpedin, the Crushing Darkness",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "A Forgotten Haven",
+      "x": 0.24,
+      "y": 0.74,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Barpedin as an open-world Field Boss, with comma/no-comma naming variants normalized as aliases. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Barpedin, the Crushing Darkness near A Forgotten Haven. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near A Forgotten Haven. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Barpedin, the Crushing Darkness Field Boss",
+        "Barpedin the Crushing Darkness",
+        "World Boss - Barpedin the Crushing Darkness",
+        "Boss - A Forgotten Haven",
+        "A Forgotten Haven Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Barpedin, the Crushing Darkness as Field Bosses in A Forgotten Haven. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Barpedin the Crushing Darkness in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:karon-the-tyrant",
+      "name": "Karon the Tyrant",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Dragon's Stonepeak",
+      "x": 0.75,
+      "y": 0.42,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Karon the Tyrant as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Karon the Tyrant near Dragon's Stonepeak. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Dragon's Stonepeak. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Karon the Tyrant Field Boss",
+        "World Boss - Karon the Tyrant",
+        "Boss - Dragon's Stonepeak",
+        "Dragon's Stonepeak Field Boss",
+        "Karon Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Karon the Tyrant as Field Bosses in Dragon's Stonepeak. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net Orbis map data",
+          "url": "https://dragonswordawakening.net/map",
+          "note": "Public field-boss layer exposes Karon the Tyrant with Skyspire Rock Mountain context; coordinates were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Karon the Tyrant in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:pakirus-the-specter-of-thirst",
+      "name": "Pakirus the Specter of Thirst",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Slumbering Star Tree",
+      "x": 0.7,
+      "y": 0.32,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Pakirus the Specter of Thirst as an open-world Field Boss. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Pakirus the Specter of Thirst near Slumbering Star Tree. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Slumbering Star Tree. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Pakirus the Specter of Thirst Field Boss",
+        "World Boss - Pakirus the Specter of Thirst",
+        "Boss - Slumbering Star Tree",
+        "Slumbering Star Tree Field Boss",
+        "Pakirus Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Pakirus the Specter of Thirst as Field Bosses in Slumbering Star Tree. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Pakirus the Specter of Thirst in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:hungry-eyes-octavia",
+      "name": "Hungry Eyes Octavia",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Starshade Forest",
+      "x": 0.78,
+      "y": 0.52,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Octavia as an open-world Field Boss, with Eye/Eyes naming variants normalized as aliases. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Hungry Eyes Octavia near Starshade Forest. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Starshade Forest. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Hungry Eyes Octavia Field Boss",
+        "Hungry Eye Octavia",
+        "World Boss - Hungry Eye Octavia",
+        "Boss - Starshade Forest",
+        "Starshade Forest Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Hungry Eyes Octavia as Field Bosses in Starshade Forest. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Hungry Eye Octavia in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
+        }
+      ]
+    },
+    {
+      "id": "marker:boss:flaming-ash-feather-lavanis",
+      "name": "Flaming Ash Feather Lavanis",
+      "category": "BOSS",
+      "subtype": "FIELD_BOSS",
+      "region": "Skyfeather Ridge",
+      "x": 0.74,
+      "y": 0.26,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Public field-boss map labels and boss-name guides align on Lavanis as an open-world Field Boss, with phrase-order naming variants normalized as aliases. DragonSwordGuide uses its own approximate schematic placement and does not copy source coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Open-world Field Boss planning marker for Flaming Ash Feather Lavanis near Skyfeather Ridge. Treat this as a broad regional anchor, not an exact in-game pin.",
+      "location_note": "Approximate open-world Field Boss marker near Skyfeather Ridge. This marker does not claim timing, reward tables, route safety or exact in-game coordinates.",
+      "aliases": [
+        "Flaming Ash Feather Lavanis Field Boss",
+        "Lavanis Feather of Burning Ashes",
+        "World Boss - Lavanis Feather of Burning Ashes",
+        "Boss - Skyfeather Ridge",
+        "Skyfeather Ridge Field Boss"
+      ],
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org public map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map label lists Flaming Ash Feather Lavanis as Field Bosses in Skyfeather Ridge. Exact coordinates were not copied."
+        },
+        {
+          "type": "COMMON_GAME_DATA_FAMILY",
+          "source": "DragonSwordAwakening.net exploration and map icons guide",
+          "url": "https://dragonswordawakening.net/guides/exploration-and-map-icons",
+          "note": "Reports 9 Field Bosses as a distinct map icon layer, separate from dungeons."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis map",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public map guide states field bosses use current in-game names for location questions and exposes field-boss markers."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSword Awakening Wiki world boss rewards guide",
+          "url": "https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4",
+          "note": "Corroborates Lavanis Feather of Burning Ashes in the world-boss name pool; no exact map coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context only; does not provide boss coordinates."
         }
       ]
     }

@@ -11,7 +11,7 @@ import markerData from '../../data/map-markers.json';
 import { sourceUrls, patch107 } from '../../data/sources';
 
 const title = 'DragonSword Awakening Interactive Map — Orbis Beta';
-const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona, Organa, Warp Point and Dungeon entrance markers with clear verification and conflict labels.';
+const description = 'Search and filter the DragonSword Awakening Interactive Map beta for approximate Orbis Eona, Organa, Warp Point, Dungeon entrance and Field Boss markers with clear verification and conflict labels.';
 const canonical = 'https://dragonswordguide.com/map/';
 const article = {
   '@context': 'https://schema.org',
@@ -34,6 +34,10 @@ const sources = [
   { label: 'Dungeon guide', href: 'https://dragonswordawakening.net/guides/dungeons', note: 'Evidence C — corroborates Normal, Trait and Currency dungeon taxonomy and selected named dungeon records.' },
   { label: 'Public Orbis map layer', href: 'https://dragonsword-awakening.org/maps?type=TOWN', note: 'Evidence C — public map layer lists dungeon entrances; coordinates and map assets were not copied.' },
   { label: 'Dungeon taxonomy index', href: 'https://dragonsword-awakening.org/dungeons?page=%223%22', note: 'Evidence C — broader dungeon taxonomy used for candidate counting, not for exact placement claims.' },
+  { label: 'Field Boss map-icon guide', href: 'https://dragonswordawakening.net/guides/exploration-and-map-icons', note: 'Evidence C — reports 9 Field Bosses as a separate public map layer from dungeons.' },
+  { label: 'Public Field Boss map labels', href: 'https://dragonsword-awakening.org/maps?type=TOWN', note: 'Evidence C — public map labels list 9 Field Boss names and nearby regions; coordinates and map assets were not copied.' },
+  { label: 'GrandWiki Orbis Field Boss layer', href: 'https://dsawakening.grandwiki.com/map', note: 'Evidence C — public map guide says field bosses use current in-game names for location questions and exposes a field-boss layer.' },
+  { label: 'World boss name guide', href: 'https://dragonsword-awakening.wiki/guides/guide/world-boss-rewards-1-0-4', note: 'Evidence C — corroborates the world-boss name pool and explicitly does not provide exact map coordinates.' },
   { label: 'Community interactive-map discussion', href: 'https://www.reddit.com/r/DSwordAwakening/comments/1vap7qr/all_chests_locations_interactive_map/', note: 'Evidence C — demand and discovery signal only; not copied marker coordinates or a complete map claim.' },
 ];
 ---
@@ -49,25 +53,25 @@ const sources = [
       </header>
 
       <QuickAnswer title="Use this beta map for broad Orbis planning, not exact collectible routing.">
-        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. The Eona, named Organa, Warp Point and Dungeon entrance markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
+        <p>The current DragonSword Awakening Interactive Map uses an owned schematic Orbis base map and normalized relative coordinates. The Eona, named Organa, Warp Point, Dungeon entrance and Field Boss markers are source-corroborated but still approximate; none is presented as an official, video or first-hand verified in-game pin.</p>
       </QuickAnswer>
 
       <InteractiveMap markerData={markerData} />
 
       <div class="copy">
         <h2>How to use the map</h2>
-        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point or Dungeon categories on and off. Select any marker to read its precision, confidence and evidence boundary.</p>
+        <p>Drag the schematic to pan, use the zoom controls to inspect a region, search by marker name, region, subtype or alias, and turn Eona's Legacy, Organa Statue, Warp Point, Dungeon or Boss categories on and off. Select any marker to read its precision, confidence and evidence boundary.</p>
 
         <h2>What is mapped now</h2>
-        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors and 21 Dungeon entrance planning markers. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 21 published / 26 mapped entrances, with five mapped story-style candidates held back as location-unresolved. The map still does not publish a chest database, exact route, respawn rule, copied community pin set or official map asset.</p>
+        <p>This MVP publishes a beta set for Eona's Legacy, named Organa Statue markers, 20 Warp Point planning anchors, 21 Dungeon entrance planning markers and 9 open-world Field Boss planning markers. The Eona pilot remains unchanged. Organa coverage is 13 published markers against a 13-14 public-source range; the 13 vs 14 count conflict remains retained because the apparent 14th map-layer entry is not yet named as a separate restoration statue. Warp Point coverage is 20 published / 20 known. Dungeon coverage is 21 published / 26 mapped entrances, with five mapped story-style candidates held back as location-unresolved. Boss coverage is 9 published / 9 mapped Field Bosses; dungeon, raid and internal boss encounters are not added as world-map markers. The map still does not publish a chest database, exact route, respawn rule, copied community pin set or official map asset.</p>
 
         <AdsterraNativeBanner />
 
         <h2>Verification status</h2>
-        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 official, video or first-hand verified markers. Published Organa locations, Warp Point aliases and Dungeon subtypes are searchable, while the unresolved Organa count conflict stays visible in page metadata.</p>
+        <p>Marker coordinates are <strong>IMAGE_RELATIVE_COORDINATES</strong> on <strong>OWN_SCHEMATIC_ORBIS_BASE_MAP</strong>. The live dataset contains {markerData.markers.length} approximate beta markers and 0 official, video or first-hand verified markers. Published Organa locations, Warp Point aliases, Dungeon subtypes and Boss aliases are searchable, while the unresolved Organa count conflict stays visible in page metadata.</p>
 
         <h2>Updates and data provenance</h2>
-        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Community map threads remain discovery inputs, not production coordinate sources.</p>
+        <p>The official 1.0.7 note confirms World Map pin capacity changed from 100 to 200, which supports map-planning demand but does not provide marker locations. Dungeon sources are split between activity records and public entrance-layer evidence, so a dungeon name alone is not treated as a publishable location. Boss sources are split the same way: name-pool evidence alone is not enough, and only location-level open-world Field Boss candidates are published. Community map threads remain discovery inputs, not production coordinate sources.</p>
       </div>
 
       <SourceList sources={sources} />
