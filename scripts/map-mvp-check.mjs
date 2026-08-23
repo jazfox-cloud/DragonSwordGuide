@@ -183,6 +183,7 @@ const expectedSnippets = [
   'data-map-action="reset"',
   'data-marker-search',
   'data-category-filter',
+  '13_VS_14_CONFLICT_RETAINED',
   'Unofficial schematic map',
   'Not to exact in-game scale',
 ];
