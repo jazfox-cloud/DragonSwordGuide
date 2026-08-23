@@ -1,0 +1,316 @@
+---
+interface Marker {
+  id: string;
+  name: string;
+  category: 'EONAS_LEGACY' | 'ORGANA_STATUE';
+  region: string;
+  x: number;
+  y: number;
+  precision: string;
+  verification_status: string;
+  confidence: string;
+  source_summary: string;
+  game_version: string;
+  last_checked: string;
+  description: string;
+}
+
+interface MarkerData {
+  base_map_id: string;
+  coordinate_system: string;
+  data_policy: string;
+  source_boundary: string;
+  game_version: string;
+  last_checked: string;
+  markers: Marker[];
+}
+
+const { markerData } = Astro.props as { markerData: MarkerData };
+const categoryLabels = {
+  EONAS_LEGACY: "Eona's Legacy",
+  ORGANA_STATUE: 'Organa Statues',
+};
+const categoryCounts = markerData.markers.reduce<Record<string, number>>((counts, marker) => {
+  counts[marker.category] = (counts[marker.category] || 0) + 1;
+  return counts;
+}, {});
+const firstMarker = markerData.markers[0];
+---
+
+<section
+  class="interactive-map"
+  data-map-mvp
+  data-base-map-id={markerData.base_map_id}
+  data-coordinate-system={markerData.coordinate_system}
+  data-marker-count={markerData.markers.length}
+  aria-labelledby="interactive-map-title"
+>
+  <div class="map-heading">
+    <div>
+      <p class="eyebrow">Interactive beta · Unofficial schematic</p>
+      <h2 id="interactive-map-title">DragonSword Awakening Interactive Map Beta</h2>
+      <p>Search, filter, pan and zoom approximate Orbis markers while exact routes are still being verified.</p>
+    </div>
+    <div class="map-stats" aria-label="Map marker summary">
+      <span><strong>{markerData.markers.length}</strong> beta markers</span>
+      <span><strong>0</strong> first-hand verified</span>
+    </div>
+  </div>
+
+  <div class="map-toolbar" aria-label="Interactive map controls">
+    <label class="search-field">
+      <span>Search markers</span>
+      <input data-marker-search type="search" placeholder="Search name or region" autocomplete="off" />
+    </label>
+    <div class="filter-group" aria-label="Marker categories">
+      {Object.entries(categoryLabels).map(([category, label]) => (
+        <label class="filter-pill">
+          <input data-category-filter type="checkbox" value={category} checked />
+          <span>{label} <small>{categoryCounts[category] || 0}</small></span>
+        </label>
+      ))}
+    </div>
+    <div class="zoom-actions" aria-label="Map view controls">
+      <button type="button" data-map-action="zoom-out" aria-label="Zoom out">-</button>
+      <button type="button" data-map-action="reset">Reset</button>
+      <button type="button" data-map-action="zoom-in" aria-label="Zoom in">+</button>
+    </div>
+  </div>
+
+  <div class="map-workspace">
+    <div class="map-frame">
+      <div class="map-viewport" data-map-viewport aria-label="Unofficial schematic Orbis map. Drag to pan and use controls to zoom.">
+        <div class="map-canvas" data-map-canvas>
+          <svg class="schematic-map" viewBox="0 0 1000 680" role="img" aria-labelledby="orbis-map-title orbis-map-desc">
+            <title id="orbis-map-title">Unofficial schematic map of Orbis</title>
+            <desc id="orbis-map-desc">An owned, approximate schematic base map for DragonSword Awakening beta markers. Not to exact in-game scale.</desc>
+            <rect width="1000" height="680" rx="8" fill="#0c1726" />
+            <path d="M80 462 C146 346 251 288 370 303 C465 190 615 151 735 226 C849 278 905 389 851 486 C765 610 570 626 451 568 C314 624 162 578 80 462 Z" fill="#193649" stroke="#61d7ff" stroke-opacity=".42" stroke-width="3" />
+            <path d="M191 444 C242 372 334 352 409 382 C492 324 604 317 684 376 C746 420 772 505 709 552 C607 589 517 563 446 526 C360 561 248 540 191 444 Z" fill="#244d43" opacity=".86" />
+            <path d="M341 221 L415 108 L486 230 L552 132 L660 273 Z" fill="#2c3f52" stroke="#d9f3ff" stroke-opacity=".36" stroke-width="3" />
+            <path d="M686 270 C758 298 812 365 809 438 C776 415 727 407 686 424 C704 368 698 318 686 270 Z" fill="#344d36" opacity=".82" />
+            <path d="M151 489 C264 536 366 534 455 493 C530 548 645 576 748 540" fill="none" stroke="#89e3c1" stroke-opacity=".42" stroke-width="7" stroke-linecap="round" />
+            <path d="M506 171 C513 251 502 321 468 389 C439 447 443 512 486 568" fill="none" stroke="#70c8ff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round" />
+            <circle cx="490" cy="385" r="46" fill="#243647" stroke="#f6d675" stroke-opacity=".6" stroke-width="3" />
+            <path d="M461 386 L490 354 L520 386 L490 419 Z" fill="#f6d675" opacity=".68" />
+            <text x="490" y="462" text-anchor="middle" fill="#dcecff" font-size="28" font-weight="700">Central Orbis</text>
+            <text x="249" y="356" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Western Plains</text>
+            <text x="514" y="92" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Northern Ruins</text>
+            <text x="750" y="334" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Eastern Highlands</text>
+            <text x="610" y="626" text-anchor="middle" fill="#b9d4e6" font-size="22" font-weight="700">Southern Coast</text>
+            <text x="24" y="48" fill="#dcecff" font-size="24" font-weight="800">Unofficial schematic map</text>
+            <text x="24" y="82" fill="#9fb1c4" font-size="20">Not to exact in-game scale</text>
+          </svg>
+          {markerData.markers.map((marker) => (
+            <button
+              type="button"
+              class={`marker marker-${marker.category.toLowerCase().replace('_', '-')}`}
+              data-marker-id={marker.id}
+              data-marker-category={marker.category}
+              data-marker-name={marker.name}
+              data-marker-region={marker.region}
+              style={`left:${marker.x * 100}%;top:${marker.y * 100}%;`}
+              aria-label={`${marker.name}, ${marker.region}, ${marker.precision.toLowerCase()}`}
+            >
+              <span aria-hidden="true"></span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div class="map-scale-note">
+        <span>{markerData.base_map_id}</span>
+        <span>{markerData.coordinate_system}</span>
+      </div>
+    </div>
+
+    <aside class="marker-panel" data-marker-panel aria-live="polite">
+      <p class="panel-kicker">{categoryLabels[firstMarker.category]}</p>
+      <h3>{firstMarker.name}</h3>
+      <dl>
+        <div><dt>Region</dt><dd>{firstMarker.region}</dd></div>
+        <div><dt>Precision</dt><dd>{firstMarker.precision}</dd></div>
+        <div><dt>Status</dt><dd>{firstMarker.verification_status}</dd></div>
+        <div><dt>Confidence</dt><dd>{firstMarker.confidence}</dd></div>
+      </dl>
+      <p>{firstMarker.description}</p>
+      <p class="source-note">{firstMarker.source_summary}</p>
+    </aside>
+  </div>
+
+  <p class="map-boundary">{markerData.source_boundary}</p>
+  <script type="application/json" id="map-marker-data" set:html={JSON.stringify(markerData.markers)} />
+  <script is:inline>
+    (() => {
+      const root = document.querySelector('[data-map-mvp]');
+      if (!root) return;
+
+      const markerDataScript = root.querySelector('#map-marker-data');
+      const markers = JSON.parse(markerDataScript.textContent || '[]');
+      const canvas = root.querySelector('[data-map-canvas]');
+      const viewport = root.querySelector('[data-map-viewport]');
+      const panel = root.querySelector('[data-marker-panel]');
+      const search = root.querySelector('[data-marker-search]');
+      const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
+      const markerButtons = Array.from(root.querySelectorAll('[data-marker-id]'));
+      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues' };
+      let scale = 1;
+      let offsetX = 0;
+      let offsetY = 0;
+      let dragStart = null;
+
+      function setTransform() {
+        canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+      }
+
+      function renderPanel(marker) {
+        panel.innerHTML = `
+          <p class="panel-kicker">${labels[marker.category] || marker.category}</p>
+          <h3>${marker.name}</h3>
+          <dl>
+            <div><dt>Region</dt><dd>${marker.region}</dd></div>
+            <div><dt>Precision</dt><dd>${marker.precision}</dd></div>
+            <div><dt>Status</dt><dd>${marker.verification_status}</dd></div>
+            <div><dt>Confidence</dt><dd>${marker.confidence}</dd></div>
+          </dl>
+          <p>${marker.description}</p>
+          <p class="source-note">${marker.source_summary}</p>
+        `;
+      }
+
+      function selectMarker(id) {
+        const marker = markers.find((item) => item.id === id);
+        if (!marker) return;
+        markerButtons.forEach((button) => button.toggleAttribute('data-active-marker', button.dataset.markerId === id));
+        renderPanel(marker);
+      }
+
+      function visibleCategories() {
+        return new Set(filters.filter((input) => input.checked).map((input) => input.value));
+      }
+
+      function applyFilters() {
+        const query = search.value.trim().toLowerCase();
+        const categories = visibleCategories();
+        let shown = 0;
+
+        markerButtons.forEach((button) => {
+          const haystack = `${button.dataset.markerName} ${button.dataset.markerRegion}`.toLowerCase();
+          const visible = categories.has(button.dataset.markerCategory) && (!query || haystack.includes(query));
+          button.hidden = !visible;
+          if (visible) shown += 1;
+        });
+
+        root.dataset.filteredMarkerCount = String(shown);
+      }
+
+      function zoomBy(amount) {
+        scale = Math.min(2.4, Math.max(0.8, Number((scale + amount).toFixed(2))));
+        setTransform();
+      }
+
+      root.addEventListener('click', (event) => {
+        const actionButton = event.target.closest('[data-map-action]');
+        if (actionButton) {
+          const action = actionButton.dataset.mapAction;
+          if (action === 'zoom-in') zoomBy(0.2);
+          if (action === 'zoom-out') zoomBy(-0.2);
+          if (action === 'reset') {
+            scale = 1;
+            offsetX = 0;
+            offsetY = 0;
+            setTransform();
+          }
+        }
+
+        const markerButton = event.target.closest('[data-marker-id]');
+        if (markerButton) {
+          selectMarker(markerButton.dataset.markerId);
+        }
+      });
+
+      viewport.addEventListener('pointerdown', (event) => {
+        if (event.target.closest('[data-marker-id]')) return;
+        dragStart = { x: event.clientX, y: event.clientY, offsetX, offsetY };
+        viewport.setPointerCapture(event.pointerId);
+      });
+
+      viewport.addEventListener('pointermove', (event) => {
+        if (!dragStart) return;
+        offsetX = dragStart.offsetX + event.clientX - dragStart.x;
+        offsetY = dragStart.offsetY + event.clientY - dragStart.y;
+        setTransform();
+      });
+
+      viewport.addEventListener('pointerup', () => {
+        dragStart = null;
+      });
+
+      viewport.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        zoomBy(event.deltaY > 0 ? -0.12 : 0.12);
+      }, { passive: false });
+
+      search.addEventListener('input', applyFilters);
+      filters.forEach((input) => input.addEventListener('change', applyFilters));
+      setTransform();
+      applyFilters();
+    })();
+  </script>
+</section>
+
+<style>
+  .interactive-map { display: grid; gap: 1rem; margin: 1.4rem 0 2.5rem; }
+  .map-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: end; }
+  .map-heading h2 { margin: 0.35rem 0 0.35rem; }
+  .map-heading p { max-width: 64ch; margin: 0; color: var(--muted-strong); }
+  .map-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: end; }
+  .map-stats span { display: grid; min-width: 120px; padding: 0.7rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--muted); font-size: 0.78rem; }
+  .map-stats strong { color: var(--ink); font-size: 1.25rem; line-height: 1.1; }
+  .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(260px, auto) auto; gap: 0.75rem; align-items: end; padding: 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: hsl(219 24% 16% / 0.72); }
+  .search-field { display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.78rem; font-weight: 700; }
+  .search-field input { width: 100%; min-height: 42px; border: 1px solid hsl(199 86% 58% / 0.35); border-radius: 6px; background: hsl(222 32% 8% / 0.8); color: var(--ink); padding: 0.65rem 0.75rem; font: inherit; }
+  .filter-group, .zoom-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .filter-pill { cursor: pointer; }
+  .filter-pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .filter-pill span, .zoom-actions button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--muted-strong); padding: 0.55rem 0.7rem; font-size: 0.82rem; font-weight: 800; }
+  .filter-pill input:checked + span { border-color: hsl(165 62% 63% / 0.7); color: var(--ink); background: hsl(165 62% 26% / 0.35); }
+  .filter-pill small { color: var(--muted); margin-left: 0.35rem; }
+  .zoom-actions button { min-width: 44px; cursor: pointer; }
+  .zoom-actions button:hover { border-color: var(--accent); color: var(--accent-light); }
+  .map-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: 1rem; align-items: stretch; }
+  .map-frame, .marker-panel { border: 1px solid hsl(199 86% 58% / 0.28); border-radius: 8px; background: var(--paper); }
+  .map-frame { overflow: hidden; }
+  .map-viewport { position: relative; overflow: hidden; min-height: 560px; cursor: grab; touch-action: none; background: #07101b; }
+  .map-viewport:active { cursor: grabbing; }
+  .map-canvas { position: absolute; inset: 0; min-width: 100%; min-height: 100%; transform-origin: 0 0; transition: transform 140ms ease; }
+  .schematic-map { display: block; width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
+  .marker { position: absolute; z-index: 2; width: 24px; height: 24px; border: 0; border-radius: 999px; transform: translate(-50%, -50%); background: transparent; cursor: pointer; }
+  .marker span { display: block; width: 18px; height: 18px; border: 2px solid #07101b; border-radius: 999px; box-shadow: 0 0 0 2px hsl(0 0% 100% / 0.22), 0 8px 20px hsl(0 0% 0% / 0.35); }
+  .marker-eonas-legacy span { background: #8ee6c8; }
+  .marker-organa-statue span { background: #f6d675; }
+  .marker:hover span, .marker[data-active-marker] span { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
+  .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0.75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
+  .marker-panel { padding: 1rem; }
+  .panel-kicker { margin: 0 0 0.35rem; color: var(--success); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; }
+  .marker-panel h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.2; }
+  .marker-panel dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin: 0 0 1rem; }
+  .marker-panel dl div { border-top: 1px solid var(--line); padding-top: 0.5rem; }
+  .marker-panel dt { color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
+  .marker-panel dd { margin: 0.15rem 0 0; color: var(--muted-strong); font-size: 0.86rem; }
+  .marker-panel p { color: var(--muted-strong); font-size: 0.9rem; }
+  .source-note, .map-boundary { color: var(--muted); font-size: 0.82rem; }
+  .map-boundary { margin: 0; padding: 0.75rem; border-left: 3px solid var(--success); background: hsl(165 62% 26% / 0.16); }
+  @media (max-width: 900px) {
+    .map-heading, .map-toolbar, .map-workspace { grid-template-columns: 1fr; }
+    .map-stats { justify-content: start; }
+    .map-viewport, .schematic-map { min-height: 440px; }
+  }
+  @media (max-width: 560px) {
+    .interactive-map { margin-top: 1rem; }
+    .map-toolbar { padding: 0.65rem; }
+    .filter-group, .zoom-actions { width: 100%; }
+    .filter-pill, .zoom-actions button { flex: 1 1 auto; }
+    .map-viewport, .schematic-map { min-height: 360px; }
+    .map-scale-note, .marker-panel dl { grid-template-columns: 1fr; display: grid; }
+  }
+</style>

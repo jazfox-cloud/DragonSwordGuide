@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node scripts/map-mvp-check.mjs",
+    "map:mvp-check": "node scripts/map-mvp-check.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
