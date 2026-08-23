@@ -1,7 +1,7 @@
 # DragonSwordGuide Japanese Pilot Implementation
 
 Date: 2026-08-23
-Status: IMPLEMENTED_PENDING_DEPLOYMENT
+Status: DEPLOYED
 
 ## Scope
 
@@ -136,13 +136,22 @@ Changed:
 
 ## Deployment
 
-- Commit: PENDING
-- Push: PENDING
-- Deployment: PENDING
-- Production smoke: PENDING
+- Site content commit: `635c9dd` (`Add Japanese pilot pages`)
+- Push: PASS, `origin/main`
+- Cloudflare Pages deployment: PASS
+  - Project: `dragonswordguide`
+  - Environment: Production
+  - Deployment ID: `3d832f06-7a4b-4452-971f-46915949c11f`
+  - Source: `635c9dd`
+  - Preview URL: `https://3d832f06.dragonswordguide.pages.dev`
+- Custom-domain smoke:
+  - `https://dragonswordguide.com/ja/`: HTTP 200
+  - `https://dragonswordguide.com/sitemap-ja.xml`: HTTP 200
+- Production browser smoke: PASS for the six Japanese pilot URLs and `/ja/map/` interactions.
+- Follow-up validation note: the browser smoke harness was hardened to wait for production page readiness and chest chunk lazy loading. This changed validation tooling only, not public Japanese page content or map data.
 
 ## Pilot Gate
 
-`PILOT_GATE`: PASS_PENDING_DEPLOYMENT
+`PILOT_GATE`: PASS
 
-The implementation is ready for commit, push, deployment, and production custom-domain smoke.
+The Japanese pilot is deployed and production-smoked. No indexing request was submitted.

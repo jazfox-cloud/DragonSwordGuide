@@ -35,6 +35,25 @@ async function waitForJson(url, attempts = 50) {
   throw lastError || new Error(`No response from ${url}`);
 }
 
+async function waitForPageComplete(cdp, attempts = 80) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const ready = await cdp.send('Runtime.evaluate', { expression: 'document.readyState', returnByValue: true });
+    if (ready.result.value === 'complete') return true;
+    await delay(100);
+  }
+  return false;
+}
+
+async function waitForSelector(cdp, selector, attempts = 80) {
+  const expression = `Boolean(document.querySelector(${JSON.stringify(selector)}))`;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const result = await cdp.send('Runtime.evaluate', { expression, returnByValue: true });
+    if (result.result.value) return true;
+    await delay(100);
+  }
+  return false;
+}
+
 function connect(wsUrl) {
   const socket = new WebSocket(wsUrl);
   let nextId = 1;
@@ -97,11 +116,7 @@ async function main() {
 
       for (const page of pages) {
         await cdp.send('Page.navigate', { url: `${baseUrl}${page}` });
-        for (let attempt = 0; attempt < 40; attempt += 1) {
-          const ready = await cdp.send('Runtime.evaluate', { expression: 'document.readyState', returnByValue: true });
-          if (ready.result.value === 'complete') break;
-          await delay(100);
-        }
+        await waitForPageComplete(cdp);
         await delay(100);
         const result = await cdp.send('Runtime.evaluate', {
           returnByValue: true,
@@ -128,7 +143,9 @@ async function main() {
 
     await cdp.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
     await cdp.send('Page.navigate', { url: `${baseUrl}/ja/map/` });
-    await delay(600);
+    await waitForPageComplete(cdp);
+    await waitForSelector(cdp, '[data-map-mvp]');
+    await delay(250);
     const mapResult = await cdp.send('Runtime.evaluate', {
       awaitPromise: true,
       returnByValue: true,
@@ -152,7 +169,10 @@ async function main() {
         search.value = '宝箱';
         search.dispatchEvent(new Event('input', { bubbles: true }));
         if (!chest.checked) chest.click();
-        await new Promise((resolve) => setTimeout(resolve, 1200));
+        for (let attempt = 0; attempt < 80 && root.dataset.chestLoaded !== 'true' && !root.dataset.chestLoadError; attempt += 1) {
+          await new Promise((resolve) => setTimeout(resolve, 125));
+        }
+        await new Promise((resolve) => setTimeout(resolve, 250));
         const chestShown = Number(root.dataset.filteredMarkerCount || 0);
         const panelText = root.querySelector('[data-marker-panel]')?.textContent || '';
         return {
@@ -161,17 +181,21 @@ async function main() {
           chestShown,
           panelLocalized: panelText.includes('地域') && panelText.includes('状態'),
           chestLoaded: root.dataset.chestLoaded === 'true',
+          chestLoadError: root.dataset.chestLoadError || '',
           transform: root.querySelector('[data-map-canvas]')?.style.transform || ''
         };
       })()`,
     });
     const mapValue = mapResult.result.value;
-    if (!mapValue.ok) fail(`/ja/map/: ${mapValue.reason}`);
-    if (mapValue.waypointShown <= 0) fail('/ja/map/: Japanese waypoint search returned no results');
-    if (mapValue.chestShown <= 0) fail('/ja/map/: Japanese chest search returned no results');
-    if (!mapValue.panelLocalized) fail('/ja/map/: marker panel labels not localized');
-    if (!mapValue.chestLoaded) fail('/ja/map/: chest layer did not lazy load');
-    if (!mapValue.transform.includes('scale(1)')) fail('/ja/map/: reset did not return scale to 1');
+    if (!mapValue?.ok) {
+      fail(`/ja/map/: ${mapValue?.reason || 'map interaction returned no result'}`);
+    } else {
+      if (mapValue.waypointShown <= 0) fail('/ja/map/: Japanese waypoint search returned no results');
+      if (mapValue.chestShown <= 0) fail('/ja/map/: Japanese chest search returned no results');
+      if (!mapValue.panelLocalized) fail('/ja/map/: marker panel labels not localized');
+      if (!mapValue.chestLoaded) fail(`/ja/map/: chest layer did not lazy load${mapValue.chestLoadError ? ` (${mapValue.chestLoadError})` : ''}`);
+      if (!mapValue.transform.includes('scale(1)')) fail('/ja/map/: reset did not return scale to 1');
+    }
 
     cdp.close();
   } finally {
