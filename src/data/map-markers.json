@@ -2,7 +2,7 @@
   "base_map_id": "OWN_SCHEMATIC_ORBIS_BASE_MAP",
   "coordinate_system": "IMAGE_RELATIVE_COORDINATES",
   "data_policy": "PRODUCTION_BETA_APPROXIMATE_MARKERS_ONLY",
-  "source_boundary": "Official Eona, Organa and Waypoint system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins, not imported map coordinates and not first-hand verified routes.",
+  "source_boundary": "Official Eona, Organa, Waypoint and dungeon-system context plus independent secondary location guides. Coordinates are owned schematic placements, not copied game pins, not imported map coordinates and not first-hand verified routes.",
   "game_version": "1.0.8 public update context",
   "last_checked": "2026-08-23",
   "category_status": {
@@ -30,6 +30,41 @@
       "source_independence": "COMMON_GAME_DATA_FAMILY + OFFICIAL + INDEPENDENT_GUIDE_CONTEXT",
       "coverage": "8 published / ~20 known",
       "note": "A public map-data-family source reports 20 mapped Warp Points. Sprint B1 publishes eight high-utility region anchors as SECONDARY_CORROBORATED, REGION_APPROXIMATE planning markers. Exact in-game pins, unlock conditions, costs and cooldowns are not verified."
+    },
+    "DUNGEON": {
+      "status": "PILOT_NEAR_MAPPED_COVERAGE",
+      "published_count": 21,
+      "known_candidates": 26,
+      "estimated_total": "26 mapped entrances / 30 activity records / 69 broad taxonomy records",
+      "source_count": 5,
+      "source_independence": "COMMON_GAME_DATA_FAMILY_MAP + INDEPENDENT_ACTIVITY_DATABASE + OFFICIAL_CONTEXT",
+      "coverage": "21 published / 26 mapped entrances",
+      "subtypes_published": [
+        "NORMAL_DUNGEON",
+        "TRAIT_DUNGEON",
+        "CURRENCY_DUNGEON"
+      ],
+      "subtypes_observed": [
+        "STORY_DUNGEON",
+        "NORMAL_DUNGEON",
+        "TRAIT_DUNGEON",
+        "CURRENCY_DUNGEON",
+        "RAID",
+        "SUPPRESSION",
+        "PLATFORM_DUNGEON",
+        "ABILITY_DUNGEON",
+        "MATERIAL_DUNGEON",
+        "TRIAL_TOWER",
+        "CRACK_DUNGEON"
+      ],
+      "unpublished_location_unresolved": [
+        "Dragon Worshipper Hideout",
+        "Nest of the Great Worm",
+        "Altar of the Dragon",
+        "Tomb of Greed",
+        "Where the Giant Sleeps"
+      ],
+      "note": "Sprint B2 publishes mapped entrances with independent activity/name corroboration. Story-only mapped entrances remain KNOWN_ACTIVITY_LOCATION_UNRESOLVED until independent corroboration is added."
     }
   },
   "markers": [
@@ -710,7 +745,12 @@
       "last_checked": "2026-08-23",
       "description": "Central Orbis Castle planning anchor for Warp Point search. Exact in-game pin and unlock requirements are not yet verified.",
       "navigation_note": "Use as a broad central fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Orbis Castle", "Fast Travel - Orbis Castle", "Teleport - Orbis Castle", "Warp - Orbis Castle"],
+      "aliases": [
+        "Waypoint - Orbis Castle",
+        "Fast Travel - Orbis Castle",
+        "Teleport - Orbis Castle",
+        "Warp - Orbis Castle"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -753,7 +793,12 @@
       "last_checked": "2026-08-23",
       "description": "Early Meadow of Beginnings planning anchor for Warp Point search. Treat the marker as a region-level fast-travel reminder.",
       "navigation_note": "Use as a broad early-route fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Meadow of Beginnings", "Fast Travel - Meadow of Beginnings", "Teleport - Meadow of Beginnings", "Warp - Meadow of Beginnings"],
+      "aliases": [
+        "Waypoint - Meadow of Beginnings",
+        "Fast Travel - Meadow of Beginnings",
+        "Teleport - Meadow of Beginnings",
+        "Warp - Meadow of Beginnings"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -796,7 +841,12 @@
       "last_checked": "2026-08-23",
       "description": "Autumnleaf Zone planning anchor for Warp Point searches and cleanup loops. Exact in-game pin remains unverified.",
       "navigation_note": "Use as a broad Autumnleaf fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Autumnleaf Zone", "Fast Travel - Autumnleaf Zone", "Teleport - Autumnleaf Zone", "Warp - Autumnleaf Zone"],
+      "aliases": [
+        "Waypoint - Autumnleaf Zone",
+        "Fast Travel - Autumnleaf Zone",
+        "Teleport - Autumnleaf Zone",
+        "Warp - Autumnleaf Zone"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -839,7 +889,12 @@
       "last_checked": "2026-08-23",
       "description": "Echo Canyon planning anchor for Warp Point searches. The schematic placement is intentionally approximate.",
       "navigation_note": "Use as a broad canyon-route fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Echo Canyon", "Fast Travel - Echo Canyon", "Teleport - Echo Canyon", "Warp - Echo Canyon"],
+      "aliases": [
+        "Waypoint - Echo Canyon",
+        "Fast Travel - Echo Canyon",
+        "Teleport - Echo Canyon",
+        "Warp - Echo Canyon"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -882,7 +937,12 @@
       "last_checked": "2026-08-23",
       "description": "Dragonrise Basin planning anchor for Warp Point search and return travel while clearing the basin area.",
       "navigation_note": "Use as a broad Dragonrise fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Dragonrise Basin", "Fast Travel - Dragonrise Basin", "Teleport - Dragonrise Basin", "Warp - Dragonrise Basin"],
+      "aliases": [
+        "Waypoint - Dragonrise Basin",
+        "Fast Travel - Dragonrise Basin",
+        "Teleport - Dragonrise Basin",
+        "Warp - Dragonrise Basin"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -925,7 +985,12 @@
       "last_checked": "2026-08-23",
       "description": "Skyfeather Ridge planning anchor for Warp Point searches. Use it as a highlands route reminder, not an exact pin.",
       "navigation_note": "Use as a broad ridge-route fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Skyfeather Ridge", "Fast Travel - Skyfeather Ridge", "Teleport - Skyfeather Ridge", "Warp - Skyfeather Ridge"],
+      "aliases": [
+        "Waypoint - Skyfeather Ridge",
+        "Fast Travel - Skyfeather Ridge",
+        "Teleport - Skyfeather Ridge",
+        "Warp - Skyfeather Ridge"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -968,7 +1033,12 @@
       "last_checked": "2026-08-23",
       "description": "Starshade Forest planning anchor for Warp Point search. Exact in-game pin and route level are not verified.",
       "navigation_note": "Use as a broad forest-route fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Starshade Forest", "Fast Travel - Starshade Forest", "Teleport - Starshade Forest", "Warp - Starshade Forest"],
+      "aliases": [
+        "Waypoint - Starshade Forest",
+        "Fast Travel - Starshade Forest",
+        "Teleport - Starshade Forest",
+        "Warp - Starshade Forest"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -1011,7 +1081,12 @@
       "last_checked": "2026-08-23",
       "description": "Ruined Temple planning anchor for Warp Point search. Do not use this as an exact in-game coordinate.",
       "navigation_note": "Use as a broad temple-route fast-travel planning anchor. Unlock condition, cost and cooldown are not yet verified.",
-      "aliases": ["Waypoint - Ruined Temple", "Fast Travel - Ruined Temple", "Teleport - Ruined Temple", "Warp - Ruined Temple"],
+      "aliases": [
+        "Waypoint - Ruined Temple",
+        "Fast Travel - Ruined Temple",
+        "Teleport - Ruined Temple",
+        "Warp - Ruined Temple"
+      ],
       "evidence": [
         {
           "type": "COMMON_GAME_DATA_FAMILY",
@@ -1036,6 +1111,1056 @@
           "source": "DragonSwordAwakening.net beginner roadmap",
           "url": "https://dragonswordawakening.net/guides/beginner-roadmap",
           "note": "Recommends activating every Waypoint along the route."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:dragon-worshipper-ruins",
+      "name": "Dragon Worshipper Ruins",
+      "category": "DUNGEON",
+      "subtype": "CURRENCY_DUNGEON",
+      "region": "Meadow of Beginnings",
+      "aliases": [
+        "Dragon Worshipper Ruins Dungeon",
+        "Dragon Worshipper Ruins Entrance",
+        "Currency Dungeon - Dragon Worshipper Ruins",
+        "Dungeon - Meadow of Beginnings"
+      ],
+      "x": 0.24,
+      "y": 0.58,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Currency Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Dragon Worshipper Ruins is published as a broad Meadow of Beginnings dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Currency Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/dragon-worshipper-ruins",
+          "note": "Lists Dragon Worshipper Ruins as a Currency Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:rusted-tusk-bandits-treasure-vault",
+      "name": "Rusted Tusk Bandits' Treasure Vault",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Skyridge Uplands",
+      "aliases": [
+        "Rusted Tusk Bandits' Treasure Vault Dungeon",
+        "Rusted Tusk Bandits' Treasure Vault Entrance",
+        "Normal Dungeon - Rusted Tusk Bandits' Treasure Vault",
+        "Dungeon - Skyridge Uplands"
+      ],
+      "x": 0.35,
+      "y": 0.3,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Rusted Tusk Bandits' Treasure Vault is published as a broad Skyridge Uplands dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/rusted-tusk-bandits-treasure-vault",
+          "note": "Lists Rusted Tusk Bandits' Treasure Vault as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:goblin-bandits-cave",
+      "name": "Goblin Bandits' Cave",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Meadow of Beginnings",
+      "aliases": [
+        "Goblin Bandits' Cave Dungeon",
+        "Goblin Bandits' Cave Entrance",
+        "Normal Dungeon - Goblin Bandits' Cave",
+        "Dungeon - Meadow of Beginnings"
+      ],
+      "x": 0.28,
+      "y": 0.62,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Goblin Bandits' Cave is published as a broad Meadow of Beginnings dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/goblin-bandits-cave",
+          "note": "Lists Goblin Bandits' Cave as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:silver-tusk-bandits-supply-depot",
+      "name": "Silver Tusk Bandits' Supply Depot",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Field of Plenty",
+      "aliases": [
+        "Silver Tusk Bandits' Supply Depot Dungeon",
+        "Silver Tusk Bandits' Supply Depot Entrance",
+        "Normal Dungeon - Silver Tusk Bandits' Supply Depot",
+        "Dungeon - Field of Plenty"
+      ],
+      "x": 0.36,
+      "y": 0.72,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Silver Tusk Bandits' Supply Depot is published as a broad Field of Plenty dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/silver-tusk-bandits-supply-depot",
+          "note": "Lists Silver Tusk Bandits' Supply Depot as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:residual-worm-cleanup-zone",
+      "name": "Residual Worm Cleanup Zone",
+      "category": "DUNGEON",
+      "subtype": "CURRENCY_DUNGEON",
+      "region": "Skyridge Uplands",
+      "aliases": [
+        "Residual Worm Cleanup Zone Dungeon",
+        "Residual Worm Cleanup Zone Entrance",
+        "Currency Dungeon - Residual Worm Cleanup Zone",
+        "Dungeon - Skyridge Uplands"
+      ],
+      "x": 0.38,
+      "y": 0.24,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Currency Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Residual Worm Cleanup Zone is published as a broad Skyridge Uplands dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Currency Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/residual-worm-cleanup-zone",
+          "note": "Lists Residual Worm Cleanup Zone as a Currency Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:fang-bandits-arena",
+      "name": "Fang Bandits' Arena",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Orbis Castle Approach",
+      "aliases": [
+        "Fang Bandits' Arena Dungeon",
+        "Fang Bandits' Arena Entrance",
+        "Normal Dungeon - Fang Bandits' Arena",
+        "Dungeon - Orbis Castle Approach"
+      ],
+      "x": 0.39,
+      "y": 0.45,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Fang Bandits' Arena is published as a broad Orbis Castle Approach dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/fang-bandits-arena",
+          "note": "Lists Fang Bandits' Arena as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:corrupted-bedchamber",
+      "name": "Corrupted Bedchamber",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Shadowed Woods",
+      "aliases": [
+        "Corrupted Bedchamber Dungeon",
+        "Corrupted Bedchamber Entrance",
+        "Normal Dungeon - Corrupted Bedchamber",
+        "Dungeon - Shadowed Woods"
+      ],
+      "x": 0.43,
+      "y": 0.53,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Corrupted Bedchamber is published as a broad Shadowed Woods dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/corrupted-bedchamber",
+          "note": "Lists Corrupted Bedchamber as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:warg-cave",
+      "name": "Warg Cave",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Shadowed Woods",
+      "aliases": [
+        "Warg Cave Dungeon",
+        "Warg Cave Entrance",
+        "Normal Dungeon - Warg Cave",
+        "Dungeon - Shadowed Woods"
+      ],
+      "x": 0.41,
+      "y": 0.6,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Warg Cave is published as a broad Shadowed Woods dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/warg-cave",
+          "note": "Lists Warg Cave as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:endless-summoning-grounds",
+      "name": "Endless Summoning Grounds",
+      "category": "DUNGEON",
+      "subtype": "CURRENCY_DUNGEON",
+      "region": "Field of Plenty",
+      "aliases": [
+        "Endless Summoning Grounds Dungeon",
+        "Endless Summoning Grounds Entrance",
+        "Currency Dungeon - Endless Summoning Grounds",
+        "Dungeon - Field of Plenty"
+      ],
+      "x": 0.44,
+      "y": 0.7,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Currency Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Endless Summoning Grounds is published as a broad Field of Plenty dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Currency Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/endless-summoning-grounds",
+          "note": "Lists Endless Summoning Grounds as a Currency Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:mantius-of-amplitude",
+      "name": "Mantius of Amplitude",
+      "category": "DUNGEON",
+      "subtype": "TRAIT_DUNGEON",
+      "region": "Shadowed Woods",
+      "aliases": [
+        "Mantius of Amplitude Dungeon",
+        "Mantius of Amplitude Entrance",
+        "Trait Dungeon - Mantius of Amplitude",
+        "Dungeon - Shadowed Woods"
+      ],
+      "x": 0.48,
+      "y": 0.55,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Trait Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Mantius of Amplitude is published as a broad Shadowed Woods dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Trait Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/mantius-of-amplitude",
+          "note": "Lists Mantius of Amplitude as a Trait Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:underground-goblin-village",
+      "name": "Underground Goblin Village",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Shadowed Woods",
+      "aliases": [
+        "Underground Goblin Village Dungeon",
+        "Underground Goblin Village Entrance",
+        "Normal Dungeon - Underground Goblin Village",
+        "Dungeon - Shadowed Woods"
+      ],
+      "x": 0.5,
+      "y": 0.58,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Underground Goblin Village is published as a broad Shadowed Woods dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/underground-goblin-village",
+          "note": "Lists Underground Goblin Village as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:eroded-underground-cemetery",
+      "name": "Eroded Underground Cemetery",
+      "category": "DUNGEON",
+      "subtype": "CURRENCY_DUNGEON",
+      "region": "Misty Veil Highlands",
+      "aliases": [
+        "Eroded Underground Cemetery Dungeon",
+        "Eroded Underground Cemetery Entrance",
+        "Currency Dungeon - Eroded Underground Cemetery",
+        "Dungeon - Misty Veil Highlands"
+      ],
+      "x": 0.53,
+      "y": 0.25,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Currency Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Eroded Underground Cemetery is published as a broad Misty Veil Highlands dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Currency Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/eroded-underground-cemetery",
+          "note": "Lists Eroded Underground Cemetery as a Currency Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:coastal-cliff-cave-outpost",
+      "name": "Coastal Cliff Cave Outpost",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Silver Ford Lake",
+      "aliases": [
+        "Coastal Cliff Cave Outpost Dungeon",
+        "Coastal Cliff Cave Outpost Entrance",
+        "Normal Dungeon - Coastal Cliff Cave Outpost",
+        "Dungeon - Silver Ford Lake"
+      ],
+      "x": 0.56,
+      "y": 0.63,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Coastal Cliff Cave Outpost is published as a broad Silver Ford Lake dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/coastal-cliff-cave-outpost",
+          "note": "Lists Coastal Cliff Cave Outpost as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:dark-swamp",
+      "name": "Dark Swamp",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Misty Veil Highlands",
+      "aliases": [
+        "Dark Swamp Dungeon",
+        "Dark Swamp Entrance",
+        "Normal Dungeon - Dark Swamp",
+        "Dungeon - Misty Veil Highlands"
+      ],
+      "x": 0.58,
+      "y": 0.34,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Dark Swamp is published as a broad Misty Veil Highlands dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/dark-swamp",
+          "note": "Lists Dark Swamp as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:warg-enclosure",
+      "name": "Warg Enclosure",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Steelheart Fortress",
+      "aliases": [
+        "Warg Enclosure Dungeon",
+        "Warg Enclosure Entrance",
+        "Normal Dungeon - Warg Enclosure",
+        "Dungeon - Steelheart Fortress"
+      ],
+      "x": 0.6,
+      "y": 0.47,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Warg Enclosure is published as a broad Steelheart Fortress dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/warg-enclosure",
+          "note": "Lists Warg Enclosure as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:rock-tribe-base",
+      "name": "Rock Tribe Base",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Dragonrise Basin",
+      "aliases": [
+        "Rock Tribe Base Dungeon",
+        "Rock Tribe Base Entrance",
+        "Normal Dungeon - Rock Tribe Base",
+        "Dungeon - Dragonrise Basin"
+      ],
+      "x": 0.64,
+      "y": 0.31,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Rock Tribe Base is published as a broad Dragonrise Basin dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/rock-tribe-base",
+          "note": "Lists Rock Tribe Base as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:collapsed-sanctuary",
+      "name": "Collapsed Sanctuary",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Dragonrise Basin",
+      "aliases": [
+        "Collapsed Sanctuary Dungeon",
+        "Collapsed Sanctuary Entrance",
+        "Normal Dungeon - Collapsed Sanctuary",
+        "Dungeon - Dragonrise Basin"
+      ],
+      "x": 0.66,
+      "y": 0.27,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Collapsed Sanctuary is published as a broad Dragonrise Basin dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/collapsed-sanctuary",
+          "note": "Lists Collapsed Sanctuary as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:the-graveyard-where-tragedy-sleeps",
+      "name": "The Graveyard Where Tragedy Sleeps",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Moss Forest Logging Site",
+      "aliases": [
+        "The Graveyard Where Tragedy Sleeps Dungeon",
+        "The Graveyard Where Tragedy Sleeps Entrance",
+        "Normal Dungeon - The Graveyard Where Tragedy Sleeps",
+        "Dungeon - Moss Forest Logging Site"
+      ],
+      "x": 0.66,
+      "y": 0.7,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "The Graveyard Where Tragedy Sleeps is published as a broad Moss Forest Logging Site dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/the-graveyard-where-tragedy-sleeps",
+          "note": "Lists The Graveyard Where Tragedy Sleeps as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:forest-of-entangled-roots",
+      "name": "Forest of Entangled Roots",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Starshade Forest",
+      "aliases": [
+        "Forest of Entangled Roots Dungeon",
+        "Forest of Entangled Roots Entrance",
+        "Normal Dungeon - Forest of Entangled Roots",
+        "Dungeon - Starshade Forest"
+      ],
+      "x": 0.69,
+      "y": 0.4,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Forest of Entangled Roots is published as a broad Starshade Forest dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/forest-of-entangled-roots",
+          "note": "Lists Forest of Entangled Roots as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:trace-of-the-giant",
+      "name": "Trace of the Giant",
+      "category": "DUNGEON",
+      "subtype": "CURRENCY_DUNGEON",
+      "region": "Dragonrise Basin",
+      "aliases": [
+        "Trace of the Giant Dungeon",
+        "Trace of the Giant Entrance",
+        "Currency Dungeon - Trace of the Giant",
+        "Dungeon - Dragonrise Basin"
+      ],
+      "x": 0.73,
+      "y": 0.32,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Currency Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Trace of the Giant is published as a broad Dragonrise Basin dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Currency Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/trace-of-the-giant",
+          "note": "Lists Trace of the Giant as a Currency Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
+        }
+      ]
+    },
+    {
+      "id": "marker:dungeon:ashen-ruins",
+      "name": "Ashen Ruins",
+      "category": "DUNGEON",
+      "subtype": "NORMAL_DUNGEON",
+      "region": "Moss Forest Logging Site",
+      "aliases": [
+        "Ashen Ruins Dungeon",
+        "Ashen Ruins Entrance",
+        "Normal Dungeon - Ashen Ruins",
+        "Dungeon - Moss Forest Logging Site"
+      ],
+      "x": 0.78,
+      "y": 0.66,
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "source_summary": "Normal Dungeon activity/name evidence is corroborated by public dungeon records and a public entrance layer. Schematic placement is approximate and does not copy third-party coordinates.",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "description": "Ashen Ruins is published as a broad Moss Forest Logging Site dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "activity_type": "Normal Dungeon",
+      "activity_note": "Dungeon entrance associated with this region. Activity mechanics are not yet verified on DragonSwordGuide.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists this named Dungeon entrance; exact coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/ashen-ruins",
+          "note": "Lists Ashen Ruins as a Normal Dungeon activity; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Normal, Trait and Currency Dungeon taxonomy and route selection."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Steam store",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official store context confirms Orbis includes caves and dungeons but not this entrance."
         }
       ]
     }

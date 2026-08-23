@@ -7,7 +7,9 @@ const htmlPath = path.join(root, 'dist/map/index.html');
 const sourcePath = path.join(root, 'src/pages/map/index.astro');
 const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-organa-expansion-sprint-2.md');
 const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
-const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT']);
+const dungeonSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
+const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT', 'DUNGEON']);
+const allowedDungeonSubtypes = new Set(['NORMAL_DUNGEON', 'TRAIT_DUNGEON', 'CURRENCY_DUNGEON', 'STORY_DUNGEON']);
 const allowedVerificationStatuses = new Set([
   'OFFICIAL_VERIFIED',
   'FIRST_HAND_VERIFIED',
@@ -80,6 +82,11 @@ let warpCount = 0;
 let warpSecondaryCount = 0;
 let warpApproximateCount = 0;
 let warpAliasCount = 0;
+let dungeonCount = 0;
+let dungeonSecondaryCount = 0;
+let dungeonApproximateCount = 0;
+let dungeonAliasCount = 0;
+const dungeonCanonicalNames = new Set();
 
 for (const marker of markerData.markers) {
   for (const field of requiredMarkerFields) {
@@ -176,6 +183,42 @@ for (const marker of markerData.markers) {
 
     warpAliasCount += marker.aliases.length;
   }
+
+  if (marker.category === 'DUNGEON') {
+    dungeonCount += 1;
+
+    const canonicalName = marker.name.toLowerCase();
+    if (dungeonCanonicalNames.has(canonicalName)) {
+      fail(`duplicate canonical Dungeon marker name ${marker.name}`);
+    }
+    dungeonCanonicalNames.add(canonicalName);
+
+    if (!marker.subtype || !allowedDungeonSubtypes.has(marker.subtype)) {
+      fail(`${marker.id} must include a valid Dungeon subtype`);
+    }
+
+    if (marker.verification_status === 'SECONDARY_CORROBORATED') {
+      dungeonSecondaryCount += 1;
+    }
+
+    if (marker.precision === 'APPROXIMATE' || marker.precision.endsWith('_APPROXIMATE')) {
+      dungeonApproximateCount += 1;
+    }
+
+    if (!Array.isArray(marker.aliases) || marker.aliases.length < 3) {
+      fail(`${marker.id} must include searchable Dungeon aliases`);
+    }
+
+    if (!marker.aliases.some((alias) => alias.toLowerCase().includes('entrance'))) {
+      fail(`${marker.id} must include an entrance alias`);
+    }
+
+    if (!marker.activity_note || /recommended level|party size|loot table|unlock condition/i.test(marker.activity_note)) {
+      fail(`${marker.id} must include a safe activity_note without unverified mechanics`);
+    }
+
+    dungeonAliasCount += marker.aliases.length;
+  }
 }
 
 if (approximateCount < 4) {
@@ -214,6 +257,26 @@ if (warpAliasCount < warpCount * 3) {
   fail('Warp Point aliases are too sparse for search coverage');
 }
 
+if (markerData.markers.length < 45) {
+  fail('expected at least 45 production beta markers after Dungeons sprint B2');
+}
+
+if (dungeonCount < 21) {
+  fail('expected at least 21 Dungeon pilot markers');
+}
+
+if (dungeonSecondaryCount !== dungeonCount) {
+  fail('all published Dungeon pilot markers should be SECONDARY_CORROBORATED');
+}
+
+if (dungeonApproximateCount !== dungeonCount) {
+  fail('all published Dungeon pilot markers should retain approximate precision');
+}
+
+if (dungeonAliasCount < dungeonCount * 3) {
+  fail('Dungeon aliases are too sparse for search coverage');
+}
+
 if (markerData.category_status?.ORGANA_STATUE?.count_conflict !== '13_VS_14_CONFLICT_RETAINED') {
   fail('Organa 13 vs 14 count conflict must be retained in production metadata');
 }
@@ -236,6 +299,10 @@ if (!fs.existsSync(organaSprint2ReportPath)) {
 
 if (!fs.existsSync(warpSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
+}
+
+if (!fs.existsSync(dungeonSprintReportPath)) {
+  fail('missing reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
 }
 
 const warpStatus = markerData.category_status?.WARP_POINT;
@@ -264,6 +331,28 @@ if (warpStatus.coverage !== '8 published / ~20 known') {
   fail('WARP_POINT coverage must stay honest for Sprint B1');
 }
 
+const dungeonStatus = markerData.category_status?.DUNGEON;
+
+if (!dungeonStatus) {
+  fail('missing category_status.DUNGEON');
+}
+
+if (dungeonStatus.published_count !== dungeonCount) {
+  fail('DUNGEON published_count must match production markers');
+}
+
+if (dungeonStatus.known_candidates !== 26) {
+  fail('DUNGEON known_candidates must retain the public 26 mapped entrance count');
+}
+
+if (dungeonStatus.estimated_total !== '26 mapped entrances / 30 activity records / 69 broad taxonomy records') {
+  fail('DUNGEON estimated_total must separate mapped entrances from activity databases');
+}
+
+if (dungeonStatus.coverage !== '21 published / 26 mapped entrances') {
+  fail('DUNGEON coverage must stay honest for Sprint B2');
+}
+
 const source = fs.readFileSync(sourcePath, 'utf8');
 
 if (source.includes('2026-08-22-map-data-pipeline-pilot.json')) {
@@ -287,9 +376,15 @@ const expectedSnippets = [
   'data-marker-aliases',
   'data-category-filter',
   'data-marker-category="WARP_POINT"',
+  'data-marker-category="DUNGEON"',
+  'data-marker-subtype',
   'Warp Points',
+  'Dungeons',
   'marker:warp-point:orbis-castle',
+  'marker:dungeon:warg-cave',
+  'marker:dungeon:dragon-worshipper-ruins',
   '8 published / ~20 known',
+  '21 published / 26 mapped entrances',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',
   'Unofficial schematic map',

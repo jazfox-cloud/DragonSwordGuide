@@ -2,7 +2,8 @@
 interface Marker {
   id: string;
   name: string;
-  category: 'EONAS_LEGACY' | 'ORGANA_STATUE' | 'WARP_POINT';
+  category: 'EONAS_LEGACY' | 'ORGANA_STATUE' | 'WARP_POINT' | 'DUNGEON';
+  subtype?: string;
   region: string;
   x: number;
   y: number;
@@ -15,6 +16,7 @@ interface Marker {
   description: string;
   aliases?: string[];
   navigation_note?: string;
+  activity_note?: string;
 }
 
 interface MarkerData {
@@ -38,6 +40,7 @@ const categoryLabels = {
   EONAS_LEGACY: "Eona's Legacy",
   ORGANA_STATUE: 'Organa Statues',
   WARP_POINT: 'Warp Points',
+  DUNGEON: 'Dungeons',
 };
 const statusLabels = {
   OFFICIAL_VERIFIED: 'Official verified',
@@ -127,9 +130,10 @@ const firstMarker = markerData.markers[0];
               data-marker-id={marker.id}
               data-marker-category={marker.category}
               data-marker-status={marker.verification_status}
-              data-marker-name={marker.name}
-              data-marker-region={marker.region}
-              data-marker-aliases={(marker.aliases || []).join(' ')}
+      data-marker-name={marker.name}
+      data-marker-region={marker.region}
+      data-marker-subtype={marker.subtype || ''}
+      data-marker-aliases={(marker.aliases || []).join(' ')}
               style={`left:${marker.x * 100}%;top:${marker.y * 100}%;`}
               aria-label={`${marker.name}, ${marker.region}, ${marker.precision.toLowerCase()}`}
             >
@@ -150,11 +154,13 @@ const firstMarker = markerData.markers[0];
       <span class={`status-badge status-${firstMarker.verification_status.toLowerCase().replaceAll('_', '-')}`}>{statusLabels[firstMarker.verification_status]}</span>
       <dl>
         <div><dt>Region</dt><dd>{firstMarker.region}</dd></div>
+        {firstMarker.subtype && <div><dt>Subtype</dt><dd>{firstMarker.subtype}</dd></div>}
         <div><dt>Precision</dt><dd>{firstMarker.precision}</dd></div>
         <div><dt>Status</dt><dd>{firstMarker.verification_status}</dd></div>
         <div><dt>Confidence</dt><dd>{firstMarker.confidence}</dd></div>
       </dl>
       <p>{firstMarker.description}</p>
+      {firstMarker.activity_note && <p class="activity-note">{firstMarker.activity_note}</p>}
       <p class="source-note">{firstMarker.source_summary}</p>
       {firstMarker.navigation_note && <p class="navigation-note">{firstMarker.navigation_note}</p>}
     </aside>
@@ -175,7 +181,7 @@ const firstMarker = markerData.markers[0];
       const search = root.querySelector('[data-marker-search]');
       const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
       const markerButtons = Array.from(root.querySelectorAll('[data-marker-id]'));
-      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points' };
+      const labels = { EONAS_LEGACY: "Eona's Legacy", ORGANA_STATUE: 'Organa Statues', WARP_POINT: 'Warp Points', DUNGEON: 'Dungeons' };
       const statusLabels = {
         OFFICIAL_VERIFIED: 'Official verified',
         FIRST_HAND_VERIFIED: 'First-hand verified',
@@ -195,17 +201,21 @@ const firstMarker = markerData.markers[0];
 
       function renderPanel(marker) {
         const navigationNote = marker.navigation_note ? `<p class="navigation-note">${marker.navigation_note}</p>` : '';
+        const subtypeRow = marker.subtype ? `<div><dt>Subtype</dt><dd>${marker.subtype}</dd></div>` : '';
+        const activityNote = marker.activity_note ? `<p class="activity-note">${marker.activity_note}</p>` : '';
         panel.innerHTML = `
           <p class="panel-kicker">${labels[marker.category] || marker.category}</p>
           <h3>${marker.name}</h3>
           <span class="status-badge status-${marker.verification_status.toLowerCase().replaceAll('_', '-')}">${statusLabels[marker.verification_status] || marker.verification_status}</span>
           <dl>
             <div><dt>Region</dt><dd>${marker.region}</dd></div>
+            ${subtypeRow}
             <div><dt>Precision</dt><dd>${marker.precision}</dd></div>
             <div><dt>Status</dt><dd>${marker.verification_status}</dd></div>
             <div><dt>Confidence</dt><dd>${marker.confidence}</dd></div>
           </dl>
           <p>${marker.description}</p>
+          ${activityNote}
           <p class="source-note">${marker.source_summary}</p>
           ${navigationNote}
         `;
@@ -232,7 +242,7 @@ const firstMarker = markerData.markers[0];
         let shown = 0;
 
         markerButtons.forEach((button) => {
-          const haystack = normalizeSearchText(`${button.dataset.markerName} ${button.dataset.markerRegion} ${button.dataset.markerAliases}`);
+          const haystack = normalizeSearchText(`${button.dataset.markerName} ${button.dataset.markerRegion} ${button.dataset.markerSubtype} ${button.dataset.markerAliases}`);
           const visible = categories.has(button.dataset.markerCategory) && (!query || haystack.includes(query));
           button.hidden = !visible;
           if (visible) shown += 1;
@@ -327,6 +337,7 @@ const firstMarker = markerData.markers[0];
   .marker-eonas-legacy span { background: #8ee6c8; }
   .marker-organa-statue span { background: #f6d675; }
   .marker-warp-point span { background: #70c8ff; }
+  .marker-dungeon span { background: #ff9a6c; }
   .marker:hover span, .marker[data-active-marker] span { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.55), 0 8px 20px hsl(0 0% 0% / 0.35); }
   .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.65rem 0.75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
   .marker-panel { padding: 1rem; }
@@ -341,8 +352,9 @@ const firstMarker = markerData.markers[0];
   .marker-panel dt { color: var(--muted); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; }
   .marker-panel dd { margin: 0.15rem 0 0; color: var(--muted-strong); font-size: 0.86rem; }
   .marker-panel p { color: var(--muted-strong); font-size: 0.9rem; }
-  .source-note, .navigation-note, .map-boundary { color: var(--muted); font-size: 0.82rem; }
+  .source-note, .navigation-note, .activity-note, .map-boundary { color: var(--muted); font-size: 0.82rem; }
   .navigation-note { border-top: 1px solid var(--line); margin-top: 0.9rem; padding-top: 0.75rem; }
+  .activity-note { border-left: 3px solid hsl(18 100% 72% / 0.58); padding-left: 0.65rem; }
   .map-boundary { margin: 0; padding: 0.75rem; border-left: 3px solid var(--success); background: hsl(165 62% 26% / 0.16); }
   @media (max-width: 900px) {
     .map-heading, .map-toolbar, .map-workspace { grid-template-columns: 1fr; }
