@@ -9,6 +9,7 @@ const organaSprint2ReportPath = path.join(root, 'reports/map-product/2026-08-23-
 const warpSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-expansion-sprint.md');
 const warpCompletionSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-warp-points-completion-sprint.md');
 const dungeonSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
+const dungeonCompletionSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-dungeons-completion-sprint.md');
 const bossesSprintReportPath = path.join(root, 'reports/map-product/2026-08-23-bosses-expansion-sprint.md');
 const allowedCategories = new Set(['EONAS_LEGACY', 'ORGANA_STATUE', 'WARP_POINT', 'DUNGEON', 'BOSS']);
 const allowedDungeonSubtypes = new Set(['NORMAL_DUNGEON', 'TRAIT_DUNGEON', 'CURRENCY_DUNGEON', 'STORY_DUNGEON']);
@@ -313,8 +314,12 @@ if (markerData.markers.length < 66) {
   fail('expected at least 66 production beta markers after Boss sprint B4');
 }
 
-if (dungeonCount < 21) {
-  fail('expected at least 21 Dungeon pilot markers');
+if (markerData.markers.length < 71) {
+  fail('expected at least 71 production beta markers after Dungeon completion sprint B5');
+}
+
+if (dungeonCount < 26) {
+  fail('expected at least 26 Dungeon pilot markers after completion sprint B5');
 }
 
 if (dungeonSecondaryCount !== dungeonCount) {
@@ -377,6 +382,10 @@ if (!fs.existsSync(dungeonSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-dungeons-expansion-sprint.md');
 }
 
+if (!fs.existsSync(dungeonCompletionSprintReportPath)) {
+  fail('missing reports/map-product/2026-08-23-dungeons-completion-sprint.md');
+}
+
 if (!fs.existsSync(bossesSprintReportPath)) {
   fail('missing reports/map-product/2026-08-23-bosses-expansion-sprint.md');
 }
@@ -421,12 +430,20 @@ if (dungeonStatus.known_candidates !== 26) {
   fail('DUNGEON known_candidates must retain the public 26 mapped entrance count');
 }
 
+if (dungeonStatus.true_mapped_entrance_total !== 26) {
+  fail('DUNGEON true_mapped_entrance_total must reconcile the 26 independent world-map entrances');
+}
+
 if (dungeonStatus.estimated_total !== '26 mapped entrances / 30 activity records / 69 broad taxonomy records') {
   fail('DUNGEON estimated_total must separate mapped entrances from activity databases');
 }
 
-if (dungeonStatus.coverage !== '21 published / 26 mapped entrances') {
-  fail('DUNGEON coverage must stay honest for Sprint B2');
+if (dungeonStatus.coverage !== '26 published / 26 mapped entrances') {
+  fail('DUNGEON coverage must stay honest for Sprint B5');
+}
+
+if (Array.isArray(dungeonStatus.unpublished_location_unresolved) && dungeonStatus.unpublished_location_unresolved.length !== 0) {
+  fail('DUNGEON unpublished_location_unresolved should be empty after Sprint B5 reconciliation');
 }
 
 const bossStatus = markerData.category_status?.BOSS;
@@ -489,11 +506,16 @@ const expectedSnippets = [
   'marker:warp-point:seagull-village',
   'marker:dungeon:warg-cave',
   'marker:dungeon:dragon-worshipper-ruins',
+  'marker:dungeon:dragon-disciples-hideout',
+  'marker:dungeon:nest-of-the-great-worm',
+  'marker:dungeon:altar-of-the-dragon',
+  'marker:dungeon:tomb-of-greed',
+  'marker:dungeon:where-the-giant-sleeps',
   'marker:boss:scraping-brack',
   'marker:boss:horg-the-roamer',
   'marker:boss:flaming-ash-feather-lavanis',
   '20 published / 20 known',
-  '21 published / 26 mapped entrances',
+  '26 published / 26 mapped entrances',
   '9 published / 9 mapped Field Bosses',
   '13_VS_14_CONFLICT_RETAINED',
   'UNRESOLVED_13_VS_14',

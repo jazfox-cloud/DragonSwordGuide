@@ -35,17 +35,18 @@
       "note": "Sprint B3 normalizes Warp Points to the 20 public waypoint markers corroborated by map-data-family and public technical-model sources. Exact source coordinates, unlock conditions, costs and cooldowns are not imported or claimed."
     },
     "DUNGEON": {
-      "status": "PILOT_NEAR_MAPPED_COVERAGE",
-      "published_count": 21,
+      "status": "COMPLETION_RECONCILED",
+      "published_count": 26,
       "known_candidates": 26,
       "estimated_total": "26 mapped entrances / 30 activity records / 69 broad taxonomy records",
-      "source_count": 5,
-      "source_independence": "COMMON_GAME_DATA_FAMILY_MAP + INDEPENDENT_ACTIVITY_DATABASE + OFFICIAL_CONTEXT",
-      "coverage": "21 published / 26 mapped entrances",
+      "source_count": 7,
+      "source_independence": "COMMON_GAME_DATA_FAMILY_MAP + PUBLIC_TECHNICAL_MODEL + INDEPENDENT_ACTIVITY_DATABASE + INDEPENDENT_QUEST_GUIDE + COMMUNITY_CONTEXT + OFFICIAL_CONTEXT",
+      "coverage": "26 published / 26 mapped entrances",
       "subtypes_published": [
         "NORMAL_DUNGEON",
         "TRAIT_DUNGEON",
-        "CURRENCY_DUNGEON"
+        "CURRENCY_DUNGEON",
+        "STORY_DUNGEON"
       ],
       "subtypes_observed": [
         "STORY_DUNGEON",
@@ -60,14 +61,15 @@
         "TRIAL_TOWER",
         "CRACK_DUNGEON"
       ],
-      "unpublished_location_unresolved": [
-        "Dragon Worshipper Hideout",
-        "Nest of the Great Worm",
-        "Altar of the Dragon",
-        "Tomb of Greed",
-        "Where the Giant Sleeps"
-      ],
-      "note": "Sprint B2 publishes mapped entrances with independent activity/name corroboration. Story-only mapped entrances remain KNOWN_ACTIVITY_LOCATION_UNRESOLVED until independent corroboration is added."
+      "unpublished_location_unresolved": [],
+      "note": "Sprint B5 reconciles the five held story-style Dungeon entrances and publishes them as world-map Dungeon markers. Dragon Worshipper Hideout is normalized to Dragon Disciple's Hideout where public technical layers use that canonical name; it remains searchable as an alias. Difficulty variants, internal bosses, raid-only encounters and reward variants are not separate map markers.",
+      "true_mapped_entrance_total": 26,
+      "normalized_aliases": {
+        "Dragon Disciple's Hideout": [
+          "Dragon Worshipper Hideout",
+          "Dragon Disciple’s Hideout"
+        ]
+      }
     },
     "BOSS": {
       "status": "FIELD_BOSS_LOCATION_PILOT_COMPLETE",
@@ -3398,6 +3400,333 @@
           "note": "Official game context only; does not provide boss coordinates."
         }
       ]
+    },
+    {
+      "id": "marker:dungeon:dragon-disciples-hideout",
+      "name": "Dragon Disciple's Hideout",
+      "region": "Meadow of Beginnings",
+      "x": 0.25,
+      "y": 0.6,
+      "aliases": [
+        "Dragon Disciple's Hideout Dungeon",
+        "Dragon Disciple's Hideout Entrance",
+        "The Dragon Disciple's Hideout",
+        "Dragon Worshipper Hideout",
+        "Dragon Disciple’s Hideout",
+        "Story Dungeon - Dragon Disciple Hideout",
+        "Dungeon - Meadow of Beginnings"
+      ],
+      "description": "Dragon Disciple's Hideout is published as a broad Meadow of Beginnings story-dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "source_summary": "Story Dungeon entrance evidence is corroborated by public map layers and independent walkthrough/activity context. Schematic placement is approximate and does not copy third-party coordinates.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists Dragon Worshipper Hideout as a Dungeon entrance. Exact coordinates and map assets were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis official marker layer",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public technical marker layer exposes Dragon Disciple's Hideout as a dungeon-category Orbis marker. Used for category/name corroboration only; coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/dragon-disciples-hideout",
+          "note": "Lists Dragon Disciple's Hideout as a Dungeon activity record; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_WALKTHROUGH_CONTEXT",
+          "source": "Into Indie Games Chapter 1 walkthrough",
+          "url": "https://intoindiegames.com/walkthroughs/dragonsword-awakening-walkthrough-part-2-chapter-1/",
+          "note": "Walkthrough describes reaching the Dragon Disciple's Hideout entrance and heading inside; no exact coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context confirms Orbis includes caves and dungeons but not this entrance coordinate."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Dungeon taxonomy and route selection context without making this an exact placement source."
+        }
+      ],
+      "category": "DUNGEON",
+      "subtype": "STORY_DUNGEON",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "activity_type": "Story Dungeon",
+      "activity_note": "Story Dungeon entrance associated with this region. Route, rewards, difficulty and exact access state are not yet verified on DragonSwordGuide."
+    },
+    {
+      "id": "marker:dungeon:nest-of-the-great-worm",
+      "name": "Nest of the Great Worm",
+      "region": "Skyridge Uplands",
+      "x": 0.36,
+      "y": 0.27,
+      "aliases": [
+        "Nest of the Great Worm Dungeon",
+        "Nest of the Great Worm Entrance",
+        "The Nest of the Great Worm",
+        "Great Worm Nest",
+        "Story Dungeon - Nest of the Great Worm",
+        "Dungeon - Skyridge Uplands"
+      ],
+      "description": "Nest of the Great Worm is published as a broad Skyridge Uplands story-dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "source_summary": "Story Dungeon entrance evidence is corroborated by public map layers, public dungeon records and Steam community location context. Schematic placement is approximate and does not copy third-party coordinates.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists Nest of the Great Worm as a Dungeon entrance. Exact coordinates and map assets were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis official marker layer",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public technical marker layer exposes Nest of the Great Worm as a dungeon-category Orbis marker. Used for category/name corroboration only; coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/nest-of-the-great-worm",
+          "note": "Lists Nest of the Great Worm as a Dungeon activity record; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "COMMUNITY_LOCATION_CONTEXT",
+          "source": "Steam Community discussion",
+          "url": "https://steamcommunity.com/app/4570720/discussions/",
+          "note": "Public discussion index and thread snippets reference accessing Nest of the Great Worm as a location question; no exact coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context confirms Orbis includes caves and dungeons but not this entrance coordinate."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Dungeon taxonomy and route selection context without making this an exact placement source."
+        }
+      ],
+      "category": "DUNGEON",
+      "subtype": "STORY_DUNGEON",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "activity_type": "Story Dungeon",
+      "activity_note": "Story Dungeon entrance associated with this region. Route, rewards, difficulty and exact access state are not yet verified on DragonSwordGuide."
+    },
+    {
+      "id": "marker:dungeon:altar-of-the-dragon",
+      "name": "Altar of the Dragon",
+      "region": "Field of Plenty",
+      "x": 0.42,
+      "y": 0.67,
+      "aliases": [
+        "Altar of the Dragon Dungeon",
+        "Altar of the Dragon Entrance",
+        "The Altar of the Dragon",
+        "Dragon Altar",
+        "Story Dungeon - Altar of the Dragon",
+        "Dungeon - Field of Plenty"
+      ],
+      "description": "Altar of the Dragon is published as a broad Field of Plenty story-dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "source_summary": "Story Dungeon entrance evidence is corroborated by public map layers, public dungeon records and independent quest/walkthrough context. Schematic placement is approximate and does not copy third-party coordinates.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists Altar of the Dragon as a Dungeon entrance. Exact coordinates and map assets were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis official marker layer",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public technical marker layer exposes Altar of the Dragon as a dungeon-category Orbis marker. Used for category/name corroboration only; coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/altar-of-the-dragon",
+          "note": "Lists Altar of the Dragon as a Dungeon activity record; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_QUEST_GUIDE",
+          "source": "GCZ Ornette request quest guide",
+          "url": "https://gcz.gg/en/games/dragon-sword-awakening/quests/ornette-s-request",
+          "note": "Quest guide includes an Enter Dungeon step targeting Altar of the Dragon on the Orbis world map; no exact coordinate is used."
+        },
+        {
+          "type": "INDEPENDENT_WALKTHROUGH_CONTEXT",
+          "source": "Into Indie Games Chapter 2 walkthrough",
+          "url": "https://intoindiegames.com/walkthroughs/dragonsword-awakening-walkthrough-part-3-chapter-2/",
+          "note": "Walkthrough describes reaching the Altar of the Dragon entrance and heading inside; no exact coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "Official Steam store page",
+          "url": "https://store.steampowered.com/app/4570720/DragonSword__Awakening/",
+          "note": "Official game context confirms Orbis includes caves and dungeons but not this entrance coordinate."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Dungeon taxonomy and route selection context without making this an exact placement source."
+        }
+      ],
+      "category": "DUNGEON",
+      "subtype": "STORY_DUNGEON",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "activity_type": "Story Dungeon",
+      "activity_note": "Story Dungeon entrance associated with this region. Route, rewards, difficulty and exact access state are not yet verified on DragonSwordGuide."
+    },
+    {
+      "id": "marker:dungeon:tomb-of-greed",
+      "name": "Tomb of Greed",
+      "region": "Misty Veil Highlands",
+      "x": 0.54,
+      "y": 0.3,
+      "aliases": [
+        "Tomb of Greed Dungeon",
+        "Tomb of Greed Entrance",
+        "The Tomb of Greed",
+        "Greed Tomb",
+        "Story Dungeon - Tomb of Greed",
+        "Dungeon - Misty Veil Highlands"
+      ],
+      "description": "Tomb of Greed is published as a broad Misty Veil Highlands story-dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "source_summary": "Story Dungeon entrance evidence is corroborated by public map layers, public dungeon records, patch context and Steam community access discussion. Schematic placement is approximate and does not copy third-party coordinates.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists Tomb of Greed as a Dungeon entrance. Exact coordinates and map assets were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis official marker layer",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public technical marker layer exposes Tomb of Greed as a dungeon-category Orbis marker. Used for category/name corroboration only; coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/tomb-of-greed",
+          "note": "Lists Tomb of Greed as a Dungeon activity record; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "COMMUNITY_LOCATION_CONTEXT",
+          "source": "Steam Community Tomb of Greed discussion",
+          "url": "https://steamcommunity.com/app/4570720/discussions/0/581678051258051230/",
+          "note": "Players discuss finding the dungeon and nearby route under Ruined Temple; no exact coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "DragonSwordAwakening.net mirror of official update 1.0.4",
+          "url": "https://dragonswordawakening.net/updates/update-1-0-4",
+          "note": "Patch context references Adventure Quest 59: Tomb of Greed; it does not provide entrance coordinates."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Dungeon taxonomy and route selection context without making this an exact placement source."
+        }
+      ],
+      "category": "DUNGEON",
+      "subtype": "STORY_DUNGEON",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "activity_type": "Story Dungeon",
+      "activity_note": "Story Dungeon entrance associated with this region. Route, rewards, difficulty and exact access state are not yet verified on DragonSwordGuide."
+    },
+    {
+      "id": "marker:dungeon:where-the-giant-sleeps",
+      "name": "Where the Giant Sleeps",
+      "region": "Dragonrise Basin",
+      "x": 0.72,
+      "y": 0.3,
+      "aliases": [
+        "Where the Giant Sleeps Dungeon",
+        "Where the Giant Sleeps Entrance",
+        "The Place Where the Giant Sleeps",
+        "Giant Sleeps Dungeon",
+        "Story Dungeon - Where the Giant Sleeps",
+        "Dungeon - Dragonrise Basin"
+      ],
+      "description": "Where the Giant Sleeps is published as a broad Dragonrise Basin story-dungeon entrance planning marker on DragonSwordGuide's owned schematic map.",
+      "source_summary": "Story Dungeon entrance evidence is corroborated by public map layers, public dungeon records, independent quest context and official patch context. Schematic placement is approximate and does not copy third-party coordinates.",
+      "evidence": [
+        {
+          "type": "COMMON_GAME_DATA_FAMILY_MAP",
+          "source": "DragonSword-Awakening.org interactive map",
+          "url": "https://dragonsword-awakening.org/maps?type=TOWN",
+          "note": "Public map layer lists Where the Giant Sleeps as a Dungeon entrance. Exact coordinates and map assets were not copied."
+        },
+        {
+          "type": "PUBLIC_TECHNICAL_MODEL",
+          "source": "GrandWiki Orbis official marker layer",
+          "url": "https://dsawakening.grandwiki.com/map",
+          "note": "Public technical marker layer exposes Where the Giant Sleeps as a dungeon-category Orbis marker. Used for category/name corroboration only; coordinates were not copied."
+        },
+        {
+          "type": "INDEPENDENT_ACTIVITY_DATABASE",
+          "source": "DragonSwordAwakening.net dungeon database",
+          "url": "https://dragonswordawakening.net/database/dungeons/where-the-giant-sleeps",
+          "note": "Lists Where the Giant Sleeps as a Dungeon activity record; activity facts do not upgrade exact location."
+        },
+        {
+          "type": "INDEPENDENT_QUEST_GUIDE",
+          "source": "GCZ Where the Giant Sleeps quest guide",
+          "url": "https://gcz.gg/en/games/dragon-sword-awakening/quests/where-the-giant-sleeps",
+          "note": "Quest guide includes an Entrance to Where the Giant Sleeps step targeting a Dungeon on the Orbis world map; no exact coordinate is used."
+        },
+        {
+          "type": "OFFICIAL_CONTEXT",
+          "source": "DragonSwordAwakening.net mirror of official update 1.0.4",
+          "url": "https://dragonswordawakening.net/updates/update-1-0-4",
+          "note": "Patch context references Adventure Quest 39: Where the Giant Sleeps; it does not provide entrance coordinates."
+        },
+        {
+          "type": "INDEPENDENT_GUIDE_CONTEXT",
+          "source": "DragonSwordAwakening.net dungeon guide",
+          "url": "https://dragonswordawakening.net/guides/dungeons",
+          "note": "Explains Dungeon taxonomy and route selection context without making this an exact placement source."
+        }
+      ],
+      "category": "DUNGEON",
+      "subtype": "STORY_DUNGEON",
+      "precision": "REGION_APPROXIMATE",
+      "verification_status": "SECONDARY_CORROBORATED",
+      "confidence": "LOW",
+      "game_version": "1.0.8 public update context",
+      "last_checked": "2026-08-23",
+      "activity_type": "Story Dungeon",
+      "activity_note": "Story Dungeon entrance associated with this region. Route, rewards, difficulty and exact access state are not yet verified on DragonSwordGuide."
     }
   ]
 }
