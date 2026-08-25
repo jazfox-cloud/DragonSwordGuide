@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "node scripts/map-mvp-check.mjs && node scripts/map/chest-pipeline-check.mjs && node scripts/i18n/check-hreflang.mjs && node scripts/i18n/check-map-locale.mjs",
+    "test": "node scripts/map-mvp-check.mjs && node scripts/map/chest-pipeline-check.mjs && node scripts/map/visual-integration-check.mjs && node scripts/i18n/check-hreflang.mjs && node scripts/i18n/check-map-locale.mjs",
     "map:mvp-check": "node scripts/map-mvp-check.mjs",
     "i18n:stale": "node scripts/i18n/check-source-staleness.mjs",
     "i18n:hreflang": "node scripts/i18n/check-hreflang.mjs",

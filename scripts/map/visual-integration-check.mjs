@@ -35,5 +35,6 @@ assert(markerData.markers.length + manifest.total_published === 1555, 'total mar
 assert(fs.existsSync(path.join(root, 'public/map/orbis-atlas-v1.svg')), 'rollback SVG is missing');
 assert(fs.existsSync(path.join(root, 'public/map/base-map-candidate-v2.webp')), 'optimized WebP base map is missing');
 assert(fs.existsSync(path.join(root, 'public/map/base-map-candidate-v2.png')), 'PNG fallback base map is missing');
+assert(fs.statSync(path.join(root, 'public/map/base-map-candidate-v2.png')).size <= 1024 * 1024, 'PNG fallback base map exceeds 1 MiB');
 
 console.log('[map:visual-integration] checks passed');
