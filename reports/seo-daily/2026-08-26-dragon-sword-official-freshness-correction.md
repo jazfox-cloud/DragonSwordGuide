@@ -4,7 +4,7 @@ Date: 2026-08-26
 
 ## 1. Executive Status
 
-Status before release: `LOCAL_VERIFIED`
+Status: `PRODUCTION_VERIFIED`
 
 This was a `FACTUAL_FRESHNESS_CORRECTION`. It updated current-version facts from official Steam primary sources without creating a URL, changing Map coordinates or marker counts, expanding an SEO cluster, or touching Product Architecture research.
 
@@ -137,9 +137,31 @@ Current evidence boundary: the prior notice/guidelines were retracted and were n
 
 ## 12. Production Verification
 
-Status: `PENDING_PUSH_AND_DEPLOYMENT`
+Status: `PASS`
 
-The release verification will cover `/`, `/roadmap/`, `/multiplayer/`, `/map/`, `/ja/`, `/ja/roadmap/`, `/ja/multiplayer/`, `/ja/map/`, `sitemap.xml`, `sitemap-index.xml`, `sitemap-en.xml` and `sitemap-ja.xml`. It must confirm HTTP 200, source SHA/deployment correlation, 1.0.10 wording where applicable, self canonicals, no accidental noindex, reciprocal hreflang and no broken routes. Bounded no-cache retries will be used if the custom domain initially serves stale HTML.
+- Content commit: `5f74fc327f32ffc6c5a956177f6d396cfd9e97d7`
+- Remote `origin/main`: matched content commit before deployment verification.
+- Cloudflare Pages deployment: `3b4d8a8f-13ae-49e2-96ad-a25fdc5661e5`
+- Cloudflare environment/branch/source: `Production` / `main` / `5f74fc3`
+- Preview: `https://3b4d8a8f.dragonswordguide.pages.dev`
+- Custom domain: `https://dragonswordguide.com`
+
+No-cache checks returned HTTP 200 on preview and custom domain for:
+
+- `/`
+- `/roadmap/`
+- `/multiplayer/`
+- `/map/`
+- `/ja/`
+- `/ja/roadmap/`
+- `/ja/multiplayer/`
+- `/ja/map/`
+- `/sitemap.xml`
+- `/sitemap-index.xml`
+- `/sitemap-en.xml`
+- `/sitemap-ja.xml`
+
+The required 1.0.10/JA freshness markers rendered on affected pages. All eight HTML routes retained the expected self canonical, no accidental `noindex`, reciprocal EN/JA hreflang and x-default. Both sitemap indexes referenced the EN/JA sitemaps; sitemap counts remained 16 EN and 6 JA. Preview and custom-domain results agreed, so no propagation retry or Cloudflare/DNS change was required.
 
 ## 13. Remaining Freshness Risks
 
