@@ -11,9 +11,9 @@ export const multiplayerJa = {
     source_url: sourcePages.multiplayer.sourceUrl,
     source_file: sourcePages.multiplayer.sourceFile,
     source_revision: sourceRevisionGitCommit,
-    source_hash: 'c0de9cf89bb4a40abadb11455275089bd23419d8d5aa4fa8fdb9143ff57cd1ef',
+    source_hash: 'b4d8290803a75ab720c42e44d66ac28e74eb5e104e0e3650b7711664fb0607e3',
     source_updated_at: sourcePages.multiplayer.sourceUpdatedAt,
     translation_status: 'AI_TRANSLATED',
-    last_translated_at: '2026-08-23',
+    last_translated_at: '2026-08-26',
   },
 } as const;

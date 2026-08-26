@@ -11,7 +11,7 @@ export const homeJa = {
     source_url: sourcePages.home.sourceUrl,
     source_file: sourcePages.home.sourceFile,
     source_revision: sourceRevisionGitCommit,
-    source_hash: '4b0874eb2db6f82555206f192df406584c899bad210fe06866dfce616db39cfa',
+    source_hash: '5b2e43785ddd9c6bec7c67a31d9712e535d66c5aa42c5271bb3b952704cce9c9',
     source_updated_at: sourcePages.home.sourceUpdatedAt,
     translation_status: 'AI_TRANSLATED',
     last_translated_at: '2026-08-23',

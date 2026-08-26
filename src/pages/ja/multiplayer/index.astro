@@ -6,16 +6,16 @@ import QuickAnswer from '../../../components/QuickAnswer.astro';
 import SourceList from '../../../components/SourceList.astro';
 import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
 import { multiplayerJa as page } from '../../../content/ja/multiplayer';
-import { patch108 } from '../../../data/sources';
+import { latestAppliedPatch } from '../../../data/sources';
 import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
 
 const canonical = getCanonical('multiplayer', 'ja');
-const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-22' });
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-26' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'マルチプレイ', path: '/ja/multiplayer/' }]);
 const sources = [
   { label: 'Steam公式ストア', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: '公式確認済み - Single-player と Online Co-op を確認。' },
   { label: '公式1.0.7アップデート', href: 'https://steamcommunity.com/app/4570720/announcements/', note: '公式確認済み - Quick Entry とマルチプレイマッチングのロビー検索範囲設定を確認。' },
-  { label: '公式1.0.8アップデート', href: patch108.href, note: '公式確認済み - 最新確認済みアップデート。新しい協力モード追加ではありません。' },
+  { label: '公式1.0.10アップデート', href: latestAppliedPatch.href, note: '公式確認済み - パーティーリーダーが長時間応答しない場合、マルチプレイロビーがパーティーを解散します。' },
   { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: '公式開発者情報 - Subjugation と Raids を協力コンテンツとして説明。' },
 ];
 ---
@@ -24,15 +24,16 @@ const sources = [
   <div class="shell page-wrap">
     <Breadcrumbs ariaLabel="パンくずリスト" items={[{ label: 'DragonSword Guide', href: '/ja/' }, { label: 'マルチプレイ' }]} />
     <article class="copy">
-      <header class="article-header"><p class="eyebrow">ガイド · 現在の協力プレイ</p><h1>{page.h1}</h1><LastVerified date="2026年8月22日" label="最終確認" /></header>
+      <header class="article-header"><p class="eyebrow">ガイド · 現在の協力プレイ</p><h1>{page.h1}</h1><LastVerified date="2026年8月26日" label="最終確認" /></header>
       <QuickAnswer eyebrow="要点" title="はい。ただし確認済みなのは、選択されたオンライン協力プレイです。">
-        <p>SteamはSingle-playerとOnline Co-opを掲載しています。Hound13はSubjugationとRaidsを協力コンテンツとして説明し、公式1.0.7ではQuick Entryとロビー検索範囲設定が確認されています。プレイヤー数、招待手順、クロスプレイ、共有進行、ストーリー協力、オープンワールド協力は未検証です。</p>
+        <p>SteamはSingle-playerとOnline Co-opを掲載しています。Hound13はSubjugationとRaidsを協力コンテンツとして説明し、公式1.0.7ではQuick Entryとロビー検索範囲設定が確認されています。公式1.0.10では、パーティーリーダーが長時間応答しない場合にロビーがパーティーを解散する変更も確認できます。プレイヤー数、招待手順、クロスプレイ、共有進行、ストーリー協力、オープンワールド協力は未検証です。</p>
       </QuickAnswer>
       <div class="status-grid">
         <div><strong>オンライン協力プレイ</strong><span>Steamで確認</span></div>
         <div><strong>Subjugation / Raids</strong><span>Hound13が説明</span></div>
         <div><strong>Quick Entry</strong><span>公式1.0.7で追加</span></div>
         <div><strong>ロビー検索範囲</strong><span>公式1.0.7で追加</span></div>
+        <div><strong>リーダーが長時間無応答</strong><span>公式1.0.10でパーティー解散</span></div>
       </div>
       <h2>マルチプレイはどう動く？</h2>
       <p>DragonSword: Awakeningは、まずシングルプレイヤーRPGとして成立し、その一部にオンライン協力プレイがあります。現在確認できる範囲は狭いですが、協力プレイの存在、対象アクティビティ、マッチング機能の一部は一次情報で確認できます。</p>
@@ -41,6 +42,7 @@ const sources = [
         <tr><th>Subjugation</th><td>協力アクティビティとして確認</td><td>Hound13 developer discussion。</td></tr>
         <tr><th>Raids</th><td>協力アクティビティとして確認</td><td>Hound13 developer discussion。</td></tr>
         <tr><th>Quick Entry</th><td>確認済み</td><td>公式1.0.7アップデート。</td></tr>
+        <tr><th>リーダーが長時間応答しないロビー</th><td>パーティーを解散</td><td>公式1.0.10。正確な待機時間は公表されていません。</td></tr>
         <tr><th>プレイヤー数 / 招待手順 / クロスプレイ</th><td>未検証</td><td>このページの一次情報では確認できません。</td></tr>
       </tbody></table></div>
       <h2>協力プレイで遊べる内容</h2>

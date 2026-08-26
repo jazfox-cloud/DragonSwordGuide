@@ -8,18 +8,18 @@ import SourceList from '../../components/SourceList.astro';
 import UpdateBadge from '../../components/UpdateBadge.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro';
-import { patch108 } from '../../data/sources';
+import { latestAppliedPatch } from '../../data/sources';
 
 const title = 'Is DragonSword Awakening Multiplayer? Co-op Explained';
 const description = "Yes, DragonSword: Awakening supports online co-op for selected activities. See what's officially confirmed for Subjugation, Raids, story co-op, lobbies, and matchmaking.";
 const canonical = 'https://dragonswordguide.com/multiplayer/';
-const verifiedDate = 'August 13, 2026';
+const verifiedDate = 'August 26, 2026';
 const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dragonswordguide.com/' }, { '@type': 'ListItem', position: 2, name: 'Multiplayer', item: canonical }] };
-const article = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-08-22', publisher: { '@type': 'Organization', name: 'DragonSword Guide' } };
+const article = { '@context': 'https://schema.org', '@type': 'Article', headline: title, description, mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-08-26', publisher: { '@type': 'Organization', name: 'DragonSword Guide' } };
 const sources = [
   { label: 'Official Steam store page', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'OFFICIAL_VERIFIED: lists Single-player and Online Co-op.' },
   { label: 'Official Steam update notes 1.0.7', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'OFFICIAL_VERIFIED: confirms Quick Entry and a lobby search range setting for multiplayer matching.' },
-  { label: 'Official update notes 1.0.8', href: patch108.href, note: 'OFFICIAL_VERIFIED: latest official update checked by the project; it fixes dash-related character-state bugs and does not add a new co-op mode.' },
+  { label: 'Official update notes 1.0.10', href: latestAppliedPatch.href, note: 'OFFICIAL_VERIFIED: multiplayer lobbies disband the party when the party leader is unresponsive for a long time.' },
   { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'OFFICIAL_VERIFIED developer source: describes Subjugation and Raids, and says story co-op was not ready for launch.' },
 ];
 ---
@@ -33,10 +33,10 @@ const sources = [
         <LastVerified date={verifiedDate} />
       </header>
 
-      <UpdateBadge label={`${patch108.label} · latest checked August 10`} href={patch108.href} />
+      <UpdateBadge label={`${latestAppliedPatch.label} · ${latestAppliedPatch.date}`} href={latestAppliedPatch.href} />
 
       <QuickAnswer title="Yes — selected activities support online co-op.">
-        <p>Steam lists Single-player and Online Co-op. Hound13 confirmed Subjugation and Raids as co-op activities, and the official 1.0.7 notes confirm Quick Entry plus a lobby search range setting for multiplayer matching. Exact player count, unlock requirements, crossplay, invite flow, shared progression and loot rules are not yet verified here.</p>
+        <p>Steam lists Single-player and Online Co-op. Hound13 confirmed Subjugation and Raids as co-op activities, and the official 1.0.7 notes confirm Quick Entry plus a lobby search range setting for multiplayer matching. Update 1.0.10 also says multiplayer lobbies disband the party when the party leader is unresponsive for a long time. Exact player count, unlock requirements, crossplay, invite flow, shared progression and loot rules are not yet verified here.</p>
       </QuickAnswer>
 
       <div class="article-body">
@@ -47,6 +47,7 @@ const sources = [
           <div><strong>Subjugation & Raids</strong><span>Confirmed by Hound13</span></div>
           <div><strong>Quick Entry</strong><span>Added in official 1.0.7</span></div>
           <div><strong>Lobby search range</strong><span>Added in official 1.0.7</span></div>
+          <div><strong>Unresponsive party leader</strong><span>Party disbands · official 1.0.10</span></div>
         </div>
 
         <h2>How Does Multiplayer Work in DragonSword: Awakening?</h2>
@@ -87,6 +88,11 @@ const sources = [
                 <th scope="row">Lobby search range</th>
                 <td>Verified matching setting</td>
                 <td>Official 1.0.7 update notes.</td>
+              </tr>
+              <tr>
+                <th scope="row">Unresponsive party leader</th>
+                <td>Lobby disbands the party after a long period</td>
+                <td>Official 1.0.10 update notes; no exact timeout is stated.</td>
               </tr>
               <tr>
                 <th scope="row">Exact player count</th>
