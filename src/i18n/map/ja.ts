@@ -6,6 +6,7 @@ export const mapJa = {
     betaMarkers: 'beta マーカー',
     chests: '宝箱',
     firstHandVerified: '一次確認済み',
+    found: '発見済み',
     markerSummary: 'マップマーカー概要',
     viewportLabel: '独自制作のオルビス地図。ドラッグで移動し、操作ボタンでズームできます。',
     schematicTitle: '独自制作のオルビス地図',
@@ -50,6 +51,9 @@ export const mapJa = {
     zoomIn: '拡大',
     zoomOut: '縮小',
     reset: 'リセット',
+    progressControls: '探索進捗',
+    hideCompleted: '発見済みを隠す',
+    resetCompleted: '発見済みをリセット',
     noMatches: '一致する場所がありません',
   },
   panel: {
@@ -59,6 +63,10 @@ export const mapJa = {
     precision: '精度',
     status: '状態',
     confidence: '信頼度',
+    markFound: '発見済みにする',
+    markNotFound: '未発見に戻す',
+    foundStatus: 'この端末に保存済み',
+    notFoundStatus: '未発見',
   },
   chest: {
     displayPrefix: '宝箱',

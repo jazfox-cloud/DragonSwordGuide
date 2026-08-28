@@ -49,6 +49,7 @@ const defaultLabels = {
     betaMarkers: 'beta markers',
     chests: 'chests',
     firstHandVerified: 'first-hand verified',
+    found: 'found',
     markerSummary: 'Map marker summary',
     viewportLabel: 'Independent Orbis atlas. Drag to pan and use controls to zoom.',
     schematicTitle: 'Independent Orbis atlas',
@@ -93,6 +94,9 @@ const defaultLabels = {
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
     reset: 'Reset',
+    progressControls: 'Map progress controls',
+    hideCompleted: 'Hide found',
+    resetCompleted: 'Reset found markers',
     noMatches: 'No matching locations',
   },
   panel: {
@@ -102,6 +106,10 @@ const defaultLabels = {
     precision: 'Precision',
     status: 'Status',
     confidence: 'Confidence',
+    markFound: 'Mark as found',
+    markNotFound: 'Mark as not found',
+    foundStatus: 'Saved on this device',
+    notFoundStatus: 'Not marked found',
   },
   chest: {
     displayPrefix: 'Treasure Chest',
@@ -162,6 +170,7 @@ const firstMarker = markerData.markers[0];
       <span><strong>{markerData.markers.length + chestMarkerCount}</strong> {mapLabels.headings.betaMarkers}</span>
       <span><strong>{chestMarkerCount}</strong> {mapLabels.headings.chests}</span>
       <span><strong>0</strong> {mapLabels.headings.firstHandVerified}</span>
+      <span class="map-progress-stat"><strong data-map-progress-percentage>0%</strong><small><b data-map-progress-count>0</b> / {markerData.markers.length + chestMarkerCount} {mapLabels.headings.found}</small></span>
     </div>
   </div>
 
@@ -188,6 +197,13 @@ const firstMarker = markerData.markers[0];
       <button type="button" data-map-action="zoom-out" aria-label={mapLabels.controls.zoomOut}>-</button>
       <button type="button" data-map-action="reset">{mapLabels.controls.reset}</button>
       <button type="button" data-map-action="zoom-in" aria-label={mapLabels.controls.zoomIn}>+</button>
+    </div>
+    <div class="progress-actions" aria-label={mapLabels.controls.progressControls}>
+      <label class="progress-toggle">
+        <input data-hide-completed type="checkbox" />
+        <span>{mapLabels.controls.hideCompleted}</span>
+      </label>
+      <button type="button" data-map-action="reset-completed">{mapLabels.controls.resetCompleted}</button>
     </div>
   </div>
 
@@ -246,6 +262,10 @@ const firstMarker = markerData.markers[0];
       {firstMarker.location_note && <p class="location-note">{firstMarker.location_note}</p>}
       <p class="source-note">{firstMarker.source_summary}</p>
       {firstMarker.navigation_note && <p class="navigation-note">{firstMarker.navigation_note}</p>}
+      <div class="marker-progress-actions">
+        <button type="button" data-map-action="toggle-completed" aria-pressed="false">{mapLabels.panel.markFound}</button>
+        <small data-map-progress-status>{mapLabels.panel.notFoundStatus}</small>
+      </div>
     </aside>
   </div>
 
@@ -269,6 +289,9 @@ const firstMarker = markerData.markers[0];
       const panel = root.querySelector('[data-marker-panel]');
       const search = root.querySelector('[data-marker-search]');
       const filters = Array.from(root.querySelectorAll('[data-category-filter]'));
+      const hideCompleted = root.querySelector('[data-hide-completed]');
+      const progressCount = root.querySelector('[data-map-progress-count]');
+      const progressPercentage = root.querySelector('[data-map-progress-percentage]');
       const chestRegionFilter = root.querySelector('[data-chest-region-filter]');
       const chestLayer = root.querySelector('[data-chest-layer]');
       const chestManifestUrl = root.dataset.chestManifestUrl;
@@ -280,12 +303,77 @@ const firstMarker = markerData.markers[0];
       const chestLabels = mapLabels.chest || {};
       const regionLabels = mapLabels.regions || {};
       const chestMarkers = [];
+      const progressStorageKey = 'dragonswordguide.map.completed.v1';
+      const totalMarkerCount = Number(root.dataset.markerCount || 0);
       let chestLoadPromise = null;
       const maxIndividualChestMarkers = 420;
+      let selectedMarkerId = baseMarkers[0]?.id || '';
       let scale = 1;
       let offsetX = 0;
       let offsetY = 0;
       let dragStart = null;
+
+      function trackToolEvent(name, parameters = {}) {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', name, {
+          tool_name: 'interactive_map',
+          page_path: window.location.pathname,
+          ...parameters,
+        });
+      }
+
+      function readCompletedMarkerIds() {
+        try {
+          const parsed = JSON.parse(window.localStorage.getItem(progressStorageKey) || '[]');
+          if (!Array.isArray(parsed)) return new Set();
+          return new Set(parsed.filter((id) => typeof id === 'string' && id.trim()));
+        } catch {
+          return new Set();
+        }
+      }
+
+      const completedMarkerIds = readCompletedMarkerIds();
+
+      function persistCompletedMarkerIds() {
+        try {
+          if (completedMarkerIds.size === 0) {
+            window.localStorage.removeItem(progressStorageKey);
+            return;
+          }
+          window.localStorage.setItem(progressStorageKey, JSON.stringify(Array.from(completedMarkerIds).sort()));
+        } catch {
+          // Progress remains usable in memory when storage is unavailable.
+        }
+      }
+
+      function updateMarkerQuery(id) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('marker', id);
+        window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+      }
+
+      function updateCompletionSummary() {
+        const completedCount = Math.min(completedMarkerIds.size, totalMarkerCount);
+        const percentage = totalMarkerCount > 0 ? Math.round((completedCount / totalMarkerCount) * 100) : 0;
+        root.dataset.completedMarkerCount = String(completedCount);
+        if (progressCount) progressCount.textContent = String(completedCount);
+        if (progressPercentage) progressPercentage.textContent = `${percentage}%`;
+      }
+
+      function syncCompletionUi() {
+        markerButtons().forEach((button) => {
+          button.toggleAttribute('data-marker-completed', completedMarkerIds.has(button.dataset.markerId));
+        });
+        const toggle = panel?.querySelector('[data-map-action="toggle-completed"]');
+        const status = panel?.querySelector('[data-map-progress-status]');
+        const completed = completedMarkerIds.has(selectedMarkerId);
+        if (toggle) {
+          toggle.textContent = completed ? panelLabels.markNotFound || 'Mark as not found' : panelLabels.markFound || 'Mark as found';
+          toggle.setAttribute('aria-pressed', String(completed));
+        }
+        if (status) status.textContent = completed ? panelLabels.foundStatus || 'Saved on this device' : panelLabels.notFoundStatus || 'Not marked found';
+        updateCompletionSummary();
+      }
 
       function setTransform() {
         canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
@@ -412,6 +500,7 @@ const firstMarker = markerData.markers[0];
         const subtypeRow = marker.subtype ? `<div><dt>${escapeHtml(subtypeLabel)}</dt><dd>${escapeHtml(marker.subtype)}</dd></div>` : '';
         const activityNote = marker.activity_note ? `<p class="activity-note">${escapeHtml(marker.activity_note)}</p>` : '';
         const locationNote = marker.location_note ? `<p class="location-note">${escapeHtml(marker.location_note)}</p>` : '';
+        const completed = completedMarkerIds.has(marker.id);
         panel.innerHTML = `
           <p class="panel-kicker">${escapeHtml(labels[marker.category] || marker.category)}</p>
           <h3>${escapeHtml(localized.display_name || marker.name)}</h3>
@@ -428,16 +517,29 @@ const firstMarker = markerData.markers[0];
           ${locationNote}
           <p class="source-note">${escapeHtml(marker.source_summary)}</p>
           ${navigationNote}
+          <div class="marker-progress-actions">
+            <button type="button" data-map-action="toggle-completed" aria-pressed="${completed}">${escapeHtml(completed ? panelLabels.markNotFound || 'Mark as not found' : panelLabels.markFound || 'Mark as found')}</button>
+            <small data-map-progress-status>${escapeHtml(completed ? panelLabels.foundStatus || 'Saved on this device' : panelLabels.notFoundStatus || 'Not marked found')}</small>
+          </div>
         `;
         panel.scrollTop = 0;
       }
 
-      function selectMarker(id) {
+      function selectMarker(id, options = {}) {
         const marker = allMarkers().find((item) => item.id === id);
         if (!marker) return;
+        selectedMarkerId = id;
         markerButtons().forEach((button) => button.toggleAttribute('data-active-marker', button.dataset.markerId === id));
         renderPanel(marker);
+        syncCompletionUi();
         keepSelectedMarkerClear(marker);
+        if (options.updateUrl !== false) updateMarkerQuery(id);
+        if (options.track !== false) {
+          trackToolEvent('tool_result_generated', {
+            marker_id: id,
+            marker_category: marker.category,
+          });
+        }
       }
 
       function keepSelectedMarkerClear(marker) {
@@ -509,7 +611,11 @@ const firstMarker = markerData.markers[0];
           return;
         }
 
-        const visibleChestMarkers = chestMarkers.filter((marker) => markerMatches(marker, query) && markerMatchesChestRegion(marker));
+        const visibleChestMarkers = chestMarkers.filter((marker) =>
+          markerMatches(marker, query) &&
+          markerMatchesChestRegion(marker) &&
+          (!hideCompleted?.checked || !completedMarkerIds.has(marker.id))
+        );
         if (scale < 1.45) {
           const clusters = clusterChestMarkers(visibleChestMarkers);
           chestLayer.innerHTML = clusters.map((cluster, index) => `
@@ -543,6 +649,7 @@ const firstMarker = markerData.markers[0];
             data-marker-region="${escapeHtml(localized.display_region || marker.region)}"
             data-marker-subtype="${marker.subtype || ''}"
             data-marker-aliases="${escapeHtml((localized.search_aliases || []).join(' '))}"
+            ${completedMarkerIds.has(marker.id) ? 'data-marker-completed' : ''}
             style="left:${marker.x * 100}%;top:${marker.y * 100}%;"
             aria-label="${escapeHtml(localized.display_name || marker.name)}, ${escapeHtml(localized.display_region || marker.region)}, ${escapeHtml(String(marker.precision).toLowerCase())}"
           ><span aria-hidden="true"></span></button>
@@ -600,16 +707,67 @@ const firstMarker = markerData.markers[0];
 
         Array.from(root.querySelectorAll('[data-marker-id]:not(.marker-chest)')).forEach((button) => {
           const haystack = normalizeSearchText(`${button.dataset.markerName} ${button.dataset.markerRegion} ${button.dataset.markerSubtype} ${button.dataset.markerAliases}`);
-          const visible = categories.has(button.dataset.markerCategory) && (!query || haystack.includes(query));
+          const visible = categories.has(button.dataset.markerCategory) &&
+            (!query || haystack.includes(query)) &&
+            (!hideCompleted?.checked || !completedMarkerIds.has(button.dataset.markerId));
           button.hidden = !visible;
           if (visible) shown += 1;
         });
 
         renderChestLayer();
         if (categories.has('CHEST')) {
-          shown += chestMarkers.filter((marker) => markerMatches(marker, query) && markerMatchesChestRegion(marker)).length;
+          shown += chestMarkers.filter((marker) =>
+            markerMatches(marker, query) &&
+            markerMatchesChestRegion(marker) &&
+            (!hideCompleted?.checked || !completedMarkerIds.has(marker.id))
+          ).length;
         }
         root.dataset.filteredMarkerCount = String(shown);
+      }
+
+      async function toggleSelectedMarkerCompletion() {
+        const marker = allMarkers().find((item) => item.id === selectedMarkerId);
+        if (!marker) return;
+        const completed = !completedMarkerIds.has(marker.id);
+        if (completed) completedMarkerIds.add(marker.id);
+        else completedMarkerIds.delete(marker.id);
+        persistCompletedMarkerIds();
+        syncCompletionUi();
+        await applyFilters();
+        trackToolEvent('map_marker_completed', {
+          marker_id: marker.id,
+          marker_category: marker.category,
+          completed,
+        });
+      }
+
+      async function resetCompletedMarkers() {
+        completedMarkerIds.clear();
+        persistCompletedMarkerIds();
+        syncCompletionUi();
+        await applyFilters();
+        trackToolEvent('tool_reset', { reset_scope: 'map_completed_markers' });
+      }
+
+      async function selectDeepLinkedMarker() {
+        const markerId = new URLSearchParams(window.location.search).get('marker');
+        if (!markerId) return;
+        let marker = baseMarkers.find((item) => item.id === markerId);
+        if (!marker && markerId.startsWith('marker:chest:')) {
+          const chestFilter = filters.find((input) => input.value === 'CHEST');
+          if (chestFilter) chestFilter.checked = true;
+          await loadChestMarkers();
+          marker = chestMarkers.find((item) => item.id === markerId);
+          if (marker) {
+            if (chestRegionFilter && marker.chunk_key) chestRegionFilter.value = marker.chunk_key;
+            scale = Math.max(scale, 1.55);
+            offsetX = Math.round(viewport.clientWidth / 2 - marker.x * viewport.clientWidth * scale);
+            offsetY = Math.round(viewport.clientHeight / 2 - marker.y * viewport.clientHeight * scale);
+            setTransform();
+            await applyFilters();
+          }
+        }
+        if (marker) selectMarker(markerId, { updateUrl: false });
       }
 
       function zoomBy(amount) {
@@ -629,6 +787,8 @@ const firstMarker = markerData.markers[0];
             offsetY = 0;
             setTransform();
           }
+          if (action === 'toggle-completed') void toggleSelectedMarkerCompletion();
+          if (action === 'reset-completed') void resetCompletedMarkers();
         }
 
         const markerButton = event.target.closest('[data-marker-id]');
@@ -671,10 +831,23 @@ const firstMarker = markerData.markers[0];
       }, { passive: false });
 
       search.addEventListener('input', () => void applyFilters());
-      filters.forEach((input) => input.addEventListener('change', () => void applyFilters()));
-      chestRegionFilter?.addEventListener('change', () => void applyFilters());
+      search.addEventListener('change', () => trackToolEvent('tool_input_change', { input_name: 'search' }));
+      filters.forEach((input) => input.addEventListener('change', () => {
+        void applyFilters();
+        trackToolEvent('tool_input_change', { input_name: 'category', input_value: input.value, enabled: input.checked });
+      }));
+      hideCompleted?.addEventListener('change', () => {
+        void applyFilters();
+        trackToolEvent('tool_input_change', { input_name: 'hide_completed', enabled: hideCompleted.checked });
+      });
+      chestRegionFilter?.addEventListener('change', () => {
+        void applyFilters();
+        trackToolEvent('tool_input_change', { input_name: 'chest_region', input_value: chestRegionFilter.value });
+      });
+      syncCompletionUi();
       setTransform();
-      void applyFilters();
+      trackToolEvent('tool_open');
+      void applyFilters().then(selectDeepLinkedMarker);
     })();
   </script>
 </section>
@@ -687,11 +860,17 @@ const firstMarker = markerData.markers[0];
   .map-stats { display: flex; gap: 0.45rem; flex-wrap: wrap; justify-content: end; }
   .map-stats span { display: grid; min-width: 102px; padding: 0.55rem 0.65rem; border: 1px solid hsl(199 86% 58% / 0.22); border-radius: 8px; background: hsl(221 27% 12% / 0.72); color: var(--muted); font-size: 0.72rem; }
   .map-stats strong { color: var(--ink); font-size: 1.08rem; line-height: 1.1; }
+  .map-stats small { color: var(--muted); font-size: 0.68rem; }
+  .map-stats small b { color: var(--muted-strong); }
   .map-toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.35fr) minmax(170px, 220px) auto; gap: 0.55rem; align-items: end; padding: 0.62rem; border: 1px solid hsl(199 86% 58% / 0.2); border-radius: 10px; background: hsl(219 24% 12% / 0.88); box-shadow: 0 16px 34px hsl(222 32% 3% / 0.28); }
   .search-field, .chest-region-field { display: grid; gap: 0.28rem; color: var(--muted); font-size: 0.72rem; font-weight: 800; }
   .search-field input, .chest-region-field select { width: 100%; min-height: 38px; border: 1px solid hsl(199 86% 58% / 0.32); border-radius: 8px; background: hsl(222 32% 6% / 0.88); color: var(--ink); padding: 0.56rem 0.68rem; font: inherit; }
   .chest-region-field select:disabled { opacity: 0.55; }
   .filter-group, .zoom-actions { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+  .progress-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.45rem; padding-top: 0.45rem; border-top: 1px solid hsl(217 20% 24%); }
+  .progress-toggle { display: inline-flex; min-height: 38px; align-items: center; gap: 0.45rem; color: var(--muted-strong); font-size: 0.74rem; font-weight: 800; }
+  .progress-toggle input { width: 18px; height: 18px; accent-color: var(--success); }
+  .progress-actions button, .marker-progress-actions button { min-height: 38px; border: 1px solid hsl(165 62% 63% / 0.42); border-radius: 999px; background: hsl(165 45% 20% / 0.62); color: var(--ink); padding: 0.46rem 0.72rem; font: inherit; font-size: 0.74rem; font-weight: 850; cursor: pointer; }
   .filter-pill { cursor: pointer; }
   .filter-pill input { position: absolute; opacity: 0; pointer-events: none; }
   .filter-pill span, .zoom-actions button { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; border: 1px solid hsl(217 20% 28%); border-radius: 999px; background: hsl(221 27% 12% / 0.82); color: var(--muted-strong); padding: 0.42rem 0.6rem; font-size: 0.74rem; font-weight: 850; }
@@ -711,6 +890,8 @@ const firstMarker = markerData.markers[0];
   .marker { --marker: #b9d6e8; position: absolute; z-index: 4; width: 22px; height: 22px; border: 0; border-radius: 999px; transform: translate(-50%, -50%); background: transparent; cursor: pointer; }
   .marker span { position: relative; display: block; width: 14px; height: 14px; margin: 4px; border: 2px solid hsl(222 32% 5% / 0.96); border-radius: 999px; background: hsl(218 26% 8% / 0.9); box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.28), 0 7px 16px hsl(222 32% 2% / 0.66); }
   .marker span::before { content: ""; position: absolute; inset: 3px; border-radius: inherit; background: var(--marker); box-shadow: 0 0 10px color-mix(in oklab, var(--marker), transparent 52%); }
+  .marker[data-marker-completed] { opacity: 0.72; }
+  .marker[data-marker-completed] span::after { content: "✓"; position: absolute; inset: -8px; display: grid; place-items: center; border: 1px solid hsl(165 62% 70% / 0.9); border-radius: 999px; background: hsl(165 55% 18% / 0.96); color: hsl(165 72% 82%); font-size: 0.7rem; font-weight: 900; }
   .marker-eonas-legacy { --marker: #8fd4b8; }
   .marker-organa-statue { --marker: #d8c06a; }
   .marker-warp-point { --marker: #6dbde5; width: 24px; height: 24px; }
@@ -739,6 +920,8 @@ const firstMarker = markerData.markers[0];
   :global(.chest-layer .marker:hover span), :global(.chest-layer .marker:focus-visible span) { box-shadow: 0 0 0 3px hsl(199 86% 58% / 0.36), 0 10px 22px hsl(222 32% 2% / 0.68); }
   :global(.chest-layer .marker[data-active-marker]) { z-index: 6; }
   :global(.chest-layer .marker[data-active-marker] span) { box-shadow: 0 0 0 4px hsl(199 86% 58% / 0.52), 0 0 0 8px hsl(222 32% 5% / 0.46), 0 12px 26px hsl(222 32% 2% / 0.72); }
+  :global(.chest-layer .marker[data-marker-completed]) { opacity: 0.72; }
+  :global(.chest-layer .marker[data-marker-completed] span::after) { content: "✓"; position: absolute; inset: -8px; display: grid; place-items: center; border: 1px solid hsl(165 62% 70% / 0.9); border-radius: 999px; background: hsl(165 55% 18% / 0.96); color: hsl(165 72% 82%); font-size: 0.7rem; font-weight: 900; transform: rotate(-45deg); }
   .chest-cluster { position: absolute; z-index: 5; min-width: 28px; height: 28px; border: 2px solid hsl(222 32% 5% / 0.94); border-radius: 999px; transform: translate(-50%, -50%); background: hsl(43 53% 57% / 0.96); color: #07101b; box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.24), 0 9px 20px hsl(222 32% 2% / 0.64); font-size: 0.68rem; font-weight: 950; cursor: pointer; }
   .chest-cluster:hover, .chest-cluster:focus-visible { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.4), 0 10px 24px hsl(222 32% 2% / 0.62); }
   :global(.chest-cluster) { position: absolute; z-index: 5; min-width: 28px; height: 28px; border: 2px solid hsl(222 32% 5% / 0.94); border-radius: 999px; transform: translate(-50%, -50%); background: hsl(43 53% 57% / 0.96); color: #07101b; box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.24), 0 9px 20px hsl(222 32% 2% / 0.64); font-size: 0.68rem; font-weight: 950; cursor: pointer; pointer-events: auto; }
@@ -760,6 +943,9 @@ const firstMarker = markerData.markers[0];
   .source-note, .navigation-note, .activity-note, .location-note, .map-boundary { color: var(--muted); font-size: 0.82rem; }
   .navigation-note, .location-note { border-top: 1px solid var(--line); margin-top: 0.9rem; padding-top: 0.75rem; }
   .activity-note { padding: 0.62rem 0.68rem; border: 1px solid hsl(18 100% 72% / 0.28); border-radius: 8px; background: hsl(18 60% 24% / 0.14); }
+  .marker-progress-actions { display: grid; gap: 0.4rem; padding-top: 0.8rem; border-top: 1px solid hsl(217 20% 24%); }
+  .marker-progress-actions button { justify-self: start; }
+  .marker-progress-actions small { color: var(--muted); }
   .map-boundary { margin: 0; padding: 0.72rem; border: 1px solid hsl(165 62% 63% / 0.24); border-radius: 8px; background: hsl(165 62% 26% / 0.16); }
   @media (max-width: 900px) {
     .map-heading, .map-toolbar { grid-template-columns: 1fr; }
@@ -772,6 +958,8 @@ const firstMarker = markerData.markers[0];
     .interactive-map { margin-top: 1rem; }
     .map-toolbar { padding: 0.65rem; }
     .filter-group, .zoom-actions { width: 100%; }
+    .progress-actions { justify-content: stretch; }
+    .progress-toggle, .progress-actions button { flex: 1 1 auto; }
     .filter-pill, .zoom-actions button { flex: 1 1 auto; }
     .map-workspace, .map-frame { min-height: 540px; }
     .map-viewport, .map-canvas picture, .orbis-atlas-map { min-height: 500px; }
