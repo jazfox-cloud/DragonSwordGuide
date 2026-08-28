@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import http from 'node:http';
+import https from 'node:https';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
@@ -30,10 +31,11 @@ async function waitForExit(child, timeoutMs = 2000) {
 
 async function waitForHttp(url, timeoutMs = 30000) {
   const started = Date.now();
+  const client = url.startsWith('https:') ? https : http;
   while (Date.now() - started < timeoutMs) {
     try {
       const status = await new Promise((resolve, reject) => {
-        http.get(url, (response) => {
+        client.get(url, (response) => {
           response.resume();
           resolve(response.statusCode || 0);
         }).on('error', reject);
@@ -94,13 +96,15 @@ async function evaluate(cdp, expression) {
 }
 
 async function navigate(cdp, url) {
-  await cdp.send('Page.navigate', { url });
+  const navigation = await cdp.send('Page.navigate', { url });
+  if (navigation.errorText) throw new Error(`Navigation failed for ${url}: ${navigation.errorText}`);
   for (let attempt = 0; attempt < 100; attempt += 1) {
-    const ready = await evaluate(cdp, `document.readyState === 'complete' && Boolean(document.querySelector('[data-map-mvp]'))`);
+    const ready = await evaluate(cdp, `document.readyState !== 'loading' && Boolean(document.querySelector('[data-map-mvp]'))`);
     if (ready) return;
     await delay(100);
   }
-  throw new Error(`Map did not become ready at ${url}`);
+  const state = await evaluate(cdp, `({ href: location.href, title: document.title, readyState: document.readyState, body: document.body?.innerText?.slice(0, 160) })`);
+  throw new Error(`Map did not become ready at ${url}: ${JSON.stringify(state)}`);
 }
 
 function assert(condition, message) {
@@ -251,7 +255,9 @@ try {
     if (hide.checked) hide.click();
     const chestFilter = root.querySelector('[data-category-filter][value="CHEST"]');
     if (!chestFilter.checked) chestFilter.click();
-    await waitFor(() => root.dataset.chestLoaded === 'true' && root.querySelector('[data-chest-cluster]'));
+    await waitFor(() => root.dataset.chestLoaded === 'true' || root.dataset.chestLoadError);
+    if (root.dataset.chestLoadError) throw new Error('chest data load failed: ' + root.dataset.chestLoadError);
+    await waitFor(() => root.querySelector('[data-chest-cluster]'));
     root.querySelector('[data-chest-cluster]').click();
     await waitFor(() => root.querySelector('.marker-chest'));
     const chestMarker = root.querySelector('.marker-chest');
