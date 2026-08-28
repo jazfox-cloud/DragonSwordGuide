@@ -255,9 +255,9 @@ try {
     if (hide.checked) hide.click();
     const chestFilter = root.querySelector('[data-category-filter][value="CHEST"]');
     if (!chestFilter.checked) chestFilter.click();
-    await waitFor(() => root.dataset.chestLoaded === 'true' || root.dataset.chestLoadError);
+    await waitFor(() => root.dataset.chestLoaded === 'true' || root.dataset.chestLoadError, ${remoteBaseUrl ? 400 : 100});
     if (root.dataset.chestLoadError) throw new Error('chest data load failed: ' + root.dataset.chestLoadError);
-    await waitFor(() => root.querySelector('[data-chest-cluster]'));
+    await waitFor(() => root.querySelector('[data-chest-cluster]'), ${remoteBaseUrl ? 400 : 100});
     root.querySelector('[data-chest-cluster]').click();
     await waitFor(() => root.querySelector('.marker-chest'));
     const chestMarker = root.querySelector('.marker-chest');
