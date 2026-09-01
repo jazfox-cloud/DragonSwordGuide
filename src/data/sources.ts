@@ -33,6 +33,19 @@ export const patch110 = {
   date: 'August 19, 2026',
   isoDate: '2026-08-19',
   href: 'https://steamcommunity.com/games/4570720/announcements/detail/1841579228664485',
+  status: 'RELEASED',
 };
 
 export const latestAppliedPatch = patch110;
+
+export const nextAnnouncedPatch = {
+  version: '1.0.11',
+  label: 'Official update 1.0.11 preview',
+  announcedDate: 'August 28, 2026',
+  targetDate: '2026-09-03',
+  targetTimezone: 'KST',
+  href: 'https://steamcommunity.com/games/4570720/announcements/detail/1842212951302260',
+  status: 'PLANNED',
+  appliedDate: null,
+  scheduleConfidence: 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE',
+};
