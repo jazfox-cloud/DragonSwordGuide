@@ -1,0 +1,90 @@
+---
+const statusEffects = [
+  { name: 'Stun', group: 'Control condition', mark: 'ST', summary: 'Check whether the next Hero’s Signal Skill explicitly names Stun as its trigger.' },
+  { name: 'Airborne', group: 'Control condition', mark: 'AR', summary: 'Treat Airborne as a distinct trigger; a Signal that asks for another condition will not answer it.' },
+  { name: 'Knockdown', group: 'Control condition', mark: 'KD', summary: 'Match the grounded condition to the exact wording on the receiving Hero’s Signal Skill.' },
+  { name: 'Fire', group: 'Status condition', mark: 'FI', summary: 'Use the current in-game skill text to confirm both the Fire applicator and the Signal that can answer it.' },
+  { name: 'Shock', group: 'Status condition', mark: 'SH', summary: 'A Shock plan still needs a receiving Signal whose listed activation condition matches Shock.' },
+  { name: 'Ice', group: 'Status condition', mark: 'IC', summary: 'Check the current English label in your build before assuming Ice, Chill, or Frost wording is interchangeable.' },
+  { name: 'Poison', group: 'Status condition', mark: 'PO', summary: 'Confirm that Poison is actually applied before expecting a Poison-triggered Signal prompt.' },
+  { name: 'Bleed', group: 'Status condition', mark: 'BL', summary: 'Read both sides of the handoff: the skill that applies Bleed and the Signal that requires it.' },
+];
+---
+
+<section class="status-guide" aria-labelledby="status-effects-title">
+  <header class="status-guide__header">
+    <p class="status-guide__eyebrow">Field guide · Status response</p>
+    <h2 id="status-effects-title">What every status effect changes</h2>
+    <p>Status effects are not interchangeable prompts. The useful question is not “which effect is best?” but “does the next Hero’s Signal Skill name the condition this team creates?”</p>
+  </header>
+
+  <figure class="status-loop" aria-labelledby="status-loop-title status-loop-caption">
+    <div class="status-loop__header">
+      <p class="status-guide__eyebrow">Troubleshooting flow</p>
+      <h3 id="status-loop-title">If a Signal Skill Is Not Triggering</h3>
+    </div>
+    <div class="status-loop__steps">
+      <div><span>1</span><strong>Required Status Applied?</strong><small>Use a skill whose text names the condition required by the receiving Signal.</small></div>
+      <div><span>2</span><strong>Additional Condition Met?</strong><small>Check Super Armor, Break, and any extra requirement written on that Signal Skill.</small></div>
+      <div><span>3</span><strong>Matching Signal Available?</strong><small>Confirm the intended Hero has the matching Signal ready in the current setup.</small></div>
+      <div><span>4</span><strong>Prompt Appears — Activate or Switch</strong><small>Use the Signal window; if it never appears, return to the exact trigger text.</small></div>
+    </div>
+    <figcaption id="status-loop-caption">Check the trigger from left to right instead of switching on a guessed timing window.</figcaption>
+  </figure>
+
+  <div class="status-grid" aria-label="DragonSword Awakening status effect reference">
+    {statusEffects.map((effect) => (
+      <article class="status-card">
+        <div class="status-card__mark" aria-hidden="true">{effect.mark}</div>
+        <div>
+          <p class="status-card__group">{effect.group}</p>
+          <h3>{effect.name}</h3>
+          <p>{effect.summary}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="practice-panel">
+    <div>
+      <p class="status-guide__eyebrow">Practice without wasting materials</p>
+      <h3>Test one condition before building a whole team</h3>
+    </div>
+    <ol>
+      <li>Choose one status effect and read the skill text on all three Heroes.</li>
+      <li>Identify who applies the condition and whose Signal text requires it.</li>
+      <li>Check any additional condition before expecting the prompt.</li>
+      <li>Activate or switch when the matching Signal window appears, then repeat.</li>
+    </ol>
+  </div>
+
+  <aside class="evidence-note">
+    <strong>Current guide boundary:</strong> these are practical behavior summaries for the current retail guide. Exact durations, buildup thresholds, damage multipliers and universal best teams are not claimed here.
+  </aside>
+</section>
+
+<style>
+  .status-guide { margin: 3.5rem 0; }
+  .status-guide__header { max-width: 720px; }
+  .status-guide__eyebrow, .status-card__group { margin: 0 0 .4rem; color: var(--accent-light); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .status-guide h2, .status-guide h3 { line-height: 1.12; letter-spacing: -.035em; }
+  .status-guide h2 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+  .status-guide h3 { margin: 0 0 .45rem; }
+  .status-guide p, .status-guide li, .status-guide small { color: var(--muted-strong); }
+  .status-loop { margin: 1.6rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: 16px 5px 16px 5px; background: linear-gradient(135deg, var(--raised), var(--paper)); }
+  .status-loop__header { margin-bottom: .9rem; }
+  .status-loop__header h3 { margin-bottom: 0; }
+  .status-loop__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+  .status-loop__steps div { position: relative; min-width: 0; padding: .9rem; border-left: 2px solid var(--accent); background: hsl(221 27% 12% / .72); }
+  .status-loop__steps span { display: inline-grid; width: 1.65rem; height: 1.65rem; place-items: center; margin-bottom: .55rem; border-radius: 50%; color: var(--wash); background: var(--accent-light); font-size: .72rem; font-weight: 900; }
+  .status-loop__steps strong, .status-loop__steps small { display: block; }
+  .status-loop figcaption { margin-top: .8rem; color: var(--muted); font-size: .75rem; }
+  .status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+  .status-card { display: grid; grid-template-columns: auto 1fr; gap: .9rem; padding: 1rem; border: 1px solid var(--line); border-radius: 12px 4px 12px 4px; background: var(--paper); }
+  .status-card__mark { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border: 1px solid hsl(199 86% 58% / .55); border-radius: 10px 3px 10px 3px; color: var(--accent-light); background: var(--accent-soft); font-size: .72rem; font-weight: 900; }
+  .status-card p { margin: 0; }
+  .practice-panel { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 1.2rem; margin-top: 1rem; padding: 1.2rem; border: 1px solid hsl(165 62% 63% / .32); border-radius: 14px; background: hsl(165 32% 13% / .38); }
+  .practice-panel ol { margin: 0; padding-left: 1.2rem; }
+  .evidence-note { margin-top: 1rem; padding: 1rem; border-left: 3px solid var(--accent-light); color: var(--muted-strong); background: var(--raised); }
+  @media (max-width: 760px) { .status-loop__steps, .status-grid, .practice-panel { grid-template-columns: 1fr; } }
+</style>

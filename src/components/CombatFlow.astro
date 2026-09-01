@@ -1,5 +1,5 @@
 ---
-const steps = ['Active Skill', 'Status Ailment', 'Signal Skill', 'Switching Signal', 'Finisher'];
+const steps = ['Active Skill', 'Status Ailment', 'Signal Skill', 'Switching Signal'];
 ---
 <div class="combat-flow" aria-label="Combat flow">
   {steps.map((step, index) => <><div class="flow-step"><span>0{index + 1}</span><strong>{step}</strong></div>{index < steps.length - 1 && <span class="flow-arrow" aria-hidden="true">→</span>}</>)}

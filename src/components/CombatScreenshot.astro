@@ -1,0 +1,58 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="combat-shot">
+  <img
+    src={src}
+    alt={alt}
+    width="1920"
+    height="1080"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption>
+    <span>{caption}</span>
+    <small>Official Steam gameplay screenshot · UI may vary by version.</small>
+  </figcaption>
+</figure>
+
+<style>
+  .combat-shot {
+    margin: 1.5rem 0 2rem;
+    overflow: hidden;
+    border: 1px solid hsl(199 86% 58% / .35);
+    border-radius: 16px 5px 16px 5px;
+    background: var(--paper);
+    box-shadow: 0 20px 48px hsl(222 32% 3% / .35);
+  }
+
+  .combat-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .combat-shot figcaption {
+    display: grid;
+    gap: .35rem;
+    padding: .85rem 1rem;
+    color: var(--muted-strong);
+    font-size: .82rem;
+    line-height: 1.5;
+  }
+
+  .combat-shot small {
+    color: var(--muted);
+    font-size: .68rem;
+    letter-spacing: .025em;
+  }
+</style>
