@@ -126,8 +126,9 @@ Historical 1.0.7, 1.0.8, and 1.0.9 references remain where they describe earlier
   - Ryza, Othello Hero Quest, and Hunt Hell Mode remain separate from guaranteed September 3 content
   - Multiplayer remains live-fact-first and does not present planned Retry/matchmaking changes as available
   - sitemap counts remain 16 EN + 6 JA
-- No propagation retry was required.
+- The content deployment required no propagation retry.
+- The report-closure deployment (`2e2876a`, deployment `4f9ea040-87d5-4b70-bcff-e163dd76f2c8`) was Active and current on the custom domain, while its new preview hostname initially returned 404. One bounded no-cache retry then passed all six routes and sitemap checks. No DNS or Cloudflare configuration was changed.
 
 ## 12. Final status
 
-`PASS`
+`PASS_WITH_TRANSIENT_PROPAGATION`
