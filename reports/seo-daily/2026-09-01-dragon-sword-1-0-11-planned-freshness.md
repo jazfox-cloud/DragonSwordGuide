@@ -111,8 +111,23 @@ Historical 1.0.7, 1.0.8, and 1.0.9 references remain where they describe earlier
 
 ## 11. Production verification
 
-Pending scoped commit, push, Cloudflare Pages source verification, and required-route production checks.
+- Content commit: `27b73e9` (`Align DragonSword roadmap with 1.0.11 preview`).
+- Push: `cea658f..27b73e9  HEAD -> main`.
+- Cloudflare Pages project: `dragonswordguide` (GitHub-backed production deployment).
+- Deployment: `9ed14888-34aa-43d1-81ba-f324c04bd899`, Production / Active, source `27b73e9`.
+- Preview: <https://9ed14888.dragonswordguide.pages.dev>
+- Custom domain: <https://dragonswordguide.com>
+- Preview and custom domain both passed the required-route verification for `/`, `/roadmap/`, `/multiplayer/`, `/ja/`, `/ja/roadmap/`, and `/ja/multiplayer/`:
+  - HTTP 200
+  - self-canonical to the custom domain
+  - no accidental `noindex`
+  - reciprocal EN/JA hreflang and x-default
+  - Roadmap shows 1.0.10 as applied and 1.0.11 as planned for September 3 KST with the development/schedule caveat
+  - Ryza, Othello Hero Quest, and Hunt Hell Mode remain separate from guaranteed September 3 content
+  - Multiplayer remains live-fact-first and does not present planned Retry/matchmaking changes as available
+  - sitemap counts remain 16 EN + 6 JA
+- No propagation retry was required.
 
 ## 12. Final status
 
-`PENDING_DEPLOYMENT`
+`PASS`
