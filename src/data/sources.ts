@@ -29,23 +29,41 @@ export const patch109 = {
 
 export const patch110 = {
   version: '1.0.10',
-  label: 'Official update 1.0.10',
+  label: 'Official update 1.0.10 (previous)',
   date: 'August 19, 2026',
   isoDate: '2026-08-19',
+  appliedDate: '2026-08-19',
   href: 'https://steamcommunity.com/games/4570720/announcements/detail/1841579228664485',
   status: 'RELEASED',
 };
 
-export const latestAppliedPatch = patch110;
-
-export const nextAnnouncedPatch = {
+export const patch111 = {
   version: '1.0.11',
-  label: 'Official update 1.0.11 preview',
+  label: 'Official update 1.0.11',
+  date: 'September 3, 2026',
+  isoDate: '2026-09-03',
+  appliedDate: '2026-09-03',
+  href: 'https://steamcommunity.com/games/4570720/announcements/detail/1842846814442045',
+  status: 'RELEASED',
+};
+
+export const previousApplied = patch110;
+export const latestApplied = patch111;
+export const latestAppliedPatch = latestApplied;
+
+export const patch111Preview = {
+  version: '1.0.11',
+  label: 'Official update 1.0.11 preview (historical)',
   announcedDate: 'August 28, 2026',
   targetDate: '2026-09-03',
   targetTimezone: 'KST',
   href: 'https://steamcommunity.com/games/4570720/announcements/detail/1842212951302260',
-  status: 'PLANNED',
-  appliedDate: null,
+  status: 'HISTORICAL_ANNOUNCEMENT',
   scheduleConfidence: 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE',
 };
+
+export const comingNextAnnouncements = [
+  { name: 'Ryza (Playable Hero)', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
+  { name: 'Othello Hero Quest', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
+  { name: 'Hunt Hell Mode', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
+] as const;

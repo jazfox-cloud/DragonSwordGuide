@@ -6,16 +6,17 @@ import QuickAnswer from '../../../components/QuickAnswer.astro';
 import SourceList from '../../../components/SourceList.astro';
 import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
 import { roadmapJa as page } from '../../../content/ja/roadmap';
-import { sourceUrls, patch107, patch109, latestAppliedPatch, nextAnnouncedPatch } from '../../../data/sources';
+import { sourceUrls, patch107, patch109, latestAppliedPatch, previousApplied, patch111Preview } from '../../../data/sources';
 import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
 
 const canonical = getCanonical('roadmap', 'ja');
-const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-09-01' });
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-09-04' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'ロードマップ', path: '/ja/roadmap/' }]);
 const sources = [
   { label: '公式ロードマップ & Q&A', href: sourceUrls.roadmap, note: 'Evidence B - 今後の予定、英雄、Rifts、マルチプレイRaids、プラットフォーム状況の一次情報。' },
-  { label: '公式1.0.10アップデート', href: latestAppliedPatch.href, note: 'Evidence B - 2026年8月19日に適用された現在の公式パッチ。' },
-  { label: '公式1.0.11パッチプレビュー', href: nextAnnouncedPatch.href, note: 'Evidence B - 2026年9月3日 KSTを適用目標とする公式予告。開発中のため、内容と日程は変更される可能性があります。' },
+  { label: '公式1.0.11アップデート', href: latestAppliedPatch.href, note: 'Evidence B - 2026年9月3日 KSTに適用された最新の公式パッチ。' },
+  { label: '公式1.0.10アップデート', href: previousApplied.href, note: 'Evidence B - 2026年8月19日に適用された過去の公式パッチ。' },
+  { label: '公式1.0.11パッチプレビュー（履歴）', href: patch111Preview.href, note: 'Evidence B - 予告の出典として保存。別枠のComing Nextは1.0.11適用済み内容に含めません。' },
 ];
 ---
 
@@ -26,25 +27,25 @@ const sources = [
       <header class="article-header">
         <p class="eyebrow">アップデート · 出典タイムライン</p>
         <h1>{page.h1}</h1>
-        <LastVerified date="2026年9月1日" label="最終確認" />
+        <LastVerified date="2026年9月4日" label="最終確認" />
       </header>
-      <QuickAnswer eyebrow="要点" title="最新確認状況: 1.0.10は適用済み、1.0.11は公式予告です。">
-        <p>1.0.11は2026年9月3日 KSTの適用予定として公式に予告されています。ただし開発中の内容をもとにしたプレビューであり、実際のアップデート内容と日程は変更される可能性があります。</p>
+      <QuickAnswer eyebrow="要点" title="最新確認状況: 1.0.11は適用済みの最新アップデートです。">
+        <p>公式の最終アップデートノートは、1.0.11が2026年9月3日 KSTに適用されたことを明記しています。Ryza、Othello Hero Quest、Hunt Hell Modeは日程未定のComing Nextのままです。</p>
       </QuickAnswer>
       <div class="timeline">
-        <div><span>リリース済み / 現在</span><h2>1.0.10 適用済み</h2><p>1.0.10が現在適用されている最新パッチです。<a href={patch109.href}>1.0.9は直前のパッチ</a>です。</p></div>
-        <div><span>公式予告 / 適用予定</span><h2>1.0.11 · 2026年9月3日 KST</h2><p>公式の目標日であり、リリース済みという意味ではありません。開発中のため内容と日程は変更される可能性があります。</p></div>
-        <div><span>今後 / 日程未定</span><h2>Coming Next</h2><p>Ryza、Othello Hero Quest、Hunt Hell Modeは別枠で予告されており、確定した配信日は示されていません。</p></div>
+        <div><span>最新適用済み / リリース済み</span><h2>1.0.11 適用済み</h2><p>2026年9月3日 KSTの公式アップデートノートで適用が確認されています。</p></div>
+        <div><span>適用済み / 過去の更新</span><h2>1.0.10 適用済み</h2><p><a href={previousApplied.href}>1.0.10は直前の適用済みパッチ</a>で、<a href={patch109.href}>1.0.9はさらに過去の履歴</a>です。</p></div>
+        <div><span>今後の予定 / 日程未定</span><h2>Coming Next</h2><p>Ryza、Othello Hero Quest、Hunt Hell Modeは別枠で予告されており、確定した配信日は示されていません。</p></div>
       </div>
       <section class="copy">
-        <h2>リリース済み / 現在</h2>
-        <ul><li>DragonSword: Awakening はSteamでリリース済みです。</li><li>1.0.10は適用済みです。1.0.9は直前のパッチで、<a href={patch107.href}>1.0.7</a>はQuick Entry、マッチング範囲、マップピン、ルーン変更の履歴として参照します。</li></ul>
-        <h2>公式予告 / 適用予定: 1.0.11</h2>
-        <p>公式の開発プレビューは2026年9月3日 KSTを目標とし、次の範囲のみを案内しています。</p>
-        <ul><li>マルチプレイのRetry機能とマッチメイキングの強化。</li><li>新しいJust Dodge機能。</li><li>Lock-On操作とSwitchingプレイの改善。</li><li>Tarte、Lute、Aria、Roxy、Astria、Kalsionを対象とする英雄バランス調整。</li><li>QoL改善と追加の不具合修正。</li></ul>
-        <p class="evidence-note"><strong>予定であり、未適用です:</strong> 公式告知は、開発中の内容をもとにしたプレビューだと明記しています。実際のアップデート内容と日程は変更される可能性があります。</p>
+        <h2>最新適用済み / リリース済み: 1.0.11</h2>
+        <p>最終アップデートノートで、次の適用内容が確認できます。</p>
+        <ul><li>1秒間の無敵、3秒間の確定クリティカル、Active Skill Rageゲージ10%回復、Dodge Stamina消費の半分回復を伴うJust Dodge。</li><li>Lock-Onの操作、ターゲット保持、検索、カメラの改善。</li><li>切り替え後にフィールドに残る英雄のSuper Armorが1秒間破壊されない調整。</li><li>Lute、Aria、Tarte、Roxy、Astria、Kalsion、Danaのバランス調整。</li><li>マルチプレイのRetry、応答が最も速いロビーの検索、バージョン通知、ロビー不具合の修正。</li><li>システムのQoL改善、ローカライズ修正、記載された不具合修正。</li></ul>
+        <p class="evidence-note"><strong>最終ノートの境界:</strong> これらの適用済み情報は、予告ではなく最終版の1.0.11アップデートノートを根拠とします。</p>
+        <h2>適用済み / 過去の更新: 1.0.10</h2>
+        <ul><li>1.0.10は2026年8月19日に適用された過去の公式パッチです。</li><li><a href={patch107.href}>1.0.7</a>はQuick Entry、旧マッチング範囲設定、マップピン、ルーン変更の履歴として参照します。</li></ul>
         <h2>Coming Next / 日程未定</h2>
-        <p>同じプレビューでは、次の項目を「Coming Next」として別枠で紹介しています。これらがすべて9月3日に含まれるとは明記されていません。</p>
+        <p>8月28日のプレビューは、次の項目を「Coming Next」として別枠で紹介しています。最終版の1.0.11アップデートノートには含まれていないため、適用済みの1.0.11内容とは分けています。</p>
         <ul><li>プレイアブル英雄 Ryza。</li><li>Othello Hero Quest。</li><li>Hunt Hell Mode。</li></ul>
         <h2>今後 / 日程未定</h2>
         <ul><li>以前の公式ロードマップでは、Jerome、Veronica、Loganの追加英雄や、Hero Quest、Rift、マルチプレイRaidの方向性も示されていますが、確定した配信日はありません。</li><li>コンソール版、クロスプラットフォーム、ストーリー協力、オープンワールド協力は、このページでは確定情報として扱いません。</li></ul>

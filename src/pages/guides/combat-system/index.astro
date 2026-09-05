@@ -10,7 +10,7 @@ import CombatScreenshot from '../../../components/CombatScreenshot.astro';
 import StatusEffectsFieldGuide from '../../../components/StatusEffectsFieldGuide.astro';
 import SectionHeader from '../../../components/SectionHeader.astro';
 import AdsterraNativeBanner from '../../../components/AdsterraNativeBanner.astro';
-import { sourceUrls } from '../../../data/sources';
+import { sourceUrls, latestAppliedPatch } from '../../../data/sources';
 
 const title = 'DragonSword Awakening Signal Skills & Status Effects Guide';
 const description = 'Learn how to trigger Signal Skills in DragonSword Awakening, diagnose missing prompts, and match Status Ailments to the exact Signal Skill conditions shown in your current build.';
@@ -22,14 +22,21 @@ const article = {
   description,
   mainEntityOfPage: canonical,
   datePublished: '2026-08-08',
-  dateModified: '2026-09-01',
+  dateModified: '2026-09-04',
   publisher: { '@type': 'Organization', name: 'DragonSword Guide' },
 };
-const sources = [{
-  label: 'Official Steam store page',
-  href: sourceUrls.steam,
-  note: 'describes 19 Heroes, Status Ailments, Active Skills, Signal Skills and Switching Signals.',
-}];
+const sources = [
+  {
+    label: 'Official Steam store page',
+    href: sourceUrls.steam,
+    note: 'describes 19 Heroes, Status Ailments, Active Skills, Signal Skills and Switching Signals.',
+  },
+  {
+    label: 'Official update notes 1.0.11',
+    href: latestAppliedPatch.href,
+    note: 'confirms the applied Just Dodge effects, Lock-On improvements and one-second switching Super Armor protection.',
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical} ogType="article" schema={[article]}>
@@ -39,7 +46,7 @@ const sources = [{
       <header class="article-header">
         <p class="eyebrow">Guide · Read the signal</p>
         <h1>DragonSword Awakening Signal Skills & Status Effects Guide</h1>
-        <LastVerified date="September 1, 2026" />
+        <LastVerified date="September 4, 2026" />
       </header>
 
       <QuickAnswer title="Match the exact condition, then wait for the prompt.">
@@ -82,6 +89,10 @@ const sources = [{
 
         <StatusEffectsFieldGuide />
         <AdsterraNativeBanner />
+
+        <h2>Applied in 1.0.11: Just Dodge and Lock-On</h2>
+        <p>The final official 1.0.11 notes add Just Dodge when a Dodge perfectly evades an enemy attack. A successful Just Dodge grants 1 second of invincibility, 3 seconds of guaranteed critical hits, recovers 10% of the Active Skill Rage gauge, and restores half of the Dodge Stamina cost.</p>
+        <p>The same applied notes improve Lock-On controls, target retention, target search and camera movement. Target search now considers angle and range, while Sudden Mission, World Boss, Hunt and Raid monsters keep Lock-On at greater distances than before. They also confirm that the Hero left on the field after switching keeps unbroken Super Armor for 1 second.</p>
 
         <h2>Why team order matters</h2>
         <p>A useful team has readable handoffs: one Hero creates a condition, the next Hero owns a matching Signal, and the third can continue from the state that follows.</p>
