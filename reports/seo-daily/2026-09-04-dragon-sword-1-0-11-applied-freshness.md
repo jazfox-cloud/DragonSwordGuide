@@ -169,22 +169,29 @@ No remaining public surface claims that 1.0.10 is the latest applied patch.
 
 ## 14. Production Verification
 
-Status: `PENDING_DEPLOYMENT`
+Status: `PASS_WITH_TRANSIENT_PROPAGATION`
 
-- Content commit: PENDING
-- Remote `origin/main`: PENDING
-- Cloudflare Pages deployment/source SHA: PENDING
-- Deployment timestamp: PENDING
-- Preview smoke: PENDING
-- Custom-domain smoke: PENDING
-- Sitemap production counts: PENDING
+- Content commit: `c3ad36aeb24c8fefdd025266490f2af813884ebb` (`Apply DragonSword 1.0.11 freshness update`).
+- Push: `bfbc8d0..c3ad36a HEAD -> main`.
+- Remote `origin/main`: verified as full SHA `c3ad36aeb24c8fefdd025266490f2af813884ebb`.
+- Cloudflare Pages project: `dragonswordguide`, GitHub-backed Production branch `main`.
+- Deployment: `3090e60f-a4f7-4ca6-a665-da667929c29a`.
+- Deployment source: `c3ad36a`.
+- Exact successful Cloudflare Pages check timestamp: `2026-09-05T02:14:12Z` / `2026-09-04 19:14:12 PDT`.
+- Preview: <https://3090e60f.dragonswordguide.pages.dev>.
+- Custom domain: <https://dragonswordguide.com>.
+- First smoke: the new preview returned 404 and the custom domain still served prior HTML; the control plane already showed the new deployment as Active. This was classified as bounded propagation, with no DNS or Cloudflare configuration change.
+- Bounded retry: PASS. Preview and custom domain both returned HTTP 200 for `/`, `/roadmap/`, `/multiplayer/`, `/guides/combat-system/`, `/ja/`, `/ja/roadmap/`, and `/ja/multiplayer/`.
+- Live output: PASS for 1.0.11 latest/applied markers, 1.0.10 previous history, EN/JA Coming Next boundary, current Multiplayer facts, Combat Just Dodge/Lock-On facts, exact canonical, no HTML `noindex`, hreflang/x-default where configured, Last Verified and official source link.
+- Preview response carries Cloudflare's expected `x-robots-tag: noindex`; the custom domain does not.
+- Production sitemap counts: 16 EN + 6 JA, unchanged.
 
 ## 15. Remaining Measurement Boundary
 
 Do not evaluate SEO success from immediate post-deploy data. Attribution remains on hold until Roadmap, Multiplayer and Combat have been recrawled. `/guides/combat-system/` also recently changed its Signal Skills / Status Effects intent, so pre-recrawl performance cannot validate or reject the repositioning or this freshness correction.
 
 ```yaml
-current_stage: LOCAL_VERIFIED
+current_stage: PRODUCTION_VERIFIED
 gate: PASS
 surface_holds:
   - Ryza, Othello Hero Quest, and Hunt Hell Mode remain ANNOUNCED / DATE_UNKNOWN
@@ -194,10 +201,9 @@ evidence:
   - TDD RED then freshness-contract GREEN
   - npm test, build, i18n and sitemap verification
 authorized_actions:
-  - Commit scoped Sprint files
-  - Push through existing GitHub-backed Cloudflare Pages production policy
+  - Report-closure commit and push
 blocked_actions:
   - New URLs or keyword clusters
   - DNS, Cloudflare configuration, GSC, GA4, indexing or sitemap-submission changes
-next_action: Run final SEO/output checks, commit, push, and verify production
+next_action: Wait for Roadmap, Multiplayer, and Combat recrawl before outcome attribution
 ```
