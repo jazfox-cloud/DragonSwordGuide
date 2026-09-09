@@ -55,6 +55,8 @@ export const mapJa = {
     hideCompleted: '発見済みを隠す',
     resetCompleted: '発見済みをリセット',
     noMatches: '一致する場所がありません',
+    clearSearch: '検索をクリア',
+    adjustFilters: '検索語、カテゴリ、地域、または発見済みを非表示にする設定を変更してください。',
   },
   panel: {
     region: '地域',

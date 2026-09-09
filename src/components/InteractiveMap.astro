@@ -98,6 +98,8 @@ const defaultLabels = {
     hideCompleted: 'Hide found',
     resetCompleted: 'Reset found markers',
     noMatches: 'No matching locations',
+    clearSearch: 'Clear search',
+    adjustFilters: 'Try another search or change the category, region or Hide found filters.',
   },
   panel: {
     region: 'Region',
@@ -205,6 +207,11 @@ const firstMarker = markerData.markers[0];
       </label>
       <button type="button" data-map-action="reset-completed">{mapLabels.controls.resetCompleted}</button>
     </div>
+  </div>
+
+  <div class="search-feedback">
+    <p data-map-empty role="status" hidden>{mapLabels.controls.noMatches}. {mapLabels.controls.adjustFilters}</p>
+    <button type="button" data-map-action="clear-search" hidden>{mapLabels.controls.clearSearch}</button>
   </div>
 
   <div class="map-workspace">
@@ -529,6 +536,7 @@ const firstMarker = markerData.markers[0];
         const marker = allMarkers().find((item) => item.id === id);
         if (!marker) return;
         selectedMarkerId = id;
+        panel.hidden = false;
         markerButtons().forEach((button) => button.toggleAttribute('data-active-marker', button.dataset.markerId === id));
         renderPanel(marker);
         syncCompletionUi();
@@ -700,10 +708,11 @@ const firstMarker = markerData.markers[0];
       }
 
       async function applyFilters() {
+        if (visibleCategories().has('CHEST')) await loadChestMarkers();
         const query = normalizeSearchText(search.value);
         const categories = visibleCategories();
-        if (categories.has('CHEST')) await loadChestMarkers();
         let shown = 0;
+        let selectedVisible = false;
 
         Array.from(root.querySelectorAll('[data-marker-id]:not(.marker-chest)')).forEach((button) => {
           const haystack = normalizeSearchText(`${button.dataset.markerName} ${button.dataset.markerRegion} ${button.dataset.markerSubtype} ${button.dataset.markerAliases}`);
@@ -712,6 +721,7 @@ const firstMarker = markerData.markers[0];
             (!hideCompleted?.checked || !completedMarkerIds.has(button.dataset.markerId));
           button.hidden = !visible;
           if (visible) shown += 1;
+          if (visible && button.dataset.markerId === selectedMarkerId) selectedVisible = true;
         });
 
         renderChestLayer();
@@ -723,6 +733,15 @@ const firstMarker = markerData.markers[0];
           ).length;
         }
         root.dataset.filteredMarkerCount = String(shown);
+        const selectedChest = chestMarkers.find((marker) => marker.id === selectedMarkerId);
+        if (selectedChest) {
+          selectedVisible = categories.has('CHEST') && markerMatches(selectedChest, query) &&
+            markerMatchesChestRegion(selectedChest) &&
+            (!hideCompleted?.checked || !completedMarkerIds.has(selectedChest.id));
+        }
+        panel.hidden = !selectedVisible;
+        root.querySelector('[data-map-empty]').hidden = shown !== 0;
+        root.querySelector('[data-map-action="clear-search"]').hidden = !search.value;
       }
 
       async function toggleSelectedMarkerCompletion() {
@@ -779,6 +798,11 @@ const firstMarker = markerData.markers[0];
         const actionButton = event.target.closest('[data-map-action]');
         if (actionButton) {
           const action = actionButton.dataset.mapAction;
+          if (action === 'clear-search') {
+            search.value = '';
+            search.focus();
+            void applyFilters();
+          }
           if (action === 'zoom-in') zoomBy(0.2);
           if (action === 'zoom-out') zoomBy(-0.2);
           if (action === 'reset') {
@@ -928,6 +952,10 @@ const firstMarker = markerData.markers[0];
   :global(.chest-cluster:hover), :global(.chest-cluster:focus-visible) { box-shadow: 0 0 0 4px hsl(45 89% 62% / 0.4), 0 10px 24px hsl(222 32% 2% / 0.62); }
   .map-scale-note { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0.72rem; border-top: 1px solid hsl(199 86% 58% / 0.14); color: hsl(215 18% 74%); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; background: hsl(222 32% 8% / 0.86); }
   .marker-panel { position: absolute; z-index: 7; top: 1rem; right: 1rem; width: min(316px, calc(100% - 2rem)); max-height: calc(100% - 2rem); overflow: auto; padding: 0.86rem; background: hsl(221 27% 10% / 0.9); backdrop-filter: blur(12px); box-shadow: 0 18px 44px hsl(222 32% 2% / 0.52); }
+  .marker-panel[hidden], .search-feedback [hidden] { display: none; }
+  .search-feedback { margin-bottom: 0.75rem; }
+  .search-feedback p { color: var(--muted-strong); }
+  .search-feedback button { padding: 0.6rem 1rem; min-height: 44px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); cursor: pointer; }
   .marker-panel * { min-width: 0; overflow-wrap: anywhere; }
   .panel-kicker { margin: 0 0 0.35rem; color: var(--success); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; }
   .marker-panel h3 { margin: 0 0 0.72rem; font-size: 1.08rem; line-height: 1.22; }
