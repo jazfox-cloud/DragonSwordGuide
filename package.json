@@ -12,7 +12,9 @@
     "i18n:stale": "node scripts/i18n/check-source-staleness.mjs",
     "i18n:hreflang": "node scripts/i18n/check-hreflang.mjs",
     "i18n:map": "node scripts/i18n/check-map-locale.mjs",
-    "i18n:audit": "node scripts/i18n/audit-localization-parity.mjs"
+    "i18n:audit": "node scripts/i18n/audit-localization-parity.mjs",
+    "map:measurement-check": "node scripts/map/measurement-contract-check.mjs",
+    "map:measurement-browser": "node scripts/map/measurement-browser-check.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

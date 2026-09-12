@@ -141,11 +141,12 @@ try {
   const cdp = await connectChrome();
   await cdp.send('Page.enable');
   await cdp.send('Runtime.enable');
+  await cdp.send('Network.enable');
+  await cdp.send('Network.setBlockedURLs', { urls: ['*googletagmanager.com*', '*google-analytics.com*'] });
   await cdp.send('Page.addScriptToEvaluateOnNewDocument', {
     source: `
-      window.__toolEvents = [];
       window.__runtimeErrors = [];
-      window.gtag = (...args) => window.__toolEvents.push(args);
+      window.dataLayer = window.dataLayer || [];
       addEventListener('error', (event) => window.__runtimeErrors.push(String(event.error?.message || event.message)));
       addEventListener('unhandledrejection', (event) => window.__runtimeErrors.push(String(event.reason?.message || event.reason)));
     `,
@@ -195,7 +196,7 @@ try {
       searchWorked,
       categoryHideWorked,
       stored: JSON.parse(localStorage.getItem(${JSON.stringify(storageKey)}) || '[]'),
-      events: window.__toolEvents.map((entry) => entry[1]),
+      events: Array.from(window.dataLayer || [], (entry) => Array.from(entry)).filter((entry) => entry[0] === 'event').map((entry) => entry[1]),
       errors: window.__runtimeErrors,
     };
   })()`);
@@ -232,7 +233,7 @@ try {
       hidden,
       visibleAfterReset: markerButton.hidden === false,
       storageValue: localStorage.getItem(${JSON.stringify(storageKey)}),
-      events: window.__toolEvents.map((entry) => entry[1]),
+      events: Array.from(window.dataLayer || [], (entry) => Array.from(entry)).filter((entry) => entry[0] === 'event').map((entry) => entry[1]),
       errors: window.__runtimeErrors,
     };
   })()`);
@@ -279,7 +280,7 @@ try {
       completedOpacity,
       hidden,
       storageValue: localStorage.getItem(${JSON.stringify(storageKey)}),
-      events: window.__toolEvents.map((entry) => entry[1]),
+      events: Array.from(window.dataLayer || [], (entry) => Array.from(entry)).filter((entry) => entry[0] === 'event').map((entry) => entry[1]),
       errors: window.__runtimeErrors,
     };
   })()`);

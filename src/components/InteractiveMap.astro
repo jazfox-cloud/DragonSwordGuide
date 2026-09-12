@@ -329,12 +329,20 @@ const firstMarker = markerData.markers[0];
         });
       }
 
+      let progressRestore = 'empty';
+
       function readCompletedMarkerIds() {
         try {
           const parsed = JSON.parse(window.localStorage.getItem(progressStorageKey) || '[]');
-          if (!Array.isArray(parsed)) return new Set();
-          return new Set(parsed.filter((id) => typeof id === 'string' && id.trim()));
+          if (!Array.isArray(parsed)) {
+            progressRestore = 'failed';
+            return new Set();
+          }
+          const ids = parsed.filter((id) => typeof id === 'string' && id.trim());
+          progressRestore = ids.length !== parsed.length ? 'failed' : ids.length ? 'restored' : 'empty';
+          return new Set(ids);
         } catch {
+          progressRestore = 'failed';
           return new Set();
         }
       }
@@ -345,11 +353,13 @@ const firstMarker = markerData.markers[0];
         try {
           if (completedMarkerIds.size === 0) {
             window.localStorage.removeItem(progressStorageKey);
-            return;
+            return true;
           }
           window.localStorage.setItem(progressStorageKey, JSON.stringify(Array.from(completedMarkerIds).sort()));
+          return true;
         } catch {
           // Progress remains usable in memory when storage is unavailable.
+          return false;
         }
       }
 
@@ -544,7 +554,7 @@ const firstMarker = markerData.markers[0];
         if (options.updateUrl !== false) updateMarkerQuery(id);
         if (options.track !== false) {
           trackToolEvent('tool_result_generated', {
-            marker_id: id,
+            selection_origin: options.selectionOrigin || 'manual',
             marker_category: marker.category,
           });
         }
@@ -750,13 +760,13 @@ const firstMarker = markerData.markers[0];
         const completed = !completedMarkerIds.has(marker.id);
         if (completed) completedMarkerIds.add(marker.id);
         else completedMarkerIds.delete(marker.id);
-        persistCompletedMarkerIds();
+        const persisted = persistCompletedMarkerIds();
         syncCompletionUi();
         await applyFilters();
         trackToolEvent('map_marker_completed', {
-          marker_id: marker.id,
           marker_category: marker.category,
           completed,
+          persisted,
         });
       }
 
@@ -786,7 +796,7 @@ const firstMarker = markerData.markers[0];
             await applyFilters();
           }
         }
-        if (marker) selectMarker(markerId, { updateUrl: false });
+        if (marker) selectMarker(markerId, { updateUrl: false, selectionOrigin: 'deeplink' });
       }
 
       function zoomBy(amount) {
@@ -854,24 +864,33 @@ const firstMarker = markerData.markers[0];
         zoomBy(event.deltaY > 0 ? -0.12 : 0.12);
       }, { passive: false });
 
+      async function trackInputChange(parameters) {
+        try {
+          await applyFilters();
+          trackToolEvent('tool_input_change', { ...parameters, result_count: Number(root.dataset.filteredMarkerCount) });
+        } catch {
+          trackToolEvent('tool_input_change', { ...parameters, load_state: 'failed' });
+        }
+      }
+
       search.addEventListener('input', () => void applyFilters());
-      search.addEventListener('change', () => trackToolEvent('tool_input_change', { input_name: 'search' }));
+      search.addEventListener('change', () => void trackInputChange({ input_name: 'search' }));
       filters.forEach((input) => input.addEventListener('change', () => {
-        void applyFilters();
-        trackToolEvent('tool_input_change', { input_name: 'category', input_value: input.value, enabled: input.checked });
+        void trackInputChange({ input_name: 'category', input_value: input.value, enabled: input.checked });
       }));
       hideCompleted?.addEventListener('change', () => {
-        void applyFilters();
-        trackToolEvent('tool_input_change', { input_name: 'hide_completed', enabled: hideCompleted.checked });
+        void trackInputChange({ input_name: 'hide_completed', enabled: hideCompleted.checked });
       });
       chestRegionFilter?.addEventListener('change', () => {
-        void applyFilters();
-        trackToolEvent('tool_input_change', { input_name: 'chest_region', input_value: chestRegionFilter.value });
+        void trackInputChange({ input_name: 'chest_region', input_value: chestRegionFilter.value });
       });
       syncCompletionUi();
       setTransform();
-      trackToolEvent('tool_open');
-      void applyFilters().then(selectDeepLinkedMarker);
+      void applyFilters().then(selectDeepLinkedMarker).then(() => {
+        trackToolEvent('tool_open', { progress_restore: progressRestore, load_state: 'ready' });
+      }).catch(() => {
+        trackToolEvent('tool_open', { progress_restore: progressRestore, load_state: 'failed' });
+      });
     })();
   </script>
 </section>
