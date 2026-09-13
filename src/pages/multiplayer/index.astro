@@ -8,7 +8,7 @@ import SourceList from '../../components/SourceList.astro';
 import UpdateBadge from '../../components/UpdateBadge.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro';
-import { latestAppliedPatch, previousApplied } from '../../data/sources';
+import { latestAppliedPatch, patch110, patch111 } from '../../data/sources';
 
 const title = 'Is DragonSword Awakening Multiplayer? Co-op Explained';
 const description = "Yes, DragonSword: Awakening supports online co-op for selected activities. See what's officially confirmed for Subjugation, Raids, story co-op, lobbies, and matchmaking.";
@@ -19,8 +19,8 @@ const article = { '@context': 'https://schema.org', '@type': 'Article', headline
 const sources = [
   { label: 'Official Steam store page', href: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/', note: 'OFFICIAL_VERIFIED: lists Single-player and Online Co-op.' },
   { label: 'Official Steam update notes 1.0.7', href: 'https://steamcommunity.com/app/4570720/announcements/', note: 'OFFICIAL_VERIFIED: confirms Quick Entry and a lobby search range setting for multiplayer matching.' },
-  { label: 'Official update notes 1.0.11', href: latestAppliedPatch.href, note: 'OFFICIAL_VERIFIED: confirms Retry, fastest-response lobby search, version notices, departure notifications and lobby fixes.' },
-  { label: 'Official update notes 1.0.10', href: previousApplied.href, note: 'OFFICIAL_VERIFIED: multiplayer lobbies disband the party when the party leader is unresponsive for a long time.' },
+  { label: 'Official update notes 1.0.11', href: patch111.href, note: 'OFFICIAL_VERIFIED: confirms Retry, fastest-response lobby search, version notices, departure notifications and lobby fixes.' },
+  { label: 'Official update notes 1.0.10', href: patch110.href, note: 'OFFICIAL_VERIFIED: multiplayer lobbies disband the party when the party leader is unresponsive for a long time.' },
   { label: 'Hound13 developer discussion', href: 'https://steamcommunity.com/app/4570720/discussions/0/802344445710375983/', note: 'OFFICIAL_VERIFIED developer source: describes Subjugation and Raids, and says story co-op was not ready for launch.' },
 ];
 ---

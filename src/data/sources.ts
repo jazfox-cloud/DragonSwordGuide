@@ -39,7 +39,7 @@ export const patch110 = {
 
 export const patch111 = {
   version: '1.0.11',
-  label: 'Official update 1.0.11',
+  label: 'Official update 1.0.11 (previous)',
   date: 'September 3, 2026',
   isoDate: '2026-09-03',
   appliedDate: '2026-09-03',
@@ -47,8 +47,18 @@ export const patch111 = {
   status: 'RELEASED',
 };
 
-export const previousApplied = patch110;
-export const latestApplied = patch111;
+export const patch112 = {
+  version: '1.0.12',
+  label: 'Official update 1.0.12',
+  date: 'September 10, 2026 KST',
+  isoDate: '2026-09-10',
+  appliedDate: '2026-09-10',
+  href: 'https://steamcommunity.com/games/4570720/announcements/detail/1843481262690915',
+  status: 'RELEASED',
+};
+
+export const previousApplied = patch111;
+export const latestApplied = patch112;
 export const latestAppliedPatch = latestApplied;
 
 export const patch111Preview = {

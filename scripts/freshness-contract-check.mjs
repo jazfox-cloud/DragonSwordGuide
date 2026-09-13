@@ -13,7 +13,7 @@ const {
 
 const root = process.cwd();
 const dist = path.join(root, 'dist');
-const requiredRoutes = ['/', '/roadmap/', '/multiplayer/', '/guides/combat-system/', '/ja/roadmap/', '/ja/multiplayer/'];
+const requiredRoutes = ['/', '/roadmap/', '/multiplayer/', '/ja/roadmap/'];
 const freshnessPatterns = [
   /latest(?: official)? (?:update|patch)[^.!?\n]{0,160}\b(\d+\.\d+\.\d+)\b/giu,
   /\b(\d+\.\d+\.\d+)\b[^.!?\n]{0,160}(?:is|as) the latest(?: official)? (?:update|patch)/giu,
@@ -57,15 +57,15 @@ if (!latestAppliedPatch?.version || !latestAppliedPatch?.date || !latestAppliedP
   if (latestApplied !== latestAppliedPatch) {
     fail('latestAppliedPatch must alias the authoritative latestApplied record');
   }
-  if (latestAppliedPatch.version !== '1.0.11' || latestAppliedPatch.appliedDate !== '2026-09-03') {
-    fail('latestApplied must be official 1.0.11 applied on 2026-09-03');
+  if (latestAppliedPatch.version !== '1.0.12' || latestAppliedPatch.appliedDate !== '2026-09-10') {
+    fail('latestApplied must be official 1.0.12 applied on 2026-09-10');
   }
   if (latestAppliedPatch.status !== 'RELEASED') {
     fail(`latestAppliedPatch must be RELEASED, got ${latestAppliedPatch.status || 'missing'}`);
   }
 
-  if (previousApplied?.version !== '1.0.10' || previousApplied?.status !== 'RELEASED' || previousApplied?.appliedDate !== '2026-08-19') {
-    fail('previousApplied must retain released 1.0.10 applied on 2026-08-19');
+  if (previousApplied?.version !== '1.0.11' || previousApplied?.status !== 'RELEASED' || previousApplied?.appliedDate !== '2026-09-03') {
+    fail('previousApplied must retain released 1.0.11 applied on 2026-09-03');
   }
 
   for (const route of requiredRoutes) {
@@ -90,6 +90,23 @@ if (!latestAppliedPatch?.version || !latestAppliedPatch?.date || !latestAppliedP
         }
       }
     }
+  }
+}
+
+// Feature-specific citations must retain their historical patch after latest advances.
+for (const [route, label, patch] of [
+  ['/multiplayer/', 'Official update notes 1.0.11', sourceData.patch111],
+  ['/multiplayer/', 'Official update notes 1.0.10', sourceData.patch110],
+  ['/ja/multiplayer/', '公式1.0.11アップデート', sourceData.patch111],
+  ['/ja/multiplayer/', '公式1.0.10アップデート', sourceData.patch110],
+  ['/guides/combat-system/', 'Official update notes 1.0.11', sourceData.patch111],
+  ['/roadmap/', 'Official update notes 1.0.12', latestAppliedPatch],
+  ['/ja/roadmap/', '公式1.0.12アップデート', latestAppliedPatch],
+]) {
+  const html = fs.readFileSync(htmlFile(route), 'utf8');
+  const links = [...html.matchAll(/<a\b([^>]+)>([\s\S]*?)<\/a>/g)];
+  if (!links.some(([, attributes, labelHtml]) => attributes.includes(`href="${patch.href}"`) && visibleText(labelHtml) === label)) {
+    fail(`${route}: ${label} must link to its own official announcement`);
   }
 }
 
