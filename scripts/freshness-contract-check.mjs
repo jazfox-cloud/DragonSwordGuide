@@ -171,5 +171,21 @@ if (!Array.isArray(comingNextAnnouncements) || comingNextAnnouncements.length !=
   }
 }
 
+const charactersHtml = fs.readFileSync(htmlFile('/characters/'), 'utf8');
+const charactersText = visibleText(charactersHtml);
+const ryzaTeaserHref = 'https://steamcommunity.com/games/4570720/announcements/detail/1844115010490208';
+for (const expected of [
+  'Ryza is officially announced for October 2026.',
+  'The exact release date has not been confirmed, and she is not yet released.',
+  'Jerome, Veronica and Logan remain planned for the second half of 2026, with exact release dates and release order unknown.',
+]) {
+  if (!charactersText.includes(expected)) {
+    fail(`/characters/: missing bounded Ryza freshness marker "${expected}"`);
+  }
+}
+if (!charactersHtml.includes(`href="${ryzaTeaserHref}"`)) {
+  fail('/characters/: official Ryza teaser must be cited as Evidence B');
+}
+
 if (process.exitCode) process.exit(process.exitCode);
 console.log(`[freshness] all current/latest claims agree on ${latestAppliedPatch.version}`);
