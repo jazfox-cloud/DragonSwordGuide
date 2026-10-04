@@ -6,13 +6,15 @@ import QuickAnswer from '../../../components/QuickAnswer.astro';
 import SourceList from '../../../components/SourceList.astro';
 import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
 import { roadmapJa as page } from '../../../content/ja/roadmap';
-import { sourceUrls, patch107, patch109, patch110, latestAppliedPatch, previousApplied, patch111Preview } from '../../../data/sources';
+import { sourceUrls, patch107, patch109, patch110, latestAppliedPatch, previousApplied, patch111Preview, plannedUpdate11 } from '../../../data/sources';
 import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
 
 const canonical = getCanonical('roadmap', 'ja');
-const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-09-13' });
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-10-04' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'ロードマップ', path: '/ja/roadmap/' }]);
 const sources = [
+  { label: '公式 LIVE STREAM #7 アーカイブ', href: plannedUpdate11.replayHref, note: 'Evidence B - 公式の日本語字幕付きアーカイブ。Version 1.1の10月15日配信予定と紹介内容を確認。適用済みノートではありません。' },
+  { label: '公式1.1アップデート配信告知', href: plannedUpdate11.noticeHref, note: 'Evidence B - 配信で扱う内容と、Version 1.1が今後のアップデートであることを確認。' },
   { label: '公式ロードマップ & Q&A', href: sourceUrls.roadmap, note: 'Evidence B - 今後の予定、英雄、Rifts、マルチプレイRaids、プラットフォーム状況の一次情報。' },
   { label: '公式1.0.12アップデート', href: latestAppliedPatch.href, note: 'Evidence B - 2026年9月10日 KST公開の適用済み最新パッチ。' },
   { label: '公式1.0.11アップデート', href: previousApplied.href, note: 'Evidence B - 2026年9月3日 KSTに適用された直前の公式パッチ。' },
@@ -28,15 +30,15 @@ const sources = [
       <header class="article-header">
         <p class="eyebrow">アップデート · 出典タイムライン</p>
         <h1>{page.h1}</h1>
-        <LastVerified date="2026年9月13日" label="最終確認" />
+        <LastVerified date="2026年10月4日" label="最終確認" />
       </header>
-      <QuickAnswer eyebrow="要点" title="最新確認状況: 1.0.12は適用済みの最新アップデートです。">
-        <p>2026年9月10日 KST公開の公式アップデートノートは、1.0.12が適用済みであることを明記しています。Ryza、Othello Hero Quest、Hunt Hell Modeは日程未定のComing Nextのままです。</p>
+      <QuickAnswer eyebrow="要点" title="Version 1.1は10月15日配信予定、1.0.12は適用済みの最新アップデートです。">
+        <p>公式 LIVE STREAM #7 では、ライザ、討伐ランクとヘル難易度、トレーニンググラウンド、Othello Hero Quest、3種類のコスチューム、QoL改善をVersion 1.1として紹介しました。10月15日は公式の予定であり、適用済みの確認ではありません。</p>
       </QuickAnswer>
       <div class="timeline">
         <div><span>最新適用済み / リリース済み</span><h2>1.0.12 適用済み</h2><p>2026年9月10日 KST公開の公式アップデートノートで適用が確認されています。</p></div>
         <div><span>適用済み / 過去の更新</span><h2>1.0.11 適用済み</h2><p><a href={previousApplied.href}>1.0.11は直前の適用済みパッチ</a>で、<a href={patch109.href}>1.0.9はさらに過去の履歴</a>です。</p></div>
-        <div><span>今後の予定 / 日程未定</span><h2>Coming Next</h2><p>Ryza、Othello Hero Quest、Hunt Hell Modeは別枠で予告されており、確定した配信日は示されていません。</p></div>
+        <div><span>配信予定 / 未適用</span><h2>Version 1.1 配信予定: 2026年10月15日</h2><p>公式配信で10月15日予定と案内されました。最終アップデートノートで適用を確認するまでは、配信予定として扱います。</p></div>
       </div>
       <section class="copy">
         <h2>最新適用済み / リリース済み: 1.0.12</h2>
@@ -48,12 +50,20 @@ const sources = [
         <p class="evidence-note"><strong>最終ノートの境界:</strong> これらの適用済み情報は、予告ではなく最終版の1.0.11アップデートノートを根拠とします。</p>
         <h2>適用済み / 過去の更新: 1.0.10</h2>
         <ul><li>1.0.10は2026年8月19日に適用された過去の公式パッチです。</li><li><a href={patch107.href}>1.0.7</a>はQuick Entry、旧マッチング範囲設定、マップピン、ルーン変更の履歴として参照します。</li></ul>
-        <h2>Coming Next / 日程未定</h2>
-        <p>8月28日のプレビューは、次の項目を「Coming Next」として別枠で紹介しています。最終版の1.0.11と1.0.12のアップデートノートには含まれていないため、適用済みとはせず予告のまま扱います。</p>
-        <ul><li>プレイアブル英雄 Ryza。</li><li>Othello Hero Quest。</li><li>Hunt Hell Mode。</li></ul>
+        <h2>Version 1.1 / 配信予定・未適用</h2>
+        <p>公式 LIVE STREAM #7 は、Version 1.1を2026年10月15日に配信予定とし、次の範囲を紹介しています。</p>
+        <ul>
+          <li>プレイアブル英雄 ライザ — クエスト#53「再会」の完了報酬。すでに該当のストーリーをクリア済みの場合は、アップデート時にインベントリへ直接支給される予定です。</li>
+          <li>Othello Hero Quest — Version 1.1で追加予定。</li>
+          <li>討伐ヘル難易度 — 全難易度に追加されるD〜Sの討伐ランクシステムとともに実装予定。</li>
+          <li>トレーニンググラウンド — オルビス王城の管理人エドリックから入場し、静止・移動・複数対象で練習し、ダメージとDPSを確認できる予定。</li>
+          <li>QoL改善 — クイックスロットを2枠から3枠へ拡張、料理クールダウンと食材表示、マップピン種類、Tag Combo Animation切替、Familiar入手、実績完了通知の改善。</li>
+          <li>コスチューム — Eileen、Othello、Reina向けの3種類。</li>
+        </ul>
+        <p class="evidence-note"><strong>配信予定の境界:</strong> 10月15日は公式配信で示された予定です。最終アップデートノートで適用が確認されるまでは、Version 1.1の内容をリリース済みとは扱いません。</p>
         <h2>今後 / 日程未定</h2>
         <ul><li>以前の公式ロードマップでは、Jerome、Veronica、Loganの追加英雄や、Hero Quest、Rift、マルチプレイRaidの方向性も示されていますが、確定した配信日はありません。</li><li>コンソール版、クロスプラットフォーム、ストーリー協力、オープンワールド協力は、このページでは確定情報として扱いません。</li></ul>
-        <p class="evidence-note"><strong>Evidence B の境界:</strong> 公式ロードマップとSteam公式お知らせを一次情報として扱います。コミュニティ情報は疑問の発見には使えますが、機能・日程・対応プラットフォームを確定させる根拠にはしません。</p>
+        <p class="evidence-note"><strong>Evidence B の境界:</strong> 公式ロードマップ、Steam公式お知らせ、公式配信アーカイブを一次情報として扱います。コミュニティ情報は疑問の発見には使えますが、機能・日程・対応プラットフォームを確定させる根拠にはしません。</p>
         <p>現在のシステム変更は <a href="/ja/systems/runes/">ルーン</a> と <a href="/ja/builds/">ビルド</a> のページでも確認できます。</p>
       </section>
       <SourceList title="出典と検証" intro="Evidence Bは一次情報、Evidence Cはコミュニティ確認として扱います。" sources={sources} />

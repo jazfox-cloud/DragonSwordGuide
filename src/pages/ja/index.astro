@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SourceRevisionMeta from '../../components/SourceRevisionMeta.astro';
 import OfficialMedia from '../../components/OfficialMedia.astro';
 import { homeJa as page } from '../../content/ja/home';
+import { plannedUpdate11 } from '../../data/sources';
 import { getCanonical, absoluteUrl } from '../../i18n/seo';
 
 const canonical = getCanonical('home', 'ja');
@@ -13,6 +14,7 @@ const website = {
   name: 'DragonSword Guide',
   url: canonical,
   description: page.description,
+  dateModified: '2026-10-04',
 };
 const organization = {
   '@context': 'https://schema.org',
@@ -43,6 +45,13 @@ const organization = {
         </div>
       </div>
       <OfficialMedia locale="ja" />
+    </section>
+
+    <section class="shell section update-signal">
+      <p class="eyebrow">現在のアップデート予定</p>
+      <h2>Version 1.1は2026年10月15日配信予定</h2>
+      <p>公式 LIVE STREAM #7 では、ライザ、討伐ランクとヘル難易度、トレーニンググラウンド、コスチューム、QoL改善を紹介しました。10月15日は公式の予定であり、適用済みの確認ではありません。</p>
+      <a class="text-link" href={plannedUpdate11.replayHref}>公式アーカイブを見る</a>
     </section>
 
     <section class="shell section">
@@ -83,6 +92,9 @@ const organization = {
   .stats span { display: grid; min-width: 130px; padding: 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--muted); font-size: 0.8rem; }
   .stats strong { color: var(--ink); font-size: 1.25rem; }
   .section { margin-top: clamp(3rem, 7vw, 5rem); }
+  .update-signal { padding: 1.25rem; border: 1px solid hsl(199 86% 58% / 0.28); border-radius: 14px; background: linear-gradient(105deg, var(--accent-soft), var(--paper)); }
+  .update-signal h2 { margin-bottom: 0.6rem; }
+  .update-signal p:not(.eyebrow) { max-width: 72ch; color: var(--muted-strong); }
   .card-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
   .card { display: grid; min-height: 190px; align-content: start; gap: 0.45rem; padding: 1.1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); text-decoration: none; }
   .card:hover { border-color: var(--accent); background: var(--raised); }

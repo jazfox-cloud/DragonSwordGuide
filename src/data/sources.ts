@@ -2,7 +2,8 @@ export const sourceUrls = {
   steam: 'https://store.steampowered.com/app/4570720/DragonSword__Awakening/',
   announcements: 'https://steamcommunity.com/app/4570720/announcements/',
   roadmap: 'https://store.steampowered.com/news/app/4570720/view/678501715215911876',
-  livestream: 'https://steamcommunity.com/app/4570720/announcements/',
+  livestream: 'https://www.youtube.com/watch?v=sFXJ5nB3nwY',
+  update11LivestreamNotice: 'https://steamcommunity.com/games/4570720/announcements/detail/1844751498230737',
   workshopRetraction: 'https://steamcommunity.com/games/4570720/announcements/detail/1841579228677116',
   youtube: 'https://www.youtube.com/@DragonSwordAwakening',
   discord: 'https://discord.gg/CzZ5ddkMVg',
@@ -61,6 +62,17 @@ export const previousApplied = patch111;
 export const latestApplied = patch112;
 export const latestAppliedPatch = latestApplied;
 
+export const plannedUpdate11 = {
+  version: '1.1',
+  label: 'Version 1.1 target',
+  date: 'October 15, 2026',
+  targetDate: '2026-10-15',
+  status: 'SCHEDULED_NOT_RELEASED',
+  scheduleConfidence: 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE',
+  noticeHref: sourceUrls.update11LivestreamNotice,
+  replayHref: sourceUrls.livestream,
+};
+
 export const patch111Preview = {
   version: '1.0.11',
   label: 'Official update 1.0.11 preview (historical)',
@@ -73,7 +85,7 @@ export const patch111Preview = {
 };
 
 export const comingNextAnnouncements = [
-  { name: 'Ryza (Playable Hero)', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
-  { name: 'Othello Hero Quest', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
-  { name: 'Hunt Hell Mode', status: 'ANNOUNCED', releaseDate: null, source: patch111Preview.href },
+  { name: 'Ryza (Playable Hero)', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
+  { name: 'Othello Hero Quest', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
+  { name: 'Hunt Hell Difficulty', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
 ] as const;
