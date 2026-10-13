@@ -79,6 +79,11 @@ function assertJaPublicationGate(route, html) {
   assert(!html.includes('Coming soon'), `${route.ja}: placeholder detected`);
   assert(!html.includes('近日公開'), `${route.ja}: placeholder detected`);
   assert(schemaBlocks(html).some((block) => block.includes('"inLanguage":"ja"')), `${route.ja}: localized schema missing`);
+  for (const block of schemaBlocks(html).map((value) => JSON.parse(value))) {
+    if (block['@type'] === 'BreadcrumbList') {
+      assert(!('inLanguage' in block), `${route.ja}: BreadcrumbList must not use unsupported inLanguage`);
+    }
+  }
 }
 
 function assertEnReciprocal(route, html) {

@@ -31,7 +31,6 @@ export function getBreadcrumbSchema(
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    inLanguage: locale,
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
