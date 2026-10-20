@@ -10,36 +10,49 @@ import { sourceUrls } from '../../../data/sources';
 import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
 
 const canonical = getCanonical('builds', 'ja');
-const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-08-11' });
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-10-19' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'ビルド', path: '/ja/builds/' }]);
-const sources = [{ label: 'Steam公式ストア', href: sourceUrls.steam, note: 'Evidence B - 19人の英雄、状態異常、シグナルスキル、スイッチングの戦闘文脈を確認。' }];
+const sources = [{ label: 'Steam公式ストア', href: sourceUrls.steam, note: '2026年10月19日確認。アクティブスキルによる状態異常とシグナルスキルの連携を説明しています。個別ビルドや本ページの比較手順の有効性を証明する資料ではありません。' }];
 ---
 
 <BaseLayout title={page.title} description={page.description} canonical={canonical} locale="ja" routeId="builds" ogType="article" schema={[article, breadcrumb]}>
   <div class="shell page-wrap">
     <Breadcrumbs ariaLabel="パンくずリスト" items={[{ label: 'DragonSword Guide', href: '/ja/' }, { label: 'ビルド' }]} />
     <article class="copy">
-      <header class="article-header"><p class="eyebrow">ビルド · 検証優先の考え方</p><h1>{page.h1}</h1><LastVerified date="2026年8月11日" label="最終確認" /></header>
-      <QuickAnswer eyebrow="要点" title="ビルドは、1人の英雄を3英雄の戦闘計画の中でどう使うかを整理するものです。">
-        <p>英雄の役割、戦闘行動、状態異常、シグナルスキル、交代順、ルーン、Karma、チーム編成を順に考えます。このページは最強ビルド表ではなく、公式に確認できる戦闘ループをもとにした実用的な整理です。</p>
+      <header class="article-header"><p class="eyebrow">ビルド計画 · 自分の構成を比較する</p><h1>{page.h1}</h1><LastVerified date="2026年10月19日" label="記事更新" /></header>
+      <QuickAnswer eyebrow="要点" title="同じ戦闘で、変更を1つだけ比較します。">
+        <p>現在の構成と解決したい問題を書き出します。1つだけ変更して同じ戦闘を繰り返し、狙った連携、生存、クリアの安定性を比較してください。これは計画用チェックリストです。実測済みのキャラクタービルドや最強ランキングではありません。</p>
       </QuickAnswer>
-      <h2>ビルドを構成する要素</h2>
+      <h2>1. 変更する前に、解決したい問題を選ぶ</h2>
+      <ul>
+        <li><strong>シグナルが出ない:</strong> 受け手のスキルに書かれた条件と、その条件を作る手順を確認します。装備を変更する前に、<a href="/guides/combat-system/">シグナルスキルガイド（英語）</a>で連携を確認してください。</li>
+        <li><strong>戦闘をクリアできない:</strong> どこで失敗し、どの動きまで安定して再現できるかを記録します。まずクリアできるかを比較します。</li>
+        <li><strong>クリアを速くしたい:</strong> 戦闘、難易度、開始条件をそろえてから所要時間を比べます。</li>
+      </ul>
+      <h2>2. 基準を記録し、1つだけ変更する</h2>
+      <p>公式の戦闘紹介は、アクティブスキル、状態異常、シグナルスキルのつながりを説明しています。自分の構成では、使用中のバージョンのスキル説明を記録してください。すべての英雄が同じ追撃を起動できるとは限りません。</p>
       <ol>
-        <li><strong>英雄の役割:</strong> その英雄が現在の戦闘で何を担当するのかを決めます。</li>
-        <li><strong>スキルと行動:</strong> 安定して実行できる動きを確認します。</li>
-        <li><strong>状態異常:</strong> どの状態を作る、または利用するかを整理します。</li>
-        <li><strong>シグナルスキル:</strong> 交代を単独火力ではなく、流れの一部として扱います。</li>
-        <li><strong>交代順:</strong> 次の英雄が有効なタイミングで入れるかを試します。</li>
-        <li><strong>ルーン:</strong> <a href="/ja/systems/runes/">ルーン</a>は育成リソースとして扱い、未検証の最適セットにはしません。</li>
-        <li><strong>チーム編成:</strong> 1英雄の計画を、3英雄全体の流れと比較します。</li>
+        <li><strong>構成Aを記録:</strong> ゲームのバージョン、戦闘と難易度、英雄、装備、ルーン、実際に使うスキルと交代の順番を書きます。</li>
+        <li><strong>構成Bを選ぶ:</strong> 使用可能なルーンや交代順など、1つだけ変更します。他の記録項目も変えると、どの変更が効いたかを切り分けられません。</li>
+        <li><strong>同じ条件で繰り返す:</strong> 各回の成功・失敗と、選んだ比較項目を記録します。中断や敵の条件が変わった回は分けて扱います。</li>
+        <li><strong>次の行動を決める:</strong> 選んだ目的で改善を繰り返し確認できた場合にBを採用します。結果が混在する場合は、強い構成と断定せず「判断保留」にします。</li>
       </ol>
-      <h2>ビルドとチーム編成の違い</h2>
-      <p>ビルドは、1人の英雄のリソースと再現可能な行動パターンです。チーム編成は、その英雄を含む複数英雄の役割、受け渡し、条件づくりを考えるものです。強いチーム案が、そのまま万能ビルドを証明するわけではありません。</p>
-      <h2>ルーンとKarma</h2>
-      <p>ルーンはビルドのリソース層にあります。Karmaは別の計画要素ですが、正確な優先度や最適化はこのページでは未検証です。</p>
-      <h2>掲載しないもの</h2>
-      <p class="evidence-note">現時点では、絶対的な最強ビルド、S-tierランキング、DPSランキング、未確認のスキル優先度、未確認の装備推奨を掲載しません。</p>
-      <SourceList title="出典と検証" intro="ビルドの説明は公式に確認できる戦闘ループを土台にし、未検証の最適化を混ぜません。" sources={sources} />
+      <h2>3. この比較メモを自分のノートにコピーする</h2>
+      <ul>
+        <li>バージョン / 戦闘 / 難易度:</li>
+        <li>解決したい問題:</li>
+        <li>構成A — 英雄 / 装備 / ルーン / 行動順:</li>
+        <li>構成B — 変更した1項目:</li>
+        <li>Aの各試行 — クリア / シグナル連携 / 所要時間のうち必要な項目:</li>
+        <li>Bの各試行 — Aと同じ観察項目:</li>
+        <li>条件の変化や中断:</li>
+        <li>判断 — Aを維持 / Bを採用 / 判断保留、その理由:</li>
+      </ul>
+      <p>例えば、ルーンと交代順を同時に変えて次の戦闘に成功しても、ルーンが原因とは証明できません。成功した試行として記録し、その仮定に追加のリソースを使う前に、変更を1つに絞って再比較します。</p>
+      <h2>この比較で判断できる範囲</h2>
+      <p>記録は、試したバージョン、戦闘、構成での選択に役立ちます。万能のスキル優先度、最強ルーンセット、Karmaの投資順、DPSランキングを示すものではありません。更新で関連スキルが変わった場合は、その説明を再確認してください。</p>
+      <p>次に確認したい内容に合わせて、<a href="/guides/combat-system/">シグナルと表示されない原因（英語）</a>、<a href="/ja/systems/runes/">確認済みのルーン仕様変更</a>、<a href="/teams/">チーム編成の概要（英語）</a>へ進めます。</p>
+      <SourceList title="出典と確認範囲" intro="公式資料は戦闘の概要を裏付けます。比較チェックリストは編集上の提案であり、実測済みのビルドや公式の最適化式ではありません。" sources={sources} />
     </article>
   </div>
   <SourceRevisionMeta metadata={page.translation} />
