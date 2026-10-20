@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="540" viewBox="0 0 480 540" role="img" aria-labelledby="title desc">
+<title id="title">Three questions before an optional upgrade or craft</title><desc id="desc">Look at the cost, the effect and your current need. If one is unclear, pause the optional spend. This is an editorial decision aid, not a game interface.</desc>
+<rect width="480" height="540" rx="20" fill="#142231"/>
+<g font-family="Arial, sans-serif">
+<text x="28" y="42" fill="#7dd3fc" font-size="15" font-weight="700" letter-spacing="2">BEFORE AN OPTIONAL SPEND</text>
+<text x="28" y="81" fill="#f4f7fa" font-size="29" font-weight="700">Read these three things</text>
+<g fill="#0d1723" stroke="#3a5267" stroke-width="2"><rect x="24" y="105" width="432" height="105" rx="14"/><rect x="24" y="225" width="432" height="105" rx="14"/><rect x="24" y="345" width="432" height="105" rx="14"/></g>
+<g fill="none" stroke="#7dd3fc" stroke-width="3" stroke-linejoin="round"><ellipse cx="72" cy="144" rx="22" ry="9"/><path d="M50 144v28c0 12 44 12 44 0v-28M50 158c0 12 44 12 44 0"/><path d="m73 247 7 21 23 7-23 7-7 21-7-21-23-7 23-7z"/><circle cx="73" cy="397" r="25"/><circle cx="73" cy="397" r="11"/><path d="m73 397 27-27m-11 0h11v11"/></g>
+<g fill="#f4f7fa" font-size="25" font-weight="700"><text x="124" y="145">1  Cost</text><text x="124" y="265">2  Effect</text><text x="124" y="385">3  Current need</text></g>
+<g fill="#d2dee8" font-size="22"><text x="124" y="180">What will you use up?</text><text x="124" y="300">What changes, and for whom?</text><text x="124" y="420">Does that help you now?</text></g>
+<path d="M240 454v20m-8-8 8 8 8-8" fill="none" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round"/>
+<text x="240" y="509" text-anchor="middle" fill="#b3f2df" font-size="23" font-weight="700">Unclear? Pause the optional spend.</text>
+</g></svg>
