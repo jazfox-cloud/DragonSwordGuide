@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+  <title id="title">DragonSword co-op scope</title>
+  <desc id="desc">Friends or random players use Steam lobbies for Subjugation and Raids. Official notes also confirm Quick Entry, invite-code version notices and Hunt or Raid Retry. Current story and open-world co-op, player count and crossplay remain unconfirmed here. This is an editorial concept diagram, not a menu sequence or a party-size diagram.</desc>
+  <rect width="600" height="760" rx="20" fill="#142231"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="20" y="20" width="560" height="350" rx="16" fill="#102c31" stroke="#62cbb1" stroke-width="2"/>
+    <path d="m42 50 8 8 15-18" fill="none" stroke="#9be4ce" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="82" y="59" fill="#c0f2e2" font-size="28" font-weight="700">Confirmed co-op activities</text>
+    <rect x="44" y="88" width="222" height="64" rx="12" fill="#1c3c45"/>
+    <rect x="282" y="88" width="274" height="64" rx="12" fill="#1c3c45"/>
+    <text x="155" y="129" text-anchor="middle" fill="#f4f7fa" font-size="28">Friends</text>
+    <text x="419" y="129" text-anchor="middle" fill="#f4f7fa" font-size="28">Random players</text>
+    <path d="M155 152v24h264v-24M300 176v23" fill="none" stroke="#9be4ce" stroke-width="3"/>
+    <rect x="139" y="199" width="322" height="58" rx="12" fill="#244955" stroke="#9be4ce" stroke-width="2"/>
+    <text x="300" y="237" text-anchor="middle" fill="#f4f7fa" font-size="29" font-weight="700">Steam lobbies</text>
+    <path d="M300 257v26" stroke="#9be4ce" stroke-width="3"/>
+    <rect x="44" y="283" width="512" height="62" rx="12" fill="#1c3c45"/>
+    <text x="300" y="324" text-anchor="middle" fill="#f4f7fa" font-size="30" font-weight="700">Subjugation · Raids</text>
+
+    <rect x="20" y="390" width="560" height="153" rx="16" fill="#142c40" stroke="#71c6ed" stroke-width="2"/>
+    <text x="44" y="431" fill="#a8e1ff" font-size="28" font-weight="700">Known lobby features</text>
+    <text x="44" y="473" fill="#f4f7fa" font-size="27">Quick Entry · Invite-code notices</text>
+    <text x="44" y="515" fill="#f4f7fa" font-size="27">Party-leader Hunt / Raid Retry</text>
+
+    <rect x="20" y="563" width="560" height="177" rx="16" fill="#302c25" stroke="#cbb88b" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="44" y="606" fill="#f3deb0" font-size="28" font-weight="700">Not confirmed in our sources</text>
+    <text x="44" y="650" fill="#f4f7fa" font-size="27">Story / open-world co-op</text>
+    <text x="44" y="692" fill="#f4f7fa" font-size="27">Player count · Crossplay</text>
+    <text x="44" y="722" fill="#e1d5bd" font-size="22">Unconfirmed does not mean unavailable.</text>
+  </g>
+</svg>

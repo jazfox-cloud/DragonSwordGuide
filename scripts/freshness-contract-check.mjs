@@ -53,8 +53,9 @@ for (const file of files(dist)) {
 
 // A historical feature citation must never silently follow the moving latest-patch pointer.
 for (const [route, label, patch] of [
-  ['/multiplayer/', 'Official update notes 1.0.11', sources.patch111],
-  ['/multiplayer/', 'Official update notes 1.0.10', sources.patch110],
+  ['/multiplayer/', 'Official Steam update notes 1.0.7', { href: sources.patch107.resolvedHref }],
+  ['/multiplayer/', 'Official update notes 1.0.11', { href: sources.patch111.resolvedHref }],
+  ['/multiplayer/', 'Official update notes 1.0.10', { href: sources.patch110.resolvedHref }],
   ['/ja/multiplayer/', '公式1.0.11アップデート', sources.patch111],
   ['/ja/multiplayer/', '公式1.0.10アップデート', sources.patch110],
   ['/guides/combat-system/', 'Official update notes 1.0.11', sources.patch111],

@@ -10,6 +10,7 @@ export const sourceUrls = {
 };
 
 export const patch107 = {
+  resolvedHref: 'https://steamcommunity.com/games/4570720/announcements/detail/671750754888843506',
   label: 'Official update 1.0.7 (history)',
   date: 'August 5, 2026',
   href: sourceUrls.announcements,
@@ -29,6 +30,7 @@ export const patch109 = {
 };
 
 export const patch110 = {
+  resolvedHref: 'https://steamcommunity.com/games/4570720/announcements/detail/719039819889508647',
   version: '1.0.10',
   label: 'Official update 1.0.10 (previous)',
   date: 'August 19, 2026',
@@ -39,6 +41,7 @@ export const patch110 = {
 };
 
 export const patch111 = {
+  resolvedHref: 'https://steamcommunity.com/games/4570720/announcements/detail/693145389614760566',
   version: '1.0.11',
   label: 'Official update 1.0.11 (previous)',
   date: 'September 3, 2026',
