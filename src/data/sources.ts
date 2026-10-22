@@ -58,16 +58,36 @@ export const patch112 = {
   status: 'RELEASED',
 };
 
-export const previousApplied = patch111;
-export const latestApplied = patch112;
+export const update110 = {
+  version: '1.1.0',
+  label: 'Official update 1.1.0 (previous)',
+  date: 'October 15, 2026',
+  isoDate: '2026-10-15',
+  appliedDate: '2026-10-15',
+  href: 'https://steamcommunity.com/games/4570720/announcements/detail/697652884114767907',
+  status: 'RELEASED',
+};
+
+export const update111 = {
+  version: '1.1.1',
+  label: 'Official update 1.1.1',
+  date: 'October 15, 2026',
+  isoDate: '2026-10-15',
+  appliedDate: '2026-10-15',
+  href: 'https://steamcommunity.com/games/4570720/announcements/detail/697652884114767998',
+  status: 'RELEASED',
+};
+
+export const previousApplied = update110;
+export const latestApplied = update111;
 export const latestAppliedPatch = latestApplied;
 
-export const plannedUpdate11 = {
+export const update11Preview = {
   version: '1.1',
-  label: 'Version 1.1 target',
+  label: 'Version 1.1 preview (historical)',
   date: 'October 15, 2026',
   targetDate: '2026-10-15',
-  status: 'SCHEDULED_NOT_RELEASED',
+  status: 'HISTORICAL_ANNOUNCEMENT',
   scheduleConfidence: 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE',
   noticeHref: sourceUrls.update11LivestreamNotice,
   replayHref: sourceUrls.livestream,
@@ -84,8 +104,8 @@ export const patch111Preview = {
   scheduleConfidence: 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE',
 };
 
-export const comingNextAnnouncements = [
-  { name: 'Ryza (Playable Hero)', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
-  { name: 'Othello Hero Quest', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
-  { name: 'Hunt Hell Difficulty', status: 'SCHEDULED_NOT_RELEASED', targetDate: plannedUpdate11.targetDate, source: plannedUpdate11.replayHref },
+export const releasedUpdate11Features = [
+  { name: 'Ryza (Playable Hero)', status: 'RELEASED', appliedDate: update110.appliedDate, source: update110.href },
+  { name: 'Othello Hero Quest', status: 'RELEASED', appliedDate: update110.appliedDate, source: update110.href },
+  { name: 'Hunt Hell Difficulty', status: 'RELEASED', appliedDate: update110.appliedDate, source: update110.href },
 ] as const;

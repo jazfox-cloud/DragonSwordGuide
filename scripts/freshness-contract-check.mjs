@@ -1,248 +1,93 @@
 import fs from 'node:fs';
 import path from 'node:path';
-
-import * as sourceData from '../src/data/sources.ts';
-
-const {
-  latestApplied,
-  previousApplied,
-  latestAppliedPatch,
-  patch111Preview,
-  plannedUpdate11,
-  comingNextAnnouncements,
-} = sourceData;
+import * as sources from '../src/data/sources.ts';
 
 const root = process.cwd();
 const dist = path.join(root, 'dist');
-const requiredRoutes = ['/', '/roadmap/', '/multiplayer/', '/ja/roadmap/'];
-const freshnessPatterns = [
-  /latest(?: official)? (?:update|patch)[^.!?\n]{0,160}\b(\d+\.\d+\.\d+)\b/giu,
-  /\b(\d+\.\d+\.\d+)\b[^.!?\n]{0,160}(?:is|as) the latest(?: official)? (?:update|patch)/giu,
-  /current (?:update|patch|version)[^.!?\n]{0,160}\b(\d+\.\d+\.\d+)\b/giu,
-  /最新[^。！？\n]{0,160}?\b(\d+\.\d+\.\d+)\b/gu,
-  /\b(\d+\.\d+\.\d+)\b[^。！？\n]{0,160}最新/gu,
+const { latestApplied, latestAppliedPatch, previousApplied, update11Preview, releasedUpdate11Features } = sources;
+const changedRoutes = ['/', '/ja/', '/roadmap/', '/ja/roadmap/', '/characters/'];
+function fail(message) { console.error(`[freshness] ${message}`); process.exitCode = 1; }
+function html(route) { return fs.readFileSync(path.join(dist, route.replace(/^\//, ''), 'index.html'), 'utf8'); }
+function text(value) { return value.replace(/<script\b[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&(?:nbsp|amp|quot|#39);/g, ' ').replace(/\s+/g, ' ').trim(); }
+function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(path.join(dir, e.name)) : e.name.endsWith('.html') ? [path.join(dir, e.name)] : []); }
+function link(body, label, href) {
+  return [...body.matchAll(/<a\b([^>]+)>([\s\S]*?)<\/a>/g)].some(([, attrs, title]) => attrs.includes(`href="${href}"`) && text(title) === label);
+}
+
+// Offline consistency only. Weekly official-source review is still required to detect new releases.
+if (latestApplied !== latestAppliedPatch) fail('latestAppliedPatch must alias the authoritative latestApplied record');
+for (const record of [latestApplied, previousApplied]) {
+  if (record?.status !== 'RELEASED' || !record?.appliedDate || !record?.href) fail('current and previous patches require released records, application dates and final-notes URLs');
+}
+if (latestApplied === previousApplied || latestApplied?.version === previousApplied?.version) fail('current and previous patches must be distinct');
+if (update11Preview?.status !== 'HISTORICAL_ANNOUNCEMENT' || update11Preview?.targetDate !== '2026-10-15' || !update11Preview?.replayHref) fail('retain the 1.1 preview as historical provenance, not an active schedule');
+if (sources.patch111Preview?.status !== 'HISTORICAL_ANNOUNCEMENT') fail('retain the earlier 1.0.11 preview as history');
+if ('plannedUpdate11' in sources || 'nextAnnouncedPatch' in sources || 'comingNextAnnouncements' in sources) fail('released announcements must leave active planned slots');
+if (!releasedUpdate11Features || releasedUpdate11Features.length !== 3 || releasedUpdate11Features.some(x => x.status !== 'RELEASED' || x.appliedDate !== sources.update110.appliedDate || x.source !== sources.update110.href)) fail('the three previously scheduled 1.1 features require final-release evidence');
+
+const stale = [
+  /1\.0\.12 remains (?:the )?latest applied/i,
+  /(?:Version )?1\.1 (?:is scheduled|has not yet been confirmed applied)/i,
+  /Ryza is scheduled with Version 1\.1/i,
+  /Version 1\.1は.{0,25}配信予定/,
+  /1\.0\.12は適用済みの最新/,
+  /Version 1\.1 \/ (?:scheduled, not yet applied|配信予定・未適用)/,
 ];
-
-function fail(message) {
-  console.error(`[freshness] ${message}`);
-  process.exitCode = 1;
+for (const route of [...changedRoutes, '/multiplayer/']) {
+  const body = html(route);
+  for (const pattern of stale) if (pattern.test(text(body)) || pattern.test(body.match(/<head>[\s\S]*?<\/head>/)?.[0] || '')) fail(`${route}: obsolete schedule/latest claim ${pattern}`);
+  if (!text(body).includes(latestAppliedPatch.version)) fail(`${route}: missing shared current patch ${latestAppliedPatch.version}`);
+}
+// Include metadata as well as visible copy; allow old versions only in explicitly historical sections.
+const freshnessPatterns = [
+  /latest(?: official)? (?:update|patch|applied update|applied patch)[^.!?\n]{0,60}\b(\d+\.\d+\.\d+)\b/giu,
+  /\b(\d+\.\d+\.\d+)\b[^.!?\n]{0,40}(?:is|as) the latest(?: official)? (?:update|patch)/giu,
+  /current (?:update|patch|version)[^.!?\n]{0,60}\b(\d+\.\d+\.\d+)\b/giu,
+  /最新(?:適用済み|アップデート)[^。！？\n]{0,35}?\b(\d+\.\d+\.\d+)\b/gu,
+];
+for (const file of files(dist)) {
+  const body = fs.readFileSync(file, 'utf8');
+  const copy = text(body) + ' ' + [...body.matchAll(/<meta[^>]+content="([^"]+)"/g)].map(m => m[1]).join(' ');
+  for (const pattern of freshnessPatterns) for (const match of copy.matchAll(pattern)) if (match[1] !== latestAppliedPatch.version) fail(`${path.relative(root, file)}: stale current/latest claim ${match[1]}`);
 }
 
-function htmlFile(urlPath) {
-  return urlPath === '/'
-    ? path.join(dist, 'index.html')
-    : path.join(dist, urlPath.replace(/^\//, ''), 'index.html');
-}
-
-function visibleText(html) {
-  return html
-    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&(?:nbsp|amp|quot|#39);/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function allHtmlFiles(directory) {
-  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const target = path.join(directory, entry.name);
-    if (entry.isDirectory()) return allHtmlFiles(target);
-    return entry.isFile() && entry.name.endsWith('.html') ? [target] : [];
-  });
-}
-
-if (!latestAppliedPatch?.version || !latestAppliedPatch?.date || !latestAppliedPatch?.href) {
-  fail('latestAppliedPatch must expose version, date, and official href');
-} else {
-  if (latestApplied !== latestAppliedPatch) {
-    fail('latestAppliedPatch must alias the authoritative latestApplied record');
-  }
-  if (latestAppliedPatch.version !== '1.0.12' || latestAppliedPatch.appliedDate !== '2026-09-10') {
-    fail('latestApplied must be official 1.0.12 applied on 2026-09-10');
-  }
-  if (latestAppliedPatch.status !== 'RELEASED') {
-    fail(`latestAppliedPatch must be RELEASED, got ${latestAppliedPatch.status || 'missing'}`);
-  }
-
-  if (previousApplied?.version !== '1.0.11' || previousApplied?.status !== 'RELEASED' || previousApplied?.appliedDate !== '2026-09-03') {
-    fail('previousApplied must retain released 1.0.11 applied on 2026-09-03');
-  }
-
-  for (const route of requiredRoutes) {
-    const file = htmlFile(route);
-    if (!fs.existsSync(file)) {
-      fail(`${route}: missing built HTML`);
-      continue;
-    }
-    const html = fs.readFileSync(file, 'utf8');
-    if (!visibleText(html).includes(latestAppliedPatch.version)) {
-      fail(`${route}: does not render shared latest patch ${latestAppliedPatch.version}`);
-    }
-  }
-
-  for (const file of allHtmlFiles(dist)) {
-    const text = visibleText(fs.readFileSync(file, 'utf8'));
-    for (const pattern of freshnessPatterns) {
-      for (const match of text.matchAll(pattern)) {
-        const claimedVersion = match[1];
-        if (claimedVersion !== latestAppliedPatch.version) {
-          fail(`${path.relative(root, file)}: stale latest/current claim ${claimedVersion}; shared latest is ${latestAppliedPatch.version}`);
-        }
-      }
-    }
-  }
-}
-
-if (
-  plannedUpdate11?.version !== '1.1'
-  || plannedUpdate11?.targetDate !== '2026-10-15'
-  || plannedUpdate11?.status !== 'SCHEDULED_NOT_RELEASED'
-  || plannedUpdate11?.scheduleConfidence !== 'OFFICIAL_TARGET_SUBJECT_TO_CHANGE'
-  || !plannedUpdate11?.noticeHref
-  || !plannedUpdate11?.replayHref
-) {
-  fail('plannedUpdate11 must retain the official October 15 target without becoming an applied release');
-}
-
-// Feature-specific citations must retain their historical patch after latest advances.
+// A historical feature citation must never silently follow the moving latest-patch pointer.
 for (const [route, label, patch] of [
-  ['/multiplayer/', 'Official update notes 1.0.11', sourceData.patch111],
-  ['/multiplayer/', 'Official update notes 1.0.10', sourceData.patch110],
-  ['/ja/multiplayer/', '公式1.0.11アップデート', sourceData.patch111],
-  ['/ja/multiplayer/', '公式1.0.10アップデート', sourceData.patch110],
-  ['/guides/combat-system/', 'Official update notes 1.0.11', sourceData.patch111],
-  ['/roadmap/', 'Official update notes 1.0.12', latestAppliedPatch],
-  ['/ja/roadmap/', '公式1.0.12アップデート', latestAppliedPatch],
+  ['/multiplayer/', 'Official update notes 1.0.11', sources.patch111],
+  ['/multiplayer/', 'Official update notes 1.0.10', sources.patch110],
+  ['/ja/multiplayer/', '公式1.0.11アップデート', sources.patch111],
+  ['/ja/multiplayer/', '公式1.0.10アップデート', sources.patch110],
+  ['/guides/combat-system/', 'Official update notes 1.0.11', sources.patch111],
+  ['/roadmap/', 'Official update notes 1.0.12', sources.patch112],
+  ['/roadmap/', 'Official update notes 1.0.11', sources.patch111],
+  ['/ja/roadmap/', '公式1.0.12アップデート', sources.patch112],
+  ['/ja/roadmap/', '公式1.0.11アップデート', sources.patch111],
+  ['/roadmap/', 'Official update notes 1.1.0', sources.update110],
+  ['/roadmap/', 'Official update notes 1.1.1', sources.update111],
+  ['/ja/roadmap/', '公式1.1.0アップデート', sources.update110],
+  ['/ja/roadmap/', '公式1.1.1アップデート', sources.update111],
+]) if (!patch?.href || !link(html(route), label, patch.href)) fail(`${route}: ${label} must link to its own final announcement`);
+
+for (const route of ['/roadmap/', '/ja/roadmap/']) {
+  const copy = text(html(route));
+  for (const expected of ['1.1.1', '1.1.0', '1.0.12', 'Jerome', 'Veronica', 'Logan']) if (!copy.includes(expected)) fail(`${route}: missing release/history/unknown-date distinction ${expected}`);
+}
+const characters = html('/characters/');
+for (const expected of ['Ryza was added in Update 1.1.0', 'Quest #53, “Reunion,”', '19 launch Heroes', 'exact release dates and release order unknown']) if (!text(characters).includes(expected)) fail(`/characters/: missing bounded status ${expected}`);
+if (sources.update110 && !characters.includes(`href="${sources.update110.href}"`)) fail('/characters/: final 1.1.0 notes must support the release claim');
+for (const route of changedRoutes) if (!html(route).includes('"dateModified":"2026-10-22"')) fail(`${route}: editorial date must match this reviewed change`);
+
+for (const [route, title, h1] of [
+  ['/', 'DragonSword Awakening Wiki — Builds, Map &amp; Characters', 'DragonSword Awakening Guides'],
+  ['/ja/', 'ドラゴンソード:アウェイクニング 攻略ガイド - マップ・ビルド・ロードマップ', 'ドラゴンソード:アウェイクニング 攻略ガイド'],
+  ['/roadmap/', 'DragonSword Awakening Roadmap: Latest Updates &amp; Future Plans', 'DragonSword Awakening Roadmap'],
+  ['/ja/roadmap/', 'ドラゴンソード:アウェイクニング ロードマップ - 最新アップデートと今後の予定', 'ドラゴンソード:アウェイクニング ロードマップ'],
+  ['/characters/', 'DragonSword Awakening Characters — Launch Roster &amp; Ryza', 'DragonSword Awakening Characters'],
 ]) {
-  const html = fs.readFileSync(htmlFile(route), 'utf8');
-  const links = [...html.matchAll(/<a\b([^>]+)>([\s\S]*?)<\/a>/g)];
-  if (!links.some(([, attributes, labelHtml]) => attributes.includes(`href="${patch.href}"`) && visibleText(labelHtml) === label)) {
-    fail(`${route}: ${label} must link to its own official announcement`);
-  }
+  const body = html(route);
+  if (!body.includes(`<title>${title}</title>`)) fail(`${route}: title mismatch`);
+  if (!body.includes(`<link rel="canonical" href="https://dragonswordguide.com${route}">`)) fail(`${route}: canonical changed`);
+  if ([...body.matchAll(/<h1\b/g)].length !== 1 || !text(body).includes(h1)) fail(`${route}: H1 mismatch`);
 }
-
-if ('nextAnnouncedPatch' in sourceData) {
-  fail('1.0.11 must not remain in an active nextAnnouncedPatch slot after application');
-}
-
-if (patch111Preview?.version !== '1.0.11' || patch111Preview?.status !== 'HISTORICAL_ANNOUNCEMENT' || !patch111Preview?.href) {
-  fail('the 1.0.11 preview must remain as historical announcement provenance');
-}
-
-const expectedComingNext = ['Ryza (Playable Hero)', 'Othello Hero Quest', 'Hunt Hell Difficulty'];
-if (!Array.isArray(comingNextAnnouncements) || comingNextAnnouncements.length !== expectedComingNext.length) {
-  fail('comingNextAnnouncements must retain the three separately announced items');
-} else {
-  for (const [index, item] of comingNextAnnouncements.entries()) {
-    if (
-      item.name !== expectedComingNext[index]
-      || item.status !== 'SCHEDULED_NOT_RELEASED'
-      || item.targetDate !== plannedUpdate11.targetDate
-      || item.source !== plannedUpdate11.replayHref
-    ) {
-      fail(`${item.name || `coming-next item ${index + 1}`}: must retain the official 1.1 schedule without becoming released`);
-    }
-  }
-
-  const roadmapContracts = [
-    {
-      route: '/roadmap/',
-      currentStatus: 'Latest applied / released',
-      previousStatus: 'Released / previous',
-      comingNextStatus: 'Scheduled / not yet applied',
-      visibleComingNext: expectedComingNext,
-      staleClaims: [
-        '1.0.11 is announced and planned',
-        'Planned, not released',
-        'Announced / planned: 1.0.11',
-        'Othello Hero Quest and Hunt Hell Mode still have no confirmed release dates',
-      ],
-    },
-    {
-      route: '/ja/roadmap/',
-      currentStatus: '最新適用済み / リリース済み',
-      previousStatus: '適用済み / 過去の更新',
-      comingNextStatus: '配信予定 / 未適用',
-      visibleComingNext: ['プレイアブル英雄 ライザ', 'Othello Hero Quest', '討伐ヘル難易度'],
-      staleClaims: [
-        '1.0.11は公式予告です',
-        '予定であり、未適用です',
-        '公式予告 / 適用予定: 1.0.11',
-        'Ryza、Othello Hero Quest、Hunt Hell Modeは日程未定',
-      ],
-    },
-  ];
-
-  for (const contract of roadmapContracts) {
-    const file = htmlFile(contract.route);
-    const text = visibleText(fs.readFileSync(file, 'utf8'));
-    for (const expected of [latestAppliedPatch.version, previousApplied.version, contract.currentStatus, contract.previousStatus, contract.comingNextStatus, ...contract.visibleComingNext]) {
-      if (!text.includes(expected)) {
-        fail(`${contract.route}: missing applied/history/coming-next marker "${expected}"`);
-      }
-    }
-    for (const staleClaim of contract.staleClaims) {
-      if (text.toLowerCase().includes(staleClaim.toLowerCase())) {
-        fail(`${contract.route}: stale sweeping date claim "${staleClaim}"`);
-      }
-    }
-  }
-}
-
-const charactersHtml = fs.readFileSync(htmlFile('/characters/'), 'utf8');
-const charactersText = visibleText(charactersHtml);
-const ryzaTeaserHref = 'https://steamcommunity.com/games/4570720/announcements/detail/1844115010490208';
-for (const expected of [
-  'Ryza is scheduled with Version 1.1 for October 15, 2026, but the update is not yet applied.',
-  'Quest #53, “Reunion,” grants Ryza as its completion reward.',
-  'Players who already completed that story point are scheduled to receive her directly in their inventory when the update goes live.',
-  'Jerome, Veronica and Logan remain planned for the second half of 2026, with exact release dates and release order unknown.',
-]) {
-  if (!charactersText.includes(expected)) {
-    fail(`/characters/: missing bounded Ryza freshness marker "${expected}"`);
-  }
-}
-if (!charactersHtml.includes(`href="${ryzaTeaserHref}"`)) {
-  fail('/characters/: official Ryza teaser must be cited as Evidence B');
-}
-if (plannedUpdate11?.replayHref && !charactersHtml.includes(`href="${plannedUpdate11.replayHref}"`)) {
-  fail('/characters/: official LIVE STREAM #7 replay must be cited as Evidence B');
-}
-
-for (const [route, expected] of [
-  ['/', 'Version 1.1 target · October 15, 2026'],
-  ['/ja/', 'Version 1.1は2026年10月15日配信予定'],
-  ['/roadmap/', 'Version 1.1 target: October 15, 2026'],
-  ['/ja/roadmap/', 'Version 1.1 配信予定: 2026年10月15日'],
-]) {
-  const text = visibleText(fs.readFileSync(htmlFile(route), 'utf8'));
-  if (!text.includes(expected)) fail(`${route}: missing 1.1 schedule marker "${expected}"`);
-}
-
-for (const route of ['/', '/ja/', '/roadmap/', '/ja/roadmap/', '/characters/']) {
-  const html = fs.readFileSync(htmlFile(route), 'utf8');
-  if (!html.includes('"dateModified":"2026-10-04"')) {
-    fail(`${route}: dateModified must match the 2026-10-04 evidence refresh`);
-  }
-  if (!html.includes(`href="${plannedUpdate11.replayHref}"`)) {
-    fail(`${route}: official LIVE STREAM #7 replay must remain linked`);
-  }
-}
-
-for (const [route, title, canonical, h1] of [
-  ['/', 'DragonSword Awakening Wiki — Builds, Map &amp; Characters', 'https://dragonswordguide.com/', 'DragonSword Awakening Guides'],
-  ['/ja/', 'ドラゴンソード:アウェイクニング 攻略ガイド - マップ・ビルド・ロードマップ', 'https://dragonswordguide.com/ja/', 'ドラゴンソード:アウェイクニング 攻略ガイド'],
-  ['/roadmap/', 'DragonSword Awakening Roadmap: Latest Updates &amp; Future Plans', 'https://dragonswordguide.com/roadmap/', 'DragonSword Awakening Roadmap'],
-  ['/ja/roadmap/', 'ドラゴンソード:アウェイクニング ロードマップ - 最新アップデートと今後の予定', 'https://dragonswordguide.com/ja/roadmap/', 'ドラゴンソード:アウェイクニング ロードマップ'],
-  ['/characters/', 'All DragonSword Awakening Characters — 19-Hero Directory', 'https://dragonswordguide.com/characters/', 'All DragonSword Awakening Characters'],
-]) {
-  const html = fs.readFileSync(htmlFile(route), 'utf8');
-  if (!html.includes(`<title>${title}</title>`)) fail(`${route}: protected title changed`);
-  if (!html.includes(`<link rel="canonical" href="${canonical}">`)) fail(`${route}: protected canonical changed`);
-  if (!html.includes(`<h1`)) fail(`${route}: H1 missing`);
-  if (!visibleText(html).includes(h1)) fail(`${route}: protected H1 changed`);
-}
-
 if (process.exitCode) process.exit(process.exitCode);
-console.log(`[freshness] all current/latest claims agree on ${latestAppliedPatch.version}`);
+console.log(`[freshness] current patch ${latestAppliedPatch.version}; final notes, historical citations, retired schedules and EN/JA entries agree`);
