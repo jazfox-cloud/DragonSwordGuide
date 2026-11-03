@@ -6,13 +6,14 @@ import QuickAnswer from '../../../components/QuickAnswer.astro';
 import SourceList from '../../../components/SourceList.astro';
 import SourceRevisionMeta from '../../../components/SourceRevisionMeta.astro';
 import { roadmapJa as page } from '../../../content/ja/roadmap';
-import { sourceUrls, patch107, patch109, patch110, latestAppliedPatch, update110, update111, patch111, patch112, patch111Preview, update11Preview } from '../../../data/sources';
+import { sourceUrls, patch107, patch109, patch110, latestAppliedPatch, update110, update111, update112, patch111, patch112, patch111Preview, update11Preview } from '../../../data/sources';
 import { getArticleSchema, getBreadcrumbSchema, getCanonical } from '../../../i18n/seo';
 
 const canonical = getCanonical('roadmap', 'ja');
-const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-10-22' });
+const article = getArticleSchema('ja', { title: page.title, description: page.description, canonical, datePublished: '2026-08-08', dateModified: '2026-11-02' });
 const breadcrumb = getBreadcrumbSchema('ja', [{ name: 'DragonSword Guide', path: '/ja/' }, { name: 'ロードマップ', path: '/ja/roadmap/' }]);
 const sources = [
+  { label: '公式1.1.2アップデート', href: update112.href, note: 'Evidence B - 2026年10月27日に適用された改善と不具合修正の最終ノート。' },
   { label: '公式1.1.1アップデート', href: update111.href, note: 'Evidence B - 2026年10月15日に適用された修正パッチの最終ノート。' },
   { label: '公式1.1.0アップデート', href: update110.href, note: 'Evidence B - 2026年10月15日のリリースを確認する最終ノート。以前の予定を更新します。' },
   { label: '公式 LIVE STREAM #7 アーカイブ', href: update11Preview.replayHref, note: 'Evidence B - 日本語字幕付きの過去の予告。現在の適用状況は1.1.0最終ノートを根拠とします。' },
@@ -32,20 +33,22 @@ const sources = [
       <header class="article-header">
         <p class="eyebrow">アップデート · 出典タイムライン</p>
         <h1>{page.h1}</h1>
-        <LastVerified date="2026年10月22日" label="最終確認" />
+        <LastVerified date="2026年11月2日" label="最終確認" />
       </header>
-      <QuickAnswer eyebrow="要点" title="Update 1.1.1は適用済み、Version 1.1.0はリリース済みです。">
-        <p>1.1.0ではライザ、討伐ランクとヘル難易度、トレーニンググラウンド、Othello Hero Questが追加されました。1.1.1はクエストと討伐報酬の不具合を修正しています。いずれも2026年10月15日の公式ノートで確認できます。</p>
+      <QuickAnswer eyebrow="要点" title="Update 1.1.2は適用済みです。以前の更新は履歴として確認できます。">
+        <p>2026年10月27日の1.1.2では、トレーニンググラウンドの計測終了キーを変更し、クエスト、英雄の動作、装備製作などの不具合を修正しました。ライザとトレーニンググラウンドは、以前の1.1.0で追加された内容です。</p>
       </QuickAnswer>
       <div class="timeline">
-        <div><span>最新適用済み / リリース済み</span><h2>1.1.1 適用済み</h2><p>2026年10月15日。クエストと討伐報酬の修正を公式ノートで確認できます。</p></div>
-        <div><span>適用済み / 直前の更新</span><h2>1.1.0 リリース済み</h2><p>2026年10月15日。ライザ、トレーニンググラウンド、討伐関連の追加を確認できます。</p></div>
+        <div><span>最新適用済み / リリース済み</span><h2>1.1.2 適用済み</h2><p>2026年10月27日。改善と不具合修正の適用を公式ノートで確認できます。</p></div>
+        <div><span>適用済み / 直前の更新</span><h2>1.1.1 適用済み</h2><p>2026年10月15日。クエストと討伐報酬の修正を更新履歴として確認できます。</p></div>
         <div><span>今後 / 日程未定</span><h2>残る英雄の予定</h2><p>Jerome、Veronica、Loganの確定した配信日は、今回確認した出典にはありません。</p></div>
       </div>
       <section class="copy">
-        <h2>最新適用済み / リリース済み: 1.1.1</h2>
+        <h2>最新適用済み / リリース済み: 1.1.2</h2>
+        <p>公式ノートでは、トレーニンググラウンドのDPS計測を終了するキーボード操作をESCに変更し、クエスト、英雄の動作、装備製作などの不具合を修正したことを確認できます。</p>
+        <h2>適用済み / 直前の更新: 1.1.1</h2>
         <p>クエスト#53完了後のライザのレベルアップ、クエスト#45のReinaとの会話、討伐報酬通貨の不具合を修正。修正に伴い討伐ランク・スコア・報酬はリセットされ、初回ランク報酬を再び獲得できます。</p>
-        <h2>適用済み / 直前の更新: 1.1.0</h2>
+        <h2>適用済み / 過去の更新: 1.1.0</h2>
         <p>適用状況は、以前の10月15日予告ではなく、最終リリースノートを根拠とします。</p>
         <ul><li>プレイアブル英雄 ライザ — Adventure Quest #53「Reunion」の完了報酬。すでに完了していた場合は即時付与。</li><li>Othello Hero Quest — Chapter 5完了後に追加。</li><li>討伐ヘル難易度 — スコアとランクの仕組みとともに追加。</li><li>トレーニンググラウンド — Roderic Palace前のEdricから入場。静止ダミーまたは戦闘する対象と、ダメージ・DPS表示を利用できます。</li><li>QoL改善 — 料理クイックスロットを2枠から3枠へ拡張、マップピンの種類追加、CodexからのFamiliar入手など。</li></ul>
         <p class="evidence-note"><strong>適用情報の境界:</strong> 最終1.1.0ノートで確認した追加内容であり、実測した攻略や強さの推奨ではありません。予告の詳細より最終ノートを優先します。</p>

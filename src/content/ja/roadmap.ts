@@ -11,9 +11,9 @@ export const roadmapJa = {
     source_url: sourcePages.roadmap.sourceUrl,
     source_file: sourcePages.roadmap.sourceFile,
     source_revision: sourceRevisionGitCommit,
-    source_hash: '8fec77cdf87eb40e36bf4fca2ac9d9107df4dd8996dd2510a6372fd881c399c0',
+    source_hash: '3d6e327e8e1e345499be8ed164209c349984e26ee99d689f6a96a26f7e275dd2',
     source_updated_at: sourcePages.roadmap.sourceUpdatedAt,
     translation_status: 'AI_TRANSLATED',
-    last_translated_at: '2026-10-22',
+    last_translated_at: '2026-11-02',
   },
 } as const;

@@ -5,7 +5,7 @@ import * as sources from '../src/data/sources.ts';
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const { latestApplied, latestAppliedPatch, previousApplied, update11Preview, releasedUpdate11Features } = sources;
-const changedRoutes = ['/', '/ja/', '/roadmap/', '/ja/roadmap/', '/characters/'];
+const changedRoutes = ['/', '/ja/', '/roadmap/', '/ja/roadmap/'];
 function fail(message) { console.error(`[freshness] ${message}`); process.exitCode = 1; }
 function html(route) { return fs.readFileSync(path.join(dist, route.replace(/^\//, ''), 'index.html'), 'utf8'); }
 function text(value) { return value.replace(/<script\b[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&(?:nbsp|amp|quot|#39);/g, ' ').replace(/\s+/g, ' ').trim(); }
@@ -38,6 +38,19 @@ for (const route of [...changedRoutes, '/multiplayer/']) {
   for (const pattern of stale) if (pattern.test(text(body)) || pattern.test(body.match(/<head>[\s\S]*?<\/head>/)?.[0] || '')) fail(`${route}: obsolete schedule/latest claim ${pattern}`);
   if (!text(body).includes(latestAppliedPatch.version)) fail(`${route}: missing shared current patch ${latestAppliedPatch.version}`);
 }
+// A current version elsewhere on the page must not mask a stale latest-status card.
+for (const [route, heading] of [['/roadmap/', `Latest applied / released: ${latestApplied.version}`], ['/ja/roadmap/', `最新適用済み / リリース済み: ${latestApplied.version}`]]) {
+  const body = html(route);
+  if (![...body.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)].some(([, title]) => text(title) === heading)) fail(`${route}: latest section must identify the authoritative patch`);
+  const firstCard = body.match(/<div class="timeline"[^>]*>[\s\S]*?<h2\b[^>]*>(.*?)<\/h2>/)?.[1];
+  if (!firstCard?.includes(latestApplied.version)) fail(`${route}: latest timeline card is stale`);
+}
+for (const route of ['/', '/ja/', '/roadmap/', '/multiplayer/']) {
+  const body = html(route);
+  const hasCurrentLink = [...body.matchAll(/<a\b([^>]+)>([\s\S]*?)<\/a>/g)].some(([, attrs, label]) => attrs.includes(`href="${latestApplied.href}"`) && text(label).includes(latestApplied.version));
+  if (!hasCurrentLink) fail(`${route}: current version label and official link must agree`);
+}
+
 // Include metadata as well as visible copy; allow old versions only in explicitly historical sections.
 const freshnessPatterns = [
   /latest(?: official)? (?:update|patch|applied update|applied patch)[^.!?\n]{0,60}\b(\d+\.\d+\.\d+)\b/giu,
@@ -65,18 +78,20 @@ for (const [route, label, patch] of [
   ['/ja/roadmap/', '公式1.0.11アップデート', sources.patch111],
   ['/roadmap/', 'Official update notes 1.1.0', sources.update110],
   ['/roadmap/', 'Official update notes 1.1.1', sources.update111],
+  ['/roadmap/', 'Official update notes 1.1.2', sources.update112],
   ['/ja/roadmap/', '公式1.1.0アップデート', sources.update110],
   ['/ja/roadmap/', '公式1.1.1アップデート', sources.update111],
+  ['/ja/roadmap/', '公式1.1.2アップデート', sources.update112],
 ]) if (!patch?.href || !link(html(route), label, patch.href)) fail(`${route}: ${label} must link to its own final announcement`);
 
 for (const route of ['/roadmap/', '/ja/roadmap/']) {
   const copy = text(html(route));
-  for (const expected of ['1.1.1', '1.1.0', '1.0.12', 'Jerome', 'Veronica', 'Logan']) if (!copy.includes(expected)) fail(`${route}: missing release/history/unknown-date distinction ${expected}`);
+  for (const expected of [latestApplied.version, previousApplied.version, '1.1.0', '1.0.12', 'Jerome', 'Veronica', 'Logan']) if (!copy.includes(expected)) fail(`${route}: missing release/history/unknown-date distinction ${expected}`);
 }
 const characters = html('/characters/');
 for (const expected of ['Ryza was added in Update 1.1.0', 'Quest #53, “Reunion,”', '19 launch Heroes', 'exact release dates and release order unknown']) if (!text(characters).includes(expected)) fail(`/characters/: missing bounded status ${expected}`);
 if (sources.update110 && !characters.includes(`href="${sources.update110.href}"`)) fail('/characters/: final 1.1.0 notes must support the release claim');
-for (const route of changedRoutes) if (!html(route).includes('"dateModified":"2026-10-22"')) fail(`${route}: editorial date must match this reviewed change`);
+for (const route of changedRoutes) if (!html(route).includes('"dateModified":"2026-11-02"')) fail(`${route}: editorial date must match this reviewed change`);
 
 for (const [route, title, h1] of [
   ['/', 'DragonSword Awakening Wiki — Builds, Map &amp; Characters', 'DragonSword Awakening Guides'],
