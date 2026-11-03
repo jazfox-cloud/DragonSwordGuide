@@ -52,7 +52,7 @@ const sources = [
 const totalMapMarkers = markerData.markers.length + chestManifest.total_published;
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} routeId="map" ogType="article" schema={[article]}>
+<BaseLayout title={title} description={description} canonical={canonical} routeId="map" ogType="article" ogImage={{ url: 'https://dragonswordguide.com/map/base-map-candidate-v2.png', alt: 'Orbis beta map used by DragonSword Guide; approximate planning reference, not exact collectible routes.', width: 1521, height: 1034, type: 'image/png' }} schema={[article]}>
   <div class="shell page-wrap">
     <Breadcrumbs items={[{ label: 'DragonSword Guide', href: '/' }, { label: 'Map' }]} />
     <article>

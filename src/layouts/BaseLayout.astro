@@ -5,6 +5,7 @@ interface Props {
   canonical: string;
   schema?: Record<string, unknown>[];
   ogType?: 'website' | 'article';
+  ogImage?: { url: string; alt: string; width: number; height: number; type: string };
   noindex?: boolean;
   locale?: 'en' | 'ja';
   routeId?: RouteId;
@@ -15,7 +16,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { getAlternates } from '../i18n/seo';
 
-const { title, description, canonical, schema = [], ogType = 'website', noindex = false, locale = 'en', routeId } = Astro.props;
+const { title, description, canonical, schema = [], ogType = 'website', ogImage, noindex = false, locale = 'en', routeId } = Astro.props;
 const alternates = routeId ? getAlternates(routeId) : [];
 const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
 ---
@@ -39,6 +40,13 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    {ogImage && <>
+      <meta property="og:image" content={ogImage.url} />
+      <meta property="og:image:alt" content={ogImage.alt} />
+      <meta property="og:image:width" content={ogImage.width} />
+      <meta property="og:image:height" content={ogImage.height} />
+      <meta property="og:image:type" content={ogImage.type} />
+    </>}
     <meta name="twitter:card" content="summary" />
     <title>{title}</title>
     {schema.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
