@@ -96,7 +96,7 @@ for (const route of changedRoutes) if (!html(route).includes('"dateModified":"20
 for (const [route, title, h1] of [
   ['/', 'DragonSword Awakening Wiki — Builds, Map &amp; Characters', 'DragonSword Awakening Guides'],
   ['/ja/', 'ドラゴンソード:アウェイクニング 攻略ガイド - マップ・ビルド・ロードマップ', 'ドラゴンソード:アウェイクニング 攻略ガイド'],
-  ['/roadmap/', 'DragonSword Awakening Roadmap: Latest Updates &amp; Future Plans', 'DragonSword Awakening Roadmap'],
+  ['/roadmap/', 'DragonSword Awakening Roadmap: Ryza, Next Update &amp; 1.1.2', 'DragonSword Awakening Roadmap'],
   ['/ja/roadmap/', 'ドラゴンソード:アウェイクニング ロードマップ - 最新アップデートと今後の予定', 'ドラゴンソード:アウェイクニング ロードマップ'],
   ['/characters/', 'DragonSword Awakening Characters — Launch Roster &amp; Ryza', 'DragonSword Awakening Characters'],
 ]) {

@@ -12,8 +12,8 @@ import SectionHeader from '../../../components/SectionHeader.astro';
 import AdsterraNativeBanner from '../../../components/AdsterraNativeBanner.astro';
 import { sourceUrls, patch111 } from '../../../data/sources';
 
-const title = 'DragonSword Awakening Signal Skills & Status Effects Guide';
-const description = 'Learn how to trigger Signal Skills in DragonSword Awakening, diagnose missing prompts, and match Status Ailments to the exact Signal Skill conditions shown in your current build.';
+const title = 'What Is a Signal Skill in DragonSword Awakening?';
+const description = 'A Signal Skill starts when the exact condition in its skill text is applied and the prompt appears. Learn how to trigger it and what to check if it is missing.';
 const canonical = 'https://dragonswordguide.com/guides/combat-system/';
 const article = {
   '@context': 'https://schema.org',
@@ -45,12 +45,12 @@ const sources = [
     <article>
       <header class="article-header">
         <p class="eyebrow">Guide · Read the signal</p>
-        <h1>DragonSword Awakening Signal Skills & Status Effects Guide</h1>
+        <h1>What Is a Signal Skill in DragonSword Awakening?</h1>
         <LastVerified date="September 4, 2026" />
       </header>
 
-      <QuickAnswer title="Match the exact condition, then wait for the prompt.">
-        <p>Use an Active Skill to apply the Status Ailment named by another Hero’s Signal Skill. Check any additional condition written in the current skill description, then activate the Signal or switch when its prompt appears.</p>
+      <QuickAnswer title="A Signal Skill is a follow-up skill triggered by its exact condition.">
+        <p>A Signal Skill is a follow-up skill that becomes available when the exact Status Ailment or combat condition named in that skill's current text is applied, and then the in-game prompt appears. It is not a generic character swap and it is not on a fixed timer. To trigger it: 1) read the receiving Signal Skill first; 2) apply the required condition with an Active Skill; 3) check any extra condition written on the skill, such as Super Armor or Break; 4) activate or switch when the prompt appears. If the prompt never appears, return to the exact trigger text instead of repeating the same swap.</p>
       </QuickAnswer>
 
       <div class="article-body">
@@ -102,7 +102,7 @@ const sources = [
       </div>
 
       <SourceList sources={sources} />
-      <RelatedGuides links={[{ label: 'Beginner Guide', href: '/guides/beginner/' }, { label: 'Teams', href: '/teams/' }, { label: 'Characters', href: '/characters/' }]} />
+      <RelatedGuides links={[{ label: 'Beginner Guide', href: '/guides/beginner/' }, { label: 'Teams', href: '/teams/' }, { label: 'Characters', href: '/characters/' }, { label: 'Builds', href: '/builds/' }]} />
     </article>
   </div>
 </BaseLayout>
