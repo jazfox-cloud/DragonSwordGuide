@@ -9,8 +9,8 @@ import UpdateBadge from '../../components/UpdateBadge.astro';
 import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro';
 import { latestAppliedPatch, patch107, patch110, patch111 } from '../../data/sources';
 
-const title = 'Is DragonSword Awakening Multiplayer? Co-op Explained';
-const description = "DragonSword Awakening co-op covers Subjugation and Raids. See confirmed lobby features and the evidence limits for story co-op, player count and crossplay.";
+const title = 'Is DragonSword Awakening Multiplayer? Yes — Co-op Scope';
+const description = "Yes. DragonSword Awakening has online co-op for Subjugation and Raids. Story and open-world co-op and crossplay are unconfirmed. See how co-op works.";
 const canonical = 'https://dragonswordguide.com/multiplayer/';
 const reviewedDate = 'October 22, 2026';
 const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dragonswordguide.com/' }, { '@type': 'ListItem', position: 2, name: 'Multiplayer', item: canonical }] };
@@ -33,11 +33,46 @@ const sources = [
         <LastVerified date={reviewedDate} label="Sources reviewed" />
       </header>
 
-      <QuickAnswer title="Yes — Subjugation and Raids support online co-op.">
-        <p>Steam lists Online Co-op. Hound13 identifies Subjugation and Raids as activities you can play with friends or random players through Steam lobbies. Current story and open-world co-op, player count and crossplay are not confirmed by the sources reviewed here.</p>
+      <QuickAnswer title="Yes — Subjugation and Raids support online co-op via Steam lobbies.">
+        <p>Steam also lists Single-player. This is not a shared-world MMO. Story co-op, open-world co-op, exact player count, and crossplay are not confirmed in the sources reviewed here.</p>
       </QuickAnswer>
 
+      <section class="article-body" aria-label="Co-op FAQ">
+        <details>
+          <summary>Is DragonSword Awakening multiplayer?</summary>
+          <p>Yes. Steam lists Online Co-op alongside Single-player. Confirmed co-op activities are Subjugation and Raids, played with friends or random players through Steam lobbies (Hound13).</p>
+        </details>
+        <details>
+          <summary>How does co-op work?</summary>
+          <p>Use Steam lobbies. Update 1.0.7 added Quick Entry. Update 1.0.11 searches lobbies by fastest response time, lets the party leader Retry a Hunt or Raid after a clear or wipe, and shows version notices for invite-code joins and Quick Entry. Update 1.0.10: a lobby may disband if the leader is unresponsive for a long time; an exact timeout is not published.</p>
+        </details>
+        <details>
+          <summary>Can I play the story or open world in co-op?</summary>
+          <p>Not confirmed in the sources reviewed here. Hound13 said story co-op was not ready for launch; that statement does not establish availability in the current build.</p>
+        </details>
+        <details>
+          <summary>Does DragonSword Awakening have crossplay?</summary>
+          <p>Crossplay is not confirmed in the sources reviewed on this page. It remains unverified until an official source confirms it; this does not establish that it exists or that it is absent.</p>
+        </details>
+        <details>
+          <summary>Does it have PvP?</summary>
+          <p>No PvP feature was verified in the primary sources reviewed here. Confirmed multiplayer activities are cooperative PvE.</p>
+        </details>
+      </section>
+
       <div class="article-body">
+        <h2>Confirmed and Unverified Co-op Features</h2>
+        <div class="table-wrap"><table><thead><tr><th scope="col">Item</th><th scope="col">Current status</th><th scope="col">Evidence</th></tr></thead><tbody>
+          <tr><th scope="row">Multiplayer / co-op</th><td>Confirmed</td><td>Steam lists Online Co-op.</td></tr>
+          <tr><th scope="row">Subjugation</th><td>Confirmed co-op activity</td><td>Hound13 developer discussion.</td></tr>
+          <tr><th scope="row">Raids</th><td>Confirmed co-op activity</td><td>Hound13 developer discussion.</td></tr>
+          <tr><th scope="row">Quick Entry</th><td>Confirmed</td><td>Official update 1.0.7.</td></tr>
+          <tr><th scope="row">Retry</th><td>Leader can restart a Hunt/Raid after a final clear or party wipe.</td><td>Official update 1.0.11.</td></tr>
+          <tr><th scope="row">Lobby search</th><td>Searches by fastest response time; old search-range setting removed.</td><td>Official update 1.0.11.</td></tr>
+          <tr><th scope="row">Version mismatch notices</th><td>Notices for a higher version in Quick Entry and a different leader version on invite-code joins.</td><td>Official update 1.0.11.</td></tr>
+          <tr><th scope="row">Leader unresponsive lobby</th><td>Party disbands after prolonged leader inactivity.</td><td>Official update 1.0.10; exact timeout not published.</td></tr>
+          <tr><th scope="row">Player count / invite steps / crossplay</th><td>Not yet verified</td><td>Not confirmed in the primary sources reviewed here.</td></tr>
+        </tbody></table></div>
         <h2>What Can You Play Together?</h2>
         <figure class="scope-figure">
           <img src="/media/multiplayer/co-op-scope.svg" width="600" height="760" alt="Co-op scope: friends or random players connect through Steam lobbies for Subjugation and Raids. Story and open-world co-op, player count and crossplay remain unconfirmed in the reviewed sources." />
@@ -65,10 +100,6 @@ const sources = [
           <summary>Is DragonSword: Awakening an MMO?</summary>
           <p>The official description presents a single-player action RPG with selected online co-op activities, rather than a shared-world MMO.</p>
         </details>
-        <details>
-          <summary>Does it have PvP?</summary>
-          <p>No PvP feature was verified in the primary sources reviewed here. The confirmed multiplayer activities discussed above are cooperative PvE.</p>
-        </details>
         <p class="next-read">For character setup comparisons, use <a href="/builds/">Builds</a>; for Hero handoffs, use <a href="/teams/">Teams</a>; for status conditions and Signal Skills, use the <a href="/guides/combat-system/">combat guide</a>. Those are separate from the multiplayer scope covered here.</p>
       </div>
 
@@ -88,6 +119,9 @@ const sources = [
   p { margin: 0 0 1rem; }
   .article-body { max-width: 800px; }
   .article-body a { font-weight: 700; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+  table { width: 100%; min-width: 620px; border-collapse: collapse; }
+  th, td { border-bottom: 1px solid var(--line); padding: .8rem; text-align: left; vertical-align: top; color: var(--muted-strong); }
   .scope-figure { margin: 1rem 0 1.5rem; max-width: 600px; }
   .scope-figure img { display: block; width: 100%; height: auto; border-radius: 14px; }
   figcaption { color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-top: 0.75rem; }
