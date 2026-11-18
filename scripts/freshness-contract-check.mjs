@@ -91,7 +91,10 @@ for (const route of ['/roadmap/', '/ja/roadmap/']) {
 const characters = html('/characters/');
 for (const expected of ['Ryza was added in Update 1.1.0', 'Quest #53, “Reunion,”', '19 launch Heroes', 'exact release dates and release order unknown']) if (!text(characters).includes(expected)) fail(`/characters/: missing bounded status ${expected}`);
 if (sources.update110 && !characters.includes(`href="${sources.update110.href}"`)) fail('/characters/: final 1.1.0 notes must support the release claim');
-for (const route of changedRoutes) if (!html(route).includes('"dateModified":"2026-11-02"')) fail(`${route}: editorial date must match this reviewed change`);
+for (const route of changedRoutes) {
+  const editorialDate = route === '/roadmap/' ? '2026-11-17' : '2026-11-02';
+  if (!html(route).includes(`"dateModified":"${editorialDate}"`)) fail(`${route}: editorial date must match the last reviewed change`);
+}
 
 for (const [route, title, h1] of [
   ['/', 'DragonSword Awakening Wiki — Builds, Map &amp; Characters', 'DragonSword Awakening Guides'],
