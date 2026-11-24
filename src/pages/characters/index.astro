@@ -1,6 +1,91 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import Breadcrumbs from '../../components/Breadcrumbs.astro'; import LastVerified from '../../components/LastVerified.astro'; import VerificationBadge from '../../components/VerificationBadge.astro'; import SourceList from '../../components/SourceList.astro'; import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro'; import { reportedRoster } from '../../data/characters'; import { sourceUrls, update11Preview, update110, update111 } from '../../data/sources';
-const title='DragonSword Awakening Characters — Launch Roster & Ryza'; const description='A cautious DragonSword Awakening characters directory covering the 19-Hero launch roster and Ryza release status, team switching, acquisition context, and verification status.'; const canonical='https://dragonswordguide.com/characters/'; const article={ '@context':'https://schema.org','@type':'Article',headline:title,description,mainEntityOfPage:canonical,datePublished:'2026-08-08',dateModified:'2026-10-22',publisher:{'@type':'Organization',name:'DragonSword Guide'} }; const sources=[{label:'Official update notes 1.1.0',href:update110.href,note:'Evidence B — final notes confirm Ryza was added on October 15, 2026 and the Quest #53 reward condition.'},{label:'Official update notes 1.1.1',href:update111.href,note:'Evidence B — applied fixes, including the Ryza leveling issue after Quest #53.'},{label:'Official LIVE STREAM #7 replay',href:update11Preview.replayHref,note:'Evidence B — historical preview; final 1.1.0 notes now establish release and acquisition status.'},{label:'Official 1.1 livestream notice',href:update11Preview.noticeHref,note:'Evidence B — historical showcase announcement.'},{label:'Official Ryza teaser announcement',href:'https://steamcommunity.com/games/4570720/announcements/detail/1844115010490208',note:'Evidence B — announces Ryza for October 2026.'},{label:'Official Steam store page',href:sourceUrls.steam,note:'confirms 19 launch Heroes, companions and tag-team combat.'},{label:'Official post-launch roadmap & Q&A',href:sourceUrls.roadmap,note:'Evidence B — names Ryza, Jerome, Veronica and Logan as planned additional Heroes; Jerome, Veronica and Logan retain unknown exact dates and release order.'}];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import LastVerified from '../../components/LastVerified.astro';
+import SourceList from '../../components/SourceList.astro';
+import AdsterraNativeBanner from '../../components/AdsterraNativeBanner.astro';
+import { reportedRoster } from '../../data/characters';
+import { sourceUrls, update110, update111 } from '../../data/sources';
+
+const title = 'DragonSword Awakening Characters — Launch Roster & Ryza';
+const description = 'Find the 19 launch Heroes, check how to unlock Ryza in Adventure Quest 53, find Othello’s Hero Quest, and check the announced release window for Jerome.';
+const canonical = 'https://dragonswordguide.com/characters/';
+const article = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, description,
+  mainEntityOfPage: canonical, datePublished: '2026-08-08', dateModified: '2026-11-23',
+  publisher: { '@type': 'Organization', name: 'DragonSword Guide' },
+};
+const sources = [
+  { label: 'Steam store description', href: sourceUrls.steam, note: 'Launch Hero count and the story roles of Lute, Johnny and Castella.' },
+  { label: 'Update 1.1.0', href: update110.href, note: 'Ryza’s quest reward and Shock effect, Othello’s Hero Log entry, and named Hero skill changes.' },
+  { label: 'Update 1.1.1', href: update111.href, note: 'Fix for leveling Ryza on first login after clearing her quest.' },
+  { label: 'Jerome’s official trailer announcement', href: 'https://steamcommunity.com/games/4570720/announcements/detail/562547437198114874', note: 'Free update planned for December 2026.' },
+  { label: 'Developer roadmap and Q&A', href: sourceUrls.roadmap, note: 'Post-launch plans for Veronica and Logan.' },
+];
 ---
-<BaseLayout title={title} description={description} canonical={canonical} ogType="article" schema={[article]}><div class="shell page-wrap"><Breadcrumbs items={[{label:'DragonSword Guide',href:'/'},{label:'Characters'}]}/><article><header class="article-header"><p class="eyebrow">Directory · Verification visible</p><h1>DragonSword Awakening Characters</h1><LastVerified date="October 22, 2026"/></header><div class="answer"><strong>Quick answer:</strong> The official Steam description confirms 19 launch Heroes. The names below are a working directory; exact traits, factions, unlock routes and Status effects are not published here unless independently verified.</div><section class="intro"><h2>How team switching works</h2><p>DragonSword: Awakening describes a three-Hero tag-team built around Status Ailments, Signal Skills and Switching Signals. That gives the roster a shared combat language, but it does not make every role or pairing interchangeable.</p><h2>How acquisition works</h2><p>Launch acquisition details are still being verified at the page level. For Ryza, the final 1.1.0 notes confirm one exact exception: Quest #53, “Reunion,” grants Ryza as its completion reward. The final notes say Ryza is granted immediately if the quest was already completed. Update 1.1.1 fixes the reported first-login leveling issue after this quest.</p><h2>Post-launch Heroes in the official roadmap</h2><p>Ryza was added in Update 1.1.0 on October 15, 2026. Jerome, Veronica and Logan remain planned for the second half of 2026, with exact release dates and release order unknown. The 19 launch names below are a historical roster, not a complete count after Ryza’s addition.</p></section><section class="roster"><div class="roster-heading"><h2>Roster names</h2><VerificationBadge label="19 launch names tracked"/></div><div class="name-grid">{reportedRoster.map((name)=><div class="name-item"><strong>{name}</strong><span>Roster name · details not yet verified</span></div>)}</div></section><AdsterraNativeBanner /><p class="note">Verification status: Verified means an official source mentions the identity or event; Partially Verified means the name is tracked but combat data is incomplete; Not Yet Verified means we need first-hand or primary confirmation.</p><SourceList sources={sources}/></article></div></BaseLayout>
-<style>.page-wrap{padding:1.25rem 0 2rem}.article-header{max-width:820px;margin-bottom:1.5rem}.eyebrow{color:var(--accent-light);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1,h2{line-height:1.1;letter-spacing:-.04em}h1{font-size:clamp(2.4rem,7vw,5rem);margin:0 0 .7rem}h2{font-size:clamp(1.45rem,3vw,2rem);margin:2.5rem 0 .7rem}.answer{max-width:780px;padding:1rem 1.15rem;border:1px solid hsl(199 86% 58% / .35);border-radius:12px;background:var(--accent-soft)}.answer strong{color:var(--accent-light)}.intro{max-width:760px}.intro p,.note{color:var(--muted-strong)}.roster{margin-top:2.5rem}.roster-heading{display:flex;align-items:center;gap:1rem}.roster-heading h2{margin:0}.name-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:1rem}.name-item{display:grid;gap:.2rem;padding:.85rem;background:var(--paper);border:1px solid var(--line);border-radius:10px}.name-item span{color:var(--muted);font-size:.72rem;line-height:1.35}.note{margin-top:1.5rem;font-size:.88rem}@media(max-width:700px){.name-grid{grid-template-columns:repeat(2,1fr)}}</style>
+<BaseLayout title={title} description={description} canonical={canonical} ogType="article" schema={[article]}>
+  <div class="shell page-wrap">
+    <Breadcrumbs items={[{ label: 'DragonSword Guide', href: '/' }, { label: 'Characters' }]} />
+    <article>
+      <header class="article-header">
+        <h1>DragonSword Awakening Characters</h1>
+        <LastVerified label="Official sources checked" date="November 23, 2026" />
+      </header>
+      <section class="answer" aria-labelledby="ryza">
+        <h2 id="ryza">How do I unlock Ryza?</h2>
+        <p>Complete Adventure Quest #53, “Reunion,” to recruit Ryza. If you finished the quest before Update 1.1.0, the game grants her immediately. You can then open the Hero Codex for her skill details and introduction video.</p>
+        <p>Ryza was added in Update 1.1.0 on October 15. Her spear attacks can inflict Shock. If you received her but could not level her up in the Hero menu on first login, Update 1.1.1 fixed that specific issue.</p>
+        <figure>
+          <a href="https://www.youtube.com/watch?v=5nH_UPVyLCU">
+            <img src="https://i.ytimg.com/vi/5nH_UPVyLCU/maxresdefault.jpg" width="1280" height="720" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Ryza on the cover of the official DragonSword teaser" />
+            <span>Watch Ryza’s teaser on YouTube</span>
+          </a>
+          <figcaption>Hound13’s character reveal for Ryza, the spear-wielding Hero awarded for “Reunion.”</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>The 19 launch Heroes</h2>
+        <p>Look up a launch character by name below. In the opening story, Lute travels to Orbis and meets Johnny, a mercenary, and Castella, an Elf. Ryza joined after launch.</p>
+        <ul class="names">{[...reportedRoster].sort().map(name => <li>{name}</li>)}</ul>
+      </section>
+      <section>
+        <h2>Where is Othello’s Hero Quest?</h2>
+        <p>After completing Chapter 5, open <strong>Quests → Hero Log</strong> and select <em>What the Wind Asks</em>. This unlocks Othello’s story quest. The patch notes give no recruitment condition for Othello here.</p>
+      </section>
+      <section>
+        <h2>When are the next Heroes coming?</h2>
+        <p>Hound13 announced Jerome for a free December 2026 update. The announcement gives a month only. Veronica and Logan also appear in the developer roadmap, with exact release dates and release order unknown. Check the <a href="/roadmap/">update timeline</a> for release announcements.</p>
+        <figure>
+          <a href="https://www.youtube.com/watch?v=VLFUtQv25W4">
+            <img src="https://i.ytimg.com/vi/VLFUtQv25W4/maxresdefault.jpg" width="1280" height="720" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Jerome on the cover of the official DragonSword Hero Spotlight" />
+            <span>Watch Jerome’s trailer on YouTube</span>
+          </a>
+          <figcaption>Hound13 introduces Jerome, the greatsword-wielding captain of the Lentus Rebellion’s strike team.</figcaption>
+        </figure>
+      </section>
+      <AdsterraNativeBanner />
+      <SourceList sources={sources} intro="The roster uses the launch count from Steam and the Hero names in the official update notes. The quest conditions come from the developer’s release notes." />
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-wrap { padding: 1.25rem 0 2rem; }
+  .article-header { max-width: 820px; margin-bottom: 1.5rem; }
+  h1, h2 { line-height: 1.1; letter-spacing: -.04em; }
+  h1 { font-size: clamp(2.4rem, 7vw, 5rem); margin: 0 0 .7rem; }
+  h2 { font-size: clamp(1.45rem, 3vw, 2rem); margin: 2rem 0 .7rem; }
+  section { max-width: 760px; }
+  section p { color: var(--muted-strong); }
+  .answer { padding: 1rem 1.15rem; border: 1px solid hsl(199 86% 58% / .35); border-radius: 12px; background: var(--accent-soft); }
+  .answer h2 { margin-top: 0; }
+  .answer p:last-child { margin-bottom: 0; }
+  figure { margin: 1.25rem 0 0; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 8px; }
+  figure a { display: block; }
+  figure a span { display: inline-block; margin-top: .45rem; text-decoration: underline; }
+  figcaption { margin-top: .25rem; color: var(--muted-strong); font-size: .9rem; }
+  .names { columns: 3; column-gap: 2rem; padding-left: 1.2rem; }
+  .names li { padding: .15rem 0; break-inside: avoid; }
+  @media (max-width: 600px) { .names { columns: 2; } }
+</style>
