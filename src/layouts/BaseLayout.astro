@@ -25,6 +25,7 @@ const ga4Id = import.meta.env.PUBLIC_GA4_ID?.trim();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    {canonical === 'https://dragonswordguide.com/' && <meta name="google-adsense-account" content="ca-pub-2134598094429002" />}
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
